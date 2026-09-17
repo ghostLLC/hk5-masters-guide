@@ -31,6 +31,10 @@ const PROGRAMMES = [
     "sourceNote": "已按官网逐项下钻：港大经管+CDS、中大GS、科大商学院、城大全表、理大2027学费页。"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The Master of Accounting programme at HKU Business School offers three streams: 1) Accounting Analytics and Big Data Stream; 2) Financial Reporting and Valuation Stream; 3) ESG and Strategic Management Stream. Students may also consider double concentrating. Our comprehensive curriculum is accredited by ACCA, CPA Australia, CIMA and HKICPA, and students benefit from our professional partnership with ACCA and KPMG. The programme explores theories on the importance of accounting roles in executive decisions, preparing you to be professional accountants, financial experts and future business leaders."
+  ,
+    "descCn": "港大经管会计学硕士设三个方向：1）会计分析与大数据；2）财务报告与估值；3）ESG 与战略管理。学生亦可选择双方向。课程获 ACCA、CPA Australia、CIMA、HKICPA 认证，并与 ACCA、KPMG 保持专业合作。项目探讨会计在高管决策中的作用，培养专业会计师、金融专家与未来商业领袖。"
   },
   {
     "id": "hku-maa",
@@ -57,6 +61,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The Master of Accounting Analytics programme offered by the HKU Business School aims to develop accounting professionals equipped with data analytics skills and is specifically designed to foster talents capable of transforming raw and intricate accounting data into actionable intelligence for addressing general accounting-related questions. The programme trains accounting professionals with both technical and accounting expertise through a focus on data, information technology, statistical analysis, quantitative methods, and mathematical or computer-based models, as well as a series of foundational accounting courses to meet the requirement of professional bodies."
+  ,
+    "descCn": "港大会计分析硕士旨在培养具备数据分析能力的会计专业人才，能够将复杂会计数据转化为可行动的商业洞察。项目兼顾技术与会计专长，涵盖数据、信息技术、统计分析、定量方法与计算机建模，并设基础会计课程以满足专业机构要求。"
   },
   {
     "id": "hku-maib",
@@ -83,6 +91,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The Master of Artificial Intelligence in Business Programme is designed to equip students with specialised knowledge and skills to develop strategies and manage the planning, design, and implementation of artificial intelligence in organisations. The programme explores the opportunities and challenges AI brings to businesses and the responsible management of AI in a corporate setting."
+  ,
+    "descCn": "港大商业人工智能硕士旨在培养学生制定战略、管理人工智能在组织中的规划、设计与实施的专业知识与技能，探讨 AI 给企业带来的机遇与挑战，以及企业环境中的 AI 负责任管理。"
   },
   {
     "id": "hku-mecon",
@@ -109,6 +121,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The Master of Economics Programme at the HKU Business School aims to introduce students to frontier developments in economics and to equip them with state-of-the-art analytical tools. Our comprehensive curriculum has multiple learning streams and helps students connect economic theory with real world business. The programme also provides students with a strong foundation for PhD study, and Master of Economics students can also apply to complete their PhD overseas through the Theory stream."
+  ,
+    "descCn": "港大经济学硕士旨在介绍经济学前沿进展并配备先进分析工具。课程设多个学习方向，帮助学生连接经济理论与真实商业。项目亦为博士深造打下坚实基础，理论方向学生可申请海外完成博士。"
   },
   {
     "id": "hku-mfwm",
@@ -135,6 +151,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "Led by an outstanding team of visionaries and experts, the Master of Family Wealth Management programme offered by HKU Business School and the Hong Kong Institute for the Humanities and Social Sciences dives deep into the historical roots, cultural dimensions, and cutting-edge strategies of family wealth. As the first of its kind in Hong Kong, this degree is your gateway to the dynamic world of family wealth management."
+  ,
+    "descCn": "由港大经管学院与香港人文社会研究所联合开设的家族财富管理硕士，由杰出专家团队领衔，深入探讨家族财富的历史根源、文化维度与前沿策略。作为香港首个此类学位，是进入家族财富管理世界的门户。"
   },
   {
     "id": "hku-mfin",
@@ -161,6 +181,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The HKU Business School Master of Finance Programme is a two-year full-time interdisciplinary programme combining techniques in statistics, mathematics, physics, engineering and computer programming with the knowledge in finance, accounting, economics and law. Our comprehensive and quantitative curriculum offers students multiple learning streams, as well as the option of double concentration. HKU MFin programme also enjoys professional partnerships with the CFA Institute and GARP to ensure the curriculum is closely tied to professional practice."
+  ,
+    "descCn": "港大金融学硕士为两年全日制跨学科项目，融合统计、数学、物理、工程与编程技术，以及金融、会计、经济与法律知识。课程量化程度高，设多个学习方向并可双方向毕业。项目与 CFA 协会、GARP 建立专业合作，课程与职业实践紧密衔接。"
   },
   {
     "id": "hku-mffintech",
@@ -187,6 +211,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The HKU Business School Master of Finance in Financial Technology (MFFinTech) programme is jointly offered by three faculties: the Business School, the School of Computing and Data Science and the Faculty of Law. Our innovative curriculum balances quantitative skills and visionary thinking, and applies techniques of big data, AI and natural language processing to analyse real-world financial projects. Students will also cover the legal aspects of FinTech, from cybersecurity to data protection and smart contracts."
+  ,
+    "descCn": "港大金融科技金融学硕士由经管学院、计算与数据科学学院与法学院联合开设。课程兼顾量化技能与前瞻性思维，运用大数据、人工智能与自然语言处理分析真实金融项目，并涵盖网络安全、数据保护与智能合约等金融科技法律议题。"
   },
   {
     "id": "hku-mgm",
@@ -213,6 +241,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The Master of Global Management programme at the HKU Business School offers a comprehensive curriculum that incorporates individual, organisational and national knowledge pertinent to effective management of global issues. The MGM Master programme is designed to help students develop global management problem solving skills and enhance their ability to manage and work with people from a widening spread of backgrounds in a global context."
+  ,
+    "descCn": "港大环球管理学硕士提供融合个人、组织与国家层面知识的综合课程，聚焦全球议题的有效管理。项目帮助学生培养全球管理问题解决能力，提升在多元文化背景下的管理与协作能力。"
   },
   {
     "id": "hku-mscba",
@@ -239,6 +271,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The Master of Science in Business Analytics programme at the HKU Business School offers a comprehensive curriculum that aims to help students develop both hard and soft skills related to business analytics. Our students will learn the knowledge and skills of understanding data, transforming data into information and converting information into executable actions. The programme boasts a real world business analytics project - The Capstone Project - with reputable corporations in the region."
+  ,
+    "descCn": "港大商业分析理学硕士提供综合课程，帮助学生同时发展商业分析相关的硬技能与软技能。学生将学习理解数据、将数据转化为信息、并将信息转化为可执行行动的能力。项目设有与知名企业合作的真实商业分析 Capstone 项目。"
   },
   {
     "id": "hku-mscmkt",
@@ -265,6 +301,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The Master of Science in Marketing programme at the HKU Business School combines traditional marketing concepts and strategies with up-to-date digital analysis. The programme offers a comprehensive curriculum that combines marketing insights, analytical tools and decisions framework, and students will learn the best practices in top global firms, as well as local firms in Hong Kong, Mainland China and beyond. The focus is on learning how to understand the data and translate it into marketing decisions."
+  ,
+    "descCn": "港大市场营销理学硕士将传统营销概念与策略同最新数字分析相结合。课程融合营销洞察、分析工具与决策框架，学生将学习全球顶尖企业以及香港、中国内地等地本地企业的最佳实践，重点在于理解数据并将其转化为营销决策。"
   },
   {
     "id": "hku-msaf",
@@ -291,6 +331,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The Master of Sustainable Accounting and Finance programme at the HKU Business School is designed to provide a coherent and systematic curriculum to fresh college graduates and young professionals. The focus of the programme is preparing young professionals for jobs tackling important and urgent issues on climate change, responsible corporate behavior, government policies, and sustainable accounting and finance."
+  ,
+    "descCn": "港大可持续会计与金融硕士为应届毕业生与年轻专业人士提供连贯系统的课程，聚焦气候变化、负责任企业行为、政府政策以及可持续会计与金融等重要紧迫议题，为相关职业做好准备。"
   },
   {
     "id": "hku-mwm",
@@ -317,6 +361,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The HKU Business School Master of Wealth Management programme equips students with state-of-the-art knowledge and specialised skills essential to excel in the dynamic field of wealth management. Our innovative curriculum is designed with a keen focus on industry relevance. The programme capitalises on Hong Kong's position as a global financial centre, a hub for growing wealth, and a gateway to the Greater Bay Area and Mainland China."
+  ,
+    "descCn": "港大财富管理硕士为学生提供前沿知识与专业技能，以在快速发展的财富管理领域脱颖而出。课程设计紧扣行业需求，依托香港作为全球金融中心、财富增长枢纽及通往大湾区与中国内地门户的独特优势。"
   },
   {
     "id": "hku-mscftda",
@@ -343,6 +391,14 @@ const PROGRAMMES = [
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "商科交叉项目，培养金融科技系统、大数据风控与智能投研方向的技术与管理复合人才。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位（工程/科学/商科等）；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位（工程/科学/商科等）；雅思6.0/托福80"
   },
   {
     "id": "hku-mieelm",
@@ -367,6 +423,14 @@ const PROGRAMMES = [
     "website": "https://www.mech.hku.hk/academic/tpg/",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "商科交叉项目，聚焦供应链、物流系统、运营管理与商业数据分析。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位（工程/科学相关优先）；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位（工程/科学相关优先）；雅思6.0/托福80"
   },
   {
     "id": "cuhk-macc",
@@ -393,6 +457,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "Since its launch in 1998, the Master of Accountancy has garnered respect as a leading accounting programme, recognised and accredited by all major professional accounting bodies. The programme is designed for accounting and non-accounting graduates, with the aim to nurture professional accountants who can apply accounting knowledge and data analytics to develop business insights."
+  ,
+    "descCn": "中大会计学硕士自1998年开办以来，已成为领先的会计项目，获所有主要专业会计机构认可与认证。项目面向会计与非会计背景毕业生，旨在培养能够运用会计知识与数据分析形成商业洞察的专业会计师。"
   },
   {
     "id": "cuhk-mscasi",
@@ -419,6 +487,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The MSc in Actuarial Science and Insurance Analytics (MScASI) is a full-time Master's programme designed to nurture high-calibre actuaries to meet Asia's growing demand. The programme will help you develop adaptable skills for a variety of actuarial or analytical roles. This is Hong Kong's only actuarial science Master's programme, with a syllabus approved by the International Actuarial Association."
+  ,
+    "descCn": "中大精算科学及保险分析理学硕士为全日制项目，旨在培养高素质精算人才以满足亚洲日益增长的需求。项目帮助学生发展适应多种精算或分析岗位的技能。这是香港唯一的精算科学硕士项目，教学大纲获国际精算协会认可。"
   },
   {
     "id": "cuhk-mam",
@@ -445,6 +517,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "In today's interconnected world, aviation stands at the crossroads of global commerce, cultural exchange, and technological innovation. Our pioneering MSc in Aviation Management is designed to develop the next generation of visionary aviation leaders, leveraging CUHK's world-class academic reputation and strategic partnership with the Hong Kong International Aviation Academy (HKIAA). This programme addresses the growing demand for professionals who understand the business, strategic, and experiential dimensions of modern aviation."
+  ,
+    "descCn": "在互联互通的当今世界，航空处于全球商业、文化交流与技术创新的交汇点。中大航空管理理学硕士依托世界级学术声誉及与香港国际航空学院的战略合作，旨在培养下一代具有远见的航空领军人才，回应市场对理解现代航空商业、战略与体验维度专业人才的需求。"
   },
   {
     "id": "cuhk-mscba",
@@ -471,6 +547,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "Recent technology developments have catalysed unprecedented growth rates, but many organisations struggle to keep up with the vast amounts of data generated. The MSc in Business Analytics is an advanced one-year programme designed to train professionals to analyse data with quantitative tools and convert it into useful information. You will be equipped to guide strategic decision making for organisations all over the world."
+  ,
+    "descCn": "技术发展带来前所未有的增长，但许多组织难以应对海量数据。中大商业分析理学硕士为一年制进阶项目，训练学生用定量工具分析数据并转化为有用信息，具备指导全球组织战略决策的能力。"
   },
   {
     "id": "cuhk-mscfbm",
@@ -495,6 +575,14 @@ const PROGRAMMES = [
     "website": "https://www.gs.cuhk.edu.hk/programmes/business-administration/msc-family-business-management",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
+  ,
+    "descCn": "面向家族企业传承与治理，课程覆盖家族治理、继任规划、财富管理与创新。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cuhk-mscfin",
@@ -521,6 +609,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The MSc in Finance offers rigorous training to master financial theories and techniques and develop strong quantitative reasoning, along with the latest technological skills in finance. You can study full-time for 1 year, or part-time for 2 years. After you graduate, you will be primed for a career in investment banking, commercial and corporate banking, asset management, regulatory bodies, consulting, financial services, accounting and general management."
+  ,
+    "descCn": "中大金融学理学硕士提供严格的金融理论与技术训练，培养强定量推理能力与最新金融科技技能。可全日制1年或兼读2年。毕业后可进入投行、商业银行、资产管理、监管机构、咨询、金融服务、会计与综合管理等领域。"
   },
   {
     "id": "cuhk-mscgwm",
@@ -545,6 +637,14 @@ const PROGRAMMES = [
     "website": "https://www.gs.cuhk.edu.hk/programmes/business-administration/master-science-global-wealth-management",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
+  ,
+    "descCn": "聚焦全球财富管理、家族办公室、另类投资与客户关系管理。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cuhk-mscitm",
@@ -571,6 +671,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The MSc in Information and Technology Management is designed to equip managers with cutting-edge IT knowledge and skills to enhance the productivity and competitiveness of their organisations. The curriculum offers courses in information and technology management, database and big data management, business intelligence techniques, statistical analysis, project management, enterprise resource planning and decision making."
+  ,
+    "descCn": "中大信息与科技管理理学硕士（兼读）旨在为管理者提供前沿 IT 知识与技能，提升组织生产力与竞争力。课程涵盖信息与科技管理、数据库与大数据管理、商业智能技术、统计分析、项目管理、企业资源规划与决策。"
   },
   {
     "id": "cuhk-mscistm",
@@ -597,6 +701,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The MSc in Information Science and Technology Management (MSc in ISTM) is a curriculum-evolution of the long-established full-time programme of MSc in Information and Technology Management. Topics include big data management, blockchain, business intelligence, fintech, information security, internet of things, project management, social media analytics, etc."
+  ,
+    "descCn": "中大信息科学与科技管理理学硕士由历史悠久的信息与科技管理全日制项目演进而来。议题涵盖大数据管理、区块链、商业智能、金融科技、信息安全、物联网、项目管理、社交媒体分析等。"
   },
   {
     "id": "cuhk-msclee",
@@ -623,6 +731,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "In the experience economy, organisations create value by designing and delivering memorable, engaging experiences for customers, employees, and communities. MSc in Leadership for Experience Economy (LEE) is the first MSc programme in the Asia-Pacific region focusing on developing competencies in inspirational leadership, investment, and innovation to drive organisational success in the emerging experience economy."
+  ,
+    "descCn": "在体验经济中，组织通过设计并交付令人难忘的体验为顾客、员工与社区创造价值。中大体验经济领导力理学硕士是亚太地区首个聚焦培养鼓舞人心的领导力、投资与创新能力，以在新兴体验经济中推动组织成功的硕士项目。"
   },
   {
     "id": "cuhk-mim",
@@ -649,6 +761,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "In today's fast-changing market environment, there are increasing demands for managers who can innovate and disrupt the status quo to lead the industry into the future. The MSc in Management (MiM) programme is designed to develop pioneers who do not only embrace change but also be instrumental in creating change, and help shape the future of the digital economy in Asia and beyond."
+  ,
+    "descCn": "在快速变化的市场环境中，社会对能够创新、打破现状、引领行业未来的管理者需求日增。中大管理学理学硕士旨在培养不仅拥抱变化、更能创造变化的先锋，助力塑造亚洲及更广区域数字经济的未来。"
   },
   {
     "id": "cuhk-mscmkt",
@@ -675,6 +791,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "Shaped by the rise of AI and a rapidly evolving digital landscape, the MSc in Marketing Programme cultivates tomorrow's marketing leaders through a curriculum blending theory and practice, tradition and technology, intuition and analytics, and local insight with a global vision. Students develop future-ready capabilities through courses in AI, digital marketing, entrepreneurship, machine learning, and sustainability in marketing."
+  ,
+    "descCn": "在 AI 崛起与数字环境快速演变背景下，中大市场营销理学硕士通过融合理论与实践、传统与科技、直觉与分析、本地洞察与全球视野的课程，培养未来营销领袖。学生通过 AI、数字营销、创业、机器学习与营销可持续发展等课程发展面向未来的能力。"
   },
   {
     "id": "cuhk-mscre",
@@ -701,6 +821,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "MSc in Real Estate (MRE) is the only master's degree in Asia that draws on multi-disciplinal research and teaching resources ranging from real estate, business to hospitality. The programme offers an experiential learning curriculum that integrates theory and real-world practice. The programme is professionally accredited by the Royal Institution of Chartered Surveyors (RICS)."
+  ,
+    "descCn": "中大房地产理学硕士是亚洲唯一融合房地产、商业与酒店管理多学科资源的硕士学位。项目提供融合理论与真实实践的体验式学习课程，并获英国皇家特许测量师学会（RICS）专业认证。"
   },
   {
     "id": "cuhk-mscsbm",
@@ -725,6 +849,14 @@ const PROGRAMMES = [
     "website": "https://www.gs.cuhk.edu.hk/programmes/business-administration/msc-sports-business-management",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
+  ,
+    "descCn": "新兴项目，聚焦体育产业商业运作、赛事管理、体育营销与电竞商业。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cuhk-mscsgb",
@@ -751,6 +883,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The MSc in Sustainable Global Business (SGB) programme (1-year full-time or 2-year part-time) is designed to provide comprehensive training for graduates and industry professionals aspiring to lead in the evolving landscape of sustainability. You will be equipped with professional knowledge and practical skillset to manage complex sustainability challenges through a strategic management lens."
+  ,
+    "descCn": "中大可持续环球商业理学硕士（全日制1年或兼读2年）为有志在可持续发展领域引领变革的毕业生与业界人士提供全面训练，通过战略管理视角培养学生管理复杂可持续挑战的专业知识与实用技能。"
   },
   {
     "id": "hkust-msac",
@@ -777,6 +913,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "科大会计硕士，课程高度衔接专业资格，强调数据分析在会计中的应用。2027/28 学费 HK$428,000。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福80；建议GMAT/GRE"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福80；建议GMAT/GRE"
   },
   {
     "id": "hkust-msba",
@@ -803,6 +947,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The MSBA Program is designed to equip students with the skills to effectively leverage in information and business analytics knowledge in building data-driven strategies while effectively communicating business value."
+  ,
+    "descCn": "科大商业分析理学硕士旨在培养学生有效运用信息与商业分析知识、构建数据驱动战略并有效传达商业价值的能力。"
   },
   {
     "id": "hkust-mscecon",
@@ -829,6 +977,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "严谨的经济学训练，强调计量方法与政策分析，适合研究与业界双重路径。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福80"
   },
   {
     "id": "hkust-mscfofb",
@@ -855,6 +1011,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "依托 Roger King 亚洲家族企业与家族办公室研究中心，培养家族财富治理、传承规划与家族办公室运营人才。2027/28 学费 HK$477,400。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福80；有相关经验优先"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福80；有相关经验优先"
   },
   {
     "id": "hkust-mfin",
@@ -881,6 +1045,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "Please refer to the official programme page for the latest description. The MSc in Finance at HKUST is one of Asia's leading finance programmes, covering corporate finance, investments, asset pricing, risk management and fintech."
+  ,
+    "descCn": "科大金融学理学硕士是亚洲领先的金融项目之一，涵盖公司金融、投资、资产定价、风险管理与金融科技。请以官网最新说明为准。"
   },
   {
     "id": "hkust-msgo",
@@ -907,6 +1075,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "聚焦全球运营与供应链战略，结合香港作为贸易与物流枢纽的区位优势。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福80"
   },
   {
     "id": "hkust-mscicsm",
@@ -933,6 +1109,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "培养既懂信息安全技术又懂管理的复合人才，覆盖治理、合规与风险管理。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福80"
   },
   {
     "id": "hkust-mscism",
@@ -959,6 +1143,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "连接 IT 与商业战略，培养数字化转型所需的 IT 管理与产品人才。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福80"
   },
   {
     "id": "hkust-mimt",
@@ -985,6 +1177,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "面向年轻毕业生的精英管理硕士，提供国际交换、领导力训练与职业加速。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；工作经验通常不超过2年；雅思6.5/托福80"
+  ,
+    "requirementsCn": "本科学位；工作经验通常不超过2年；雅思6.5/托福80"
   },
   {
     "id": "hkust-mscmark",
@@ -1011,6 +1211,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "强调大数据营销、消费者洞察与数字品牌策略，课程与业界紧密合作。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福80"
   },
   {
     "id": "hkust-msgf",
@@ -1035,6 +1243,14 @@ const PROGRAMMES = [
     "website": "https://msgf-nyustern.hkust.edu.hk/",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
+  ,
+    "descCn": "与纽约大学 Stern 联合开设的全球金融硕士，两地授课，面向资深金融从业人士。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；丰富工作经验；雅思/托福；GMAT/GRE"
+  ,
+    "requirementsCn": "本科学位；丰富工作经验；雅思/托福；GMAT/GRE"
   },
   {
     "id": "hkust-mscft",
@@ -1059,6 +1275,14 @@ const PROGRAMMES = [
     "website": "https://seng.hkust.edu.hk/msc/fintech",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
+  ,
+    "descCn": "工学院开设、商学院协作的交叉项目，覆盖区块链、智能合约、数字资产与监管科技。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位（工程/科学/商科等）；雅思6.5/托福80"
+  ,
+    "requirementsCn": "本科学位（工程/科学/商科等）；雅思6.5/托福80"
   },
   {
     "id": "cityu-ftda",
@@ -1085,6 +1309,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "商学院旗舰新项目，聚焦数字资产、区块链金融、加密市场监管与金融科技创业。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cityu-maia",
@@ -1111,6 +1343,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "This programme aims to provide accounting or finance major graduates an opportunity to enhance their skills by developing an expertise in international accounting as well as further understanding in Hong Kong accounting and related arena of knowledge. Students will be provided with specialised knowledge in international and Hong Kong accounting as well as related fields of information management, international business and investment."
+  ,
+    "descCn": "城大国际会计学文学硕士为会计或金融背景毕业生提供提升技能的机会，深入学习国际会计并进一步理解香港会计及相关知识领域。学生将获得国际与香港会计，以及信息管理、国际商务与投资等领域的专业知识。"
   },
   {
     "id": "cityu-mscpacg",
@@ -1137,6 +1373,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "双轨培养专业会计与公司治理能力，适合会计与合规方向发展。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cityu-mscoscm",
@@ -1163,6 +1407,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "运营与供应链管理硕士，QS 2026 全球第20、亚洲第2，运营与供应链领域极具竞争力。官方学费 HKD 330,000。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cityu-mscbdaqab",
@@ -1189,6 +1441,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "定量导向的商业分析项目，强调统计建模、优化与商业决策。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；定量背景优先；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；定量背景优先；雅思6.5/托福79"
   },
   {
     "id": "cityu-mscfin",
@@ -1215,6 +1475,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The programme aims at providing students with advanced knowledge in financial management including financing & investment strategies and risk management."
+  ,
+    "descCn": "城大金融学理学硕士旨在为学生提供财务管理的进阶知识，涵盖融资与投资策略以及风险管理。"
   },
   {
     "id": "cityu-mscae",
@@ -1241,6 +1505,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "强调计量方法在现实经济问题中的应用，适合政策、金融与咨询方向。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cityu-mscfe",
@@ -1267,6 +1539,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "交叉项目，训练金融建模、衍生品定价、量化交易与风险管理技术。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位（工程/数学/物理/商科等）；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位（工程/数学/物理/商科等）；雅思6.5/托福79"
   },
   {
     "id": "cityu-mscaib",
@@ -1293,6 +1573,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "The MSc in Artificial Intelligence in Business (AIB) is designed to prepare the next generation of business leaders who understand and use AI effectively. Our graduates will develop the skills needed to navigate the challenges of the business world by 1) using AI to improve business efficiency, 2) managing AI projects for business success, and 3) creating AI solutions that benefit both society and industry. This programme is aimed at those with a background in IT/IS or business."
+  ,
+    "descCn": "城大商业人工智能理学硕士旨在培养理解并有效运用 AI 的下一代商业领袖。毕业生将具备三项能力：1）用 AI 提升商业效率；2）管理 AI 项目以实现商业成功；3）创造惠及社会与产业的 AI 解决方案。项目面向有 IT/IS 或商科背景的学生。"
   },
   {
     "id": "cityu-mscbisfit",
@@ -1319,6 +1603,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "聚焦金融科技与智能系统在商业中的应用，技术与管理并重。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cityu-mscbismis",
@@ -1345,6 +1637,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "侧重智能系统规划、实施与管理，培养数字化转型推动者。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cityu-mscdtti",
@@ -1371,6 +1671,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "培养推动组织数字化转型的战略与技术复合人才。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cityu-mscdcc",
@@ -1397,6 +1705,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "由电子商务项目升级而来，覆盖数字商业、平台经济与智能计算。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cityu-mscbdaIAM",
@@ -1423,6 +1739,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "侧重信息分析与管理决策，培养商业智能与数据治理人才。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cityu-magbm",
@@ -1449,6 +1773,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "QS 2026 全球第49，培养具国际视野的企业管理人才，强调跨文化领导力。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cityu-mscmi",
@@ -1475,6 +1807,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "聚焦创新管理、创业与组织变革，培养未来产业推动者。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cityu-mscmkt",
@@ -1501,6 +1841,10 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descEn": "This programme is suitable for those who are interested in starting or further developing their business careers in marketing; those who intend to improve their analytical skills in making marketing decision; those who plan to pursue higher academic qualifications such as a PhD programme; those who have a strong background in a professional area but still want to enhance their understanding of customer behaviour. Designed to nurture marketing professionals and entrepreneurs."
+  ,
+    "descCn": "城大市场营销理学硕士适合：希望在营销领域开启或发展职业生涯者；希望提升营销决策分析能力者；计划攻读博士等更高学历者；已有专业背景但希望加深对消费者行为理解者。项目旨在培养营销专业人才与企业家。"
   },
   {
     "id": "polyu-mscawm",
@@ -1527,6 +1871,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "资产与财富管理硕士，设数字资产管理与家族办公室财富管理方向，面向高净值服务行业。2027 官方学费 HK$519,000。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscbm",
@@ -1553,6 +1905,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "理大商业管理硕士，覆盖战略、营销、财务与运营核心模块，含海外暑期学校体验。2027 官方学费 HK$424,800。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscacc",
@@ -1579,6 +1939,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "专业会计硕士，对接香港会计师公会等专业资格。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscafa",
@@ -1605,6 +1973,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "融合会计、金融与数据分析，培养 fintech 时代的会计金融专才。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mpa",
@@ -1629,6 +2005,14 @@ const PROGRAMMES = [
     "website": "https://www.polyu.edu.hk/study/pg/tpg/2027/21046-maf-paf-mae-pap",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
+  ,
+    "descCn": "面向转专业或进阶的会计人才，课程覆盖财务报告、审计、税务与商业法。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mcg",
@@ -1655,6 +2039,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "聚焦公司治理、合规、风险管理与董事会实务。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mofcf",
@@ -1681,6 +2073,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "企业金融方向，覆盖公司估值、并购、融资与风险管理。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mofim",
@@ -1707,6 +2107,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "投资管理方向，覆盖资产配置、组合管理、另类投资与行为金融。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscecon",
@@ -1733,6 +2141,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "设应用经济学与数字经济学方向，强调政策分析与数据驱动。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscesg",
@@ -1759,6 +2175,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "培养 ESG 报告、绿色金融与可持续战略专才，响应全球监管与投资趋势。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscgscm",
@@ -1785,6 +2209,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "依托香港物流枢纽优势，培养全球供应链战略与运营人才。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscistl",
@@ -1811,6 +2243,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "亚洲领先的航运与物流项目，覆盖航运金融、港口管理、国际贸易物流。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscom",
@@ -1835,6 +2275,14 @@ const PROGRAMMES = [
     "website": "https://www.polyu.edu.hk/study/pg/tpg/2027/44092-ofm-opm",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
+  ,
+    "descCn": "培养运营优化、质量管理与流程改进的管理人才。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscgbda",
@@ -1861,6 +2309,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "融合全球商业战略与数据分析决策方法。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscqm",
@@ -1885,6 +2341,14 @@ const PROGRAMMES = [
     "website": "https://www.polyu.edu.hk/lms/study/tpg/qm-hz",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "与浙江大学合作，主要在中国内地授课，培养质量管理与卓越运营人才。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；工作经验优先；中文授课为主"
+  ,
+    "requirementsCn": "本科学位；工作经验优先；中文授课为主"
   },
   {
     "id": "polyu-mscba",
@@ -1911,6 +2375,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "培养商务数据分析与决策支持能力，兼顾技术与商业应用。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mschrm",
@@ -1937,6 +2409,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "培养战略人力资源管理人才，覆盖组织行为、人才发展与雇佣关系。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-msciml",
@@ -1963,6 +2443,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "面向国际管理与领导力发展，强调跨文化团队与全球战略。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscmm",
@@ -1989,6 +2477,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "培养数字时代营销管理人才，覆盖品牌、消费者洞察与营销科技。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscbadata",
@@ -2013,6 +2509,14 @@ const PROGRAMMES = [
     "website": "https://www.polyu.edu.hk/af/study/taught-postgraduate-programmes/master-of-science-in-accounting-and-finance-with-big-data-chs/",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
+  ,
+    "descCn": "与厦门国家会计学院合作，中文授课，聚焦大数据在会计金融中的应用。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；中文授课；工作经验优先"
+  ,
+    "requirementsCn": "本科学位；中文授课；工作经验优先"
   },
   {
     "id": "polyu-mscgscmce",
@@ -2037,6 +2541,14 @@ const PROGRAMMES = [
     "website": "https://www.polyu.edu.hk/lms/study/tpg/gscm-ce",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
+  ,
+    "descCn": "面向内地学员的供应链管理项目，中文/双语授课。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；工作经验优先"
+  ,
+    "requirementsCn": "本科学位；工作经验优先"
   },
   {
     "id": "hku-mscds",
@@ -2063,6 +2575,14 @@ const PROGRAMMES = [
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "港大数据科学硕士，统计与计算机交叉的旗舰项目，覆盖机器学习、统计推断、大数据计算与行业应用。全日制约 1.5 年。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位（统计/CS/工程等相关）；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位（统计/CS/工程等相关）；雅思6.0/托福80"
   },
   {
     "id": "hku-msccs",
@@ -2089,6 +2609,14 @@ const PROGRAMMES = [
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "计算机科学硕士，含金融计算、网络安全、多媒体与通用方向，与金融科技、商业分析高度交叉。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "hku-mscstats",
@@ -2115,6 +2643,14 @@ const PROGRAMMES = [
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "统计学硕士，统计推断、实验设计、时间序列与数据建模，广泛应用于金融、市场与生物统计。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "hku-mscere",
@@ -2139,6 +2675,14 @@ const PROGRAMMES = [
     "website": "https://www.arch.hku.hk/programmes_/rec/",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "房地产投资、估价、开发与资产管理，商科交叉特色明显。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "hku-mscurban",
@@ -2163,6 +2707,14 @@ const PROGRAMMES = [
     "website": "https://www.arch.hku.hk/programmes_/upad/",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "城市与区域规划，涉及房地产、城市发展与公共政策，商科交叉。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "cuhk-mscis",
@@ -2187,6 +2739,14 @@ const PROGRAMMES = [
     "website": "https://www.ie.cuhk.edu.hk/programmes/msc-information-engineering/",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "信息工程与网络技术，可与金融科技、信息系统交叉应用。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cuhk-mscfineng",
@@ -2211,6 +2771,14 @@ const PROGRAMMES = [
     "website": "https://www.gs.cuhk.edu.hk/programmes/engineering/msc-financial-technology",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "工程学院与商学院交叉的金融科技项目，覆盖区块链、智能合约、数字支付。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cuhk-mscds",
@@ -2235,6 +2803,10 @@ const PROGRAMMES = [
     "website": "https://www.gs.cuhk.edu.hk/programmes/science/msc-data-science-and-business-statistics",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descEn": "Data is everywhere and there is possibly no field across the world that does not deal with data. The programme is designed for students with non-statistics background. We impart data analytic knowledge and provide quantitative training. The programme focuses on data analysis skills and explores core areas of applied and business statistics. Statistical packages such as R, Python and SAS will be covered."
+  ,
+    "descCn": "数据无处不在，几乎没有哪个领域不与数据打交道。中大数据科学与商业统计理学硕士面向非统计背景学生，传授数据分析知识与定量训练，聚焦数据分析技能与应用统计、商业统计核心领域，涵盖 R、Python、SAS 等统计软件。"
   },
   {
     "id": "hkust-mscaiml",
@@ -2259,6 +2831,14 @@ const PROGRAMMES = [
     "website": "https://seng.hkust.edu.hk/msc/ai",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "工学院 AI 硕士，可与商业分析、金融科技交叉。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位（工程/科学）；雅思6.5/托福80"
+  ,
+    "requirementsCn": "本科学位（工程/科学）；雅思6.5/托福80"
   },
   {
     "id": "hkust-mscbdt",
@@ -2283,6 +2863,14 @@ const PROGRAMMES = [
     "website": "https://seng.hkust.edu.hk/msc/bigdata",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "大数据技术与应用，与商业数据分析高度交叉。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福80"
   },
   {
     "id": "cityu-mscds",
@@ -2307,6 +2895,14 @@ const PROGRAMMES = [
     "website": "https://www.cityu.edu.hk/sds/pg",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "数据科学学院旗舰项目，覆盖统计学习、数据挖掘、商业智能。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cityu-msccs",
@@ -2331,6 +2927,14 @@ const PROGRAMMES = [
     "website": "https://www.cs.cityu.edu.hk/pg",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "计算机科学硕士，可与商业信息系统、金融科技交叉。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "polyu-mscaihm",
@@ -2357,6 +2961,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "AI 与酒店业交叉，培养智慧酒店与旅游科技人才。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscieh",
@@ -2383,6 +2995,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "酒店与旅游业创新创业，培养行业新商业模式推动者。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscihm",
@@ -2409,6 +3029,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "国际酒店管理硕士，SHTM 世界排名领先，就业资源丰富，属酒店及旅游管理硕士组合课程。2027 官方学费 HK$341,000。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscitem",
@@ -2435,6 +3063,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "国际旅游与会展管理，覆盖目的地营销、活动策划与体验经济。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-msciwm",
@@ -2461,6 +3097,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "葡萄酒与烈酒商业管理，覆盖品鉴、供应链、品牌与零售。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-msclem",
@@ -2487,6 +3131,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "奢侈品与高端体验管理，覆盖品牌、客户体验与服务设计。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscghb",
@@ -2513,6 +3165,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "三校联培：欧洲、亚洲、北美各一学期，获取三大市场与校友网络。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscmact",
@@ -2539,6 +3199,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "精算与投资科学，对接精算师资格，金融交叉。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位（数学/统计相关）；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位（数学/统计相关）；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscorra",
@@ -2563,6 +3231,14 @@ const PROGRAMMES = [
     "website": "https://www.polyu.edu.hk/study/pg/tpg/2027/63024-ofm-opm",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
+  ,
+    "descCn": "运筹优化与风险分析，广泛应用于金融、供应链与运营管理。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscqff",
@@ -2587,6 +3263,14 @@ const PROGRAMMES = [
     "website": "https://www.polyu.edu.hk/study/pg/tpg/2027/63029-qfm-qpm",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
+  ,
+    "descCn": "量化金融与金融科技交叉项目，覆盖算法交易、风控建模与区块链金融。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位（数学/工程/商科）；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位（数学/工程/商科）；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscds",
@@ -2613,6 +3297,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "数据科学与分析硕士，覆盖机器学习、统计建模与商业智能应用。2027 官方约 HK$418,500。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscaibdc",
@@ -2639,6 +3331,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "AI 与大数据计算交叉，可应用于金融科技、商业分析等场景。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscebm",
@@ -2663,6 +3363,14 @@ const PROGRAMMES = [
     "website": "https://www.polyu.edu.hk/study/pg/tpg/2027/45080-efm-efd-eqm-eqp",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
+  ,
+    "descCn": "工程与商业管理交叉，IGDS 项目，覆盖战略、运营与技术管理。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscsclm",
@@ -2687,6 +3395,14 @@ const PROGRAMMES = [
     "website": "https://www.polyu.edu.hk/study/pg/tpg/2027/45080-sfm-sfp-sqm-sqp",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
+  ,
+    "descCn": "供应链与物流管理，IGDS 项目，面向全球供应链战略。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscils",
@@ -2713,6 +3429,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "工业物流系统设计与优化，工程与商业交叉。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscktm",
@@ -2737,6 +3461,14 @@ const PROGRAMMES = [
     "website": "https://www.polyu.edu.hk/study/pg/tpg/2027/45100-mt-mtt",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
+  ,
+    "descCn": "知识管理与科技创新管理，工程与商业交叉。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscsm",
@@ -2761,6 +3493,14 @@ const PROGRAMMES = [
     "website": "https://www.polyu.edu.hk/study/pg/tpg/2027/45100-smf-smp",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
+  ,
+    "descCn": "智能制造与工业 4.0，涉及运营优化与数字化转型。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscstm",
@@ -2785,6 +3525,14 @@ const PROGRAMMES = [
     "website": "https://www.polyu.edu.hk/study/pg/tpg/2027/47005-stf-stp",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
+  ,
+    "descCn": "体育产业科技与管理交叉，覆盖赛事运营、体育营销与科技应用。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-msccre",
@@ -2811,6 +3559,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "建筑与房地产商业管理，覆盖开发、投资、估价与项目管理。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscpm",
@@ -2835,6 +3591,14 @@ const PROGRAMMES = [
     "website": "https://www.polyu.edu.hk/study/pg/tpg/2027/32113-pfm-ppm",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
+  ,
+    "descCn": "项目管理，覆盖工程、IT、商业项目的全生命周期管理。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscfm",
@@ -2861,6 +3625,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "设施与资产管理，覆盖商业楼宇运营、能源管理与服务外包。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscbcc",
@@ -2887,6 +3659,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "企业传播与品牌沟通，人文与商业交叉，适合公关、市场、传媒方向。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "hku-mscai",
@@ -2911,6 +3691,14 @@ const PROGRAMMES = [
     "website": "https://master.cds.hku.hk/",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "系统学习机器学习、深度学习、自然语言处理与计算机视觉，可落地金融、营销、运营等商业场景。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位（CS/工程/数学等相关）；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位（CS/工程/数学等相关）；雅思6.0/托福80"
   },
   {
     "id": "hku-mscstatds",
@@ -2937,6 +3725,14 @@ const PROGRAMMES = [
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "统计学硕士下的数据科学方向，强调统计学习、贝叶斯方法与高维数据分析。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80；建议有微积分/线性代数/概率基础"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80；建议有微积分/线性代数/概率基础"
   },
   {
     "id": "hku-mscact",
@@ -2961,6 +3757,14 @@ const PROGRAMMES = [
     "website": "https://mstat.cds.hku.hk/",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "精算科学训练，对接 IFoA/ASA 等专业资格，统计与金融交叉。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位（数学/统计/精算相关）；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位（数学/统计/精算相关）；雅思6.0/托福80"
   },
   {
     "id": "cuhk-mscecon",
@@ -2985,6 +3789,14 @@ const PROGRAMMES = [
     "website": "https://www.gs.cuhk.edu.hk/programmes/social-science/msc-economics",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "Please refer to the programme page for the latest description. Economics is offered under the Division of Social Science."
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "In addition to the general requirements of the Graduate School, applicants should have a good background in Mathematics or Statistics (preferred); will be assessed on the basis of their past academic record, work experience, references and language abilities; should attend an interview and take a written test (if shortlisted)."
+  ,
+    "requirementsCn": "In addition to the general requirements of the Graduate School, applicants should have a good background in Mathematics or Statistics (preferred); will be assessed on the basis of their past academic record, work experience, references and language abilities; should attend an interview and take a written test (if shortlisted)."
   },
   {
     "id": "cuhk-mscai",
@@ -3009,6 +3821,14 @@ const PROGRAMMES = [
     "website": "https://www.gs.cuhk.edu.hk/programmes/engineering/msc-artificial-intelligence-robotics",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "AI 与机器人交叉，覆盖感知、决策与智能系统，可与智能制造、商业自动化结合。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位（工程/CS相关）；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位（工程/CS相关）；雅思6.5/托福79"
   },
   {
     "id": "cuhk-mscstats",
@@ -3033,6 +3853,14 @@ const PROGRAMMES = [
     "website": "https://www.gs.cuhk.edu.hk/programmes/science/msc-statistics",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "统计推断、实验设计、时间序列与数据建模，广泛应用于金融、市场与生物统计。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cuhk-mscqe",
@@ -3057,6 +3885,14 @@ const PROGRAMMES = [
     "website": "https://www.gs.cuhk.edu.hk/programmes/business-administration/msc-economics",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "计量与数量经济方向，强调实证分析、因果推断与政策评估。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；建议有计量/统计基础；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；建议有计量/统计基础；雅思6.5/托福79"
   },
   {
     "id": "hkust-mscaif",
@@ -3081,6 +3917,14 @@ const PROGRAMMES = [
     "website": "https://seng.hkust.edu.hk/msc/ai",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "工学院 AI 硕士，覆盖机器学习、计算机视觉、NLP 与智能系统，可与金融科技、商业分析交叉。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位（工程/科学）；雅思6.5/托福80"
+  ,
+    "requirementsCn": "本科学位（工程/科学）；雅思6.5/托福80"
   },
   {
     "id": "hkust-mscstatds",
@@ -3105,6 +3949,14 @@ const PROGRAMMES = [
     "website": "https://science.hkust.edu.hk/academics/taught-postgraduate/msc-data-driven-modeling",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "以数据驱动的统计建模与科学计算，可应用于金融工程、商业预测与运营优化。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位（理工科）；雅思6.5/托福80"
+  ,
+    "requirementsCn": "本科学位（理工科）；雅思6.5/托福80"
   },
   {
     "id": "hkust-mscenvsc",
@@ -3129,6 +3981,14 @@ const PROGRAMMES = [
     "website": "https://science.hkust.edu.hk/academics/taught-postgraduate/msc-financial-mathematics",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "随机分析、衍生品定价与金融计算，统计/数学与金融深度交叉。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位（数学/统计/物理/工程）；雅思6.5/托福80"
+  ,
+    "requirementsCn": "本科学位（数学/统计/物理/工程）；雅思6.5/托福80"
   },
   {
     "id": "cityu-mscai2",
@@ -3153,6 +4013,14 @@ const PROGRAMMES = [
     "website": "https://www.cityu.edu.hk/sds/pg",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "数据科学学院 AI 硕士，覆盖学习算法、智能系统与行业应用。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cityu-mscstats",
@@ -3177,6 +4045,14 @@ const PROGRAMMES = [
     "website": "https://www.math.cityu.edu.hk/pg",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "应用统计与数据分析，覆盖回归、贝叶斯、时间序列与高维统计。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "cityu-mscbsstat",
@@ -3201,6 +4077,14 @@ const PROGRAMMES = [
     "website": "https://www.math.cityu.edu.hk/pg",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "商业统计与数据分析，面向市场研究、风险评估与运营决策。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.5/托福79"
+  ,
+    "requirementsCn": "本科学位；雅思6.5/托福79"
   },
   {
     "id": "polyu-mscaimath",
@@ -3225,6 +4109,14 @@ const PROGRAMMES = [
     "website": "https://www.polyu.edu.hk/study/pg/tpg/2027/63031-afm-apm",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
+  ,
+    "descCn": "面向 AI 的数学基础与算法实现，覆盖优化、统计学习与深度学习理论。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位（数学/统计/CS/工程）；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位（数学/统计/CS/工程）；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscaai",
@@ -3251,6 +4143,14 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "新设项目，聚焦 Agentic AI、多智能体系统与自动化商业流程。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscstats2",
@@ -3275,6 +4175,14 @@ const PROGRAMMES = [
     "website": "https://www.polyu.edu.hk/comp/study/tpg",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
+  ,
+    "descCn": "应用统计方法与研究设计，覆盖抽样调查、实验设计与高级回归。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   },
   {
     "id": "polyu-mscmaths",
@@ -3301,5 +4209,13 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
     "feeSource": "official-page"
+  ,
+    "descCn": "区块链技术与应用，可与金融科技、供应链溯源、数字资产交叉。"
+  ,
+    "descEn": ""
+  ,
+    "requirementsEn": "本科学位；雅思6.0/托福80"
+  ,
+    "requirementsCn": "本科学位；雅思6.0/托福80"
   }
 ];

@@ -141,12 +141,13 @@
               <p class="en"><a class="prog-link" href="${p.website}" target="_blank" rel="noopener">${p.nameEn}</a></p>
             </div>
           </div>
-          <p class="desc">${p.desc || ""}</p>
+          <p class="desc">${p.descCn || p.desc || ""}</p>
+          <p class="desc-en">${p.descEn || ""}</p>
           <div class="meta-grid">
             <div><div class="k">学院</div><div class="v">${p.facultyCn || p.faculty}</div></div>
             <div><div class="k">学制</div><div class="v">${p.durationText}</div></div>
             <div><div class="k">学费</div><div class="v">${fmtTuition(p)}</div></div>
-            <div><div class="k">申请要求</div><div class="v req-text">${p.requirements || "见官网"}</div></div>
+            <div><div class="k">申请要求</div><div class="v req-text">${(p.requirementsCn || p.requirements || "见官网").slice(0,80)}…</div></div>
             <div><div class="k">申请窗口</div><div class="v">${p.applyWindow}</div></div>
             <div><div class="k">授课地点</div><div class="v">${p.location}</div></div>
           </div>
@@ -156,12 +157,20 @@
           </div>
           <div class="detail">
             <div class="detail-block">
-              <div class="detail-label">专业简介</div>
-              <div class="detail-body">${p.desc || "—"}</div>
+              <div class="detail-label">专业简介 · 中文</div>
+              <div class="detail-body">${p.descCn || p.desc || "—"}</div>
             </div>
             <div class="detail-block">
-              <div class="detail-label">申请要求</div>
-              <div class="detail-body">${p.requirements || "—"}</div>
+              <div class="detail-label">Programme Description · English（官网原文）</div>
+              <div class="detail-body en">${p.descEn || "—"}</div>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">申请要求 · 中文</div>
+              <div class="detail-body">${p.requirementsCn || p.requirements || "—"}</div>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Admission Requirements · English（官网原文）</div>
+              <div class="detail-body en">${p.requirementsEn || "—"}</div>
             </div>
             <dl>
               <dt>英文名</dt><dd>${p.nameEn}</dd>
@@ -286,8 +295,10 @@
         <tr><th>允许投递时间</th><td>${p.applyWindow}</td></tr>
         <tr><th>联培学校/企业</th><td>${p.jointPartner || "—"}</td></tr>
         <tr><th>授课地点</th><td>${p.location}</td></tr>
-        <tr><th>专业简介</th><td>${p.desc || "—"}</td></tr>
-        <tr><th>申请要求</th><td>${p.requirements || "—"}</td></tr>
+        <tr><th>专业简介·中文</th><td>${p.descCn || p.desc || "—"}</td></tr>
+        <tr><th>简介·英文原文</th><td class="en">${p.descEn || "—"}</td></tr>
+        <tr><th>申请要求·中文</th><td>${p.requirementsCn || p.requirements || "—"}</td></tr>
+        <tr><th>要求·英文原文</th><td class="en">${p.requirementsEn || "—"}</td></tr>
         <tr><th>官网</th><td><a class="prog-link" href="${p.website}" target="_blank" rel="noopener">${p.website}</a></td></tr>
         <tr><th>数据可信度</th><td>${p.sourceConfidence === "official-listed" ? "官网名单已确认" : "待官网核实（投递前请务必打开官网确认）"}</td></tr>
       </table>

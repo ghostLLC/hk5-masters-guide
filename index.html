@@ -185,6 +185,20 @@ button { font: inherit; cursor: pointer; }
 .detail-block { margin-bottom: 12px; }
 .detail-label { font-size: .75rem; color: var(--muted); margin-bottom: 4px; font-weight: 600; letter-spacing: .02em; }
 .detail-body { font-size: .9rem; line-height: 1.65; color: #292524; }
+.detail-body.en { font-size: .84rem; color: #57534e; font-style: italic; }
+.desc-en {
+  margin: 0 0 10px;
+  color: #78716c;
+  font-size: .8rem;
+  line-height: 1.5;
+  font-style: italic;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card.expanded .desc-en { -webkit-line-clamp: unset; display: block; }
+.modal td.en { font-style: italic; color: #57534e; font-size: .85rem; }
 .meta-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0,1fr));
