@@ -1872,13 +1872,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "资产与财富管理硕士，设数字资产管理与家族办公室财富管理方向，面向高净值服务行业。2027 官方学费 HK$519,000。"
+    "descCn": "项目注重建立行业联系与实践经验，通过数字社交平台和网络研讨会让学生与业界专业人士互动，实现与行业领袖的实时交流。"
   ,
-    "descEn": ""
+    "descEn": "With a focus on building industry connections and practical experience, the programme offers students opportunities to engage with professionals through digital networking platforms and webinars, facilitating real-time interactions with industry leaders."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree or equivalent in any discipline."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "任何学科的学士学位或同等学历。"
   },
   {
     "id": "polyu-mscbm",
@@ -1906,13 +1906,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "理大商业管理硕士，覆盖战略、营销、财务与运营核心模块，含海外暑期学校体验。2027 官方学费 HK$424,800。"
+    "descCn": "本项目旨在帮助学生掌握实用的管理知识，并在全球化、动态的商业环境中寻求切实可行的解决方案，使学生能够对所在组织作出有效贡献。"
   ,
-    "descEn": ""
+    "descEn": "This programme aims to help students acquire practical knowledge of management and seek practical solutions in a global and dynamic business environment. It enables students to make effective contribution to their organisations."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree or equivalent in any discipline."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "任何学科的学士学位或同等学历。"
   },
   {
     "id": "polyu-mscacc",
@@ -1940,13 +1940,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "专业会计硕士，对接香港会计师公会等专业资格。"
+    "descCn": "本项目使学生熟悉当代最新会计知识与议题，建立会计知识基础，培养扎实的分析能力与判断力，以作出高效有效的商业决策。"
   ,
-    "descEn": ""
+    "descEn": "This programme familiarises students with contemporary and up-to-date accounting knowledge and issues. It aims to build up their accounting knowledge base, enabling them to develop sound analytical skills and judgement and to make efficient and effective business decisions."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree in accounting or other relevant disciplines; OR Equivalent professional qualifications. Preference will be given to applicants with at least one year of relevant work experience."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "会计或相关专业学士学位，或同等专业资格。优先考虑至少一年相关工作经验者。"
   },
   {
     "id": "polyu-mscafa",
@@ -1974,13 +1974,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "融合会计、金融与数据分析，培养 fintech 时代的会计金融专才。"
+    "descCn": "本项目旨在为学生提供会计与金融核心知识，以及将数据分析和技术应用于相关实践的技能，帮助会计金融从业者跟上最新数据分析应用与技能。"
   ,
-    "descEn": ""
+    "descEn": "The programme aims to provide students with a combination of core knowledge in accounting and finance and skills in applying data analytics and technology to related practices. It facilitates practitioners in accounting and finance to keep up with the latest data analytics applications and skills."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree; Preference will be given to applicants with a business degree who are equipped with some fundamental training in computing or graduates with a background in computing, science or engineering."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "学士学位；优先考虑具备一定计算机基础训练的商科背景申请人，或计算机、科学、工程背景毕业生。"
   },
   {
     "id": "polyu-mpa",
@@ -2006,13 +2006,13 @@ const PROGRAMMES = [
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
-    "descCn": "面向转专业或进阶的会计人才，课程覆盖财务报告、审计、税务与商业法。"
+    "descCn": "专业会计硕士（MPA）为转换型硕士项目，旨在为商科学位毕业生提供会计及相关知识与技能的强化教育。"
   ,
-    "descEn": ""
+    "descEn": "The Master of Professional Accounting (MPA) programme is a conversion Master's programme that aims to provide business degree graduates with an intensive education in accounting and related knowledge and skills."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree in business awarded by a recognised tertiary institution; OR A non-business Bachelor's degree plus evidence of completion of fundamental business course(s) deemed acceptable by the School of Accounting and Finance (AF) of PolyU."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "认可高等院校的商科学士学位；或非商科学士学位，并提供完成理工大会计及金融学院认可的基础商科课程的证明。"
   },
   {
     "id": "polyu-mcg",
@@ -2040,13 +2040,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "聚焦公司治理、合规、风险管理与董事会实务。"
+    "descCn": "企业管治硕士（MCG）旨在为企业管理人员（包括CEO、董事、财务总监、司库、管治专业人士及其他关键高管）提供公司治理的深入知识与实务能力。"
   ,
-    "descEn": ""
+    "descEn": "The Master of Corporate Governance (MCG) programme aims to equip corporate administrators, including chief executive officers, board directors, financial controllers, treasurers, governance professionals, and other key corporate officers, with in-depth knowledge and practical competencies in corporate governance."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree from a recognised university, or the equivalent. Preference will be given to applicants with relevant working experience, but it is not a must."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "认可大学的学士学位或同等学历。有相关工作经验者优先，但非必须。"
   },
   {
     "id": "polyu-mofcf",
@@ -2074,13 +2074,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "企业金融方向，覆盖公司估值、并购、融资与风险管理。"
+    "descCn": "金融学硕士（企业金融）旨在为企业金融从业者提供教育机会，提升其在公司金融、企业风险管理及相关领域的专业性与理论水平。"
   ,
-    "descEn": ""
+    "descEn": "The Master of Finance (Corporate Finance) programme aims to provide corporate finance practitioners with education opportunities to enhance their professionalism and elevate their intellectual capacity in corporate finance, corporate risk management and related areas."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree from a recognised university, or the equivalent."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "认可大学的学士学位或同等学历。"
   },
   {
     "id": "polyu-mofim",
@@ -2108,13 +2108,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "投资管理方向，覆盖资产配置、组合管理、另类投资与行为金融。"
+    "descCn": "金融学硕士（投资管理）旨在为希望专攻投资管理的学位毕业生（尤其是工作经验较少者）提供扎实的金融概念与最新行业知识。"
   ,
-    "descEn": ""
+    "descEn": "The Master of Finance (Investment Management) programme aims to provide degree graduates who would like to specialise in investment management, particularly those with no or little work experience, with a combination of solid finance concepts and up-to-date industry know-how."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree from a recognised university, or the equivalent."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "认可大学的学士学位或同等学历。"
   },
   {
     "id": "polyu-mscecon",
@@ -2142,13 +2142,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "设应用经济学与数字经济学方向，强调政策分析与数据驱动。"
+    "descCn": "本项目旨在培养学生扎实的经济分析技能，强调数字技术的快速发展与数据日益增长的重要性。除核心经济理论的全面训练外，学生可选择应用经济学或数字经济学方向。"
   ,
-    "descEn": ""
+    "descEn": "This programme aims to equip students with solid economic analysis skills, with an emphasis on the rapid evolution of digital technology and growing importance of data. In addition to receiving comprehensive training in core economic theory, students have the option of specialising in either applied economics or digital economics."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree from a recognised university."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "认可大学的学士学位。"
   },
   {
     "id": "polyu-mscesg",
@@ -2176,13 +2176,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "培养 ESG 报告、绿色金融与可持续战略专才，响应全球监管与投资趋势。"
+    "descCn": "本项目旨在为毕业生提供 ESG 与可持续发展的跨学科知识（如经济、会计、金融、管理与技术）及相关实践技能。"
   ,
-    "descEn": ""
+    "descEn": "The programme aims to provide graduates with interdisciplinary knowledge in ESG and sustainability (e.g., economic, accounting, finance, management and technology) and relevant skills for related practice."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree from a recognised university. Applicants with relevant working experience are preferred, but it is not a requirement."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "认可大学的学士学位。有相关工作经验者优先，但非必须。"
   },
   {
     "id": "polyu-mscgscm",
@@ -2210,13 +2210,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "依托香港物流枢纽优势，培养全球供应链战略与运营人才。"
+    "descCn": "本项目使管理者具备通过平衡成本、质量与效率，在供应链中创造并保持竞争力的能力。"
   ,
-    "descEn": ""
+    "descEn": "This programme equips executives with the capacity to create and sustain competitiveness in the supply chain by balancing costs, quality and efficiency."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree in a business-related discipline or an equivalent qualification. For non-business degree holders, 2 years of relevant work experience or relevant background knowledge is preferred."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "商科相关专业学士学位或同等资格。非商科背景者，优先考虑具备 2 年相关工作经验或相关背景知识者。"
   },
   {
     "id": "polyu-mscistl",
@@ -2244,13 +2244,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "亚洲领先的航运与物流项目，覆盖航运金融、港口管理、国际贸易物流。"
+    "descCn": "本项目使学生具备在航运、运输与物流行业推行现代化、高性价比改革所需的知识与技能。"
   ,
-    "descEn": ""
+    "descEn": "This programme equips students with the knowledge and skills needed to introduce modern and cost-effective reforms into the shipping, transport and logistics industries."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree or an equivalent qualification OR Full membership in one of the following professional bodies: The Chartered Institute of Logistics and Transport, Hong Kong; The Institute of Chartered Shipbrokers, UK; The Chartered Insurance Institute, UK; The Chartered Institute of Purchasing and Supply, UK"
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "学士学位或同等资格；或下列专业机构的正式会员：香港特许物流及运输学会、英国特许船务经纪学会、英国特许保险学会、英国特许采购与供应学会。"
   },
   {
     "id": "polyu-mscom",
@@ -2276,13 +2276,13 @@ const PROGRAMMES = [
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
-    "descCn": "培养运营优化、质量管理与流程改进的管理人才。"
+    "descCn": "本项目为非商科毕业生提供管理主要职能领域的基础，并为各专业毕业生提供运营管理的深入训练。"
   ,
-    "descEn": ""
+    "descEn": "This programme provides non-business graduates with the foundation they need in the main functional areas of management, and it offers graduates in all disciplines in-depth training in operations management."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree or an equivalent professional qualification, preferably with at least 1 year of relevant work experience. Applicants with other post-secondary qualifications who have been employed in industry, commerce or public administration for no less than 6 years, of which 3 years have been in a managerial capacity, will also be considered."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "学士学位或同等专业资格，最好具备至少一年相关工作经验。具备其他专上学历、在工商或公共行政领域工作不少于 6 年（其中 3 年为管理岗位）的申请人也会被考虑。"
   },
   {
     "id": "polyu-mscgbda",
@@ -2310,13 +2310,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "融合全球商业战略与数据分析决策方法。"
+    "descCn": "本项目面向多元背景（商科与非商科）但对全球商业充满热忱的学生，提供定量与定性两方面的广泛技能，帮助他们获得在全球商业环境中工作所需的资质。"
   ,
-    "descEn": ""
+    "descEn": "The programme will take students who are from diverse backgrounds (business and non-business) but with an enthusiasm and interest to deal with global business. It aims at providing students with a wide range of skills, both quantitative and qualitative ones, and equipping them with qualifications necessary for working in a global business environment."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree or equivalent in any discipline."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "任何学科的学士学位或同等学历。"
   },
   {
     "id": "polyu-mscqm",
@@ -2376,13 +2376,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "培养商务数据分析与决策支持能力，兼顾技术与商业应用。"
+    "descCn": "本项目从将分析技术应用于大数据以支持组织决策的基础讲起，进而深入研究各应用领域。"
   ,
-    "descEn": ""
+    "descEn": "This programme starts with fundamentals of applying analytical techniques on big data for decision supports of an organisation, and progresses to in-depth studies of various application domains."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "Applicants should have a Bachelor's degree or equivalent academic/professional qualifications, preferably with at least one year of relevant work experience."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "申请人应具有学士学位或同等学术/专业资格，最好具备至少一年相关工作经验。"
   },
   {
     "id": "polyu-mschrm",
@@ -2410,13 +2410,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "培养战略人力资源管理人才，覆盖组织行为、人才发展与雇佣关系。"
+    "descCn": "本项目将理论知识与理论应用相结合，以理解和解决组织问题，帮助学生实现有效管理。"
   ,
-    "descEn": ""
+    "descEn": "This programme combines theoretical knowledge with application of theories to understand and solve organisational issues. It helps students to manage effectively."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree or equivalent professional qualification, preferably with at least 1 year of relevant work experience."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "学士学位或同等专业资格，最好具备至少一年相关工作经验。"
   },
   {
     "id": "polyu-msciml",
@@ -2444,13 +2444,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "面向国际管理与领导力发展，强调跨文化团队与全球战略。"
+    "descCn": "本项目旨在培养在日益复杂的国际环境中能够有效解决问题、推动变革的未来领袖，帮助学生深入理解各类商业职能中的人类行为，成为负责任的全球领导者。"
   ,
-    "descEn": ""
+    "descEn": "This programme aims to develop future leaders who are effective problem solvers and change makers in an increasingly complex international environment. We seek to equip our students with deep understanding of human behaviours in a broad range of business functions, and to empower them to become responsible global leaders of tomorrow."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree or equivalent academic/professional qualifications."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "学士学位或同等学术/专业资格。"
   },
   {
     "id": "polyu-mscmm",
@@ -2478,13 +2478,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "培养数字时代营销管理人才，覆盖品牌、消费者洞察与营销科技。"
+    "descCn": "本项目帮助非营销背景毕业生将理论与营销实践相结合，涵盖线上消费者市场分析、营销管理议题、市场研究分析方法与全球营销战略等专业内容。"
   ,
-    "descEn": ""
+    "descEn": "This programme enables non-marketing graduates to connect theory with practice in the field of marketing. It covers a range of specialist marketing issues in areas such as online consumer market analysis, managerial issues in marketing, analytical methods for market research and global marketing strategy."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree or equivalent academic/professional qualifications. There is no restriction on previous background – business, engineering, social sciences, natural sciences, humanities, law and others are all acceptable."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "学士学位或同等学术/专业资格。不限本科背景——商科、工程、社科、自然科学、人文、法律等均可申请。"
   },
   {
     "id": "polyu-mscbadata",
@@ -3298,13 +3298,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "数据科学与分析硕士，覆盖机器学习、统计建模与商业智能应用。2027 官方约 HK$418,500。"
+    "descCn": "在大数据时代，从社交网络到金融，社会与产业各领域每天产生海量数据。从如此庞大的数据中提取与分析信息极具挑战。要从数据中创造价值，必须融合数学、统计与计算机科学技术。"
   ,
-    "descEn": ""
+    "descEn": "In today's era of big data, large data sets are generated every day in various areas of society and industry, from social networking to finance. It is challenging to extract and analyse information from such an unprecedentedly large volume of data. To create value from such data, one must combine techniques from mathematics, statistics and computer science."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree with Honours in Mathematics, Statistics, Computer Science, I.T., Engineering, Economics, and Science, or the equivalent. Applicants with a Bachelor's degree in another discipline and an adequate background in mathematics or IT will also be considered."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "数学、统计、计算机科学、信息技术、工程、经济、科学等专业的荣誉学士学位或同等学历。其他学科背景但具备足够数学或 IT 基础的申请人也会被考虑。"
   },
   {
     "id": "polyu-mscaibdc",
@@ -3332,13 +3332,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "AI 与大数据计算交叉，可应用于金融科技、商业分析等场景。"
+    "descCn": "人工智能与大数据（AIBD）技术在社会与产业中快速发展。本项目结合计算机科学与机器学习技术，教学生如何理解 AIBD 并从中创造价值。"
   ,
-    "descEn": ""
+    "descEn": "Artificial intelligence and big data (AIBD) technologies are experiencing rapid development in society and industry. Combining technologies from computer science and machine learning, this programme is designed to teach students how to understand and create value from AIBD."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree in Computing/Computer Science/Engineering, Information Systems, Mathematics or other related disciplines. Applicants with a Bachelor's degree in other disciplines with at least 3 years of relevant work experience in IT will also be considered."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "计算/计算机科学/工程、信息系统、数学或相关专业学士学位。其他学科背景但具备至少 3 年 IT 相关工作经验的申请人也会被考虑。"
   },
   {
     "id": "polyu-mscebm",
