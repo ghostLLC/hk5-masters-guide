@@ -174,12 +174,17 @@ button { font: inherit; cursor: pointer; }
   margin: 0 0 10px;
   color: #44403c;
   font-size: .88rem;
-  line-height: 1.55;
+  line-height: 1.6;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+.card.expanded .desc { -webkit-line-clamp: unset; display: block; }
+.req-text { font-weight: 400; font-size: .78rem; line-height: 1.45; color: #44403c; }
+.detail-block { margin-bottom: 12px; }
+.detail-label { font-size: .75rem; color: var(--muted); margin-bottom: 4px; font-weight: 600; letter-spacing: .02em; }
+.detail-body { font-size: .9rem; line-height: 1.65; color: #292524; }
 .meta-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0,1fr));

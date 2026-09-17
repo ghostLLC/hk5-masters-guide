@@ -17,7 +17,10 @@
   function loadWish() {
     try {
       const raw = localStorage.getItem(WISH_KEY);
-      return raw ? JSON.parse(raw) : [];
+      const arr = raw ? JSON.parse(raw) : [];
+      // 清理已从库中删除的项目（如 MBA/EMBA）
+      const ids = new Set(PROGRAMMES.map(p => p.id));
+      return Array.isArray(arr) ? arr.filter(w => w && ids.has(w.id)) : [];
     } catch { return []; }
   }
   function saveWish() {
@@ -138,12 +141,12 @@
               <p class="en"><a class="prog-link" href="${p.website}" target="_blank" rel="noopener">${p.nameEn}</a></p>
             </div>
           </div>
-          <p class="desc">${p.desc}</p>
+          <p class="desc">${p.desc || ""}</p>
           <div class="meta-grid">
             <div><div class="k">学院</div><div class="v">${p.facultyCn || p.faculty}</div></div>
             <div><div class="k">学制</div><div class="v">${p.durationText}</div></div>
             <div><div class="k">学费</div><div class="v">${fmtTuition(p)}</div></div>
-            <div><div class="k">开办年份</div><div class="v">${p.foundedYear}（约 ${yearsAgo(p.foundedYear)} 年）</div></div>
+            <div><div class="k">申请要求</div><div class="v req-text">${p.requirements || "见官网"}</div></div>
             <div><div class="k">申请窗口</div><div class="v">${p.applyWindow}</div></div>
             <div><div class="k">授课地点</div><div class="v">${p.location}</div></div>
           </div>
@@ -152,10 +155,18 @@
             <button class="btn" data-act="wish">${wished ? "已在志愿单" : "加入志愿"}</button>
           </div>
           <div class="detail">
+            <div class="detail-block">
+              <div class="detail-label">专业简介</div>
+              <div class="detail-body">${p.desc || "—"}</div>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">申请要求</div>
+              <div class="detail-body">${p.requirements || "—"}</div>
+            </div>
             <dl>
-              <dt>申请要求</dt><dd>${p.requirements}</dd>
-              <dt>完整英文名</dt><dd>${p.nameEn}</dd>
+              <dt>英文名</dt><dd>${p.nameEn}</dd>
               <dt>学院（英文）</dt><dd>${p.faculty}</dd>
+              <dt>学制 / 开办</dt><dd>${p.durationText}（约 ${p.durationYears} 年）· ${p.foundedYear} 年起（约 ${yearsAgo(p.foundedYear)} 年）</dd>
               ${p.tuitionNote ? `<dt>学费说明</dt><dd>${p.tuitionNote}</dd>` : ""}
               ${p.jointPartner ? `<dt>联培学校/企业</dt><dd>${p.jointPartner}</dd>` : ""}
               <dt>27 Fall 状态</dt><dd>${st.label}</dd>
@@ -275,6 +286,8 @@
         <tr><th>允许投递时间</th><td>${p.applyWindow}</td></tr>
         <tr><th>联培学校/企业</th><td>${p.jointPartner || "—"}</td></tr>
         <tr><th>授课地点</th><td>${p.location}</td></tr>
+        <tr><th>专业简介</th><td>${p.desc || "—"}</td></tr>
+        <tr><th>申请要求</th><td>${p.requirements || "—"}</td></tr>
         <tr><th>官网</th><td><a class="prog-link" href="${p.website}" target="_blank" rel="noopener">${p.website}</a></td></tr>
         <tr><th>数据可信度</th><td>${p.sourceConfidence === "official-listed" ? "官网名单已确认" : "待官网核实（投递前请务必打开官网确认）"}</td></tr>
       </table>
