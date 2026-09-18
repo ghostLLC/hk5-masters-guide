@@ -914,13 +914,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "科大会计硕士，课程高度衔接专业资格，强调数据分析在会计中的应用。2027/28 学费 HK$428,000。"
+    "descCn": "科大会计学理学硕士为商科与非商科背景的学士学位学生提供研究生层次的会计教育，为其进入会计相关职业搭建桥梁。项目兼具实务性与学术严谨性。"
   ,
-    "descEn": ""
+    "descEn": "The Master of Science (MSc) Program in Accounting provides postgraduate accounting education to students with bachelor degrees in business and non-business disciplines, and bridging them with a channel to enter accounting-related professions. The program is both practical and academically rigorous."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福80；建议GMAT/GRE"
+    "requirementsEn": "A bachelor's degree in a business discipline, or (i) a bachelor's degree in a non-business discipline and (ii) one of the following: having studied a course in Statistics at undergraduate level with satisfactory performance; having passed the module/paper on Financial Reporting. English: TOEFL iBT 80 / IELTS 6.5 (all sub-scores 5.5)."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福80；建议GMAT/GRE"
+    "requirementsCn": "商科专业学士学位；或非商科学士学位并满足以下之一：本科修读过统计学课程且成绩合格；或通过财务报告相关模块/考试。英语：托福 iBT 80 / 雅思 6.5（各单项 5.5）。"
   },
   {
     "id": "hkust-msba",
@@ -951,6 +951,10 @@ const PROGRAMMES = [
     "descEn": "The MSBA Program is designed to equip students with the skills to effectively leverage in information and business analytics knowledge in building data-driven strategies while effectively communicating business value."
   ,
     "descCn": "科大商业分析理学硕士旨在培养学生有效运用信息与商业分析知识、构建数据驱动战略并有效传达商业价值的能力。"
+  ,
+    "requirementsEn": "Applicants should have obtained a bachelor's degree from a recognized institution, or an approved equivalent qualification. Students are expected to have a basic proficiency in SQL and Python programming."
+  ,
+    "requirementsCn": "申请人应具有认可机构的学士学位或同等资格。期望具备 SQL 与 Python 编程基础。"
   },
   {
     "id": "hkust-mscecon",
@@ -978,13 +982,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "严谨的经济学训练，强调计量方法与政策分析，适合研究与业界双重路径。"
+    "descCn": "科大经济学理学硕士旨在为学生提供扎实的经济学与分析训练，为其进一步攻读经济学、金融、市场营销、管理等领域的更高学位做准备。"
   ,
-    "descEn": ""
+    "descEn": "The MSc in Economics Program aims to provide solid economics and analytical training for students in order to prepare them for further pursuit of higher academic degrees in economics, finance, marketing, management, etc."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福80"
+    "requirementsEn": "Applicants should have obtained a bachelor's degree from a university or tertiary institution. For those who are not econ/business major, a strong quantitative background and a commitment to academic study and research are expected."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福80"
+    "requirementsCn": "申请人应具有大学或高等院校的学士学位。非经济/商科专业者，需具备较强的定量背景，并展现出学术研究的意愿。"
   },
   {
     "id": "hkust-mscfofb",
@@ -1012,13 +1016,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "依托 Roger King 亚洲家族企业与家族办公室研究中心，培养家族财富治理、传承规划与家族办公室运营人才。2027/28 学费 HK$477,400。"
+    "descCn": "科大家族办公室及家族企业理学硕士将传统与创新无缝融合，赋能下一代家族企业领袖，使学生掌握应对家族企业独特管理挑战所需的知识与技能。"
   ,
-    "descEn": ""
+    "descEn": "The Master of Science in Family Office and Family Business (MScFOFB) program seamlessly merges tradition with innovation, empowering the next generation of family business leaders. It equips students with the essential knowledge and skills to navigate the unique challenges of managing family-owned enterprises."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福80；有相关经验优先"
+    "requirementsEn": "A bachelor's degree from a recognized institution or an approved equivalent qualification. For the part-time program, at least two years of full-time relevant post-qualification work experience is preferred."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福80；有相关经验优先"
+    "requirementsCn": "认可机构的学士学位或同等资格。兼读制优先考虑具备至少两年相关毕业后全职工作经验者。"
   },
   {
     "id": "hkust-mfin",
@@ -1046,9 +1050,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descEn": "Please refer to the official programme page for the latest description. The MSc in Finance at HKUST is one of Asia's leading finance programmes, covering corporate finance, investments, asset pricing, risk management and fintech."
+    "descEn": "The Master of Science (MSc) Program in Finance is designed to provide rigorous training to students for professional careers in the finance industry. The curriculum is structured to meet the growing and specialized demands of the industry. The program provides both full-time and part-time study modes which students can complete in 12 or 24 months respectively."
   ,
-    "descCn": "科大金融学理学硕士是亚洲领先的金融项目之一，涵盖公司金融、投资、资产定价、风险管理与金融科技。请以官网最新说明为准。"
+    "descCn": "科大金融学理学硕士旨在为学生在金融行业的职业发展提供严格训练，课程结构回应行业日益增长的专业化需求。项目设全日制与兼读制，分别可在 12 或 24 个月内完成。"
+  ,
+    "requirementsEn": "Full-time: work experience not required. Part-time: one year of full-time post-qualification work experience. GMAT/GRE scores are not required, but strong scores will enhance the application. English: TOEFL iBT 80 / IELTS 6.5."
+  ,
+    "requirementsCn": "全日制：不要求工作经验。兼读制：需一年毕业后全职工作经验。GMAT/GRE 非强制，但高分有利于申请。英语：托福 iBT 80 / 雅思 6.5。"
   },
   {
     "id": "hkust-msgo",
@@ -1076,13 +1084,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "聚焦全球运营与供应链战略，结合香港作为贸易与物流枢纽的区位优势。"
+    "descCn": "科大环球运营理学硕士为一年全日制项目，旨在使学生掌握服务运营、制造运营与供应链管理所必需的工具与理解。"
   ,
-    "descEn": ""
+    "descEn": "The HKUST MSGO program is a one-year full time program, designed to equip students with tools and understanding essential in the management of service operations, manufacturing operations and supply chains."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福80"
+    "requirementsEn": "Applicants must have a bachelor's degree with satisfactory academic performance from a university or a recognized institution. Students are recommended with basic quantitative knowledge."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福80"
+    "requirementsCn": "申请人须具有大学或认可机构的学士学位且学业成绩良好。建议具备基础定量知识。"
   },
   {
     "id": "hkust-mscicsm",
@@ -1110,13 +1118,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "培养既懂信息安全技术又懂管理的复合人才，覆盖治理、合规与风险管理。"
+    "descCn": "科大信息及网络安全管理理学硕士为学生提供在动态网络安全领域脱颖而出所必需的技术与管理技能。"
   ,
-    "descEn": ""
+    "descEn": "The HKUST MSc in Information and Cyber Security Management (MScICSM) program equips you with the essential technical and managerial skills needed to excel in the dynamic field of cyber security."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福80"
+    "requirementsEn": "Applicants must possess a bachelor's degree from a recognized university or approved institution with satisfactory academic performance. Relevant undergraduate degrees include computer science, information systems, AI, and data analytics."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福80"
+    "requirementsCn": "申请人须具有认可大学或机构的学士学位且学业成绩良好。相关本科背景包括计算机科学、信息系统、人工智能、数据分析等。"
   },
   {
     "id": "hkust-mscism",
@@ -1144,13 +1152,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "连接 IT 与商业战略，培养数字化转型所需的 IT 管理与产品人才。"
+    "descCn": "科大信息系统管理理学硕士将技术知识课程与聚焦科技管理的洞见课程相结合，旨在培养能够把握信息技术日益重要地位的新一代领导者。"
   ,
-    "descEn": ""
+    "descEn": "The Master of Science in Information Systems Management (MScISM) program combines technical knowledge courses with insightful courses focused on technology management. Our aim is to nurture a new generation of leaders who can capitalize on the growing importance of information technology."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福80"
+    "requirementsEn": "Applicants must have a good bachelor's degree from a recognized university or approved institution. Part-time mode applicants should have at least two years of post-qualification work experience."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福80"
+    "requirementsCn": "申请人须具有认可大学或机构的良好学士学位。兼读制申请人应具备至少两年毕业后工作经验。"
   },
   {
     "id": "hkust-mimt",
@@ -1178,13 +1186,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "面向年轻毕业生的精英管理硕士，提供国际交换、领导力训练与职业加速。"
+    "descCn": "科大国际管理理学硕士帮助学生在一年内掌握必要的管理知识与技能，为在全球组织与多元工作环境中担任领导角色做好准备。"
   ,
-    "descEn": ""
+    "descEn": "Apply to the HKUST MIMT program today to gain essential management knowledge and skills in just one year, preparing yourself for leadership roles in global organizations and diverse work environments."
   ,
-    "requirementsEn": "本科学位；工作经验通常不超过2年；雅思6.5/托福80"
+    "requirementsEn": "MIMT: Possess a Bachelor's degree from a recognized institution, or an approved equivalent qualification. MIMT (CEMS): Possess a Business related Bachelor's degree; Compulsory GMAT/GRE report with satisfactory score."
   ,
-    "requirementsCn": "本科学位；工作经验通常不超过2年；雅思6.5/托福80"
+    "requirementsCn": "MIMT：认可机构的学士学位或同等资格。MIMT（CEMS）：商科相关学士学位；必须提交成绩达标的 GMAT/GRE。"
   },
   {
     "id": "hkust-mscmark",
@@ -1212,13 +1220,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "强调大数据营销、消费者洞察与数字品牌策略，课程与业界紧密合作。"
+    "descCn": "科大市场营销理学硕士为一年全日制项目，提供基础课程，使学生掌握当今雇主视为关键领域的专业知识，包括数据驱动营销、数字营销、品牌管理与人工智能。"
   ,
-    "descEn": ""
+    "descEn": "The Master of Science in Marketing (MScMARK) is a 1-year full-time program offering foundational courses that enable students to gain expertise in areas regarded as critical by today's employers, including data-driven marketing, digital marketing, brand management and artificial intelligence (AI)."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福80"
+    "requirementsEn": "A bachelor's degree from a recognized university or other approved institution and evidence of satisfactory academic performance. No minimum work experience is required."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福80"
+    "requirementsCn": "认可大学或其他认可机构的学士学位，且学业成绩良好。无最低工作经验要求。"
   },
   {
     "id": "hkust-msgf",
@@ -1244,13 +1252,13 @@ const PROGRAMMES = [
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
-    "descCn": "与纽约大学 Stern 联合开设的全球金融硕士，两地授课，面向资深金融从业人士。"
+    "descCn": "科大-纽大全球金融理学硕士（MSGF）成立于2007年，由香港科技大学商学院与纽约大学 Stern 商学院合作举办，已成为全球金融教育的领军项目。"
   ,
-    "descEn": ""
+    "descEn": "Launched in 2007, the Master of Science in Global Finance (MSGF) Program is a collaboration between the HKUST Business School and the NYU Stern School of Business. Over the years, the MSGF program has earned its place as a global leader in finance education."
   ,
-    "requirementsEn": "本科学位；丰富工作经验；雅思/托福；GMAT/GRE"
+    "requirementsEn": "Applicants should have a minimum of five years of full-time post-degree professional experience. Applicants should hold a bachelor's degree from a recognized institution, with a strong academic record."
   ,
-    "requirementsCn": "本科学位；丰富工作经验；雅思/托福；GMAT/GRE"
+    "requirementsCn": "申请人应具备至少五年毕业后全职专业工作经验，并持有认可机构的学士学位且学业成绩优秀。"
   },
   {
     "id": "hkust-mscft",
@@ -1276,13 +1284,13 @@ const PROGRAMMES = [
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
-    "descCn": "工学院开设、商学院协作的交叉项目，覆盖区块链、智能合约、数字资产与监管科技。"
+    "descCn": "金融科技是近年来快速发展的新兴重要领域。科大金融科技理学硕士面向希望融合技术与金融知识、为该领域挑战提供创新解决方案的人才与在职人士。"
   ,
-    "descEn": ""
+    "descEn": "FinTech is an emerging but important area that has been developing rapidly in recent years. The MSc in Financial Technology (FinTech) program at HKUST is designed for talents and working professionals who want to combine technical and financial knowledge to generate innovative solutions that meet the challenges of this emerging field."
   ,
-    "requirementsEn": "本科学位（工程/科学/商科等）；雅思6.5/托福80"
+    "requirementsEn": "Applicants must possess a bachelor's degree from a recognized university or tertiary institution. Applicants preferably should have a programming and mathematics background. A satisfactory GMAT/GRE score is highly recommended."
   ,
-    "requirementsCn": "本科学位（工程/科学/商科等）；雅思6.5/托福80"
+    "requirementsCn": "申请人须具有认可大学或高等院校的学士学位。最好具备编程与数学背景。强烈建议提供达标的 GMAT/GRE 成绩。"
   },
   {
     "id": "cityu-ftda",
@@ -1310,13 +1318,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "商学院旗舰新项目，聚焦数字资产、区块链金融、加密市场监管与金融科技创业。"
+    "descCn": "城大金融科技与数字资产理学硕士融合金融、人工智能与数据、数字产品以及数字资产监管，跨多个商科领域授课，面向希望在金融与科技交叉领域发展的学生。"
   ,
-    "descEn": ""
+    "descEn": "The programme brings together finance, AI and data, digital products, and the regulation of digital assets. It is taught across several business disciplines and is designed for students who want to work at the intersection of finance and technology."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "Applicants should normally hold a recognised bachelor's degree in finance, economics, business, information systems, computer science, engineering, mathematics, statistics or a related discipline. TOEFL 79/4 or IELTS 6.0 or CET6 450."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "通常应持有金融、经济、商科、信息系统、计算机科学、工程、数学、统计或相关专业的认可学士学位。托福 79/4 或雅思 6.0 或 CET6 450。"
   },
   {
     "id": "cityu-maia",
@@ -1374,13 +1382,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "双轨培养专业会计与公司治理能力，适合会计与合规方向发展。"
+    "descCn": "城大专业会计与企业管治理学硕士旨在提供主动学习环境，培养学生成为香港及大中华区专业会计与公司治理领域的领导人才。"
   ,
-    "descEn": ""
+    "descEn": "The MScPACG programme aims to provide an active learning environment to develop students for leadership positions in the professional accounting and corporate governance area in Hong Kong and the Greater China region."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "Professional Accounting Stream: hold a non-accounting degree from a recognised university. Corporate Governance Stream: hold a degree from recognised universities or professional membership from recognized institutions. TOEFL 79/4 or IELTS 6.0 or CET6 450."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "专业会计方向：持有认可大学的非会计学士学位。企业管治方向：持有认可大学学位或认可机构的专业会员资格。托福 79/4 或雅思 6.0 或 CET6 450。"
   },
   {
     "id": "cityu-mscoscm",
@@ -1408,13 +1416,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "运营与供应链管理硕士，QS 2026 全球第20、亚洲第2，运营与供应链领域极具竞争力。官方学费 HKD 330,000。"
+    "descCn": "城大运营与供应链管理理学硕士旨在使学生掌握现代分析与管理技能，以支持供应链管理中各层级运营与战略实践的决策。"
   ,
-    "descEn": ""
+    "descEn": "This programme aims to enable students to apply modern analytical and managerial skills that facilitate decision-making at all levels of operational and strategic practices in Supply Chain Management."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "Hold a recognized Bachelor's degree; Working experience is preferred but NOT required. TOEFL 79 or 4.5 (from 21 Jan 2026) or IELTS 6.5 or CET6 450 if MoI not English."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "持有认可学士学位；有工作经验者优先但非必须。非英语授课需托福 79 或 4.5（2026年1月21日起）或雅思 6.5 或 CET6 450。"
   },
   {
     "id": "cityu-mscbdaqab",
@@ -1442,13 +1450,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "定量导向的商业分析项目，强调统计建模、优化与商业决策。"
+    "descCn": "城大商业及数据分析理学硕士（定量商业分析方向）旨在通过主动学习应用统计、大数据管理、数据挖掘、社交媒体分析等领域的理论、方法与技术支持技术，培养学生商业数据分析的专业知识。"
   ,
-    "descEn": ""
+    "descEn": "The MSc in Business and Data Analytics (MScBDA) programme aims to cultivate students with professional knowledge of business data analytics through active learning of the theories, methods, supporting techniques across a wide range of knowledge areas such as applied statistics, big data management, data mining and social media analytics."
   ,
-    "requirementsEn": "本科学位；定量背景优先；雅思6.5/托福79"
+    "requirementsEn": "Hold a recognized Bachelor's degree in any disciplines with the curricula covering appropriate mathematical knowledge. Selection will be based on the candidate's academic performance in previous studies, relevant working experience. TOEFL 79/4 or IELTS 6.0."
   ,
-    "requirementsCn": "本科学位；定量背景优先；雅思6.5/托福79"
+    "requirementsCn": "持有认可的任何学科学士学位，且课程涵盖适当的数学知识。录取将根据学业成绩与相关工作经验综合评定。托福 79/4 或雅思 6.0。"
   },
   {
     "id": "cityu-mscfin",
@@ -1506,13 +1514,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "强调计量方法在现实经济问题中的应用，适合政策、金融与咨询方向。"
+    "descCn": "城大应用经济学理学硕士为计划在跨国公司、投资或商业银行、行业协会、政府机构与政策研究机构担任经济分析师、政策研究员与投资策略师的学生，提供经济分析与实证方法的严格训练。"
   ,
-    "descEn": ""
+    "descEn": "The programme provides a rigorous training in economic analysis and empirical methods for those who plan to pursue a career as economic analysts, policy researchers and investment strategists in multinational corporations, investment or commercial banks, trade associations, government bodies and policy research institutes."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "Applicants must hold a bachelor's degree from a recognized university. An undergraduate degree in economics or related areas is not a pre-requisite. Students with a solid quantitative background and commitment to academic study are encouraged to apply."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "申请人须持有认可大学的学士学位。经济学或相关专业本科学位非必要条件。欢迎具备扎实定量背景与学术研究意愿的学生申请。"
   },
   {
     "id": "cityu-mscfe",
@@ -1540,13 +1548,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "交叉项目，训练金融建模、衍生品定价、量化交易与风险管理技术。"
+    "descCn": "城大金融工程学理学硕士旨在帮助学生掌握高级定量技能，以分析复杂衍生品模型、对复杂金融工具进行定价与风险评估，并制定相应的风险管理策略。"
   ,
-    "descEn": ""
+    "descEn": "The programme targets at helping students acquire advanced quantitative skills to analyze sophisticated derivative models, price and evaluate the risk of complex financial instruments, and develop appropriate risk management strategies."
   ,
-    "requirementsEn": "本科学位（工程/数学/物理/商科等）；雅思6.5/托福79"
+    "requirementsEn": "Hold a bachelor's degree from a recognized university; preferably possess more than 1 year of work experience in the industry; and have a strong foundation in quantitative analysis. TOEFL 79/4 or IELTS 6.0."
   ,
-    "requirementsCn": "本科学位（工程/数学/物理/商科等）；雅思6.5/托福79"
+    "requirementsCn": "持有认可大学的学士学位；最好具备一年以上相关行业工作经验；并具备扎实的定量分析基础。托福 79/4 或雅思 6.0。"
   },
   {
     "id": "cityu-mscaib",
@@ -1604,13 +1612,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "聚焦金融科技与智能系统在商业中的应用，技术与管理并重。"
+    "descCn": "城大商业信息系统理学硕士（金融与智能科技方向）旨在训练学生掌握智能商业技术领域，其中金融科技是最知名、最具代表性的应用。金融与智能科技有望革新传统商业运营，带来更具创新性的产品、解决方案与流程。"
   ,
-    "descEn": ""
+    "descEn": "The Financial and Intelligent Technology (FIT) Stream aims to train students in the domains of intelligent business technology, of which financial technology is the most well-known and representative application. Financial and intelligent technology hold the potential to revolutionize traditional business operations and lead to more innovative products, solutions, and processes."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "Hold a recognized Bachelor's degree from one of the tertiary education institutions in Hong Kong funded by the University Grant Committee (UGC), or equivalent, with intermediate level knowledge on IT/IS or Finance/Accounting."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "持有香港教资会资助院校或同等机构的认可学士学位，且具备 IT/信息系统或金融/会计的中级水平知识。"
   },
   {
     "id": "cityu-mscbismis",
@@ -1638,13 +1646,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "侧重智能系统规划、实施与管理，培养数字化转型推动者。"
+    "descCn": "城大商业信息系统理学硕士（智能系统管理方向）旨在训练学生掌握支撑当代信息社会的商业核心领域与前沿信息系统，使毕业生能够在同时需要高级商业知识与 IT 赋能解决问题能力的岗位上脱颖而出。"
   ,
-    "descEn": ""
+    "descEn": "The Management of Intelligent Systems Stream aims to train students in the core domains of business and cutting-edge information systems that underpin the contemporary information society, so that graduates can excel in careers with professional positions that require both advanced business knowledge and IT-enabled problem solving skills."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "Hold a recognized Bachelor's degree in any subjects, preferably not in Information Systems or Computer Science related discipline, from one of the tertiary education institutions in Hong Kong funded by the University Grant Committee (UGC), or equivalent."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "持有香港教资会资助院校或同等机构的认可学士学位，专业不限，信息系统或计算机科学相关背景以外者更佳。"
   },
   {
     "id": "cityu-mscdtti",
@@ -1672,13 +1680,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "培养推动组织数字化转型的战略与技术复合人才。"
+    "descCn": "城大数字化转型及科技创新理学硕士旨在培养未来的数字化管理者与专业人士，理解组织中数字化转型与科技创新的机遇、原理与影响。项目不要求学生具备相关先修知识，但信息系统、商科或组织研究背景者有优势。"
   ,
-    "descEn": ""
+    "descEn": "This programme aims to educate and train the digital managers and professionals of the future to understand the opportunity, principles and impact of digital transformation and technological innovation in organizations. The programme does not assume that students have prior knowledge in these areas, but a background in information systems, business or organization studies will be an advantage."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "Hold a recognized Bachelor's degree, preferably in a business or management related subject from a UGC-funded tertiary education institution in Hong Kong, or an equivalent institution overseas; have gained a basic level of computer literacy. TOEFL 79/4 or IELTS 6.5."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "持有认可学士学位，最好是香港教资会资助院校或海外同等机构的商科或管理相关专业；具备基本计算机素养。托福 79/4 或雅思 6.5。"
   },
   {
     "id": "cityu-mscdcc",
@@ -1706,13 +1714,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "由电子商务项目升级而来，覆盖数字商业、平台经济与智能计算。"
+    "descCn": "城大数字商务与计算理学硕士旨在培养学生成为能够在商业环境中评估和开发电子商务系统与服务的 IT 专业人才。学生将获得核心商业与技术相关科目的知识技能，并深入理解电子商务开发涉及的管理、监管与技术问题。"
   ,
-    "descEn": ""
+    "descEn": "This programme aims to equip students with the skills necessary to become IT professionals that are competent in evaluating and developing e-Commerce systems and services within a business context. Students will gain knowledge and skills in core business and technical related subjects, together with an in-depth understanding of the specific managerial, regulatory, and technical issues involved in the exploitation of eCommerce."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "A recognised bachelor's degree in a Computing discipline (e.g., Computer Science, Information Systems, Information Technology); or a recognised bachelor's degree in a related discipline (e.g., Electronic Engineering, Economics and Finance) preferably with applicable IT experience."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "计算类专业（如计算机科学、信息系统、信息技术）的认可学士学位；或相关专业（如电子工程、经济与金融）的认可学士学位，最好具备相关 IT 经验。"
   },
   {
     "id": "cityu-mscbdaIAM",
@@ -1740,13 +1748,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "侧重信息分析与管理决策，培养商业智能与数据治理人才。"
+    "descCn": "城大商业及数据分析理学硕士（信息分析管理方向）旨在通过主动学习应用统计、大数据管理、数据挖掘、社交媒体分析等领域的理论、方法与技术，培养学生商业数据分析的专业知识。"
   ,
-    "descEn": ""
+    "descEn": "The MSc in Business and Data Analytics (MScBDA) programme aims to cultivate students with professional knowledge of business data analytics through active learning of the theories, methods, supporting techniques across a wide range of knowledge areas such as applied statistics, big data management, data mining and social media analytics."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "Hold a recognized Bachelor's degree in any disciplines with the curricula covering appropriate mathematical knowledge. Selection will be based on academic performance and relevant working experience. TOEFL 79/4 or IELTS 6.0."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "持有认可的任何学科学士学位，且课程涵盖适当的数学知识。录取将根据学业成绩与相关工作经验综合评定。托福 79/4 或雅思 6.0。"
   },
   {
     "id": "cityu-magbm",
@@ -1774,13 +1782,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "QS 2026 全球第49，培养具国际视野的企业管理人才，强调跨文化领导力。"
+    "descCn": "城大全球企业管理文学硕士为香港同类首创，旨在帮助学员掌握跨越政治、经济与文化边界成功开展业务所需的独特技能与洞察，并具备整合关键商业职能全球维度的高超能力。"
   ,
-    "descEn": ""
+    "descEn": "The first of its kind in Hong Kong, this specialist programme aims to help participants to acquire the unique skills and insights that are needed to successfully conduct business across political, economic and cultural boundaries and become highly competent in integrating the global dimensions of key business functions."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "Possess a recognized Bachelor's degree with Second Class Honours or above, or the equivalent. Those with at least three years of post-qualification managerial experience in international business or China-related activities preferred."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "持有认可的二等荣誉学士学位或同等学历。具备三年以上国际商务或对华业务相关管理经验者优先。"
   },
   {
     "id": "cityu-mscmi",
@@ -1808,13 +1816,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "聚焦创新管理、创业与组织变革，培养未来产业推动者。"
+    "descCn": "城大管理与创新理学硕士旨在培养希望全面理解如何有效管理人员、组织与创新以实现战略目标的专业管理者与高管，帮助管理者发展应对复杂管理环境所需的批判性思维、分析、行为与创造技能。"
   ,
-    "descEn": ""
+    "descEn": "This Programme aims to nurture professional managers and executives who want to acquire a broad-based understanding of how to effectively manage people, organizations and innovation to achieve strategic objectives. The Programme aims to help managers develop the critical thinking, analytical, behavioral, and creative-skills needed to deal with complicated management environments."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "Hold a recognized degree or equivalent. TOEFL 79 or 4 (from 21 Jan 2026) or IELTS 6.0 or CET6 450 if MoI not English."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "持有认可学位或同等学历。非英语授课需托福 79 或 4（2026年1月21日起）或雅思 6.0 或 CET6 450。"
   },
   {
     "id": "cityu-mscmkt",
@@ -2576,13 +2584,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "港大数据科学硕士，统计与计算机交叉的旗舰项目，覆盖机器学习、统计推断、大数据计算与行业应用。全日制约 1.5 年。"
+    "descCn": "大数据时代，社交媒体、消费者画像、全球经济等渠道每天产生海量数据。这要求我们不仅描述和理解信息，更重要的是揭示关键信息以支持最佳行动。港大数据科学硕士开启了大数据时代高性能分析的新前沿。"
   ,
-    "descEn": ""
+    "descEn": "In the era of big data, colossal amount of data is being generated every day from channels including social media, consumer profile, global economy, etc. These complications of data require us not only to describe and understand the information, but more importantly, to reveal crucial information to facilitate the best course of action. The emergence of HKU Master of Data Science opens up a new frontier of high-performance analytics in this era of big data."
   ,
-    "requirementsEn": "本科学位（统计/CS/工程等相关）；雅思6.0/托福80"
+    "requirementsEn": "Applicants shall hold a Bachelor's degree or an equivalent qualification. Applicants shall have taken at least one university or post-secondary certificate course in each of the following three subjects (calculus and algebra, computer programming and introductory statistics) or related areas."
   ,
-    "requirementsCn": "本科学位（统计/CS/工程等相关）；雅思6.0/托福80"
+    "requirementsCn": "申请人须具有学士学位或同等学历，并在微积分与代数、计算机编程、初等统计三个科目（或相关领域）各修读过至少一门大学或专上课程。"
   },
   {
     "id": "hku-msccs",
@@ -2610,13 +2618,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "计算机科学硕士，含金融计算、网络安全、多媒体与通用方向，与金融科技、商业分析高度交叉。"
+    "descCn": "港大计算机科学理学硕士提供全面的研究生层次计算机科学深入学习，以学分制为基础，课程兼顾应用与基础。学生可选择专注方向或综合多元学习。专注方向包括人工智能与去中心化技术（AI×Web3）、网络安全、多媒体计算与金融计算。"
   ,
-    "descEn": ""
+    "descEn": "The MSc(CompSc) programme is a comprehensive postgraduate study programme provides advanced and in-depth learning in Computer Science. The programme is credit unit based, with courses of both applied and fundamental nature. Students can choose focused streams of study or a comprehensive and diversified study in Computer Science. Focused streams include AI & Decentralized Technologies (AI x Web3), Cyber Security, Multimedia Computing and Financial Computing."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "Please refer to official programme site for latest entrance requirements. English: TOEFL iBT 80 / IELTS 6.0 typically required for non-English-medium degrees."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "请以官网最新入学要求为准。非英语授课学位通常需托福 iBT 80 / 雅思 6.0。"
   },
   {
     "id": "hku-mscstats",
@@ -2644,13 +2652,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "统计学硕士，统计推断、实验设计、时间序列与数据建模，广泛应用于金融、市场与生物统计。"
+    "descCn": "港大统计学硕士强调统计技术在各领域的应用，以更清晰准确地制定策略。学生学习检验、解读与分类数据，聚焦数据所提示的关键领域与含义，以支持有效的问题解决与决策。"
   ,
-    "descEn": ""
+    "descEn": "The Master of Statistics (MStat) programme emphasises the applications of statistical techniques across various fields to formulate strategies with greater clarity and accuracy. Students learn to examine, translate, and classify data, with a focus on pinpointing the most critical areas and implications suggested by the data for effective problem-solving and decision-making."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree or an equivalent qualification; and applicants should have knowledge of matrices and calculus, introductory statistics and linear modelling."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "学士学位或同等学历；申请人应具备矩阵与微积分、初等统计与线性建模知识。"
   },
   {
     "id": "hku-mscere",
@@ -2676,13 +2684,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "房地产投资、估价、开发与资产管理，商科交叉特色明显。"
+    "descCn": "港大房地产理学硕士从商业与经济视角研究房地产。目标包括：在法律、制度与城市经济框架下认识房地产资产与市场；提供识别与评估房地产投资机会的理论洞察与分析技能；并培养学生必要的管理能力。"
   ,
-    "descEn": ""
+    "descEn": "The Master of Science in Real Estate (MSc(RE)) programme approaches real estate from a business and economic perspective. The aims are to introduce students to real estate assets and markets within the framework of law, institutions, and urban economies; to provide theoretical insights and analytical skills to identify and evaluate real estate investment opportunities; and to equip students with necessary management skills."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "Hold a Bachelor's degree of this University or a qualification of equivalent standard. Applicants from non-English-medium institutions need to satisfy the University English language requirement. Satisfy the examiners in a qualifying examination if required."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "持有本校学士学位或同等水平资格。非英语授课院校毕业者须满足大学英语要求。如有需要，须通过资格考试。"
   },
   {
     "id": "hku-mscurban",
@@ -2708,13 +2716,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "城市与区域规划，涉及房地产、城市发展与公共政策，商科交叉。"
+    "descCn": "港大城市规划理学硕士为两年全日制国际研究生项目，提供城市与区域规划理论、方法与实践的全面专业训练。重要特色是强调可持续城市与区域的规划与管理，聚焦香港、中国与亚太地区。"
   ,
-    "descEn": ""
+    "descEn": "The Master of Science in Urban Planning is a two-year full-time international postgraduate programme that provides comprehensive professional training in the theories, methods and practice of urban and regional planning. An important distinguishing feature is the emphasis on the planning and management of sustainable cities and regions, with a strong focus on Hong Kong, China and the Asia-Pacific region."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "Hold a Bachelor degree in any discipline from HKU or an equivalent qualification. TOEFL iBT 80 or IELTS overall 6 with no subtest lower than 5.5 for non-English-medium degrees."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "持有港大任何学科学士学位或同等资格。非英语授课学位需托福 iBT 80 或雅思总分 6（各单项不低于 5.5）。"
   },
   {
     "id": "cuhk-mscis",
@@ -2962,13 +2970,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "AI 与酒店业交叉，培养智慧酒店与旅游科技人才。"
+    "descCn": "理大国际知名的硕士项目面向希望拓展知识前沿、加速职业发展的学生。酒店及旅游业管理硕士/深造文凭组合课程包括：酒店业人工智能、酒店业创新创业、国际酒店管理、国际旅游及会展管理、国际葡萄酒管理、奢华体验管理。"
   ,
-    "descEn": ""
+    "descEn": "Our internationally recognised Master's degrees are offered to those who want to extend the frontiers of their knowledge and fast-track their careers. The MSc/PgD Scheme in Hospitality and Tourism Management comprises: Artificial Intelligence in Hospitality; Innovation and Entrepreneurship in Hospitality; International Hospitality Management; International Tourism and Event Management; International Wine Management; Luxury Experiences Management."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A recognised Bachelor's degree or equivalent. Students without relevant educational or industry backgrounds may be required to take bridging courses/workshops prior to commencement of the programme."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "认可的学士学位或同等学历。无相关教育或行业背景的学生可能需要在开学前修读衔接课程/工作坊。"
   },
   {
     "id": "polyu-mscieh",
@@ -2996,13 +3004,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "酒店与旅游业创新创业，培养行业新商业模式推动者。"
+    "descCn": "属酒店及旅游业管理硕士组合课程之「酒店业创新创业」方向，面向希望拓展知识前沿、加速职业发展的学生。"
   ,
-    "descEn": ""
+    "descEn": "Part of the MSc Scheme in Hospitality and Tourism Management: Innovation and Entrepreneurship in Hospitality. Our internationally recognised Master's degrees are offered to those who want to extend the frontiers of their knowledge and fast-track their careers."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A recognised Bachelor's degree or equivalent. Bridging courses may be required for those without relevant backgrounds."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "认可的学士学位或同等学历。无相关背景者可能需要修读衔接课程。"
   },
   {
     "id": "polyu-mscihm",
@@ -3030,13 +3038,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "国际酒店管理硕士，SHTM 世界排名领先，就业资源丰富，属酒店及旅游管理硕士组合课程。2027 官方学费 HK$341,000。"
+    "descCn": "属酒店及旅游业管理硕士组合课程之「国际酒店管理」方向，面向希望拓展知识前沿、加速职业发展的学生。"
   ,
-    "descEn": ""
+    "descEn": "Part of the MSc Scheme in Hospitality and Tourism Management: International Hospitality Management. Our internationally recognised Master's degrees are offered to those who want to extend the frontiers of their knowledge and fast-track their careers."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A recognised Bachelor's degree or equivalent. Bridging courses may be required for those without relevant backgrounds."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "认可的学士学位或同等学历。无相关背景者可能需要修读衔接课程。"
   },
   {
     "id": "polyu-mscitem",
@@ -3064,13 +3072,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "国际旅游与会展管理，覆盖目的地营销、活动策划与体验经济。"
+    "descCn": "属酒店及旅游业管理硕士组合课程之「国际旅游及会展管理」方向，面向希望拓展知识前沿、加速职业发展的学生。"
   ,
-    "descEn": ""
+    "descEn": "Part of the MSc Scheme in Hospitality and Tourism Management: International Tourism and Event Management. Our internationally recognised Master's degrees are offered to those who want to extend the frontiers of their knowledge and fast-track their careers."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A recognised Bachelor's degree or equivalent. Bridging courses may be required for those without relevant backgrounds."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "认可的学士学位或同等学历。无相关背景者可能需要修读衔接课程。"
   },
   {
     "id": "polyu-msciwm",
@@ -3098,13 +3106,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "葡萄酒与烈酒商业管理，覆盖品鉴、供应链、品牌与零售。"
+    "descCn": "属酒店及旅游业管理硕士组合课程之「国际葡萄酒管理」方向，面向希望拓展知识前沿、加速职业发展的学生。"
   ,
-    "descEn": ""
+    "descEn": "Part of the MSc Scheme in Hospitality and Tourism Management: International Wine Management. Our internationally recognised Master's degrees are offered to those who want to extend the frontiers of their knowledge and fast-track their careers."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A recognised Bachelor's degree or equivalent. Bridging courses may be required for those without relevant backgrounds."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "认可的学士学位或同等学历。无相关背景者可能需要修读衔接课程。"
   },
   {
     "id": "polyu-msclem",
@@ -3132,13 +3140,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "奢侈品与高端体验管理，覆盖品牌、客户体验与服务设计。"
+    "descCn": "属酒店及旅游业管理硕士组合课程之「奢华体验管理」方向，面向希望拓展知识前沿、加速职业发展的学生。"
   ,
-    "descEn": ""
+    "descEn": "Part of the MSc Scheme in Hospitality and Tourism Management: Luxury Experiences Management. Our internationally recognised Master's degrees are offered to those who want to extend the frontiers of their knowledge and fast-track their careers."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A recognised Bachelor's degree or equivalent. Bridging courses may be required for those without relevant backgrounds."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "认可的学士学位或同等学历。无相关背景者可能需要修读衔接课程。"
   },
   {
     "id": "polyu-mscghb",
@@ -3166,13 +3174,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "三校联培：欧洲、亚洲、北美各一学期，获取三大市场与校友网络。"
+    "descCn": "本项目旨在培养具备第一手商业经验所带来区域洞察的全球酒店业管理者。毕业生掌握在多元文化环境中脱颖而出的知识与技能，将在欧洲、亚洲与北美的三个世界级校园与研究中心学习。"
   ,
-    "descEn": ""
+    "descEn": "The programme aims to develop global hospitality managers with regional awareness derived from first-hand business experience. Graduates are equipped with the knowledge and skills needed to excel in a multicultural environment. Students experience three world-class campuses and research centres across Europe, Asia and North America."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree in hospitality and tourism management or other disciplines with at least one year of employment in the hospitality industry; or equivalent professional qualifications. TOEFL iBT 100 / IELTS 7.0 for non-native English speakers."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "酒店与旅游管理或相关专业学士学位，且在酒店业有不少于一年的工作经验；或同等专业资格。非英语母语者需托福 iBT 100 / 雅思 7.0。"
   },
   {
     "id": "polyu-mscmact",
@@ -3200,13 +3208,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "精算与投资科学，对接精算师资格，金融交叉。"
+    "descCn": "本项目旨在为学生打下精算与投资科学的坚实基础。毕业生成为应对需识别、量化、评估或管理风险财务影响之商业与社会问题的领军专业人士。重点在于应用以及使用软件处理真实数据、解决实际问题。"
   ,
-    "descEn": ""
+    "descEn": "The main aim is to provide students with a solid foundation of actuarial and investment science. Graduates will become leading professionals in addressing business and societal problems that require identification, quantification, assessment or management of the financial implications of risk. Our focus is on applications and the use of software packages to handle real-world data and solve practical problems."
   ,
-    "requirementsEn": "本科学位（数学/统计相关）；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree with Honours in engineering, computer science, basic science, business, economics, or the equivalent. Non-English-medium degrees must fulfil the University's minimum English language requirement."
   ,
-    "requirementsCn": "本科学位（数学/统计相关）；雅思6.0/托福80"
+    "requirementsCn": "工程、计算机科学、基础科学、商科、经济等专业的荣誉学士学位或同等学历。非英语授课学位须满足大学最低英语要求。"
   },
   {
     "id": "polyu-mscorra",
@@ -3264,13 +3272,13 @@ const PROGRAMMES = [
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
-    "descCn": "量化金融与金融科技交叉项目，覆盖算法交易、风控建模与区块链金融。"
+    "descCn": "香港作为国际金融中心，汇聚众多金融机构。在日益复杂的金融市场中提供创新且稳健的金融服务，需要数学、统计、金融与编程的进阶知识。本项目提供定量与分析方法、建模技术、金融概念与编程技能的深入训练，涵盖人工智能、区块链、云计算与大数据。"
   ,
-    "descEn": ""
+    "descEn": "As a leading international financial centre, Hong Kong is home to many financial institutions. To provide innovative and stable financial services in increasingly complex financial markets, professionals require advanced knowledge in mathematics, statistics, finance and programming. This programme provides in-depth training in quantitative and analytical methods, modelling techniques, financial concepts and programming skills, including artificial intelligence, blockchain, cloud computing and big data."
   ,
-    "requirementsEn": "本科学位（数学/工程/商科）；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree in mathematics, statistics, business, finance, science, computer science, engineering, or the equivalent. Other disciplines with adequate mathematics or IT background will also be considered."
   ,
-    "requirementsCn": "本科学位（数学/工程/商科）；雅思6.0/托福80"
+    "requirementsCn": "数学、统计、商科、金融、科学、计算机科学、工程等专业的学士学位或同等学历。其他学科但具备足够数学或 IT 背景者也会被考虑。"
   },
   {
     "id": "polyu-mscds",
@@ -3560,13 +3568,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "建筑与房地产商业管理，覆盖开发、投资、估价与项目管理。"
+    "descCn": "本项目旨在拓宽和加深学生在建筑与房地产领域的知识，提供基于当代研究成果的最新知识、超越本科层次的专业技能，以及了解中国内地建筑与房地产实践的机会。"
   ,
-    "descEn": ""
+    "descEn": "The programme aims to broaden and deepen students' knowledge in the construction and real estate sectors, providing up-to-date knowledge based on contemporary research findings, specific specialist skills beyond the first undergraduate degree level, and the opportunity to study construction and real estate practices in the Chinese mainland."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree with Honours; OR a Bachelor's degree in a construction or real estate related discipline; OR corporate membership of a relevant professional institution. Non-English-medium degrees must meet University English requirements."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "荣誉学士学位；或建筑/房地产相关专业学士学位；或相关专业机构的正式会员资格。非英语授课学位须满足大学英语要求。"
   },
   {
     "id": "polyu-mscpm",
@@ -3592,13 +3600,13 @@ const PROGRAMMES = [
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
-    "descCn": "项目管理，覆盖工程、IT、商业项目的全生命周期管理。"
+    "descCn": "本项目面向已具备建筑或相关学士学位、在香港及周边工作的专业人士，为执业建筑师、施工经理、工程师、测量师、技术人员等相关从业者提供拓宽和加深项目管理知识的机会。"
   ,
-    "descEn": ""
+    "descEn": "This programme aims to benefit professionals who already have a bachelor's in construction or related disciplines and who work in or around Hong Kong. It offers opportunities for practising architects, construction managers, engineers, surveyors, technologists and related professionals to broaden and deepen their knowledge of project management."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree in a relevant discipline or the equivalent (including recognised professional qualifications). Non-English-medium degrees must meet University English requirements."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "相关专业学士学位或同等学历（包括认可的专业资格）。非英语授课学位须满足大学英语要求。"
   },
   {
     "id": "polyu-mscfm",
