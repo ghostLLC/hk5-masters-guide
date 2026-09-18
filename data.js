@@ -28,7 +28,7 @@ const PROGRAMMES = [
     "location": "香港大学本部（薄扶林）",
     "website": "https://www.hkubs.hku.hk/macct/",
     "sourceConfidence": "official-listed",
-    "sourceNote": "已按官网逐项下钻：港大经管+CDS、中大GS、科大商学院、城大全表、理大2027学费页。"
+    "sourceNote": "简介与申请要求已尽量采用官网英文原文+简体中文。部分官网访问失败或新项目未发布简介者，卡片标注待核实，请点官网确认。"
   ,
     "feeSource": "official-page"
   ,
@@ -392,13 +392,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "商科交叉项目，培养金融科技系统、大数据风控与智能投研方向的技术与管理复合人才。"
+    "descCn": "港大金融科技与数据分析理学硕士列于计算与数据科学学院授课研究生项目。项目站当前无法访问，请在 master.cds.hku.hk 或 portal.hku.hk 核实。"
   ,
-    "descEn": ""
+    "descEn": "MSc in Financial Technology and Data Analytics is listed under HKU School of Computing and Data Science taught postgraduate programmes. Programme site currently unreachable; please verify on master.cds.hku.hk or portal.hku.hk."
   ,
-    "requirementsEn": "本科学位（工程/科学/商科等）；雅思6.0/托福80"
+    "requirementsEn": "Not retrieved from programme site. Typical CDS requirement: Bachelor's degree; calculus/algebra, programming, introductory statistics background; TOEFL 80 / IELTS 6.0."
   ,
-    "requirementsCn": "本科学位（工程/科学/商科等）；雅思6.0/托福80"
+    "requirementsCn": "未能从项目站获取。CDS 通常要求：学士学位；微积分/代数、编程、初等统计背景；托福 80 / 雅思 6.0。"
   },
   {
     "id": "hku-mieelm",
@@ -424,13 +424,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "商科交叉项目，聚焦供应链、物流系统、运营管理与商业数据分析。"
+    "descCn": "港大工业工程与物流管理理学硕士（工程）由工程学院开设。专属项目页未能获取，请在港大工程学院或 portal.hku.hk 核实。"
   ,
-    "descEn": ""
+    "descEn": "MSc(Eng) in Industrial Engineering and Logistics Management offered by HKU Faculty of Engineering. Dedicated programme page not retrieved; please verify on HKU Engineering / portal.hku.hk."
   ,
-    "requirementsEn": "本科学位（工程/科学相关优先）；雅思6.0/托福80"
+    "requirementsEn": "Not retrieved. Typical Engineering TPG: Bachelor's degree in engineering or related field; TOEFL 80 / IELTS 6.0."
   ,
-    "requirementsCn": "本科学位（工程/科学相关优先）；雅思6.0/托福80"
+    "requirementsCn": "未能获取。工程学院通常要求：工程或相关专业学士学位；托福 80 / 雅思 6.0。"
   },
   {
     "id": "cuhk-macc",
@@ -576,13 +576,13 @@ const PROGRAMMES = [
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
-    "descCn": "面向家族企业传承与治理，课程覆盖家族治理、继任规划、财富管理与创新。"
+    "descCn": "中大家族企业管理理学硕士（FBM）是具有开创性、使命驱动的项目，面向希望在亚洲及更广区域创建、领导并延续家族企业的年轻领袖、专业人士与创业者。"
   ,
-    "descEn": ""
+    "descEn": "The MSc in Family Business Management (FBM) is a pioneering, mission-driven programme designed for aspiring young leaders, professionals, and entrepreneurs seeking to build, lead, and sustain family enterprises in China, Asia, and beyond."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "A bachelor's degree with Second Class honours or achieving an average grade of B from a recognised university, or an equivalent professional qualification. GMAT/GRE scores are not mandatory, but a good score will strengthen the application."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "认可大学的二等荣誉学士学位或平均成绩 B，或同等专业资格。GMAT/GRE 非强制，但高分有利于申请。"
   },
   {
     "id": "cuhk-mscfin",
@@ -638,13 +638,13 @@ const PROGRAMMES = [
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
-    "descCn": "聚焦全球财富管理、家族办公室、另类投资与客户关系管理。"
+    "descCn": "随着香港超越瑞士成为全球最大跨境财富中心，市场对顶尖金融人才的需求空前高涨。中大环球财富管理理学硕士为学生提供严谨的金融理论与前沿金融科技、AI 技能，以在全球财富管理行业脱颖而出。"
   ,
-    "descEn": ""
+    "descEn": "As Hong Kong overtakes Switzerland to become the world's largest cross-border wealth hub, the demand for top-tier financial talent has never been greater. The MSc Programme in Global Wealth Management equips students with rigorous financial theory and cutting-edge FinTech and AI skills to excel in the evolving global wealth management industry."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "A bachelor's degree with Second Class honours or achieving an average grade of B from a recognised university, or an equivalent professional qualification. GMAT/GRE scores are not mandatory."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "认可大学的二等荣誉学士学位或平均成绩 B，或同等专业资格。GMAT/GRE 非强制。"
   },
   {
     "id": "cuhk-mscitm",
@@ -850,13 +850,13 @@ const PROGRAMMES = [
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
-    "descCn": "新兴项目，聚焦体育产业商业运作、赛事管理、体育营销与电竞商业。"
+    "descCn": "中大体育商业管理理学硕士面向希望在全球体育产业建立活跃职业生涯的人士，超越赛事本身，涵盖战略、营销、活动、运营与创新，培养毕业生引领大中华区、亚太及更广区域快速演变的体育产业。"
   ,
-    "descEn": ""
+    "descEn": "Designed for those aspiring to build dynamic careers in the global sports industry, this distinctive programme goes beyond competition into strategy, marketing, events, operations, and innovation. It equips graduates with the skills to lead and shape the rapidly evolving sports industry across Greater China, Asia-Pacific, and beyond."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "A bachelor's degree with at least second-class honours or grade B from a recognised university, or an equivalent professional qualification. A good GMAT/GRE result will strengthen your application."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "认可大学的二等荣誉学士学位或成绩 B，或同等专业资格。优秀的 GMAT/GRE 成绩有利于申请。"
   },
   {
     "id": "cuhk-mscsgb",
@@ -2350,13 +2350,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "与浙江大学合作，主要在中国内地授课，培养质量管理与卓越运营人才。"
+    "descCn": "官网暂无英文简介。浙江大学-理大合作内地办学项目，中文授课。官方中文目标：拓宽和深化管理人员及技术专家对前沿质量管理的认知和应用，强化系统性与风险性思维，培养创新能力，以追求组织卓越成就。"
   ,
-    "descEn": ""
+    "descEn": "No official English description published. Mainland joint programme (ZJU–PolyU), Chinese-medium site only. Official Chinese aim: 本课程旨在拓宽和深化管理人员及技术专家对前沿质量管理的认知和应用，强化系统性与风险性思维，培养创新能力，以追求组织卓越成就。"
   ,
-    "requirementsEn": "本科学位；工作经验优先；中文授课为主"
+    "requirementsEn": "No official English entry requirements published. Official Chinese: Bachelor's degree or above + ≥1 year full-time work experience; or age 35+ with ≥6 years work experience (3 in management) may be considered individually; pass joint centre written test and interview."
   ,
-    "requirementsCn": "本科学位；工作经验优先；中文授课为主"
+    "requirementsCn": "官网暂无英文入学要求。官方中文：本科或以上学历 + 至少 1 年全职工作经验；或 35 岁以上、工作满 6 年（其中 3 年管理岗）可个别考虑；须通过联合中心笔试与面试。"
   },
   {
     "id": "polyu-mscba",
@@ -2518,13 +2518,13 @@ const PROGRAMMES = [
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
-    "descCn": "与厦门国家会计学院合作，中文授课，聚焦大数据在会计金融中的应用。"
+    "descCn": "官网暂无英文简介。厦门国家会计学院合作项目（代码 21056），中文页面。官方中文目标：提供专注于专业会计和新技术与会计互动的专业教育体验，赋予年轻专业人士和管理人员在大数据交汇处的高级技能。"
   ,
-    "descEn": ""
+    "descEn": "No official English description published. Chinese-only page (code 21056, Xiamen National Accounting Institute partnership). Official Chinese aim: 此项目旨在提供一个专注于专业会计和新技术与会计互动的专业教育体验，赋予年轻专业人士和管理人员在大数据交汇处的高级技能。"
   ,
-    "requirementsEn": "本科学位；中文授课；工作经验优先"
+    "requirementsEn": "No official English entry requirements published. Official Chinese: recognised bachelor's degree or above; executives in accounting/finance related industries with 5+ years relevant work experience."
   ,
-    "requirementsCn": "本科学位；中文授课；工作经验优先"
+    "requirementsCn": "官网暂无英文入学要求。官方中文：教育部认可本科或以上学历；会计/财务/金融相关行业高管，五年以上相关工作经验。"
   },
   {
     "id": "polyu-mscgscmce",
@@ -2546,17 +2546,17 @@ const PROGRAMMES = [
     "applyWindow": "按项目时间表",
     "jointPartner": null,
     "location": "中国内地",
-    "website": "https://www.polyu.edu.hk/lms/study/tpg/gscm-ce",
+    "website": "https://www.polyu.edu.hk/study/pg/tpg/2027/44089-sfm-sfp-gpm-spp",
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
-    "descCn": "面向内地学员的供应链管理项目，中文/双语授课。"
+    "descCn": "最接近的官方项目：全球供应链管理理学硕士/深造文凭（44089）。官网原文：本项目使管理者具备通过平衡成本、质量与效率，在供应链中创造并保持竞争力的能力。（注：内地专属路径页返回 404。）"
   ,
-    "descEn": ""
+    "descEn": "Closest official programme: MSc/PgD in Global Supply Chain Management (44089). Official text: This programme equips executives with the capacity to create and sustain competitiveness in the supply chain by balancing costs, quality and efficiency. (Note: dedicated Chinese Mainland pathway page returned 404.)"
   ,
-    "requirementsEn": "本科学位；工作经验优先"
+    "requirementsEn": "A Bachelor's degree in a business-related discipline or an equivalent qualification. For non-business degree holders, 2 years of relevant work experience or relevant background knowledge is preferred."
   ,
-    "requirementsCn": "本科学位；工作经验优先"
+    "requirementsCn": "商科相关专业学士学位或同等资格。非商科背景者，优先考虑具备 2 年相关工作经验或相关背景知识者。"
   },
   {
     "id": "hku-mscds",
@@ -2748,13 +2748,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "信息工程与网络技术，可与金融科技、信息系统交叉应用。"
+    "descCn": "中大信息工程理学硕士（MScIE）成立于1997年，由信息工程系开设，是成熟的授课制研究生项目，将严谨的理论基础与信息工程及新兴技术的实践训练相结合。"
   ,
-    "descEn": ""
+    "descEn": "Established in 1997, the Master of Science in Information Engineering (MScIE) programme is a well-established taught postgraduate programme offered by the Department of Information Engineering at CUHK. The programme combines rigorous theoretical foundations with practical training in information engineering and emerging technologies."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "Graduated from a recognized university and obtained a Bachelor's degree in engineering, science, or related fields, normally with Second Class Honours or higher, or an average grade of B or better."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "毕业于认可大学并获得工程、科学或相关领域的学士学位，通常为二等荣誉或以上，或平均成绩 B 或以上。"
   },
   {
     "id": "cuhk-mscfineng",
@@ -2780,13 +2780,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "工程学院与商学院交叉的金融科技项目，覆盖区块链、智能合约、数字支付。"
+    "descCn": "中大金融科技理学硕士毕业生将掌握网络安全、区块链、数据科学、人工智能等用于金融与电子商务的先进技术知识，同时对金融市场、金融工程、监管政策、合同、技术知识产权等金融与法律领域有广泛理解。"
   ,
-    "descEn": ""
+    "descEn": "Upon completion of their studies, FinTech students would have acquired advanced knowledge in technologies such as cyber security, blockchain, data science, AI, etc. for finance and e-commerce, while maintaining a broad understanding of finance and law such as financial markets, financial engineering, regulatory policy, contracts, intellectual property for technologies."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "Good knowledge of mathematics (such as calculus, linear algebra and probability) and proficiency in at least one modern programming language; obtained a Bachelor's degree in Engineering, Science, Mathematics or Finance/Business-related discipline."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "具备良好的数学知识（如微积分、线性代数、概率论）并熟练掌握至少一门现代编程语言；持有工程、科学、数学或金融/商科相关专业学士学位。"
   },
   {
     "id": "cuhk-mscds",
@@ -2840,13 +2840,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "工学院 AI 硕士，可与商业分析、金融科技交叉。"
+    "descCn": "科大人工智能理学硕士紧扣 AI 发展最新趋势，回应市场对熟练 AI 从业者的增长需求，面向应届毕业生与希望在该快速演进领域提升专长的在职人士。"
   ,
-    "descEn": ""
+    "descEn": "Our carefully designed MSc program addresses the latest trends in AI development and aims to meet the growing demand for skilled AI practitioners. This program is tailored to both recent graduates and working professionals seeking to enhance their expertise in this exciting and rapidly evolving field."
   ,
-    "requirementsEn": "本科学位（工程/科学）；雅思6.5/托福80"
+    "requirementsEn": "A bachelor's degree in Computer Engineering, Computer Science or a related discipline, or a bachelor's degree in other disciplines with at least two years of post-qualification work experience relevant to the program. English: TOEFL iBT 80 / IELTS 6.5."
   ,
-    "requirementsCn": "本科学位（工程/科学）；雅思6.5/托福80"
+    "requirementsCn": "计算机工程、计算机科学或相关专业学士学位；或其他专业但具备至少两年相关毕业后工作经验。英语：托福 iBT 80 / 雅思 6.5。"
   },
   {
     "id": "hkust-mscbdt",
@@ -2872,13 +2872,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "大数据技术与应用，与商业数据分析高度交叉。"
+    "descCn": "科大大数据科技理学硕士（BDT）由计算机科学与工程系和数学系联合开设，融合多学科，使学生学习大数据的各个重要方面及其在真实世界中的应用。"
   ,
-    "descEn": ""
+    "descEn": "This unique MSc in Big Data Technology (BDT) program is jointly offered by the Department of Computer Science and Engineering and the Department of Mathematics. The program integrates a variety of disciplines to allow students to learn all the important facets of big data and how it is used in the real world."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福80"
+    "requirementsEn": "A bachelor's degree in Computer Engineering, Computer Science, Mathematics or a related field; or a bachelor's degree in other disciplines with relevant working experience in IT and Mathematics related fields."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福80"
+    "requirementsCn": "计算机工程、计算机科学、数学或相关领域学士学位；或其他专业但具备 IT 与数学相关领域工作经验。"
   },
   {
     "id": "cityu-mscds",
@@ -2896,7 +2896,7 @@ const PROGRAMMES = [
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2020,
-    "open27": true,
+    "open27": "pending",
     "applyWindow": "2027/28 预计 2026 年秋季开放",
     "jointPartner": null,
     "location": "九龙塘校园",
@@ -2904,13 +2904,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "数据科学学院旗舰项目，覆盖统计学习、数据挖掘、商业智能。"
+    "descCn": "城大数据科学学院研究生页面当前无法访问（站点防护）。请点城大官网核实。"
   ,
-    "descEn": ""
+    "descEn": "Official School of Data Science postgraduate pages currently inaccessible (site protection). Please verify on CityU official site."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "Not retrieved. Please verify on official site."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "未能获取，请点官网核实。"
   },
   {
     "id": "cityu-msccs",
@@ -2936,13 +2936,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "计算机科学硕士，可与商业信息系统、金融科技交叉。"
+    "descCn": "城大计算机科学理学硕士帮助计算机专业人士强化和提升软件开发技术能力；拓宽学生知识，加深对人工智能、数据科学、信息安全、多媒体等计算机科学特定领域关键议题的理解。"
   ,
-    "descEn": ""
+    "descEn": "Enable computer professionals to strengthen and upgrade their technical capabilities in computer software development; Broaden students' knowledge and deepen their understanding of key issues of specific areas in computer science, including artificial intelligence, data science, information security, multimedia, and other related contemporary technologies."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "A recognised bachelor's degree in a computing discipline such as Computer Science, Information Technology, Computer Engineering, Information Systems, or equivalent; or a related discipline such as Electronic Engineering, Applied Mathematics, Manufacturing Engineering, Quantitative Analysis, or equivalent, together with applicable working experience in information technology."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "计算机科学、信息技术、计算机工程、信息系统等计算类专业认可学士学位或同等学历；或电子工程、应用数学、制造工程、定量分析等相关专业，并具备适用的信息技术工作经验。"
   },
   {
     "id": "polyu-mscaihm",
@@ -3240,13 +3240,13 @@ const PROGRAMMES = [
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
-    "descCn": "运筹优化与风险分析，广泛应用于金融、供应链与运营管理。"
+    "descCn": "理大运筹及风险分析理学硕士旨在培养具备扎实运筹学、风险分析与统计技能，并全面理解其在现代运筹与风险分析领域应用的毕业生。"
   ,
-    "descEn": ""
+    "descEn": "The primary aim of this programme is to produce graduates with strong operational research, risk analysis and statistical skills and a thorough understanding of their applications in the world of modern operational research and risk analysis."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree with Honours in engineering, computer science, basic science, finance, economics or the equivalent (industrial or business experience will be an asset)."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "工程、计算机科学、基础科学、金融、经济等专业的荣誉学士学位或同等学历（有工业或商业经验者优先）。"
   },
   {
     "id": "polyu-mscqff",
@@ -3372,13 +3372,13 @@ const PROGRAMMES = [
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
-    "descCn": "工程与商业管理交叉，IGDS 项目，覆盖战略、运营与技术管理。"
+    "descCn": "理大工程商业管理理学硕士面向希望成为科技型企业管理者与领导者的人士，提供融合工程、商业与管理以及分析工具与技术的多学科教育。"
   ,
-    "descEn": ""
+    "descEn": "The MSc in Engineering Business Management is designed for those who want to become managers and leaders in technology-based businesses. It provides a multidisciplinary education that integrates engineering, business, and management with analytical tools and techniques."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "Bachelor's degree with Second Class (Upper Division) Honours or the equivalent; OR mature applicants with significant relevant experience will be considered on individual merit. IELTS 6.5, or TOEFL iBT 92."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "二等甲级荣誉学士学位或同等学历；或具备丰富相关经验的成熟申请人可按个案审理。雅思 6.5 或托福 iBT 92。"
   },
   {
     "id": "polyu-mscsclm",
@@ -3404,13 +3404,13 @@ const PROGRAMMES = [
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
-    "descCn": "供应链与物流管理，IGDS 项目，面向全球供应链战略。"
+    "descCn": "理大供应链与物流管理理学硕士介绍可用于评估、管理与改进服务、运营与供应链流程以及进行市场分析的工具与技术，学习如何评估与管理相应使能技术并使用企业资源规划系统。"
   ,
-    "descEn": ""
+    "descEn": "The MSc introduces participants to tools and techniques that can be used to evaluate, manage and improve service, operational and supply chain processes, and conduct market analyses. Participants will acquire knowledge on how to evaluate and manage appropriate enabling technologies and use enterprise resource planning systems."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "Bachelor's degree with Second Class (Upper Division) Honours or the equivalent; OR mature applicants with significant relevant experience. IELTS 6.5, or TOEFL iBT 92."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "二等甲级荣誉学士学位或同等学历；或具备丰富相关经验的成熟申请人。雅思 6.5 或托福 iBT 92。"
   },
   {
     "id": "polyu-mscils",
@@ -3438,13 +3438,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "工业物流系统设计与优化，工程与商业交叉。"
+    "descCn": "理大工业物流系统理学硕士面向新经济下物流产业转型，旨在使学生掌握运用信息技术与管理方法改进入厂物流、生产与出厂物流，从而为客户创造价值。"
   ,
-    "descEn": ""
+    "descEn": "The programme is designed for the transformation of the logistics industry under the new economy. It aims to provide students with the use of information technology and managerial approaches in improving inbound logistics, production and outbound logistics so as to create value for the customers."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree or a professional qualification, or the equivalent, is required."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "需具有学士学位或专业资格，或同等学历。"
   },
   {
     "id": "polyu-mscktm",
@@ -3470,13 +3470,13 @@ const PROGRAMMES = [
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
-    "descCn": "知识管理与科技创新管理，工程与商业交叉。"
+    "descCn": "理大知识及科技管理理学硕士为多元背景学员提供独特灵活的机会，按职业需求定制技术与创新领域学习，培养理解创新周期并将创新转化为商业成功的能力。"
   ,
-    "descEn": ""
+    "descEn": "The programme provides a unique and flexible opportunity for participants with diverse backgrounds to customise their learning in areas of technology and innovation based on their professional needs. The aims of the programme are to enable participants to develop their competence in understanding innovation cycles and ultimately turn innovations into commercial successes."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree in engineering, business or science, or a professional qualification, or the equivalent."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "工程、商科或科学专业的学士学位，或专业资格，或同等学历。"
   },
   {
     "id": "polyu-mscsm",
@@ -3502,13 +3502,13 @@ const PROGRAMMES = [
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
-    "descCn": "智能制造与工业 4.0，涉及运营优化与数字化转型。"
+    "descCn": "理大智能制造理学硕士：使学生深入掌握智能制造技术与发展；培养学生通过评估产业实际需求开发智能制造解决方案的能力；培养学生为数字化转型升级选择、部署与管理智能制造的能力。"
   ,
-    "descEn": ""
+    "descEn": "To equip students with an in-depth knowledge of smart manufacturing technologies and developments. To endow students with the ability to develop smart manufacturing solutions by assessing industrial needs for real-life applications. To endow students with the ability to select, deploy and manage smart manufacturing for digital transformation and upgrading."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree in engineering, sciences, or a related discipline, or the equivalent. Priority will be given to candidates with relevant work experiences."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "工程、科学或相关专业的学士学位或同等学历。有相关工作经验者优先。"
   },
   {
     "id": "polyu-mscstm",
@@ -3534,13 +3534,13 @@ const PROGRAMMES = [
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
-    "descCn": "体育产业科技与管理交叉，覆盖赛事运营、体育营销与科技应用。"
+    "descCn": "理大体育科技与管理理学硕士旨在培养体育科技与管理领域具备专业能力、战略思维与终身学习能力的专业人才，提供现代科学与工程知识以及体育科技与管理实践所需的先进技术工具。"
   ,
-    "descEn": ""
+    "descEn": "To nurture professionals and specialists with professional competence, strategic thinking, and lifelong learning capability in the sports technology and management field. To provide students with modern scientific and engineering knowledge, as well as advanced technology tools necessary for sports technology and management practice."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree in engineering or applied sciences; OR a degree in a sports science discipline or a related field; OR an equivalent qualification. Relevant post-qualification experience preferred."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "工程或应用科学学士学位；或体育科学相关学位；或同等资格。有相关毕业后经验者优先。"
   },
   {
     "id": "polyu-msccre",
@@ -3634,13 +3634,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "设施与资产管理，覆盖商业楼宇运营、能源管理与服务外包。"
+    "descCn": "理大设施管理理学硕士：设施管理者的角色日益被视为通过精心匹配组织实体资产与适当的设施支持服务采购，来支撑商业计划实现的关键。"
   ,
-    "descEn": ""
+    "descEn": "The role of the facility manager is increasingly recognised as critical in supporting the realisation of business plans through the careful alignment of an organisation's physical assets with the appropriate sourcing of facility support services."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree with Honours in architecture, interior design, construction, building surveying, estate management, property/facility management, building services engineering, business or the equivalent; OR a professional qualification plus relevant professional experience."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "建筑、室内设计、施工、建筑测量、物业管理、设施管理、屋宇设备工程、商科等专业的荣誉学士学位或同等学历；或专业资格加相关专业经验。"
   },
   {
     "id": "polyu-mscbcc",
@@ -3668,13 +3668,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "企业传播与品牌沟通，人文与商业交叉，适合公关、市场、传媒方向。"
+    "descCn": "理大中英企业传讯文学硕士依托语文及传播学系在语言媒介传播、符号媒介传播、双语与跨文化传播以及中国研究方面的优势，培养学生企业传讯成功职业所需的素养。"
   ,
-    "descEn": ""
+    "descEn": "MA in Bilingual Corporate Communication (MABCC) aims to draw upon the strengths of LST in language-mediated communication, sign-mediated communication, bilingual & cross-cultural communication as well as China studies to cultivate and equip students with attributes that are essential for a successful career in corporate communication."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree from a recognised institution. Applicants may be required to attend interviews to further demonstrate their language proficiency."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "认可机构的学士学位。申请人可能需要参加面试以进一步证明语言能力。"
   },
   {
     "id": "hku-mscai",
@@ -3700,13 +3700,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "系统学习机器学习、深度学习、自然语言处理与计算机视觉，可落地金融、营销、运营等商业场景。"
+    "descCn": "港大计算与数据科学学院的 AI 以计算机科学硕士下的方向（AI 与去中心化技术）呈现，未检索到独立 MSc AI 页面。数据科学硕士官网：大数据时代每天产生海量数据，港大数据科学硕士开启了高性能分析的新前沿。"
   ,
-    "descEn": ""
+    "descEn": "AI at HKU CDS appears as a stream within MSc(CompSc) (AI & Decentralized Technologies). No standalone MSc AI page retrieved. Master of Data Science hub text: In the era of big data, colossal amount of data is being generated every day. The emergence of HKU Master of Data Science opens up a new frontier of high-performance analytics."
   ,
-    "requirementsEn": "本科学位（CS/工程/数学等相关）；雅思6.0/托福80"
+    "requirementsEn": "For MSc(CompSc) AI stream / MDASC: Bachelor's degree; calculus and algebra, computer programming, introductory statistics; TOEFL 80 / IELTS 6.0."
   ,
-    "requirementsCn": "本科学位（CS/工程/数学等相关）；雅思6.0/托福80"
+    "requirementsCn": "计算机科学 AI 方向 / 数据科学硕士：学士学位；微积分与代数、计算机编程、初等统计；托福 80 / 雅思 6.0。"
   },
   {
     "id": "hku-mscstatds",
@@ -3734,13 +3734,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "统计学硕士下的数据科学方向，强调统计学习、贝叶斯方法与高维数据分析。"
+    "descCn": "港大统计学硕士强调统计技术在各领域的应用，以更清晰准确地制定策略。学生学习检验、解读与分类数据，聚焦数据所提示的关键领域与含义。"
   ,
-    "descEn": ""
+    "descEn": "The Master of Statistics (MStat) programme emphasises the applications of statistical techniques across various fields to formulate strategies with greater clarity and accuracy. Students learn to examine, translate, and classify data, with a focus on pinpointing the most critical areas and implications suggested by the data."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80；建议有微积分/线性代数/概率基础"
+    "requirementsEn": "A Bachelor's degree or an equivalent qualification; and applicants should have knowledge of matrices and calculus, introductory statistics and linear modelling."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80；建议有微积分/线性代数/概率基础"
+    "requirementsCn": "学士学位或同等学历；申请人应具备矩阵与微积分、初等统计与线性建模知识。"
   },
   {
     "id": "hku-mscact",
@@ -3758,7 +3758,7 @@ const PROGRAMMES = [
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2000,
-    "open27": true,
+    "open27": "pending",
     "applyWindow": "通常随研究生院招生",
     "jointPartner": null,
     "location": "香港大学本部",
@@ -3766,13 +3766,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "精算科学训练，对接 IFoA/ASA 等专业资格，统计与金融交叉。"
+    "descCn": "mstat.cds.hku.hk 为统计学硕士，非精算学。本轮未检索到港大精算学独立项目页，请在 portal.hku.hk 或计算与数据科学学院网站核实。"
   ,
-    "descEn": ""
+    "descEn": "mstat.cds.hku.hk is Master of Statistics, not Actuarial Science. A separate HKU actuarial TPG page was not retrieved this pass; please verify on portal.hku.hk / CDS site."
   ,
-    "requirementsEn": "本科学位（数学/统计/精算相关）；雅思6.0/托福80"
+    "requirementsEn": "Not retrieved as Actuarial Science programme. Please verify on official site."
   ,
-    "requirementsCn": "本科学位（数学/统计/精算相关）；雅思6.0/托福80"
+    "requirementsCn": "未能作为精算学项目获取。请点官网核实。"
   },
   {
     "id": "cuhk-mscecon",
@@ -3798,13 +3798,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "Please refer to the programme page for the latest description. Economics is offered under the Division of Social Science."
+    "descCn": "中大经济学理学硕士旨在提供严格的经济学训练，使学生能够对经济问题进行分析。项目适合希望在经济学及相关学科深造，或在公私部门寻求专业职位的人士。"
   ,
-    "descEn": ""
+    "descEn": "The objective of the M.Sc. in Economics programme is to provide rigorous training in economics and enable students to conduct analyses of economic issues. The programme is suitable for those who wish to pursue further studies in economics and related disciplines or seek professional positions in private and public sectors."
   ,
-    "requirementsEn": "In addition to the general requirements of the Graduate School, applicants should have a good background in Mathematics or Statistics (preferred); will be assessed on the basis of their past academic record, work experience, references and language abilities; should attend an interview and take a written test (if shortlisted)."
+    "requirementsEn": "Should have a good background in Mathematics or Statistics (preferred); assessed on past academic record, work experience, references and language abilities; should attend an interview and take a written test (if shortlisted)."
   ,
-    "requirementsCn": "In addition to the general requirements of the Graduate School, applicants should have a good background in Mathematics or Statistics (preferred); will be assessed on the basis of their past academic record, work experience, references and language abilities; should attend an interview and take a written test (if shortlisted)."
+    "requirementsCn": "应具备良好的数学或统计背景（优先）；根据学业成绩、工作经验、推荐信与语言能力综合评定；入围者须参加面试与笔试。"
   },
   {
     "id": "cuhk-mscai",
@@ -3812,8 +3812,8 @@ const PROGRAMMES = [
     "uniCn": "香港中文大学",
     "faculty": "Faculty of Engineering",
     "facultyCn": "工程学院",
-    "nameEn": "MSc in Artificial Intelligence and Robotics",
-    "nameCn": "人工智能与机器人理学硕士",
+    "nameEn": "MSc in Artificial Intelligence",
+    "nameCn": "人工智能理学硕士",
     "category": "人工智能",
     "desc": "AI 与机器人交叉，覆盖感知、决策与智能系统，可与智能制造、商业自动化结合。",
     "requirements": "本科学位（工程/CS相关）；雅思6.5/托福79",
@@ -3826,17 +3826,17 @@ const PROGRAMMES = [
     "applyWindow": "通常随工程学院招生",
     "jointPartner": null,
     "location": "香港中文大学",
-    "website": "https://www.gs.cuhk.edu.hk/programmes/engineering/msc-artificial-intelligence-robotics",
+    "website": "https://www.gs.cuhk.edu.hk/programmes/engineering/msc-artificial-intelligence",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "AI 与机器人交叉，覆盖感知、决策与智能系统，可与智能制造、商业自动化结合。"
+    "descCn": "中大人工智能理学硕士（MSc AI）由工程学院开设，旨在培养具备全面前沿 AI 知识与相关专长的毕业生。完成学业后，学生不仅拥有扎实的 AI 基础知识，还积累了实际应用与项目开发经验。"
   ,
-    "descEn": ""
+    "descEn": "Offered by the Faculty of Engineering, the Master of Science in Artificial Intelligence (MSc AI) Programme aims to train graduates with comprehensive state-of-the-art knowledge and relevant expertise in AI. Upon completion, students will not only have solid foundation knowledge in AI, but also have accumulated experience in practical applications and project development."
   ,
-    "requirementsEn": "本科学位（工程/CS相关）；雅思6.5/托福79"
+    "requirementsEn": "Preferably have obtained a bachelor's degree in Engineering or Science discipline from a reputable university or equivalent professional qualifications; OR have at least two years of post-qualification working experience for applicants with a Bachelor's degree in other disciplines."
   ,
-    "requirementsCn": "本科学位（工程/CS相关）；雅思6.5/托福79"
+    "requirementsCn": "优先考虑知名大学工程或科学专业学士学位或同等专业资格；其他学科学位申请人须具备至少两年毕业后工作经验。"
   },
   {
     "id": "cuhk-mscstats",
@@ -3858,17 +3858,17 @@ const PROGRAMMES = [
     "applyWindow": "通常随研究生院招生",
     "jointPartner": null,
     "location": "香港中文大学",
-    "website": "https://www.gs.cuhk.edu.hk/programmes/science/msc-statistics",
+    "website": "https://www.gs.cuhk.edu.hk/programmes/science/msc-data-science-and-business-statistics",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "统计推断、实验设计、时间序列与数据建模，广泛应用于金融、市场与生物统计。"
+    "descCn": "中大（数据科学与商业统计）理学硕士聚焦数据分析技能，探索应用统计与商业统计核心领域，教学生如何从数据中分析提取有用信息并基于发现做出决策，涵盖 R、Python、SAS 等统计软件。"
   ,
-    "descEn": ""
+    "descEn": "The programme focuses on data analysis skills and explores core areas of applied and business statistics. It teaches students how to analyze and extract useful information from data and make decisions based on the findings. Statistical packages such as R, Python and SAS will be covered."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "Please refer to the general requirements of the Graduate School: bachelor's degree, normally Second Class honours or grade B; English TOEFL 79 / IELTS 6.5."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "请参阅研究院一般要求：学士学位，通常为二等荣誉或成绩 B；英语托福 79 / 雅思 6.5。"
   },
   {
     "id": "cuhk-mscqe",
@@ -3886,7 +3886,7 @@ const PROGRAMMES = [
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2018,
-    "open27": true,
+    "open27": "pending",
     "applyWindow": "通常随经济学系招生",
     "jointPartner": null,
     "location": "香港中文大学",
@@ -3894,13 +3894,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "计量与数量经济方向，强调实证分析、因果推断与政策评估。"
+    "descCn": "官网未找到独立的「数量经济学」项目页，可能与社会科学学院经济学硕士为同一项目或重复条目。请点官网核实。"
   ,
-    "descEn": ""
+    "descEn": "NOT FOUND on official CUHK GS/Business Administration pages. Possible duplicate of Social Science MSc in Economics. Please verify on official site."
   ,
-    "requirementsEn": "本科学位；建议有计量/统计基础；雅思6.5/托福79"
+    "requirementsEn": "NOT FOUND on official pages. Please verify on official site."
   ,
-    "requirementsCn": "本科学位；建议有计量/统计基础；雅思6.5/托福79"
+    "requirementsCn": "官网未找到独立入学要求，请点官网核实。"
   },
   {
     "id": "hkust-mscaif",
@@ -3926,13 +3926,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "工学院 AI 硕士，覆盖机器学习、计算机视觉、NLP 与智能系统，可与金融科技、商业分析交叉。"
+    "descCn": "科大人工智能理学硕士紧扣 AI 发展最新趋势，回应市场对熟练 AI 从业者的增长需求，面向应届毕业生与在职人士。"
   ,
-    "descEn": ""
+    "descEn": "Our carefully designed MSc program addresses the latest trends in AI development and aims to meet the growing demand for skilled AI practitioners. This program is tailored to both recent graduates and working professionals seeking to enhance their expertise in this exciting and rapidly evolving field."
   ,
-    "requirementsEn": "本科学位（工程/科学）；雅思6.5/托福80"
+    "requirementsEn": "A bachelor's degree in Computer Engineering, Computer Science or a related discipline, or other disciplines with at least two years of relevant post-qualification work experience. English: TOEFL iBT 80 / IELTS 6.5."
   ,
-    "requirementsCn": "本科学位（工程/科学）；雅思6.5/托福80"
+    "requirementsCn": "计算机工程、计算机科学或相关专业学士学位；或其他专业但具备至少两年相关毕业后工作经验。英语：托福 iBT 80 / 雅思 6.5。"
   },
   {
     "id": "hkust-mscstatds",
@@ -3958,13 +3958,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "以数据驱动的统计建模与科学计算，可应用于金融工程、商业预测与运营优化。"
+    "descCn": "科大数据驱动建模理学硕士由物理学系与数学系联合开设，旨在培养具备强问题解决与逻辑思维能力、胜任数据科学领域的下一代人才。项目通过连接理论、实践与技术，为学生提供分析海量数据的动手经验。"
   ,
-    "descEn": ""
+    "descEn": "Jointly offered by the Departments of Physics and Mathematics, the program aims to cultivate the next generation to have strong skills in problem solving and logical thinking so that they become competent in the data science sector. By bridging theory, practice and techniques, the program provides students with hands-on experience in analyzing large amounts of data."
   ,
-    "requirementsEn": "本科学位（理工科）；雅思6.5/托福80"
+    "requirementsEn": "A bachelor's degree in Science or Engineering disciplines, or other disciplines with relevant working experience in computation-related fields, working knowledge in at least one computer language, and basic training in calculus and linear algebra."
   ,
-    "requirementsCn": "本科学位（理工科）；雅思6.5/托福80"
+    "requirementsCn": "科学或工程专业学士学位；或其他专业但具备计算相关领域工作经验、掌握至少一门计算机语言，并接受过微积分与线性代数基础训练。"
   },
   {
     "id": "hkust-mscenvsc",
@@ -3982,7 +3982,7 @@ const PROGRAMMES = [
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 2006,
-    "open27": true,
+    "open27": "pending",
     "applyWindow": "通常随理学院招生",
     "jointPartner": null,
     "location": "清水湾校园",
@@ -3990,13 +3990,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "随机分析、衍生品定价与金融计算，统计/数学与金融深度交叉。"
+    "descCn": "金融数学官方页面当前无法访问。请点科大理学院或课程目录官网核实。"
   ,
-    "descEn": ""
+    "descEn": "Official Financial Mathematics page not reachable at this time. Please verify on official HKUST Science / programme catalog site."
   ,
-    "requirementsEn": "本科学位（数学/统计/物理/工程）；雅思6.5/托福80"
+    "requirementsEn": "Not retrieved from official page. Please verify on official site."
   ,
-    "requirementsCn": "本科学位（数学/统计/物理/工程）；雅思6.5/托福80"
+    "requirementsCn": "未能从官网获取，请点官网核实。"
   },
   {
     "id": "cityu-mscai2",
@@ -4022,13 +4022,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "数据科学学院 AI 硕士，覆盖学习算法、智能系统与行业应用。"
+    "descCn": "城大人工智能理学硕士旨在帮助计算机专业人士强化和提升人工智能技术能力，从技术与实践两个视角拓宽学生知识、加深对 AI 特定领域理解。"
   ,
-    "descEn": ""
+    "descEn": "The programme aims to enable computer professionals to strengthen and upgrade their technical capabilities in Artificial Intelligence, broaden students' knowledge and deepen their understanding of specific areas in Artificial Intelligence from both the technical and practical perspectives."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "A recognised bachelor's degree in a computing discipline such as Computer Studies, Information Technology, Computer Engineering, Information Systems, or equivalent; or a related discipline with applicable IT working experience; or a recognised bachelor's degree with substantial knowledge or background in information technology."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "计算机研究、信息技术、计算机工程、信息系统等计算类专业认可学士学位或同等学历；或相关专业并具备适用 IT 工作经验；或具备信息技术扎实知识/背景的认可学士学位。"
   },
   {
     "id": "cityu-mscstats",
@@ -4046,7 +4046,7 @@ const PROGRAMMES = [
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2000,
-    "open27": true,
+    "open27": "pending",
     "applyWindow": "2027/28 预计 2026 年秋季开放",
     "jointPartner": null,
     "location": "九龙塘校园",
@@ -4054,13 +4054,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "应用统计与数据分析，覆盖回归、贝叶斯、时间序列与高维统计。"
+    "descCn": "城大数学系研究生页面当前无法访问。请点城大官网核实。"
   ,
-    "descEn": ""
+    "descEn": "Official Math department postgraduate pages currently inaccessible. Please verify on CityU official site."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "Not retrieved. Please verify on official site."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "未能获取，请点官网核实。"
   },
   {
     "id": "cityu-mscbsstat",
@@ -4078,7 +4078,7 @@ const PROGRAMMES = [
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2005,
-    "open27": true,
+    "open27": "pending",
     "applyWindow": "2027/28 预计 2026 年秋季开放",
     "jointPartner": null,
     "location": "九龙塘校园",
@@ -4086,13 +4086,13 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "商业统计与数据分析，面向市场研究、风险评估与运营决策。"
+    "descCn": "城大数学系研究生页面当前无法访问。请点城大官网核实。"
   ,
-    "descEn": ""
+    "descEn": "Official Math department postgraduate pages currently inaccessible. Please verify on CityU official site."
   ,
-    "requirementsEn": "本科学位；雅思6.5/托福79"
+    "requirementsEn": "Not retrieved. Please verify on official site."
   ,
-    "requirementsCn": "本科学位；雅思6.5/托福79"
+    "requirementsCn": "未能获取，请点官网核实。"
   },
   {
     "id": "polyu-mscaimath",
@@ -4118,13 +4118,13 @@ const PROGRAMMES = [
     "sourceConfidence": "official-listed",
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中"
   ,
-    "descCn": "面向 AI 的数学基础与算法实现，覆盖优化、统计学习与深度学习理论。"
+    "descCn": "理大数智科技理学硕士回应市场对 AI 人才日益增长的需求，为毕业生提供推动科技产业创新与效率所需的专业能力。跨学科方法使毕业生能在多种场景与行业中应用其技能。"
   ,
-    "descEn": ""
+    "descEn": "This programme will meet the rising demand for professionals skilled in AI, equipping graduates with the necessary expertise to drive innovation and efficiency in the tech industry. The interdisciplinary approach will enable graduates to apply their skills across various contexts and industries."
   ,
-    "requirementsEn": "本科学位（数学/统计/CS/工程）；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree with honours in mathematics, statistics, computer science, IT, engineering, and science, or the equivalent. Other disciplines with adequate mathematics or IT background will also be considered."
   ,
-    "requirementsCn": "本科学位（数学/统计/CS/工程）；雅思6.0/托福80"
+    "requirementsCn": "数学、统计、计算机科学、信息技术、工程、科学等专业的荣誉学士学位或同等学历。其他学科但具备足够数学或 IT 背景者也会被考虑。"
   },
   {
     "id": "polyu-mscaai",
@@ -4152,13 +4152,13 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "新设项目，聚焦 Agentic AI、多智能体系统与自动化商业流程。"
+    "descCn": "理大智能体系统理学硕士超越孤立的 AI 算法训练，走向完整自主生态系统的工程化。项目通过将先进推理与稳健的软硬件基础设施相结合，帮助学生弥合抽象 AI 模型与真实世界应用之间的鸿沟。"
   ,
-    "descEn": ""
+    "descEn": "The Master of Science in Agentic AI Systems (MScAS) programme moves beyond the training of isolated AI algorithms to the engineering of complete, autonomous ecosystems. It prepares students to bridge the gap between abstract AI models and real-world applications by integrating advanced reasoning with robust hardware and software infrastructure."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree in Computing/Computer Science/Engineering, Information Systems, Mathematics or other related disciplines. Applicants with other degrees and at least 3 years of relevant IT work experience will also be considered."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "计算/计算机科学/工程、信息系统、数学或相关专业学士学位。其他学位但具备至少 3 年相关 IT 工作经验者也会被考虑。"
   },
   {
     "id": "polyu-mscstats2",
@@ -4180,17 +4180,17 @@ const PROGRAMMES = [
     "applyWindow": "2027/28 早轮截止约 2026-10-20",
     "jointPartner": null,
     "location": "红磡校园",
-    "website": "https://www.polyu.edu.hk/comp/study/tpg",
+    "website": "https://www.polyu.edu.hk/study/pg/tpg/2027/62027-dfm-dpm",
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递"
   ,
-    "descCn": "应用统计方法与研究设计，覆盖抽样调查、实验设计与高级回归。"
+    "descCn": "大数据时代，社会与产业各领域每天产生海量数据，从如此庞大的数据中提取与分析信息极具挑战，需融合数学、统计与计算机科学技术。（注：理大 2027 TPG 列表中无独立「应用统计」项目，最接近的官方项目为数据科学及分析理学硕士。）"
   ,
-    "descEn": ""
+    "descEn": "In today's era of big data, large data sets are generated every day in various areas of society and industry. It is challenging to extract and analyse information from such an unprecedentedly large volume of data. To create value from such data, one must combine techniques from mathematics, statistics and computer science. (Note: PolyU 2027 TPG list has no standalone Applied Statistics programme; closest official programme is MSc Data Science and Analytics.)"
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree with Honours in Mathematics, Statistics, Computer Science, I.T., Engineering, Economics, and Science, or the equivalent."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "数学、统计、计算机科学、信息技术、工程、经济、科学等专业的荣誉学士学位或同等学历。"
   },
   {
     "id": "polyu-mscmaths",
@@ -4218,12 +4218,12 @@ const PROGRAMMES = [
   ,
     "feeSource": "official-page"
   ,
-    "descCn": "区块链技术与应用，可与金融科技、供应链溯源、数字资产交叉。"
+    "descCn": "理大区块链科技理学硕士面向熟悉区块链及相关技术、希望分析、设计、实施与评估金融科技及相关系统、产品与服务的专业人士，涵盖关键金融科技技术与应用，以及安全、合规与监管等方面。"
   ,
-    "descEn": ""
+    "descEn": "This programme is designed for professionals proficient in blockchain and related technologies to analyse, design, implement and evaluate Fintech and other related systems, products and services. Key Fintech technologies and applications, as well as other aspects such as security, compliance and regulation, are covered."
   ,
-    "requirementsEn": "本科学位；雅思6.0/托福80"
+    "requirementsEn": "A Bachelor's degree in Computing/Computer Science/Engineering, Information Systems, Mathematics or other related disciplines. Other degrees with at least 3 years of relevant IT work experience will also be considered."
   ,
-    "requirementsCn": "本科学位；雅思6.0/托福80"
+    "requirementsCn": "计算/计算机科学/工程、信息系统、数学或相关专业学士学位。其他学位但具备至少 3 年相关 IT 工作经验者也会被考虑。"
   }
 ];
