@@ -5,6 +5,7 @@
   const WISH_KEY = "hk5_wish_v2";
   const WISH_KEY_LEGACY = "hk5_wish_v1";
   const UNVERIFIED = "官网未提供，待核实";
+  const HK5 = new Set(["HKU", "CUHK", "HKUST", "CityU", "PolyU"]);
 
   const state = {
     list: PROGRAMMES.slice(),
@@ -267,8 +268,12 @@
               ? '<span class="badge open">学费官网已核·按学期分项</span>'
               : p.feeSource === "official-other-intake"
                 ? '<span class="badge pending">官网仅列其他入学周期</span>'
-                : '<span class="badge pending">学费待核实</span>';
-      const showLoc = p.location && p.location.indexOf("香港") === -1;
+                : p.feeSource === "official-pending-approval"
+                  ? '<span class="badge pending">官网学费待审批</span>'
+                  : '<span class="badge pending">学费待核实</span>';
+      // 港五以外的院校一律显示授课地点徽章（旧逻辑按「location 含香港」判断，
+      // 会把「深圳（香港中文大学（深圳）校区）」误判为香港而漏显示）
+      const showLoc = !HK5.has(p.uni) && !!p.location;
       const reqSummary = clip(orUnverified(reqCnOf(p) || reqEnOf(p)), 80);
 
       return `
@@ -452,6 +457,7 @@
         ${row("数据可信度", (p.sourceConfidence === "official-listed" ? "官网名单已确认" : "项目存在性待官网核实")
           + "；学费" + (p.feeSource === "official-page" ? "已对照官网项目页核实"
             : p.feeSource === "official-per-credit" ? "官网按学分/模块计费，未列全程总额，已记官网单价"
+            : p.feeSource === "official-pending-approval" ? "官网标注为待审批，非最终金额，须以官网后续公布为准"
             : p.feeSource === "official-other-intake" ? "官网仅列明其他入学周期，本周期费用须向项目确认"
             : "未经官网核实，投递前务必打开官网确认"))}
         ${p.sourceNote ? row("来源说明", esc(p.sourceNote)) : ""}
