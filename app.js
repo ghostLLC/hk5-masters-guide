@@ -206,22 +206,27 @@
     const n = f => PROGRAMMES.filter(f).length;
     const confOk = n(p => p.sourceConfidence === "official-listed");
     const feeOk = n(p => p.feeSource === "official-page");
+    const feeInst = n(p => p.feeSource === "official-installments");
     const feeCredit = n(p => p.feeSource === "official-per-credit");
+    const feeModule = n(p => p.feeSource === "official-per-module");
     const feeOther = n(p => p.feeSource === "official-other-intake");
-    const feeBad = total - feeOk - feeCredit - feeOther;
+    const feeBad = total - feeOk - feeInst - feeCredit - feeModule - feeOther;
     const bar = $("#statusBar");
     bar.className = "show warn";
     bar.innerHTML =
       `<strong>数据来源自查（${esc(DATA_META.lastRefreshed.slice(0, 10))} 复核）：</strong>共 ${total} 条。` +
       `项目存在性：<strong>${confOk}</strong> 条已在官网名单确认，${total - confOk} 条待核实。` +
-      `学费：<strong>${feeOk}</strong> 条取自官网项目页、<strong>${feeCredit}</strong> 条官网按学分计费（只记单价，不推算总额）、` +
-      `<strong>${feeOther}</strong> 条官网仅列其他入学周期、<strong>${feeBad}</strong> 条未能核实（卡片标注「学费待核实」）。` +
+      `学费：<strong>${feeOk}</strong> 条取自官网项目页` +
+      (feeInst ? `、<strong>${feeInst}</strong> 条官网按学期分项列示` : "") +
+      (feeCredit ? `、<strong>${feeCredit}</strong> 条官网按学分计费（总额 = 官网单价 × 官网最低毕业学分，属估算）` : "") +
+      (feeModule ? `、<strong>${feeModule}</strong> 条官网按模块计费（官网未列模块数，不给估算总额）` : "") +
+      (feeOther ? `、<strong>${feeOther}</strong> 条官网仅列其他入学周期` : "") +
+      `、<strong>${feeBad}</strong> 条未能核实（卡片标注「学费待核实」）。` +
       `开办年份与截止日期多为参考，<strong>投递前必须点专业名跳转官网确认</strong>。` +
       (DATA_META.fx
         ? `<br/><strong>人民币换算：</strong>${esc(DATA_META.fx.date)} 汇率 1 HKD = ${DATA_META.fx.HKD_CNY}、1 SGD = ${DATA_META.fx.SGD_CNY}（来源 ${esc(DATA_META.fx.source)}），` +
           `取整到百元，<strong>仅为参考、非各校官网数字</strong>；官网原币值始终优先展示。` +
-          `身份档位按${esc(DATA_META.applicantResidency || "中国大陆")}申请者取（如 NUS MSBA 取国际学生档 S$87,550）。` +
-          `按学分计费的项目，总额 = 官网学分单价 × 官网最低毕业学分，属估算并已标注。`
+          `身份档位按${esc(DATA_META.applicantResidency || "中国大陆")}申请者取（如 NUS MSBA 取国际学生档 S$87,550）。`
         : "");
   }
 
@@ -255,9 +260,11 @@
           ? '<span class="badge pending">官网按学分计费·总额为估算</span>'
           : p.feeSource === "official-per-module"
             ? '<span class="badge pending">官网按模块计费</span>'
-            : p.feeSource === "official-other-intake"
-              ? '<span class="badge pending">官网仅列其他入学周期</span>'
-              : '<span class="badge pending">学费待核实</span>';
+            : p.feeSource === "official-installments"
+              ? '<span class="badge open">学费官网已核·按学期分项</span>'
+              : p.feeSource === "official-other-intake"
+                ? '<span class="badge pending">官网仅列其他入学周期</span>'
+                : '<span class="badge pending">学费待核实</span>';
       const showLoc = p.location && p.location.indexOf("香港") === -1;
       const reqSummary = clip(orUnverified(reqCnOf(p) || reqEnOf(p)), 80);
 
