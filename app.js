@@ -56,6 +56,8 @@
     const parts = [];
     if (typeof p.tuitionHkd === "number") parts.push("HK$" + nf(p.tuitionHkd));
     if (typeof p.tuitionSgd === "number") parts.push("S$" + nf(p.tuitionSgd));
+    // 人民币原币（中外合办院校）：本身即原币，不再附加换算值
+    if (typeof p.tuitionRmb === "number") return "¥" + nf(p.tuitionRmb);
     if (!parts.length) return p.tuitionNote || "以官网为准";
     return parts.join(" / ") + cnySuffix(p);
   }
@@ -71,6 +73,7 @@
     const parts = [];
     if (typeof p.tuitionHkd === "number") parts.push("HK$" + nf(p.tuitionHkd));
     if (typeof p.tuitionSgd === "number") parts.push("S$" + nf(p.tuitionSgd));
+    if (typeof p.tuitionRmb === "number") return "¥" + nf(p.tuitionRmb);
     return parts.length ? parts.join(" / ") + cnySuffix(p) : clip(p.tuitionNote || "以官网为准", 30);
   }
 
@@ -482,7 +485,7 @@
     const items = wishItems();
     if (!items.length) { toast("志愿单为空，无法导出"); return; }
     const headers = ["顺序", "学校", "中文名", "英文名", "方向", "学院", "学制",
-      "学费(官网原文)", "学费HKD", "学费SGD", "学费CNY(参考换算)", "是否估算总额", "学费说明",
+      "学费(官网原文)", "学费HKD", "学费SGD", "学费RMB", "学费CNY(参考换算)", "是否估算总额", "学费说明",
       "27Fall状态", "申请窗口", "授课地点", "联培", "数据可信度", "官网"];
     const lines = [headers.join(",")];
     items.forEach((p, i) => {
@@ -491,6 +494,7 @@
         fmtTuition(p),
         typeof p.tuitionHkd === "number" ? p.tuitionHkd : "",
         typeof p.tuitionSgd === "number" ? p.tuitionSgd : "",
+        typeof p.tuitionRmb === "number" ? p.tuitionRmb : "",
         typeof p.tuitionCny === "number" ? p.tuitionCny : "",
         p.tuitionIsEstimate ? "是（官网学分单价×官网最低学分）" : "否",
         p.tuitionNote || "",
