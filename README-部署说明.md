@@ -95,16 +95,39 @@ git push -u origin master
 - 14 条 PolyU 项目删除「按相近系所费率推算」的总额，改记官网学分单价（其中 3 条原先借用其他专业的费率，属臆测）
 - HKU 经管学院 12 条学费与官方 Composition Fee 表逐条吻合（来源 masters.hkubs.hku.hk/admissions）
 
+## NUS 核实状态（2026-09-20）
+
+NUS 官网对 `curl` / Node 请求返回 Incapsula 挑战页（955 字节），但**真实浏览器可通过挑战**；通过后可用同源 `fetch` 抓取该项目站各子页（跨子域仍被 CORS 拦截，须逐站导航）。据此已按官网原文核实 8 条：
+
+| 项目 | 官网学费（含 9% GST） | 入学 |
+|------|------|------|
+| MSc in Finance | S$77,390（税前 S$71,000） | 2027 年 8 月 |
+| MSc in Accounting and Financial Analytics | S$77,390（税前 S$71,000） | 2027 年 8 月 |
+| MSc in Human Capital Management and Analytics | S$77,390（税前 S$71,000） | 2027 年 8 月 |
+| MSc in Marketing Analytics and Insights | S$77,390；双学位含 CEMS S$91,560 | 2027 年 8 月 |
+| MSc in Real Estate | S$63,983（税前 S$58,700） | 2027 年 8 月 |
+| MSc in Strategic Analysis and Innovation | S$77,390（税前 S$71,000） | 2027 年 8 月 |
+| MSc in Management | 单学位 S$61,803；双学位 S$75,973 | **2028 年 1 月，无 27 Fall** |
+| MSc in Business Analytics | 国际生 S$87,550 / 校友 S$70,040 / 公民及 PR S$52,530 | AY2027/28 |
+
+关键日期（官网原文，除 MSBA 外一致）：2026-09-01 开放、2026-11-15 第一轮截止、2027-02-15 最终截止、2027-06 前发榜。MSBA 为 2026-10-05 至 2027-01-31。
+
+学费一律记官网新元原文，**不做汇率折算**——折算值属估算，违反「只允许官网来源」。因此这些条目 `tuitionHkd` 为 `null`，志愿单按学费排序时会排在末尾。
+
+英语要求官网原文为 TOEFL iBT「at least 5.0」/ IELTS 7.0。这不是笔误：2026-01 起 TOEFL 改用新分制，港大官网亦写明「4.5+ from 21 Jan 2026」。
+
 ## 待处理的数据问题
 
 | 问题 | 规模 | 说明 |
 |------|------|------|
-| `requirementsCn` 含「二手信息」表述 | NUS 8 条、NTU 1 条 | 违反「只允许官网来源」，须用官网原文替换 |
-| NUS 简介/学费未取到官网正文 | NUS 14 条 | 须用浏览器逐页抓取（curl 被 Incapsula 拦截，真实浏览器可通过） |
-| NUS 有 4 条 `website` 填的是大学首页 | NUS 4 条 | 违反「链接须指向项目自身页面」 |
-| NUS 有 2 条项目未在商学院官方硕士名单中 | `nus-msc-sustainable-green-finance`、`nus-mfe` | 须确认是否仍开办 |
-| NTU 项目页 URL 路径 404 | NTU 10 条 | 须换成官网现行路径 |
-| 港校 7 条项目页 404 或连接失败 | CUHK 3、HKUST 3、CityU 2 | 须重新定位项目页 |
+| NUS 6 条未出现在商学院官方硕士名单 | 可持续绿色金融、MFE、经济学、供应链管理、数字金融科技、创业学 | 其中 3 条 `website` 仍是大学首页；须定位项目自身官网页，否则按宁缺毋滥删条 |
+| NUS Strategic Analysis and Innovation 的入学要求/课程页 | 1 条 | 该项目站路径与其他 NUS MSc 站不同，本轮未取到 |
+| NTU 项目页 URL 路径 404 | NTU 10 条 | 须换成官网现行路径并逐项对照（学费为新元，须记原文） |
+| `hku-mscact` 名实不符 | 1 条 | `website` 指向 mstat.cds.hku.hk，该站是统计学硕士而非精算 |
+| `cuhk-mscqe` 疑似重复 | 1 条 | CUHK 研究生院与工商管理学院官网均查无此项目，疑与 MSc in Economics 重复 |
+| `hkust-mscenvsc` 名实不符 | 1 条 | 条目名与原官网页内容（Financial Mathematics）不一致，且页面不可达 |
+| 港校项目页 404 或连接失败 | CUHK 2、HKUST 3、CityU 2 | 须重新定位项目页 |
+| 学费未能核实 | 26 条 | 卡片标注「学费待核实」 |
 
 ## 已移除的功能
 
