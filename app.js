@@ -178,14 +178,20 @@
 
   function renderSourceBar() {
     const total = PROGRAMMES.length;
-    const confOk = PROGRAMMES.filter(p => p.sourceConfidence === "official-listed").length;
-    const feeOk = PROGRAMMES.filter(p => p.feeSource === "official-page").length;
+    const n = f => PROGRAMMES.filter(f).length;
+    const confOk = n(p => p.sourceConfidence === "official-listed");
+    const feeOk = n(p => p.feeSource === "official-page");
+    const feeCredit = n(p => p.feeSource === "official-per-credit");
+    const feeOther = n(p => p.feeSource === "official-other-intake");
+    const feeBad = total - feeOk - feeCredit - feeOther;
     const bar = $("#statusBar");
     bar.className = "show warn";
     bar.innerHTML =
-      `<strong>数据来源自查：</strong>共 ${total} 条，其中 <strong>${confOk}</strong> 条项目名已在本轮官网列表中确认，` +
-      `<strong>${feeOk}</strong> 条学费取自官网页面，其余为院系/交叉补充（卡片标注「待官网核实」）。` +
-      `学费、开办年份、截止日期多为参考估算，<strong>投递前必须点专业名跳转官网确认</strong>。`;
+      `<strong>数据来源自查（${esc(DATA_META.lastRefreshed.slice(0, 10))} 复核）：</strong>共 ${total} 条。` +
+      `项目存在性：<strong>${confOk}</strong> 条已在官网名单确认，${total - confOk} 条待核实。` +
+      `学费：<strong>${feeOk}</strong> 条取自官网项目页、<strong>${feeCredit}</strong> 条官网按学分计费（只记单价，不推算总额）、` +
+      `<strong>${feeOther}</strong> 条官网仅列其他入学周期、<strong>${feeBad}</strong> 条未能核实（卡片标注「学费待核实」）。` +
+      `开办年份与截止日期多为参考，<strong>投递前必须点专业名跳转官网确认</strong>。`;
   }
 
   function renderCards() {
@@ -211,6 +217,14 @@
       const conf = p.sourceConfidence === "official-listed"
         ? '<span class="badge open">官网名单已核</span>'
         : '<span class="badge pending">待官网核实</span>';
+      // 只有官网项目页明确列出本入学周期费用的，才允许标「已核」；其余一律显式标待核实
+      const feeBadge = p.feeSource === "official-page"
+        ? '<span class="badge open">学费官网已核</span>'
+        : p.feeSource === "official-per-credit"
+          ? '<span class="badge pending">官网按学分计费</span>'
+          : p.feeSource === "official-other-intake"
+            ? '<span class="badge pending">官网仅列其他入学周期</span>'
+            : '<span class="badge pending">学费待核实</span>';
       const showLoc = p.location && p.location.indexOf("香港") === -1;
       const reqSummary = clip(orUnverified(reqCnOf(p) || reqEnOf(p)), 80);
 
@@ -221,7 +235,7 @@
             <span class="badge">${esc(p.category)}</span>
             <span class="badge ${st.cls}">${st.label}</span>
             ${conf}
-            ${p.feeSource === "official-page" ? '<span class="badge open">学费官网已核</span>' : ""}
+            ${feeBadge}
             ${p.jointPartner ? `<span class="badge">联培：${esc(p.jointPartner)}</span>` : ""}
             ${showLoc ? `<span class="badge">授课：${esc(p.location)}</span>` : ""}
           </div>
@@ -236,7 +250,7 @@
           <div class="meta-grid">
             <div><div class="k">学院</div><div class="v">${esc(p.facultyCn || p.faculty)}</div></div>
             <div><div class="k">学制</div><div class="v">${esc(durationOf(p))}</div></div>
-            <div><div class="k">学费</div><div class="v">${esc(fmtTuition(p))}</div></div>
+            <div><div class="k">学费</div><div class="v">${esc(clip(fmtTuition(p), 44))}</div></div>
             <div><div class="k">申请要求</div><div class="v req-text">${esc(reqSummary)}</div></div>
             <div><div class="k">申请窗口</div><div class="v">${esc(p.applyWindow)}</div></div>
             <div><div class="k">授课地点</div><div class="v">${esc(p.location)}</div></div>
@@ -391,7 +405,11 @@
         ${row("申请要求 · 中文", esc(orUnverified(reqCnOf(p))))}
         ${row("要求 · 英文原文", esc(orUnverified(reqEnOf(p))), "en")}
         ${row("官网", progLink(p, "prog-link", p.website))}
-        ${row("数据可信度", p.sourceConfidence === "official-listed" ? "官网名单已确认" : "待官网核实（投递前请务必打开官网确认）")}
+        ${row("数据可信度", (p.sourceConfidence === "official-listed" ? "官网名单已确认" : "项目存在性待官网核实")
+          + "；学费" + (p.feeSource === "official-page" ? "已对照官网项目页核实"
+            : p.feeSource === "official-per-credit" ? "官网按学分/模块计费，未列全程总额，已记官网单价"
+            : p.feeSource === "official-other-intake" ? "官网仅列明其他入学周期，本周期费用须向项目确认"
+            : "未经官网核实，投递前务必打开官网确认"))}
         ${p.sourceNote ? row("来源说明", esc(p.sourceNote)) : ""}
       </table>
       <div class="modal-close">
