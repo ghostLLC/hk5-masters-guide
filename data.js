@@ -1,9 +1,17 @@
 /* 港五 + 新二 商科授课硕士数据库 — 采集自各校官网公开页面 */
-/* 最近更新：2026-09-20T06:41:22+08:00 */
+/* 最近更新：2026-09-20T06:51:07+08:00 */
 const DATA_META = {
-  "lastRefreshed": "2026-09-20T06:41:22+08:00",
+  "lastRefreshed": "2026-09-20T06:51:07+08:00",
   "sourceNote": "2026-09-20 复核：学费逐条对照各校官网项目页。官网只按学分计费者不再保留推算总额，仅记官网单价；官网未列明者标注未核实。NUS 官网需浏览器访问（curl 被 Incapsula 拦截）。",
-  "cycle": "2027 Fall (2027/28 Intake)"
+  "cycle": "2027 Fall (2027/28 Intake)",
+  "fx": {
+    "source": "open.er-api.com (exchangerate-api.com)",
+    "date": "2026-09-20",
+    "HKD_CNY": 0.856469,
+    "SGD_CNY": 5.266594,
+    "note": "人民币金额均为按此汇率换算的参考值，非各校官网数字；官网原币值始终保留并优先展示。按身份分档的项目（如 NUS MSBA）取国际学生档，即中国大陆申请者适用档。"
+  },
+  "applicantResidency": "中国大陆"
 };
 
 const PROGRAMMES = [
@@ -19,7 +27,7 @@ const PROGRAMMES = [
     "desc": "The Master of Accounting programme at HKU Business School offers three streams: 1) Accounting Analytics and Big Data Stream; 2) Financial Reporting and Valuation Stream; 3) ESG and Strategic Management Stream. Students may also consider double concentrating. Our comprehensive curriculum is accredited by ACCA, CPA Australia, CIMA and HKICPA, and students benefit from our professional partnership with ACCA and KPMG. The programme explores theories on the importance of accounting roles in executive decisions, preparing you to be professional accountants, financial experts and future business leaders.",
     "requirements": "Hold a recognised bachelor's or equivalent; two referees (at least one academic). TOEFL iBT 80+ (or 4.5+ from 21 Jan 2026) / IELTS 6 (no subtest below 5.5) if not from English-medium university. GMAT/GRE not required but a good score will be favourably considered.",
     "tuitionHkd": 468000,
-    "tuitionNote": "HK$468,000（2027 intake 官方 Composition Fee）",
+    "tuitionNote": "HK$468,000（2027 intake 官方 Composition Fee） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2012,
@@ -32,7 +40,8 @@ const PROGRAMMES = [
     "sourceNote": "港五 + NUS/NTU 商科授课硕士。NTU 数据来自 ntu.edu.sg 官网抓取；NUS 官网受 WAF 限制，简介/学费标注待核实，请点官网确认。",
     "feeSource": "official-page",
     "descEn": "The Master of Accounting programme at HKU Business School offers three streams: 1) Accounting Analytics and Big Data Stream; 2) Financial Reporting and Valuation Stream; 3) ESG and Strategic Management Stream. Students may also consider double concentrating. Our comprehensive curriculum is accredited by ACCA, CPA Australia, CIMA and HKICPA, and students benefit from our professional partnership with ACCA and KPMG. The programme explores theories on the importance of accounting roles in executive decisions, preparing you to be professional accountants, financial experts and future business leaders.",
-    "descCn": "港大经管会计学硕士设三个方向：1）会计分析与大数据；2）财务报告与估值；3）ESG 与战略管理。学生亦可选择双方向。课程获 ACCA、CPA Australia、CIMA、HKICPA 认证，并与 ACCA、KPMG 保持专业合作。项目探讨会计在高管决策中的作用，培养专业会计师、金融专家与未来商业领袖。"
+    "descCn": "港大经管会计学硕士设三个方向：1）会计分析与大数据；2）财务报告与估值；3）ESG 与战略管理。学生亦可选择双方向。课程获 ACCA、CPA Australia、CIMA、HKICPA 认证，并与 ACCA、KPMG 保持专业合作。项目探讨会计在高管决策中的作用，培养专业会计师、金融专家与未来商业领袖。",
+    "tuitionCny": 400800
   },
   {
     "id": "hku-maa",
@@ -46,7 +55,7 @@ const PROGRAMMES = [
     "desc": "The Master of Accounting Analytics programme offered by the HKU Business School aims to develop accounting professionals equipped with data analytics skills and is specifically designed to foster talents capable of transforming raw and intricate accounting data into actionable intelligence for addressing general accounting-related questions. The programme trains accounting professionals with both technical and accounting expertise through a focus on data, information technology, statistical analysis, quantitative methods, and mathematical or computer-based models, as well as a series of foundational accounting courses to meet the requirement of professional bodies.",
     "requirements": "Hold a recognised bachelor's or equivalent; two referees (at least one academic). TOEFL iBT 80+ (or 4.5+ from 21 Jan 2026) / IELTS 6 (no subtest below 5.5) if not from English-medium university. GMAT/GRE not required but a good score will be favourably considered.",
     "tuitionHkd": 468000,
-    "tuitionNote": "HK$468,000（2027 intake 官方 Composition Fee）",
+    "tuitionNote": "HK$468,000（2027 intake 官方 Composition Fee） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2025,
@@ -59,7 +68,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "The Master of Accounting Analytics programme offered by the HKU Business School aims to develop accounting professionals equipped with data analytics skills and is specifically designed to foster talents capable of transforming raw and intricate accounting data into actionable intelligence for addressing general accounting-related questions. The programme trains accounting professionals with both technical and accounting expertise through a focus on data, information technology, statistical analysis, quantitative methods, and mathematical or computer-based models, as well as a series of foundational accounting courses to meet the requirement of professional bodies.",
-    "descCn": "港大会计分析硕士旨在培养具备数据分析能力的会计专业人才，能够将复杂会计数据转化为可行动的商业洞察。项目兼顾技术与会计专长，涵盖数据、信息技术、统计分析、定量方法与计算机建模，并设基础会计课程以满足专业机构要求。"
+    "descCn": "港大会计分析硕士旨在培养具备数据分析能力的会计专业人才，能够将复杂会计数据转化为可行动的商业洞察。项目兼顾技术与会计专长，涵盖数据、信息技术、统计分析、定量方法与计算机建模，并设基础会计课程以满足专业机构要求。",
+    "tuitionCny": 400800
   },
   {
     "id": "hku-maib",
@@ -73,7 +83,7 @@ const PROGRAMMES = [
     "desc": "The Master of Artificial Intelligence in Business Programme is designed to equip students with specialised knowledge and skills to develop strategies and manage the planning, design, and implementation of artificial intelligence in organisations. The programme explores the opportunities and challenges AI brings to businesses and the responsible management of AI in a corporate setting.",
     "requirements": "Hold a recognised bachelor's or equivalent; two referees (at least one academic). TOEFL iBT 80+ (or 4.5+ from 21 Jan 2026) / IELTS 6 (no subtest below 5.5) if not from English-medium university. GMAT/GRE not required but a good score will be favourably considered.",
     "tuitionHkd": 508000,
-    "tuitionNote": "HK$508,000（2027 intake 官方 Composition Fee）",
+    "tuitionNote": "HK$508,000（2027 intake 官方 Composition Fee） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2025,
@@ -86,7 +96,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "The Master of Artificial Intelligence in Business Programme is designed to equip students with specialised knowledge and skills to develop strategies and manage the planning, design, and implementation of artificial intelligence in organisations. The programme explores the opportunities and challenges AI brings to businesses and the responsible management of AI in a corporate setting.",
-    "descCn": "港大商业人工智能硕士旨在培养学生制定战略、管理人工智能在组织中的规划、设计与实施的专业知识与技能，探讨 AI 给企业带来的机遇与挑战，以及企业环境中的 AI 负责任管理。"
+    "descCn": "港大商业人工智能硕士旨在培养学生制定战略、管理人工智能在组织中的规划、设计与实施的专业知识与技能，探讨 AI 给企业带来的机遇与挑战，以及企业环境中的 AI 负责任管理。",
+    "tuitionCny": 435100
   },
   {
     "id": "hku-mecon",
@@ -100,7 +111,7 @@ const PROGRAMMES = [
     "desc": "The Master of Economics Programme at the HKU Business School aims to introduce students to frontier developments in economics and to equip them with state-of-the-art analytical tools. Our comprehensive curriculum has multiple learning streams and helps students connect economic theory with real world business. The programme also provides students with a strong foundation for PhD study, and Master of Economics students can also apply to complete their PhD overseas through the Theory stream.",
     "requirements": "Hold a recognised bachelor's or equivalent; two referees (at least one academic). TOEFL iBT 80+ (or 4.5+ from 21 Jan 2026) / IELTS 6 (no subtest below 5.5) if not from English-medium university. GMAT/GRE not required but a good score will be favourably considered.",
     "tuitionHkd": 438000,
-    "tuitionNote": "HK$438,000（2027 intake 官方 Composition Fee）",
+    "tuitionNote": "HK$438,000（2027 intake 官方 Composition Fee） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2012,
@@ -113,7 +124,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "The Master of Economics Programme at the HKU Business School aims to introduce students to frontier developments in economics and to equip them with state-of-the-art analytical tools. Our comprehensive curriculum has multiple learning streams and helps students connect economic theory with real world business. The programme also provides students with a strong foundation for PhD study, and Master of Economics students can also apply to complete their PhD overseas through the Theory stream.",
-    "descCn": "港大经济学硕士旨在介绍经济学前沿进展并配备先进分析工具。课程设多个学习方向，帮助学生连接经济理论与真实商业。项目亦为博士深造打下坚实基础，理论方向学生可申请海外完成博士。"
+    "descCn": "港大经济学硕士旨在介绍经济学前沿进展并配备先进分析工具。课程设多个学习方向，帮助学生连接经济理论与真实商业。项目亦为博士深造打下坚实基础，理论方向学生可申请海外完成博士。",
+    "tuitionCny": 375100
   },
   {
     "id": "hku-mfwm",
@@ -127,7 +139,7 @@ const PROGRAMMES = [
     "desc": "Led by an outstanding team of visionaries and experts, the Master of Family Wealth Management programme offered by HKU Business School and the Hong Kong Institute for the Humanities and Social Sciences dives deep into the historical roots, cultural dimensions, and cutting-edge strategies of family wealth. As the first of its kind in Hong Kong, this degree is your gateway to the dynamic world of family wealth management.",
     "requirements": "Hold a recognised bachelor's or equivalent; two referees (at least one academic). TOEFL iBT 80+ (or 4.5+ from 21 Jan 2026) / IELTS 6 (no subtest below 5.5) if not from English-medium university. GMAT/GRE not required but a good score will be favourably considered.",
     "tuitionHkd": 508000,
-    "tuitionNote": "HK$508,000（2027 intake 官方 Composition Fee）",
+    "tuitionNote": "HK$508,000（2027 intake 官方 Composition Fee） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2025,
@@ -140,7 +152,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "Led by an outstanding team of visionaries and experts, the Master of Family Wealth Management programme offered by HKU Business School and the Hong Kong Institute for the Humanities and Social Sciences dives deep into the historical roots, cultural dimensions, and cutting-edge strategies of family wealth. As the first of its kind in Hong Kong, this degree is your gateway to the dynamic world of family wealth management.",
-    "descCn": "由港大经管学院与香港人文社会研究所联合开设的家族财富管理硕士，由杰出专家团队领衔，深入探讨家族财富的历史根源、文化维度与前沿策略。作为香港首个此类学位，是进入家族财富管理世界的门户。"
+    "descCn": "由港大经管学院与香港人文社会研究所联合开设的家族财富管理硕士，由杰出专家团队领衔，深入探讨家族财富的历史根源、文化维度与前沿策略。作为香港首个此类学位，是进入家族财富管理世界的门户。",
+    "tuitionCny": 435100
   },
   {
     "id": "hku-mfin",
@@ -154,7 +167,7 @@ const PROGRAMMES = [
     "desc": "The HKU Business School Master of Finance Programme is a two-year full-time interdisciplinary programme combining techniques in statistics, mathematics, physics, engineering and computer programming with the knowledge in finance, accounting, economics and law. Our comprehensive and quantitative curriculum offers students multiple learning streams, as well as the option of double concentration. HKU MFin programme also enjoys professional partnerships with the CFA Institute and GARP to ensure the curriculum is closely tied to professional practice.",
     "requirements": "Hold a recognised bachelor's or equivalent; two referees (at least one academic). TOEFL iBT 80+ (or 4.5+ from 21 Jan 2026) / IELTS 6 (no subtest below 5.5) if not from English-medium university. GMAT/GRE not required but a good score will be favourably considered.",
     "tuitionHkd": 508000,
-    "tuitionNote": "HK$508,000（2027 intake 官方 Composition Fee）",
+    "tuitionNote": "HK$508,000（2027 intake 官方 Composition Fee） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 2,
     "durationText": "全日制 2 年",
     "foundedYear": 2010,
@@ -167,7 +180,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "The HKU Business School Master of Finance Programme is a two-year full-time interdisciplinary programme combining techniques in statistics, mathematics, physics, engineering and computer programming with the knowledge in finance, accounting, economics and law. Our comprehensive and quantitative curriculum offers students multiple learning streams, as well as the option of double concentration. HKU MFin programme also enjoys professional partnerships with the CFA Institute and GARP to ensure the curriculum is closely tied to professional practice.",
-    "descCn": "港大金融学硕士为两年全日制跨学科项目，融合统计、数学、物理、工程与编程技术，以及金融、会计、经济与法律知识。课程量化程度高，设多个学习方向并可双方向毕业。项目与 CFA 协会、GARP 建立专业合作，课程与职业实践紧密衔接。"
+    "descCn": "港大金融学硕士为两年全日制跨学科项目，融合统计、数学、物理、工程与编程技术，以及金融、会计、经济与法律知识。课程量化程度高，设多个学习方向并可双方向毕业。项目与 CFA 协会、GARP 建立专业合作，课程与职业实践紧密衔接。",
+    "tuitionCny": 435100
   },
   {
     "id": "hku-mffintech",
@@ -181,7 +195,7 @@ const PROGRAMMES = [
     "desc": "The HKU Business School Master of Finance in Financial Technology (MFFinTech) programme is jointly offered by three faculties: the Business School, the School of Computing and Data Science and the Faculty of Law. Our innovative curriculum balances quantitative skills and visionary thinking, and applies techniques of big data, AI and natural language processing to analyse real-world financial projects. Students will also cover the legal aspects of FinTech, from cybersecurity to data protection and smart contracts.",
     "requirements": "Hold a recognised bachelor's or equivalent; two referees (at least one academic). TOEFL iBT 80+ (or 4.5+ from 21 Jan 2026) / IELTS 6 (no subtest below 5.5) if not from English-medium university. GMAT/GRE not required but a good score will be favourably considered.",
     "tuitionHkd": 508000,
-    "tuitionNote": "HK$508,000（2027 intake 官方 Composition Fee）",
+    "tuitionNote": "HK$508,000（2027 intake 官方 Composition Fee） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2018,
@@ -194,7 +208,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "The HKU Business School Master of Finance in Financial Technology (MFFinTech) programme is jointly offered by three faculties: the Business School, the School of Computing and Data Science and the Faculty of Law. Our innovative curriculum balances quantitative skills and visionary thinking, and applies techniques of big data, AI and natural language processing to analyse real-world financial projects. Students will also cover the legal aspects of FinTech, from cybersecurity to data protection and smart contracts.",
-    "descCn": "港大金融科技金融学硕士由经管学院、计算与数据科学学院与法学院联合开设。课程兼顾量化技能与前瞻性思维，运用大数据、人工智能与自然语言处理分析真实金融项目，并涵盖网络安全、数据保护与智能合约等金融科技法律议题。"
+    "descCn": "港大金融科技金融学硕士由经管学院、计算与数据科学学院与法学院联合开设。课程兼顾量化技能与前瞻性思维，运用大数据、人工智能与自然语言处理分析真实金融项目，并涵盖网络安全、数据保护与智能合约等金融科技法律议题。",
+    "tuitionCny": 435100
   },
   {
     "id": "hku-mgm",
@@ -208,7 +223,7 @@ const PROGRAMMES = [
     "desc": "The Master of Global Management programme at the HKU Business School offers a comprehensive curriculum that incorporates individual, organisational and national knowledge pertinent to effective management of global issues. The MGM Master programme is designed to help students develop global management problem solving skills and enhance their ability to manage and work with people from a widening spread of backgrounds in a global context.",
     "requirements": "Hold a recognised bachelor's or equivalent; two referees (at least one academic). TOEFL iBT 80+ (or 4.5+ from 21 Jan 2026) / IELTS 6 (no subtest below 5.5) if not from English-medium university. GMAT/GRE not required but a good score will be favourably considered.",
     "tuitionHkd": 468000,
-    "tuitionNote": "HK$468,000（2027 intake 官方 Composition Fee）",
+    "tuitionNote": "HK$468,000（2027 intake 官方 Composition Fee） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2020,
@@ -221,7 +236,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "The Master of Global Management programme at the HKU Business School offers a comprehensive curriculum that incorporates individual, organisational and national knowledge pertinent to effective management of global issues. The MGM Master programme is designed to help students develop global management problem solving skills and enhance their ability to manage and work with people from a widening spread of backgrounds in a global context.",
-    "descCn": "港大环球管理学硕士提供融合个人、组织与国家层面知识的综合课程，聚焦全球议题的有效管理。项目帮助学生培养全球管理问题解决能力，提升在多元文化背景下的管理与协作能力。"
+    "descCn": "港大环球管理学硕士提供融合个人、组织与国家层面知识的综合课程，聚焦全球议题的有效管理。项目帮助学生培养全球管理问题解决能力，提升在多元文化背景下的管理与协作能力。",
+    "tuitionCny": 400800
   },
   {
     "id": "hku-mscba",
@@ -235,7 +251,7 @@ const PROGRAMMES = [
     "desc": "The Master of Science in Business Analytics programme at the HKU Business School offers a comprehensive curriculum that aims to help students develop both hard and soft skills related to business analytics. Our students will learn the knowledge and skills of understanding data, transforming data into information and converting information into executable actions. The programme boasts a real world business analytics project - The Capstone Project - with reputable corporations in the region.",
     "requirements": "Hold a recognised bachelor's or equivalent; two referees (at least one academic). TOEFL iBT 80+ (or 4.5+ from 21 Jan 2026) / IELTS 6 (no subtest below 5.5) if not from English-medium university. GMAT/GRE not required but a good score will be favourably considered.",
     "tuitionHkd": 468000,
-    "tuitionNote": "HK$468,000（2027 intake 官方 Composition Fee）",
+    "tuitionNote": "HK$468,000（2027 intake 官方 Composition Fee） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2020,
@@ -248,7 +264,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "The Master of Science in Business Analytics programme at the HKU Business School offers a comprehensive curriculum that aims to help students develop both hard and soft skills related to business analytics. Our students will learn the knowledge and skills of understanding data, transforming data into information and converting information into executable actions. The programme boasts a real world business analytics project - The Capstone Project - with reputable corporations in the region.",
-    "descCn": "港大商业分析理学硕士提供综合课程，帮助学生同时发展商业分析相关的硬技能与软技能。学生将学习理解数据、将数据转化为信息、并将信息转化为可执行行动的能力。项目设有与知名企业合作的真实商业分析 Capstone 项目。"
+    "descCn": "港大商业分析理学硕士提供综合课程，帮助学生同时发展商业分析相关的硬技能与软技能。学生将学习理解数据、将数据转化为信息、并将信息转化为可执行行动的能力。项目设有与知名企业合作的真实商业分析 Capstone 项目。",
+    "tuitionCny": 400800
   },
   {
     "id": "hku-mscmkt",
@@ -262,7 +279,7 @@ const PROGRAMMES = [
     "desc": "The Master of Science in Marketing programme at the HKU Business School combines traditional marketing concepts and strategies with up-to-date digital analysis. The programme offers a comprehensive curriculum that combines marketing insights, analytical tools and decisions framework, and students will learn the best practices in top global firms, as well as local firms in Hong Kong, Mainland China and beyond. The focus is on learning how to understand the data and translate it into marketing decisions.",
     "requirements": "Hold a recognised bachelor's or equivalent; two referees (at least one academic). TOEFL iBT 80+ (or 4.5+ from 21 Jan 2026) / IELTS 6 (no subtest below 5.5) if not from English-medium university. GMAT/GRE not required but a good score will be favourably considered.",
     "tuitionHkd": 438000,
-    "tuitionNote": "HK$438,000（2027 intake 官方 Composition Fee）",
+    "tuitionNote": "HK$438,000（2027 intake 官方 Composition Fee） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2020,
@@ -275,7 +292,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "The Master of Science in Marketing programme at the HKU Business School combines traditional marketing concepts and strategies with up-to-date digital analysis. The programme offers a comprehensive curriculum that combines marketing insights, analytical tools and decisions framework, and students will learn the best practices in top global firms, as well as local firms in Hong Kong, Mainland China and beyond. The focus is on learning how to understand the data and translate it into marketing decisions.",
-    "descCn": "港大市场营销理学硕士将传统营销概念与策略同最新数字分析相结合。课程融合营销洞察、分析工具与决策框架，学生将学习全球顶尖企业以及香港、中国内地等地本地企业的最佳实践，重点在于理解数据并将其转化为营销决策。"
+    "descCn": "港大市场营销理学硕士将传统营销概念与策略同最新数字分析相结合。课程融合营销洞察、分析工具与决策框架，学生将学习全球顶尖企业以及香港、中国内地等地本地企业的最佳实践，重点在于理解数据并将其转化为营销决策。",
+    "tuitionCny": 375100
   },
   {
     "id": "hku-msaf",
@@ -289,7 +307,7 @@ const PROGRAMMES = [
     "desc": "The Master of Sustainable Accounting and Finance programme at the HKU Business School is designed to provide a coherent and systematic curriculum to fresh college graduates and young professionals. The focus of the programme is preparing young professionals for jobs tackling important and urgent issues on climate change, responsible corporate behavior, government policies, and sustainable accounting and finance.",
     "requirements": "Hold a recognised bachelor's or equivalent; two referees (at least one academic). TOEFL iBT 80+ (or 4.5+ from 21 Jan 2026) / IELTS 6 (no subtest below 5.5) if not from English-medium university. GMAT/GRE not required but a good score will be favourably considered.",
     "tuitionHkd": 508000,
-    "tuitionNote": "HK$508,000（2027 intake 官方 Composition Fee）",
+    "tuitionNote": "HK$508,000（2027 intake 官方 Composition Fee） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2025,
@@ -302,7 +320,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "The Master of Sustainable Accounting and Finance programme at the HKU Business School is designed to provide a coherent and systematic curriculum to fresh college graduates and young professionals. The focus of the programme is preparing young professionals for jobs tackling important and urgent issues on climate change, responsible corporate behavior, government policies, and sustainable accounting and finance.",
-    "descCn": "港大可持续会计与金融硕士为应届毕业生与年轻专业人士提供连贯系统的课程，聚焦气候变化、负责任企业行为、政府政策以及可持续会计与金融等重要紧迫议题，为相关职业做好准备。"
+    "descCn": "港大可持续会计与金融硕士为应届毕业生与年轻专业人士提供连贯系统的课程，聚焦气候变化、负责任企业行为、政府政策以及可持续会计与金融等重要紧迫议题，为相关职业做好准备。",
+    "tuitionCny": 435100
   },
   {
     "id": "hku-mwm",
@@ -316,7 +335,7 @@ const PROGRAMMES = [
     "desc": "The HKU Business School Master of Wealth Management programme equips students with state-of-the-art knowledge and specialised skills essential to excel in the dynamic field of wealth management. Our innovative curriculum is designed with a keen focus on industry relevance. The programme capitalises on Hong Kong's position as a global financial centre, a hub for growing wealth, and a gateway to the Greater Bay Area and Mainland China.",
     "requirements": "Hold a recognised bachelor's or equivalent; two referees (at least one academic). TOEFL iBT 80+ (or 4.5+ from 21 Jan 2026) / IELTS 6 (no subtest below 5.5) if not from English-medium university. GMAT/GRE not required but a good score will be favourably considered.",
     "tuitionHkd": 508000,
-    "tuitionNote": "HK$508,000（2027 intake 官方 Composition Fee）",
+    "tuitionNote": "HK$508,000（2027 intake 官方 Composition Fee） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2025,
@@ -329,7 +348,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "The HKU Business School Master of Wealth Management programme equips students with state-of-the-art knowledge and specialised skills essential to excel in the dynamic field of wealth management. Our innovative curriculum is designed with a keen focus on industry relevance. The programme capitalises on Hong Kong's position as a global financial centre, a hub for growing wealth, and a gateway to the Greater Bay Area and Mainland China.",
-    "descCn": "港大财富管理硕士为学生提供前沿知识与专业技能，以在快速发展的财富管理领域脱颖而出。课程设计紧扣行业需求，依托香港作为全球金融中心、财富增长枢纽及通往大湾区与中国内地门户的独特优势。"
+    "descCn": "港大财富管理硕士为学生提供前沿知识与专业技能，以在快速发展的财富管理领域脱颖而出。课程设计紧扣行业需求，依托香港作为全球金融中心、财富增长枢纽及通往大湾区与中国内地门户的独特优势。",
+    "tuitionCny": 435100
   },
   {
     "id": "hku-mscftda",
@@ -370,7 +390,7 @@ const PROGRAMMES = [
     "desc": "商科交叉项目，聚焦供应链、物流系统、运营管理与商业数据分析。",
     "requirements": "本科学位（工程/科学相关优先）；雅思6.0/托福80",
     "tuitionHkd": 216000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 1990,
@@ -382,7 +402,8 @@ const PROGRAMMES = [
     "sourceConfidence": "needs-verify",
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递",
     "descCn": "港大工业工程与物流管理理学硕士（工程）由工程学院开设。专属项目页未能获取，请在港大工程学院或 portal.hku.hk 核实。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 185000
   },
   {
     "id": "cuhk-macc",
@@ -396,7 +417,7 @@ const PROGRAMMES = [
     "desc": "Since its launch in 1998, the Master of Accountancy has garnered respect as a leading accounting programme, recognised and accredited by all major professional accounting bodies. The programme is designed for accounting and non-accounting graduates, with the aim to nurture professional accountants who can apply accounting knowledge and data analytics to develop business insights.",
     "requirements": "Please refer to the general requirements of the Graduate School (bachelor's degree, normally Second Class honours or grade B or above). GMAT/GRE scores are not mandatory, but a good GMAT/GRE score will strengthen the application. Preference will be given to applicants with relevant full-time post-qualification work experience. English: TOEFL 79 / IELTS 6.5 or equivalent.",
     "tuitionHkd": 420000,
-    "tuitionNote": "HK$420,000（全日制全程，gs.cuhk 官方）",
+    "tuitionNote": "HK$420,000（全日制全程，gs.cuhk 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 1998,
@@ -409,7 +430,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "Since its launch in 1998, the Master of Accountancy has garnered respect as a leading accounting programme, recognised and accredited by all major professional accounting bodies. The programme is designed for accounting and non-accounting graduates, with the aim to nurture professional accountants who can apply accounting knowledge and data analytics to develop business insights.",
-    "descCn": "中大会计学硕士自1998年开办以来，已成为领先的会计项目，获所有主要专业会计机构认可与认证。项目面向会计与非会计背景毕业生，旨在培养能够运用会计知识与数据分析形成商业洞察的专业会计师。"
+    "descCn": "中大会计学硕士自1998年开办以来，已成为领先的会计项目，获所有主要专业会计机构认可与认证。项目面向会计与非会计背景毕业生，旨在培养能够运用会计知识与数据分析形成商业洞察的专业会计师。",
+    "tuitionCny": 359700
   },
   {
     "id": "cuhk-mscasi",
@@ -423,7 +445,7 @@ const PROGRAMMES = [
     "desc": "The MSc in Actuarial Science and Insurance Analytics (MScASI) is a full-time Master's programme designed to nurture high-calibre actuaries to meet Asia's growing demand. Built on the highly successful BBA in Insurance, Financial and Actuarial Analysis (IFAA), the programme will help you develop adaptable skills for a variety of actuarial or analytical roles. This is Hong Kong's only actuarial science Master's programme, with a syllabus approved by the International Actuarial Association.",
     "requirements": "In addition to the general requirements of the Graduate School, applicants should have taken and passed at least one university-level course in either calculus, probability, statistics, or an approved equivalent course. GMAT/GRE scores are not mandatory, but a good GMAT/GRE score will strengthen the application.",
     "tuitionHkd": 370000,
-    "tuitionNote": "HK$370,000（gs.cuhk 官方）",
+    "tuitionNote": "HK$370,000（gs.cuhk 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2013,
@@ -436,7 +458,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "The MSc in Actuarial Science and Insurance Analytics (MScASI) is a full-time Master's programme designed to nurture high-calibre actuaries to meet Asia's growing demand. The programme will help you develop adaptable skills for a variety of actuarial or analytical roles. This is Hong Kong's only actuarial science Master's programme, with a syllabus approved by the International Actuarial Association.",
-    "descCn": "中大精算科学及保险分析理学硕士为全日制项目，旨在培养高素质精算人才以满足亚洲日益增长的需求。项目帮助学生发展适应多种精算或分析岗位的技能。这是香港唯一的精算科学硕士项目，教学大纲获国际精算协会认可。"
+    "descCn": "中大精算科学及保险分析理学硕士为全日制项目，旨在培养高素质精算人才以满足亚洲日益增长的需求。项目帮助学生发展适应多种精算或分析岗位的技能。这是香港唯一的精算科学硕士项目，教学大纲获国际精算协会认可。",
+    "tuitionCny": 316900
   },
   {
     "id": "cuhk-mam",
@@ -450,7 +473,7 @@ const PROGRAMMES = [
     "desc": "In today's interconnected world, aviation stands at the crossroads of global commerce, cultural exchange, and technological innovation. Our pioneering MSc in Aviation Management is designed to develop the next generation of visionary aviation leaders, leveraging CUHK's world-class academic reputation and strategic partnership with the Hong Kong International Aviation Academy (HKIAA). While traditional aviation programmes often focus on technical operations, this programme addresses the growing demand for professionals who understand the business, strategic, and experiential dimensions of modern aviation.",
     "requirements": "Please refer to the general requirements of the Graduate School. GMAT/GRE scores are not mandatory, but a good GMAT/GRE score will strengthen the application.",
     "tuitionHkd": 315000,
-    "tuitionNote": "HK$315,000（gs.cuhk 官方）",
+    "tuitionNote": "HK$315,000（gs.cuhk 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2026,
@@ -463,7 +486,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "In today's interconnected world, aviation stands at the crossroads of global commerce, cultural exchange, and technological innovation. Our pioneering MSc in Aviation Management is designed to develop the next generation of visionary aviation leaders, leveraging CUHK's world-class academic reputation and strategic partnership with the Hong Kong International Aviation Academy (HKIAA). This programme addresses the growing demand for professionals who understand the business, strategic, and experiential dimensions of modern aviation.",
-    "descCn": "在互联互通的当今世界，航空处于全球商业、文化交流与技术创新的交汇点。中大航空管理理学硕士依托世界级学术声誉及与香港国际航空学院的战略合作，旨在培养下一代具有远见的航空领军人才，回应市场对理解现代航空商业、战略与体验维度专业人才的需求。"
+    "descCn": "在互联互通的当今世界，航空处于全球商业、文化交流与技术创新的交汇点。中大航空管理理学硕士依托世界级学术声誉及与香港国际航空学院的战略合作，旨在培养下一代具有远见的航空领军人才，回应市场对理解现代航空商业、战略与体验维度专业人才的需求。",
+    "tuitionCny": 269800
   },
   {
     "id": "cuhk-mscba",
@@ -477,7 +501,7 @@ const PROGRAMMES = [
     "desc": "Recent technology developments have catalysed unprecedented growth rates, but many organisations struggle to keep up with the vast amounts of data generated. The MSc in Business Analytics is an advanced one-year programme designed to train professionals to analyse data with quantitative tools and convert it into useful information. You will be equipped to guide strategic decision making for organisations all over the world. Our dynamic curriculum offers courses in statistical analysis, decision models and applications, data mining for managers, economic analytics, operation analytics and more.",
     "requirements": "Please refer to the general requirements of the Graduate School. GMAT/GRE scores are not mandatory, but a good GMAT/GRE score will strengthen the application. After submitting your application, you may be invited by email for an optional interview.",
     "tuitionHkd": 400000,
-    "tuitionNote": "HK$400,000（gs.cuhk 官方）",
+    "tuitionNote": "HK$400,000（gs.cuhk 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2014,
@@ -490,7 +514,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "Recent technology developments have catalysed unprecedented growth rates, but many organisations struggle to keep up with the vast amounts of data generated. The MSc in Business Analytics is an advanced one-year programme designed to train professionals to analyse data with quantitative tools and convert it into useful information. You will be equipped to guide strategic decision making for organisations all over the world.",
-    "descCn": "技术发展带来前所未有的增长，但许多组织难以应对海量数据。中大商业分析理学硕士为一年制进阶项目，训练学生用定量工具分析数据并转化为有用信息，具备指导全球组织战略决策的能力。"
+    "descCn": "技术发展带来前所未有的增长，但许多组织难以应对海量数据。中大商业分析理学硕士为一年制进阶项目，训练学生用定量工具分析数据并转化为有用信息，具备指导全球组织战略决策的能力。",
+    "tuitionCny": 342600
   },
   {
     "id": "cuhk-mscfbm",
@@ -504,7 +529,7 @@ const PROGRAMMES = [
     "desc": "面向家族企业传承与治理，课程覆盖家族治理、继任规划、财富管理与创新。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 468000,
-    "tuitionNote": "HK$468,000（自资；须经大学批准）。来源：官网项目页",
+    "tuitionNote": "HK$468,000（自资；须经大学批准）。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2027,
@@ -519,7 +544,8 @@ const PROGRAMMES = [
     "descEn": "The MSc in Family Business Management (FBM) is a pioneering, mission-driven programme designed for aspiring young leaders, professionals, and entrepreneurs seeking to build, lead, and sustain family enterprises in China, Asia, and beyond.",
     "requirementsEn": "A bachelor's degree with Second Class honours or achieving an average grade of B from a recognised university, or an equivalent professional qualification. GMAT/GRE scores are not mandatory, but a good score will strengthen the application.",
     "requirementsCn": "认可大学的二等荣誉学士学位或平均成绩 B，或同等专业资格。GMAT/GRE 非强制，但高分有利于申请。",
-    "feeSource": "official-page"
+    "feeSource": "official-page",
+    "tuitionCny": 400800
   },
   {
     "id": "cuhk-mscfin",
@@ -533,7 +559,7 @@ const PROGRAMMES = [
     "desc": "The MSc in Finance offers rigorous training to master financial theories and techniques and develop strong quantitative reasoning, along with the latest technological skills in finance. You can study full-time for 1 year, or part-time for 2 years. After you graduate, you will be primed for a career in investment banking, commercial and corporate banking, asset management, regulatory bodies, consulting, financial services, accounting and general management. This programme provides a solid foundation in portfolio analysis, credit analysis, risk modelling, structured finance, sales and trading, operations and more.",
     "requirements": "Full-time: Please refer to the general requirements of the Graduate School. GMAT/GRE scores are not mandatory, but a good GMAT/GRE score will strengthen the application. Part-time: applicants should preferably have 2 years of post-qualification full-time work experience.",
     "tuitionHkd": 460000,
-    "tuitionNote": "HK$460,000 全日制 / HK$365,000 兼读（gs.cuhk 官方）",
+    "tuitionNote": "HK$460,000 全日制 / HK$365,000 兼读（gs.cuhk 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年 / 兼读 2 年",
     "foundedYear": 1998,
@@ -546,7 +572,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "The MSc in Finance offers rigorous training to master financial theories and techniques and develop strong quantitative reasoning, along with the latest technological skills in finance. You can study full-time for 1 year, or part-time for 2 years. After you graduate, you will be primed for a career in investment banking, commercial and corporate banking, asset management, regulatory bodies, consulting, financial services, accounting and general management.",
-    "descCn": "中大金融学理学硕士提供严格的金融理论与技术训练，培养强定量推理能力与最新金融科技技能。可全日制1年或兼读2年。毕业后可进入投行、商业银行、资产管理、监管机构、咨询、金融服务、会计与综合管理等领域。"
+    "descCn": "中大金融学理学硕士提供严格的金融理论与技术训练，培养强定量推理能力与最新金融科技技能。可全日制1年或兼读2年。毕业后可进入投行、商业银行、资产管理、监管机构、咨询、金融服务、会计与综合管理等领域。",
+    "tuitionCny": 394000
   },
   {
     "id": "cuhk-mscgwm",
@@ -560,7 +587,7 @@ const PROGRAMMES = [
     "desc": "聚焦全球财富管理、家族办公室、另类投资与客户关系管理。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 420000,
-    "tuitionNote": "HK$420,000（自资；须经大学批准）。来源：官网项目页",
+    "tuitionNote": "HK$420,000（自资；须经大学批准）。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2027,
@@ -575,7 +602,8 @@ const PROGRAMMES = [
     "descEn": "As Hong Kong overtakes Switzerland to become the world's largest cross-border wealth hub, the demand for top-tier financial talent has never been greater. The MSc Programme in Global Wealth Management equips students with rigorous financial theory and cutting-edge FinTech and AI skills to excel in the evolving global wealth management industry.",
     "requirementsEn": "A bachelor's degree with Second Class honours or achieving an average grade of B from a recognised university, or an equivalent professional qualification. GMAT/GRE scores are not mandatory.",
     "requirementsCn": "认可大学的二等荣誉学士学位或平均成绩 B，或同等专业资格。GMAT/GRE 非强制。",
-    "feeSource": "official-page"
+    "feeSource": "official-page",
+    "tuitionCny": 359700
   },
   {
     "id": "cuhk-mscitm",
@@ -589,7 +617,7 @@ const PROGRAMMES = [
     "desc": "The MSc in Information and Technology Management is designed to equip managers with cutting-edge IT knowledge and skills to enhance the productivity and competitiveness of their organisations. The curriculum offers a range of courses in information and technology management, database and big data management, business intelligence techniques, statistical analysis, project management, enterprise resource planning and decision making.",
     "requirements": "Please refer to the general requirements of the Graduate School. Although GMAT/GRE scores are not required, applicants are highly encouraged to provide good GMAT/GRE result for consideration.",
     "tuitionHkd": 230000,
-    "tuitionNote": "HK$230,000 兼读（gs.cuhk 官方）",
+    "tuitionNote": "HK$230,000 兼读（gs.cuhk 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 2,
     "durationText": "兼读 2 年",
     "foundedYear": 2000,
@@ -602,7 +630,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "The MSc in Information and Technology Management is designed to equip managers with cutting-edge IT knowledge and skills to enhance the productivity and competitiveness of their organisations. The curriculum offers courses in information and technology management, database and big data management, business intelligence techniques, statistical analysis, project management, enterprise resource planning and decision making.",
-    "descCn": "中大信息与科技管理理学硕士（兼读）旨在为管理者提供前沿 IT 知识与技能，提升组织生产力与竞争力。课程涵盖信息与科技管理、数据库与大数据管理、商业智能技术、统计分析、项目管理、企业资源规划与决策。"
+    "descCn": "中大信息与科技管理理学硕士（兼读）旨在为管理者提供前沿 IT 知识与技能，提升组织生产力与竞争力。课程涵盖信息与科技管理、数据库与大数据管理、商业智能技术、统计分析、项目管理、企业资源规划与决策。",
+    "tuitionCny": 197000
   },
   {
     "id": "cuhk-mscistm",
@@ -616,7 +645,7 @@ const PROGRAMMES = [
     "desc": "The MSc in Information Science and Technology Management (MSc in ISTM) is a curriculum-evolution of the long-established full-time programme of MSc in Information and Technology Management. It is designed to equip students with business and management principles and practices of information technology as well as in-depth related technical knowledge. With synergy from the Department of Decisions, Operations and Technology, CUHK Business School and the Department of Information Engineering, topics include big data management, blockchain, business intelligence, fintech, information security, internet of things, project management, social media analytics, etc.",
     "requirements": "Please refer to the general requirements of the Graduate School. GMAT/GRE scores are not mandatory, but a good GMAT/GRE score will strengthen the application.",
     "tuitionHkd": 340000,
-    "tuitionNote": "HK$340,000 全日制（gs.cuhk 官方）",
+    "tuitionNote": "HK$340,000 全日制（gs.cuhk 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2000,
@@ -629,7 +658,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "The MSc in Information Science and Technology Management (MSc in ISTM) is a curriculum-evolution of the long-established full-time programme of MSc in Information and Technology Management. Topics include big data management, blockchain, business intelligence, fintech, information security, internet of things, project management, social media analytics, etc.",
-    "descCn": "中大信息科学与科技管理理学硕士由历史悠久的信息与科技管理全日制项目演进而来。议题涵盖大数据管理、区块链、商业智能、金融科技、信息安全、物联网、项目管理、社交媒体分析等。"
+    "descCn": "中大信息科学与科技管理理学硕士由历史悠久的信息与科技管理全日制项目演进而来。议题涵盖大数据管理、区块链、商业智能、金融科技、信息安全、物联网、项目管理、社交媒体分析等。",
+    "tuitionCny": 291200
   },
   {
     "id": "cuhk-msclee",
@@ -643,7 +673,7 @@ const PROGRAMMES = [
     "desc": "In the experience economy, organisations create value by designing and delivering memorable, engaging experiences for customers, employees, and communities. Leveraging CUHK Business School exceptional business education resources and the extensive industry network of the School of Hotel and Tourism Management (SHTM), MSc in Leadership for Experience Economy (LEE) is the first MSc programme in the Asia-Pacific region focusing on developing competencies in inspirational leadership, investment, and innovation to drive organisational success in the emerging experience economy.",
     "requirements": "Please refer to the general requirements of the Graduate School. GMAT/GRE scores are not mandatory, but a good GMAT/GRE score will strengthen the application.",
     "tuitionHkd": 330000,
-    "tuitionNote": "HK$330,000（gs.cuhk 官方）",
+    "tuitionNote": "HK$330,000（gs.cuhk 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2026,
@@ -656,7 +686,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "In the experience economy, organisations create value by designing and delivering memorable, engaging experiences for customers, employees, and communities. MSc in Leadership for Experience Economy (LEE) is the first MSc programme in the Asia-Pacific region focusing on developing competencies in inspirational leadership, investment, and innovation to drive organisational success in the emerging experience economy.",
-    "descCn": "在体验经济中，组织通过设计并交付令人难忘的体验为顾客、员工与社区创造价值。中大体验经济领导力理学硕士是亚太地区首个聚焦培养鼓舞人心的领导力、投资与创新能力，以在新兴体验经济中推动组织成功的硕士项目。"
+    "descCn": "在体验经济中，组织通过设计并交付令人难忘的体验为顾客、员工与社区创造价值。中大体验经济领导力理学硕士是亚太地区首个聚焦培养鼓舞人心的领导力、投资与创新能力，以在新兴体验经济中推动组织成功的硕士项目。",
+    "tuitionCny": 282600
   },
   {
     "id": "cuhk-mim",
@@ -670,7 +701,7 @@ const PROGRAMMES = [
     "desc": "In today's fast-changing market environment, there are increasing demands for managers who can innovate and disrupt the status quo to lead the industry into the future. The MSc in Management (MiM) programme is designed to develop pioneers who do not only embrace change but also be instrumental in creating change, and help shape the future of the digital economy in Asia and beyond. You will receive extensive training in business foundations covering finance, managerial communication, global supply chain management and strategy.",
     "requirements": "Please refer to the general requirements of the Graduate School. GMAT/GRE scores are not mandatory, but a good GMAT/GRE score will strengthen the application. GMAT/GRE is highly recommended to increase chances of successful application.",
     "tuitionHkd": 435000,
-    "tuitionNote": "HK$435,000（gs.cuhk 官方）",
+    "tuitionNote": "HK$435,000（gs.cuhk 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2012,
@@ -683,7 +714,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "In today's fast-changing market environment, there are increasing demands for managers who can innovate and disrupt the status quo to lead the industry into the future. The MSc in Management (MiM) programme is designed to develop pioneers who do not only embrace change but also be instrumental in creating change, and help shape the future of the digital economy in Asia and beyond.",
-    "descCn": "在快速变化的市场环境中，社会对能够创新、打破现状、引领行业未来的管理者需求日增。中大管理学理学硕士旨在培养不仅拥抱变化、更能创造变化的先锋，助力塑造亚洲及更广区域数字经济的未来。"
+    "descCn": "在快速变化的市场环境中，社会对能够创新、打破现状、引领行业未来的管理者需求日增。中大管理学理学硕士旨在培养不仅拥抱变化、更能创造变化的先锋，助力塑造亚洲及更广区域数字经济的未来。",
+    "tuitionCny": 372600
   },
   {
     "id": "cuhk-mscmkt",
@@ -697,7 +729,7 @@ const PROGRAMMES = [
     "desc": "Shaped by the rise of AI and a rapidly evolving digital landscape, the MSc in Marketing Programme cultivates tomorrow's marketing leaders through a curriculum blending theory and practice, tradition and technology, intuition and analytics, and local insight with a global vision. With a rich history since its founding in 2000, the programme attracts high-calibre students and follows a 'small and exquisite' approach. Students develop future-ready capabilities through courses in AI, digital marketing, entrepreneurship, machine learning, and sustainability in marketing.",
     "requirements": "Please refer to the general requirements of the Graduate School. GMAT/GRE scores are not mandatory, but a good GMAT/GRE score will strengthen the application.",
     "tuitionHkd": 410000,
-    "tuitionNote": "HK$410,000（gs.cuhk 官方）",
+    "tuitionNote": "HK$410,000（gs.cuhk 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2000,
@@ -710,7 +742,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "Shaped by the rise of AI and a rapidly evolving digital landscape, the MSc in Marketing Programme cultivates tomorrow's marketing leaders through a curriculum blending theory and practice, tradition and technology, intuition and analytics, and local insight with a global vision. Students develop future-ready capabilities through courses in AI, digital marketing, entrepreneurship, machine learning, and sustainability in marketing.",
-    "descCn": "在 AI 崛起与数字环境快速演变背景下，中大市场营销理学硕士通过融合理论与实践、传统与科技、直觉与分析、本地洞察与全球视野的课程，培养未来营销领袖。学生通过 AI、数字营销、创业、机器学习与营销可持续发展等课程发展面向未来的能力。"
+    "descCn": "在 AI 崛起与数字环境快速演变背景下，中大市场营销理学硕士通过融合理论与实践、传统与科技、直觉与分析、本地洞察与全球视野的课程，培养未来营销领袖。学生通过 AI、数字营销、创业、机器学习与营销可持续发展等课程发展面向未来的能力。",
+    "tuitionCny": 351200
   },
   {
     "id": "cuhk-mscre",
@@ -724,7 +757,7 @@ const PROGRAMMES = [
     "desc": "MSc in Real Estate (MRE) is the only master's degree in Asia that draws on multi-disciplinal research and teaching resources ranging from real estate, business to hospitality. The programme offers an experiential learning curriculum that integrates theory and real-world practice to ensure that students understand multiple phases of the real estate development from business, investment and community perspectives. The programme is professionally accredited by the Royal Institution of Chartered Surveyors (RICS).",
     "requirements": "Please refer to the general requirements of the Graduate School. GMAT/GRE scores are not mandatory, but a good GMAT/GRE score will strengthen the application.",
     "tuitionHkd": 320000,
-    "tuitionNote": "HK$320,000（gs.cuhk 官方）",
+    "tuitionNote": "HK$320,000（gs.cuhk 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 1998,
@@ -737,7 +770,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "MSc in Real Estate (MRE) is the only master's degree in Asia that draws on multi-disciplinal research and teaching resources ranging from real estate, business to hospitality. The programme offers an experiential learning curriculum that integrates theory and real-world practice. The programme is professionally accredited by the Royal Institution of Chartered Surveyors (RICS).",
-    "descCn": "中大房地产理学硕士是亚洲唯一融合房地产、商业与酒店管理多学科资源的硕士学位。项目提供融合理论与真实实践的体验式学习课程，并获英国皇家特许测量师学会（RICS）专业认证。"
+    "descCn": "中大房地产理学硕士是亚洲唯一融合房地产、商业与酒店管理多学科资源的硕士学位。项目提供融合理论与真实实践的体验式学习课程，并获英国皇家特许测量师学会（RICS）专业认证。",
+    "tuitionCny": 274100
   },
   {
     "id": "cuhk-mscsbm",
@@ -751,7 +785,7 @@ const PROGRAMMES = [
     "desc": "新兴项目，聚焦体育产业商业运作、赛事管理、体育营销与电竞商业。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 250000,
-    "tuitionNote": "HK$250,000（自资；须经大学批准）。来源：官网项目页",
+    "tuitionNote": "HK$250,000（自资；须经大学批准）。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2027,
@@ -766,7 +800,8 @@ const PROGRAMMES = [
     "descEn": "Designed for those aspiring to build dynamic careers in the global sports industry, this distinctive programme goes beyond competition into strategy, marketing, events, operations, and innovation. It equips graduates with the skills to lead and shape the rapidly evolving sports industry across Greater China, Asia-Pacific, and beyond.",
     "requirementsEn": "A bachelor's degree with at least second-class honours or grade B from a recognised university, or an equivalent professional qualification. A good GMAT/GRE result will strengthen your application.",
     "requirementsCn": "认可大学的二等荣誉学士学位或成绩 B，或同等专业资格。优秀的 GMAT/GRE 成绩有利于申请。",
-    "feeSource": "official-page"
+    "feeSource": "official-page",
+    "tuitionCny": 214100
   },
   {
     "id": "cuhk-mscsgb",
@@ -780,7 +815,7 @@ const PROGRAMMES = [
     "desc": "The MSc in Sustainable Global Business (SGB) programme (1-year full-time or 2-year part-time) is designed to provide comprehensive training for graduates and industry professionals aspiring to lead in the evolving landscape of sustainability. You will be equipped with professional knowledge and practical skillset to manage complex sustainability challenges through a strategic management lens. Elective courses span ESG management, finance, supply chain management, psychology, environmental policy and management, brand communication, and tech-related modules.",
     "requirements": "Full-time: Please refer to the general requirements of the Graduate School. GMAT/GRE scores are not mandatory, but a good GMAT/GRE score will strengthen the application. Part-time: preference will be given to applicants with three years of post-qualification full-time work experience.",
     "tuitionHkd": 380000,
-    "tuitionNote": "HK$380,000 全日制 / HK$260,000 兼读（gs.cuhk 官方）",
+    "tuitionNote": "HK$380,000 全日制 / HK$260,000 兼读（gs.cuhk 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年 / 兼读制",
     "foundedYear": 2023,
@@ -793,7 +828,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "The MSc in Sustainable Global Business (SGB) programme (1-year full-time or 2-year part-time) is designed to provide comprehensive training for graduates and industry professionals aspiring to lead in the evolving landscape of sustainability. You will be equipped with professional knowledge and practical skillset to manage complex sustainability challenges through a strategic management lens.",
-    "descCn": "中大可持续环球商业理学硕士（全日制1年或兼读2年）为有志在可持续发展领域引领变革的毕业生与业界人士提供全面训练，通过战略管理视角培养学生管理复杂可持续挑战的专业知识与实用技能。"
+    "descCn": "中大可持续环球商业理学硕士（全日制1年或兼读2年）为有志在可持续发展领域引领变革的毕业生与业界人士提供全面训练，通过战略管理视角培养学生管理复杂可持续挑战的专业知识与实用技能。",
+    "tuitionCny": 325500
   },
   {
     "id": "hkust-msac",
@@ -807,7 +843,7 @@ const PROGRAMMES = [
     "desc": "科大会计硕士，课程高度衔接专业资格，强调数据分析在会计中的应用。",
     "requirements": "本科学位；雅思6.5/托福80；建议GMAT/GRE",
     "tuitionHkd": 428000,
-    "tuitionNote": "HK$428,000（2027/28 官方）",
+    "tuitionNote": "HK$428,000（2027/28 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2011,
@@ -822,7 +858,8 @@ const PROGRAMMES = [
     "descCn": "科大会计学理学硕士为商科与非商科背景的学士学位学生提供研究生层次的会计教育，为其进入会计相关职业搭建桥梁。项目兼具实务性与学术严谨性。",
     "descEn": "The Master of Science (MSc) Program in Accounting provides postgraduate accounting education to students with bachelor degrees in business and non-business disciplines, and bridging them with a channel to enter accounting-related professions. The program is both practical and academically rigorous.",
     "requirementsEn": "A bachelor's degree in a business discipline, or (i) a bachelor's degree in a non-business discipline and (ii) one of the following: having studied a course in Statistics at undergraduate level with satisfactory performance; having passed the module/paper on Financial Reporting. English: TOEFL iBT 80 / IELTS 6.5 (all sub-scores 5.5).",
-    "requirementsCn": "商科专业学士学位；或非商科学士学位并满足以下之一：本科修读过统计学课程且成绩合格；或通过财务报告相关模块/考试。英语：托福 iBT 80 / 雅思 6.5（各单项 5.5）。"
+    "requirementsCn": "商科专业学士学位；或非商科学士学位并满足以下之一：本科修读过统计学课程且成绩合格；或通过财务报告相关模块/考试。英语：托福 iBT 80 / 雅思 6.5（各单项 5.5）。",
+    "tuitionCny": 366600
   },
   {
     "id": "hkust-msba",
@@ -836,7 +873,7 @@ const PROGRAMMES = [
     "desc": "科大商业分析硕士，设专项咨询实践方向与 AI-ready 课程，由业界顾问委员会支持，就业资源丰富。",
     "requirements": "本科学位；雅思6.5/托福80；定量背景优先",
     "tuitionHkd": 415000,
-    "tuitionNote": "HK$415,000（2027/28 官方）",
+    "tuitionNote": "HK$415,000（2027/28 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2016,
@@ -851,7 +888,8 @@ const PROGRAMMES = [
     "descEn": "The MSBA Program is designed to equip students with the skills to effectively leverage in information and business analytics knowledge in building data-driven strategies while effectively communicating business value.",
     "descCn": "科大商业分析理学硕士旨在培养学生有效运用信息与商业分析知识、构建数据驱动战略并有效传达商业价值的能力。",
     "requirementsEn": "Applicants should have obtained a bachelor's degree from a recognized institution, or an approved equivalent qualification. Students are expected to have a basic proficiency in SQL and Python programming.",
-    "requirementsCn": "申请人应具有认可机构的学士学位或同等资格。期望具备 SQL 与 Python 编程基础。"
+    "requirementsCn": "申请人应具有认可机构的学士学位或同等资格。期望具备 SQL 与 Python 编程基础。",
+    "tuitionCny": 355400
   },
   {
     "id": "hkust-mscecon",
@@ -865,7 +903,7 @@ const PROGRAMMES = [
     "desc": "严谨的经济学训练，强调计量方法与政策分析，适合研究与业界双重路径。",
     "requirements": "本科学位；雅思6.5/托福80",
     "tuitionHkd": 350000,
-    "tuitionNote": "HK$350,000（2027/28 官方）",
+    "tuitionNote": "HK$350,000（2027/28 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2013,
@@ -880,7 +918,8 @@ const PROGRAMMES = [
     "descCn": "科大经济学理学硕士旨在为学生提供扎实的经济学与分析训练，为其进一步攻读经济学、金融、市场营销、管理等领域的更高学位做准备。",
     "descEn": "The MSc in Economics Program aims to provide solid economics and analytical training for students in order to prepare them for further pursuit of higher academic degrees in economics, finance, marketing, management, etc.",
     "requirementsEn": "Applicants should have obtained a bachelor's degree from a university or tertiary institution. For those who are not econ/business major, a strong quantitative background and a commitment to academic study and research are expected.",
-    "requirementsCn": "申请人应具有大学或高等院校的学士学位。非经济/商科专业者，需具备较强的定量背景，并展现出学术研究的意愿。"
+    "requirementsCn": "申请人应具有大学或高等院校的学士学位。非经济/商科专业者，需具备较强的定量背景，并展现出学术研究的意愿。",
+    "tuitionCny": 299800
   },
   {
     "id": "hkust-mscfofb",
@@ -894,7 +933,7 @@ const PROGRAMMES = [
     "desc": "依托 Roger King 亚洲家族企业与家族办公室研究中心，培养家族财富治理、传承规划与家族办公室运营人才。",
     "requirements": "本科学位；雅思6.5/托福80；有相关经验优先",
     "tuitionHkd": 477400,
-    "tuitionNote": "HK$477,400（2027/28 官方）",
+    "tuitionNote": "HK$477,400（2027/28 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2022,
@@ -909,7 +948,8 @@ const PROGRAMMES = [
     "descCn": "科大家族办公室及家族企业理学硕士将传统与创新无缝融合，赋能下一代家族企业领袖，使学生掌握应对家族企业独特管理挑战所需的知识与技能。",
     "descEn": "The Master of Science in Family Office and Family Business (MScFOFB) program seamlessly merges tradition with innovation, empowering the next generation of family business leaders. It equips students with the essential knowledge and skills to navigate the unique challenges of managing family-owned enterprises.",
     "requirementsEn": "A bachelor's degree from a recognized institution or an approved equivalent qualification. For the part-time program, at least two years of full-time relevant post-qualification work experience is preferred.",
-    "requirementsCn": "认可机构的学士学位或同等资格。兼读制优先考虑具备至少两年相关毕业后全职工作经验者。"
+    "requirementsCn": "认可机构的学士学位或同等资格。兼读制优先考虑具备至少两年相关毕业后全职工作经验者。",
+    "tuitionCny": 408900
   },
   {
     "id": "hkust-mfin",
@@ -923,7 +963,7 @@ const PROGRAMMES = [
     "desc": "科大金融硕士，亚洲最负盛名的金融项目之一，覆盖公司金融、投资、风险管理与金融科技。",
     "requirements": "本科学位；雅思6.5/托福80；强烈建议 GMAT/GRE",
     "tuitionHkd": 460000,
-    "tuitionNote": "HK$460,000（2027/28 官方）",
+    "tuitionNote": "HK$460,000（2027/28 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2004,
@@ -938,7 +978,8 @@ const PROGRAMMES = [
     "descEn": "The Master of Science (MSc) Program in Finance is designed to provide rigorous training to students for professional careers in the finance industry. The curriculum is structured to meet the growing and specialized demands of the industry. The program provides both full-time and part-time study modes which students can complete in 12 or 24 months respectively.",
     "descCn": "科大金融学理学硕士旨在为学生在金融行业的职业发展提供严格训练，课程结构回应行业日益增长的专业化需求。项目设全日制与兼读制，分别可在 12 或 24 个月内完成。",
     "requirementsEn": "Full-time: work experience not required. Part-time: one year of full-time post-qualification work experience. GMAT/GRE scores are not required, but strong scores will enhance the application. English: TOEFL iBT 80 / IELTS 6.5.",
-    "requirementsCn": "全日制：不要求工作经验。兼读制：需一年毕业后全职工作经验。GMAT/GRE 非强制，但高分有利于申请。英语：托福 iBT 80 / 雅思 6.5。"
+    "requirementsCn": "全日制：不要求工作经验。兼读制：需一年毕业后全职工作经验。GMAT/GRE 非强制，但高分有利于申请。英语：托福 iBT 80 / 雅思 6.5。",
+    "tuitionCny": 394000
   },
   {
     "id": "hkust-msgo",
@@ -952,7 +993,7 @@ const PROGRAMMES = [
     "desc": "聚焦全球运营与供应链战略，结合香港作为贸易与物流枢纽的区位优势。",
     "requirements": "本科学位；雅思6.5/托福80",
     "tuitionHkd": 365000,
-    "tuitionNote": "HK$365,000（2027/28 官方）",
+    "tuitionNote": "HK$365,000（2027/28 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2015,
@@ -967,7 +1008,8 @@ const PROGRAMMES = [
     "descCn": "科大环球运营理学硕士为一年全日制项目，旨在使学生掌握服务运营、制造运营与供应链管理所必需的工具与理解。",
     "descEn": "The HKUST MSGO program is a one-year full time program, designed to equip students with tools and understanding essential in the management of service operations, manufacturing operations and supply chains.",
     "requirementsEn": "Applicants must have a bachelor's degree with satisfactory academic performance from a university or a recognized institution. Students are recommended with basic quantitative knowledge.",
-    "requirementsCn": "申请人须具有大学或认可机构的学士学位且学业成绩良好。建议具备基础定量知识。"
+    "requirementsCn": "申请人须具有大学或认可机构的学士学位且学业成绩良好。建议具备基础定量知识。",
+    "tuitionCny": 312600
   },
   {
     "id": "hkust-mscicsm",
@@ -981,7 +1023,7 @@ const PROGRAMMES = [
     "desc": "培养既懂信息安全技术又懂管理的复合人才，覆盖治理、合规与风险管理。",
     "requirements": "本科学位；雅思6.5/托福80",
     "tuitionHkd": 400000,
-    "tuitionNote": "HK$400,000 全日制 / HK$360,000 兼读（2027/28 官方）",
+    "tuitionNote": "HK$400,000 全日制 / HK$360,000 兼读（2027/28 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2019,
@@ -996,7 +1038,8 @@ const PROGRAMMES = [
     "descCn": "科大信息及网络安全管理理学硕士为学生提供在动态网络安全领域脱颖而出所必需的技术与管理技能。",
     "descEn": "The HKUST MSc in Information and Cyber Security Management (MScICSM) program equips you with the essential technical and managerial skills needed to excel in the dynamic field of cyber security.",
     "requirementsEn": "Applicants must possess a bachelor's degree from a recognized university or approved institution with satisfactory academic performance. Relevant undergraduate degrees include computer science, information systems, AI, and data analytics.",
-    "requirementsCn": "申请人须具有认可大学或机构的学士学位且学业成绩良好。相关本科背景包括计算机科学、信息系统、人工智能、数据分析等。"
+    "requirementsCn": "申请人须具有认可大学或机构的学士学位且学业成绩良好。相关本科背景包括计算机科学、信息系统、人工智能、数据分析等。",
+    "tuitionCny": 342600
   },
   {
     "id": "hkust-mscism",
@@ -1010,7 +1053,7 @@ const PROGRAMMES = [
     "desc": "连接 IT 与商业战略，培养数字化转型所需的 IT 管理与产品人才。",
     "requirements": "本科学位；雅思6.5/托福80",
     "tuitionHkd": 360000,
-    "tuitionNote": "HK$360,000 全日制 / HK$297,000 兼读（2027/28 官方）",
+    "tuitionNote": "HK$360,000 全日制 / HK$297,000 兼读（2027/28 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2002,
@@ -1025,7 +1068,8 @@ const PROGRAMMES = [
     "descCn": "科大信息系统管理理学硕士将技术知识课程与聚焦科技管理的洞见课程相结合，旨在培养能够把握信息技术日益重要地位的新一代领导者。",
     "descEn": "The Master of Science in Information Systems Management (MScISM) program combines technical knowledge courses with insightful courses focused on technology management. Our aim is to nurture a new generation of leaders who can capitalize on the growing importance of information technology.",
     "requirementsEn": "Applicants must have a good bachelor's degree from a recognized university or approved institution. Part-time mode applicants should have at least two years of post-qualification work experience.",
-    "requirementsCn": "申请人须具有认可大学或机构的良好学士学位。兼读制申请人应具备至少两年毕业后工作经验。"
+    "requirementsCn": "申请人须具有认可大学或机构的良好学士学位。兼读制申请人应具备至少两年毕业后工作经验。",
+    "tuitionCny": 308300
   },
   {
     "id": "hkust-mimt",
@@ -1039,7 +1083,7 @@ const PROGRAMMES = [
     "desc": "面向年轻毕业生的精英管理硕士，提供国际交换、领导力训练与职业加速。",
     "requirements": "本科学位；工作经验通常不超过2年；雅思6.5/托福80",
     "tuitionHkd": 420000,
-    "tuitionNote": "HK$420,000（2027/28 官方）",
+    "tuitionNote": "HK$420,000（2027/28 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2010,
@@ -1054,7 +1098,8 @@ const PROGRAMMES = [
     "descCn": "科大国际管理理学硕士帮助学生在一年内掌握必要的管理知识与技能，为在全球组织与多元工作环境中担任领导角色做好准备。",
     "descEn": "Apply to the HKUST MIMT program today to gain essential management knowledge and skills in just one year, preparing yourself for leadership roles in global organizations and diverse work environments.",
     "requirementsEn": "MIMT: Possess a Bachelor's degree from a recognized institution, or an approved equivalent qualification. MIMT (CEMS): Possess a Business related Bachelor's degree; Compulsory GMAT/GRE report with satisfactory score.",
-    "requirementsCn": "MIMT：认可机构的学士学位或同等资格。MIMT（CEMS）：商科相关学士学位；必须提交成绩达标的 GMAT/GRE。"
+    "requirementsCn": "MIMT：认可机构的学士学位或同等资格。MIMT（CEMS）：商科相关学士学位；必须提交成绩达标的 GMAT/GRE。",
+    "tuitionCny": 359700
   },
   {
     "id": "hkust-mscmark",
@@ -1068,7 +1113,7 @@ const PROGRAMMES = [
     "desc": "强调大数据营销、消费者洞察与数字品牌策略，课程与业界紧密合作。",
     "requirements": "本科学位；雅思6.5/托福80",
     "tuitionHkd": 400000,
-    "tuitionNote": "HK$400,000（2027/28 官方）",
+    "tuitionNote": "HK$400,000（2027/28 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2016,
@@ -1083,7 +1128,8 @@ const PROGRAMMES = [
     "descCn": "科大市场营销理学硕士为一年全日制项目，提供基础课程，使学生掌握当今雇主视为关键领域的专业知识，包括数据驱动营销、数字营销、品牌管理与人工智能。",
     "descEn": "The Master of Science in Marketing (MScMARK) is a 1-year full-time program offering foundational courses that enable students to gain expertise in areas regarded as critical by today's employers, including data-driven marketing, digital marketing, brand management and artificial intelligence (AI).",
     "requirementsEn": "A bachelor's degree from a recognized university or other approved institution and evidence of satisfactory academic performance. No minimum work experience is required.",
-    "requirementsCn": "认可大学或其他认可机构的学士学位，且学业成绩良好。无最低工作经验要求。"
+    "requirementsCn": "认可大学或其他认可机构的学士学位，且学业成绩良好。无最低工作经验要求。",
+    "tuitionCny": 342600
   },
   {
     "id": "hkust-msgf",
@@ -1126,7 +1172,7 @@ const PROGRAMMES = [
     "desc": "工学院开设、商学院协作的交叉项目，覆盖区块链、智能合约、数字资产与监管科技。",
     "requirements": "本科学位（工程/科学/商科等）；雅思6.5/托福80",
     "tuitionHkd": 405000,
-    "tuitionNote": "HK$405,000（2027/28 Fall intake，全日制及兼读制名义课程费）。来源：官网项目页",
+    "tuitionNote": "HK$405,000（2027/28 Fall intake，全日制及兼读制名义课程费）。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2019,
@@ -1141,7 +1187,8 @@ const PROGRAMMES = [
     "descEn": "FinTech is an emerging but important area that has been developing rapidly in recent years. The MSc in Financial Technology (FinTech) program at HKUST is designed for talents and working professionals who want to combine technical and financial knowledge to generate innovative solutions that meet the challenges of this emerging field.",
     "requirementsEn": "Applicants must possess a bachelor's degree from a recognized university or tertiary institution. Applicants preferably should have a programming and mathematics background. A satisfactory GMAT/GRE score is highly recommended.",
     "requirementsCn": "申请人须具有认可大学或高等院校的学士学位。最好具备编程与数学背景。强烈建议提供达标的 GMAT/GRE 成绩。",
-    "feeSource": "official-page"
+    "feeSource": "official-page",
+    "tuitionCny": 346900
   },
   {
     "id": "cityu-ftda",
@@ -1155,7 +1202,7 @@ const PROGRAMMES = [
     "desc": "商学院旗舰新项目，聚焦数字资产、区块链金融、加密市场监管与金融科技创业。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 384000,
-    "tuitionNote": "HKD 384,000（城大官方学费表）",
+    "tuitionNote": "HKD 384,000（城大官方学费表） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2024,
@@ -1170,7 +1217,8 @@ const PROGRAMMES = [
     "descCn": "城大金融科技与数字资产理学硕士融合金融、人工智能与数据、数字产品以及数字资产监管，跨多个商科领域授课，面向希望在金融与科技交叉领域发展的学生。",
     "descEn": "The programme brings together finance, AI and data, digital products, and the regulation of digital assets. It is taught across several business disciplines and is designed for students who want to work at the intersection of finance and technology.",
     "requirementsEn": "Applicants should normally hold a recognised bachelor's degree in finance, economics, business, information systems, computer science, engineering, mathematics, statistics or a related discipline. TOEFL 79/4 or IELTS 6.0 or CET6 450.",
-    "requirementsCn": "通常应持有金融、经济、商科、信息系统、计算机科学、工程、数学、统计或相关专业的认可学士学位。托福 79/4 或雅思 6.0 或 CET6 450。"
+    "requirementsCn": "通常应持有金融、经济、商科、信息系统、计算机科学、工程、数学、统计或相关专业的认可学士学位。托福 79/4 或雅思 6.0 或 CET6 450。",
+    "tuitionCny": 328900
   },
   {
     "id": "cityu-maia",
@@ -1184,7 +1232,7 @@ const PROGRAMMES = [
     "desc": "This programme aims to provide accounting or finance major graduates an opportunity to enhance their skills by developing an expertise in international accounting as well as further understanding in Hong Kong accounting and related arena of knowledge. Students will be provided with specialised knowledge in international and Hong Kong accounting as well as related fields of information management, international business and investment.",
     "requirements": "Hold an accounting or finance degree from a recognised university; or hold an equivalent qualification acceptable to CityUHK; and preferably possess 2 years of experience in accounting or business disciplines. English: TOEFL 79 (or 4) / IELTS 6.0 / CET-6 450 or equivalent.",
     "tuitionHkd": 348000,
-    "tuitionNote": "HKD 348,000（全日制 1 年 / 兼读制 2 年）。来源：官网项目页",
+    "tuitionNote": "HKD 348,000（全日制 1 年 / 兼读制 2 年）。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2000,
@@ -1197,7 +1245,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "This programme aims to provide accounting or finance major graduates an opportunity to enhance their skills by developing an expertise in international accounting as well as further understanding in Hong Kong accounting and related arena of knowledge. Students will be provided with specialised knowledge in international and Hong Kong accounting as well as related fields of information management, international business and investment.",
-    "descCn": "城大国际会计学文学硕士为会计或金融背景毕业生提供提升技能的机会，深入学习国际会计并进一步理解香港会计及相关知识领域。学生将获得国际与香港会计，以及信息管理、国际商务与投资等领域的专业知识。"
+    "descCn": "城大国际会计学文学硕士为会计或金融背景毕业生提供提升技能的机会，深入学习国际会计并进一步理解香港会计及相关知识领域。学生将获得国际与香港会计，以及信息管理、国际商务与投资等领域的专业知识。",
+    "tuitionCny": 298100
   },
   {
     "id": "cityu-mscpacg",
@@ -1211,7 +1260,7 @@ const PROGRAMMES = [
     "desc": "双轨培养专业会计与公司治理能力，适合会计与合规方向发展。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 348000,
-    "tuitionNote": "HKD 348,000（全日制 1 年 / 兼读制 2 年）。来源：官网项目页",
+    "tuitionNote": "HKD 348,000（全日制 1 年 / 兼读制 2 年）。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2000,
@@ -1226,7 +1275,8 @@ const PROGRAMMES = [
     "descCn": "城大专业会计与企业管治理学硕士旨在提供主动学习环境，培养学生成为香港及大中华区专业会计与公司治理领域的领导人才。",
     "descEn": "The MScPACG programme aims to provide an active learning environment to develop students for leadership positions in the professional accounting and corporate governance area in Hong Kong and the Greater China region.",
     "requirementsEn": "Professional Accounting Stream: hold a non-accounting degree from a recognised university. Corporate Governance Stream: hold a degree from recognised universities or professional membership from recognized institutions. TOEFL 79/4 or IELTS 6.0 or CET6 450.",
-    "requirementsCn": "专业会计方向：持有认可大学的非会计学士学位。企业管治方向：持有认可大学学位或认可机构的专业会员资格。托福 79/4 或雅思 6.0 或 CET6 450。"
+    "requirementsCn": "专业会计方向：持有认可大学的非会计学士学位。企业管治方向：持有认可大学学位或认可机构的专业会员资格。托福 79/4 或雅思 6.0 或 CET6 450。",
+    "tuitionCny": 298100
   },
   {
     "id": "cityu-mscoscm",
@@ -1240,7 +1290,7 @@ const PROGRAMMES = [
     "desc": "运营与供应链管理硕士，QS 2026 全球第20、亚洲第2，运营与供应链领域极具竞争力。官方学费 HKD 330,000。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 330000,
-    "tuitionNote": "HKD 330,000（城大官方学费表）",
+    "tuitionNote": "HKD 330,000（城大官方学费表） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2004,
@@ -1255,7 +1305,8 @@ const PROGRAMMES = [
     "descCn": "城大运营与供应链管理理学硕士旨在使学生掌握现代分析与管理技能，以支持供应链管理中各层级运营与战略实践的决策。",
     "descEn": "This programme aims to enable students to apply modern analytical and managerial skills that facilitate decision-making at all levels of operational and strategic practices in Supply Chain Management.",
     "requirementsEn": "Hold a recognized Bachelor's degree; Working experience is preferred but NOT required. TOEFL 79 or 4.5 (from 21 Jan 2026) or IELTS 6.5 or CET6 450 if MoI not English.",
-    "requirementsCn": "持有认可学士学位；有工作经验者优先但非必须。非英语授课需托福 79 或 4.5（2026年1月21日起）或雅思 6.5 或 CET6 450。"
+    "requirementsCn": "持有认可学士学位；有工作经验者优先但非必须。非英语授课需托福 79 或 4.5（2026年1月21日起）或雅思 6.5 或 CET6 450。",
+    "tuitionCny": 282600
   },
   {
     "id": "cityu-mscbdaqab",
@@ -1269,7 +1320,7 @@ const PROGRAMMES = [
     "desc": "定量导向的商业分析项目，强调统计建模、优化与商业决策。",
     "requirements": "本科学位；定量背景优先；雅思6.5/托福79",
     "tuitionHkd": 360000,
-    "tuitionNote": "HKD 360,000（城大官方学费表）",
+    "tuitionNote": "HKD 360,000（城大官方学费表） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2018,
@@ -1284,7 +1335,8 @@ const PROGRAMMES = [
     "descCn": "城大商业及数据分析理学硕士（定量商业分析方向）旨在通过主动学习应用统计、大数据管理、数据挖掘、社交媒体分析等领域的理论、方法与技术支持技术，培养学生商业数据分析的专业知识。",
     "descEn": "The MSc in Business and Data Analytics (MScBDA) programme aims to cultivate students with professional knowledge of business data analytics through active learning of the theories, methods, supporting techniques across a wide range of knowledge areas such as applied statistics, big data management, data mining and social media analytics.",
     "requirementsEn": "Hold a recognized Bachelor's degree in any disciplines with the curricula covering appropriate mathematical knowledge. Selection will be based on the candidate's academic performance in previous studies, relevant working experience. TOEFL 79/4 or IELTS 6.0.",
-    "requirementsCn": "持有认可的任何学科学士学位，且课程涵盖适当的数学知识。录取将根据学业成绩与相关工作经验综合评定。托福 79/4 或雅思 6.0。"
+    "requirementsCn": "持有认可的任何学科学士学位，且课程涵盖适当的数学知识。录取将根据学业成绩与相关工作经验综合评定。托福 79/4 或雅思 6.0。",
+    "tuitionCny": 308300
   },
   {
     "id": "cityu-mscfin",
@@ -1298,7 +1350,7 @@ const PROGRAMMES = [
     "desc": "The programme aims at providing students with advanced knowledge in financial management including financing & investment strategies and risk management.",
     "requirements": "Applicants must hold a bachelor's degree from a recognized university; and preferably possess more than 1 year of work experience in the industry. English: TOEFL 79 (or 4 from 21 Jan 2026) / IELTS 6.0 / CET-6 490 or equivalent.",
     "tuitionHkd": 402000,
-    "tuitionNote": "HKD 402,000（城大官方学费表）",
+    "tuitionNote": "HKD 402,000（城大官方学费表） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2002,
@@ -1311,7 +1363,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "The programme aims at providing students with advanced knowledge in financial management including financing & investment strategies and risk management.",
-    "descCn": "城大金融学理学硕士旨在为学生提供财务管理的进阶知识，涵盖融资与投资策略以及风险管理。"
+    "descCn": "城大金融学理学硕士旨在为学生提供财务管理的进阶知识，涵盖融资与投资策略以及风险管理。",
+    "tuitionCny": 344300
   },
   {
     "id": "cityu-mscae",
@@ -1325,7 +1378,7 @@ const PROGRAMMES = [
     "desc": "强调计量方法在现实经济问题中的应用，适合政策、金融与咨询方向。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 354000,
-    "tuitionNote": "HKD 354,000（城大官方学费表）",
+    "tuitionNote": "HKD 354,000（城大官方学费表） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2008,
@@ -1340,7 +1393,8 @@ const PROGRAMMES = [
     "descCn": "城大应用经济学理学硕士为计划在跨国公司、投资或商业银行、行业协会、政府机构与政策研究机构担任经济分析师、政策研究员与投资策略师的学生，提供经济分析与实证方法的严格训练。",
     "descEn": "The programme provides a rigorous training in economic analysis and empirical methods for those who plan to pursue a career as economic analysts, policy researchers and investment strategists in multinational corporations, investment or commercial banks, trade associations, government bodies and policy research institutes.",
     "requirementsEn": "Applicants must hold a bachelor's degree from a recognized university. An undergraduate degree in economics or related areas is not a pre-requisite. Students with a solid quantitative background and commitment to academic study are encouraged to apply.",
-    "requirementsCn": "申请人须持有认可大学的学士学位。经济学或相关专业本科学位非必要条件。欢迎具备扎实定量背景与学术研究意愿的学生申请。"
+    "requirementsCn": "申请人须持有认可大学的学士学位。经济学或相关专业本科学位非必要条件。欢迎具备扎实定量背景与学术研究意愿的学生申请。",
+    "tuitionCny": 303200
   },
   {
     "id": "cityu-mscfe",
@@ -1354,7 +1408,7 @@ const PROGRAMMES = [
     "desc": "交叉项目，训练金融建模、衍生品定价、量化交易与风险管理技术。",
     "requirements": "本科学位（工程/数学/物理/商科等）；雅思6.5/托福79",
     "tuitionHkd": 402000,
-    "tuitionNote": "HKD 402,000（城大官方学费表）",
+    "tuitionNote": "HKD 402,000（城大官方学费表） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2004,
@@ -1369,7 +1423,8 @@ const PROGRAMMES = [
     "descCn": "城大金融工程学理学硕士旨在帮助学生掌握高级定量技能，以分析复杂衍生品模型、对复杂金融工具进行定价与风险评估，并制定相应的风险管理策略。",
     "descEn": "The programme targets at helping students acquire advanced quantitative skills to analyze sophisticated derivative models, price and evaluate the risk of complex financial instruments, and develop appropriate risk management strategies.",
     "requirementsEn": "Hold a bachelor's degree from a recognized university; preferably possess more than 1 year of work experience in the industry; and have a strong foundation in quantitative analysis. TOEFL 79/4 or IELTS 6.0.",
-    "requirementsCn": "持有认可大学的学士学位；最好具备一年以上相关行业工作经验；并具备扎实的定量分析基础。托福 79/4 或雅思 6.0。"
+    "requirementsCn": "持有认可大学的学士学位；最好具备一年以上相关行业工作经验；并具备扎实的定量分析基础。托福 79/4 或雅思 6.0。",
+    "tuitionCny": 344300
   },
   {
     "id": "cityu-mscaib",
@@ -1383,7 +1438,7 @@ const PROGRAMMES = [
     "desc": "The MSc in Artificial Intelligence in Business (AIB) is designed to prepare the next generation of business leaders who understand and use AI effectively. Our graduates will develop the skills needed to navigate the challenges of the business world by 1) using AI to improve business efficiency, 2) managing AI projects for business success, and 3) creating AI solutions that benefit both society and industry. This programme is aimed at those with a background in IT/IS or business, helping them build a well-rounded AI + business mindset.",
     "requirements": "Hold a recognized Bachelor's degree from a tertiary education institution in Hong Kong funded by the University Grants Committee (UGC), or an equivalent degree. Applicants should have intermediate-level knowledge in IT/IS or business, demonstrated by completing relevant undergraduate courses or having related work experience. English: TOEFL 79 (or 4) / IELTS 6.0 / CET-6 450 or equivalent.",
     "tuitionHkd": 393000,
-    "tuitionNote": "HKD 393,000（城大官方学费表）",
+    "tuitionNote": "HKD 393,000（城大官方学费表） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2024,
@@ -1396,7 +1451,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "The MSc in Artificial Intelligence in Business (AIB) is designed to prepare the next generation of business leaders who understand and use AI effectively. Our graduates will develop the skills needed to navigate the challenges of the business world by 1) using AI to improve business efficiency, 2) managing AI projects for business success, and 3) creating AI solutions that benefit both society and industry. This programme is aimed at those with a background in IT/IS or business.",
-    "descCn": "城大商业人工智能理学硕士旨在培养理解并有效运用 AI 的下一代商业领袖。毕业生将具备三项能力：1）用 AI 提升商业效率；2）管理 AI 项目以实现商业成功；3）创造惠及社会与产业的 AI 解决方案。项目面向有 IT/IS 或商科背景的学生。"
+    "descCn": "城大商业人工智能理学硕士旨在培养理解并有效运用 AI 的下一代商业领袖。毕业生将具备三项能力：1）用 AI 提升商业效率；2）管理 AI 项目以实现商业成功；3）创造惠及社会与产业的 AI 解决方案。项目面向有 IT/IS 或商科背景的学生。",
+    "tuitionCny": 336600
   },
   {
     "id": "cityu-mscbisfit",
@@ -1410,7 +1466,7 @@ const PROGRAMMES = [
     "desc": "聚焦金融科技与智能系统在商业中的应用，技术与管理并重。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 330000,
-    "tuitionNote": "HKD 330,000（城大官方学费表）",
+    "tuitionNote": "HKD 330,000（城大官方学费表） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 1990,
@@ -1425,7 +1481,8 @@ const PROGRAMMES = [
     "descCn": "城大商业信息系统理学硕士（金融与智能科技方向）旨在训练学生掌握智能商业技术领域，其中金融科技是最知名、最具代表性的应用。金融与智能科技有望革新传统商业运营，带来更具创新性的产品、解决方案与流程。",
     "descEn": "The Financial and Intelligent Technology (FIT) Stream aims to train students in the domains of intelligent business technology, of which financial technology is the most well-known and representative application. Financial and intelligent technology hold the potential to revolutionize traditional business operations and lead to more innovative products, solutions, and processes.",
     "requirementsEn": "Hold a recognized Bachelor's degree from one of the tertiary education institutions in Hong Kong funded by the University Grant Committee (UGC), or equivalent, with intermediate level knowledge on IT/IS or Finance/Accounting.",
-    "requirementsCn": "持有香港教资会资助院校或同等机构的认可学士学位，且具备 IT/信息系统或金融/会计的中级水平知识。"
+    "requirementsCn": "持有香港教资会资助院校或同等机构的认可学士学位，且具备 IT/信息系统或金融/会计的中级水平知识。",
+    "tuitionCny": 282600
   },
   {
     "id": "cityu-mscbismis",
@@ -1439,7 +1496,7 @@ const PROGRAMMES = [
     "desc": "侧重智能系统规划、实施与管理，培养数字化转型推动者。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 330000,
-    "tuitionNote": "HKD 330,000（城大官方学费表）",
+    "tuitionNote": "HKD 330,000（城大官方学费表） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 1990,
@@ -1454,7 +1511,8 @@ const PROGRAMMES = [
     "descCn": "城大商业信息系统理学硕士（智能系统管理方向）旨在训练学生掌握支撑当代信息社会的商业核心领域与前沿信息系统，使毕业生能够在同时需要高级商业知识与 IT 赋能解决问题能力的岗位上脱颖而出。",
     "descEn": "The Management of Intelligent Systems Stream aims to train students in the core domains of business and cutting-edge information systems that underpin the contemporary information society, so that graduates can excel in careers with professional positions that require both advanced business knowledge and IT-enabled problem solving skills.",
     "requirementsEn": "Hold a recognized Bachelor's degree in any subjects, preferably not in Information Systems or Computer Science related discipline, from one of the tertiary education institutions in Hong Kong funded by the University Grant Committee (UGC), or equivalent.",
-    "requirementsCn": "持有香港教资会资助院校或同等机构的认可学士学位，专业不限，信息系统或计算机科学相关背景以外者更佳。"
+    "requirementsCn": "持有香港教资会资助院校或同等机构的认可学士学位，专业不限，信息系统或计算机科学相关背景以外者更佳。",
+    "tuitionCny": 282600
   },
   {
     "id": "cityu-mscdtti",
@@ -1468,7 +1526,7 @@ const PROGRAMMES = [
     "desc": "培养推动组织数字化转型的战略与技术复合人才。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 306000,
-    "tuitionNote": "HKD 306,000（城大官方学费表）",
+    "tuitionNote": "HKD 306,000（城大官方学费表） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2021,
@@ -1483,7 +1541,8 @@ const PROGRAMMES = [
     "descCn": "城大数字化转型及科技创新理学硕士旨在培养未来的数字化管理者与专业人士，理解组织中数字化转型与科技创新的机遇、原理与影响。项目不要求学生具备相关先修知识，但信息系统、商科或组织研究背景者有优势。",
     "descEn": "This programme aims to educate and train the digital managers and professionals of the future to understand the opportunity, principles and impact of digital transformation and technological innovation in organizations. The programme does not assume that students have prior knowledge in these areas, but a background in information systems, business or organization studies will be an advantage.",
     "requirementsEn": "Hold a recognized Bachelor's degree, preferably in a business or management related subject from a UGC-funded tertiary education institution in Hong Kong, or an equivalent institution overseas; have gained a basic level of computer literacy. TOEFL 79/4 or IELTS 6.5.",
-    "requirementsCn": "持有认可学士学位，最好是香港教资会资助院校或海外同等机构的商科或管理相关专业；具备基本计算机素养。托福 79/4 或雅思 6.5。"
+    "requirementsCn": "持有认可学士学位，最好是香港教资会资助院校或海外同等机构的商科或管理相关专业；具备基本计算机素养。托福 79/4 或雅思 6.5。",
+    "tuitionCny": 262100
   },
   {
     "id": "cityu-mscdcc",
@@ -1497,7 +1556,7 @@ const PROGRAMMES = [
     "desc": "由电子商务项目升级而来，覆盖数字商业、平台经济与智能计算。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 300300,
-    "tuitionNote": "HKD 267,300（本地生）/ HKD 300,300（非本地生）。来源：官网项目页",
+    "tuitionNote": "HKD 267,300（本地生）/ HKD 300,300（非本地生）。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2000,
@@ -1512,7 +1571,8 @@ const PROGRAMMES = [
     "descCn": "城大数字商务与计算理学硕士旨在培养学生成为能够在商业环境中评估和开发电子商务系统与服务的 IT 专业人才。学生将获得核心商业与技术相关科目的知识技能，并深入理解电子商务开发涉及的管理、监管与技术问题。",
     "descEn": "This programme aims to equip students with the skills necessary to become IT professionals that are competent in evaluating and developing e-Commerce systems and services within a business context. Students will gain knowledge and skills in core business and technical related subjects, together with an in-depth understanding of the specific managerial, regulatory, and technical issues involved in the exploitation of eCommerce.",
     "requirementsEn": "A recognised bachelor's degree in a Computing discipline (e.g., Computer Science, Information Systems, Information Technology); or a recognised bachelor's degree in a related discipline (e.g., Electronic Engineering, Economics and Finance) preferably with applicable IT experience.",
-    "requirementsCn": "计算类专业（如计算机科学、信息系统、信息技术）的认可学士学位；或相关专业（如电子工程、经济与金融）的认可学士学位，最好具备相关 IT 经验。"
+    "requirementsCn": "计算类专业（如计算机科学、信息系统、信息技术）的认可学士学位；或相关专业（如电子工程、经济与金融）的认可学士学位，最好具备相关 IT 经验。",
+    "tuitionCny": 257200
   },
   {
     "id": "cityu-mscbdaIAM",
@@ -1526,7 +1586,7 @@ const PROGRAMMES = [
     "desc": "侧重信息分析与管理决策，培养商业智能与数据治理人才。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 360000,
-    "tuitionNote": "HKD 360,000（城大官方学费表）",
+    "tuitionNote": "HKD 360,000（城大官方学费表） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2018,
@@ -1541,7 +1601,8 @@ const PROGRAMMES = [
     "descCn": "城大商业及数据分析理学硕士（信息分析管理方向）旨在通过主动学习应用统计、大数据管理、数据挖掘、社交媒体分析等领域的理论、方法与技术，培养学生商业数据分析的专业知识。",
     "descEn": "The MSc in Business and Data Analytics (MScBDA) programme aims to cultivate students with professional knowledge of business data analytics through active learning of the theories, methods, supporting techniques across a wide range of knowledge areas such as applied statistics, big data management, data mining and social media analytics.",
     "requirementsEn": "Hold a recognized Bachelor's degree in any disciplines with the curricula covering appropriate mathematical knowledge. Selection will be based on academic performance and relevant working experience. TOEFL 79/4 or IELTS 6.0.",
-    "requirementsCn": "持有认可的任何学科学士学位，且课程涵盖适当的数学知识。录取将根据学业成绩与相关工作经验综合评定。托福 79/4 或雅思 6.0。"
+    "requirementsCn": "持有认可的任何学科学士学位，且课程涵盖适当的数学知识。录取将根据学业成绩与相关工作经验综合评定。托福 79/4 或雅思 6.0。",
+    "tuitionCny": 308300
   },
   {
     "id": "cityu-magbm",
@@ -1555,7 +1616,7 @@ const PROGRAMMES = [
     "desc": "QS 2026 全球第49，培养具国际视野的企业管理人才，强调跨文化领导力。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 399000,
-    "tuitionNote": "HKD 399,000（城大官方学费表）",
+    "tuitionNote": "HKD 399,000（城大官方学费表） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2005,
@@ -1570,7 +1631,8 @@ const PROGRAMMES = [
     "descCn": "城大全球企业管理文学硕士为香港同类首创，旨在帮助学员掌握跨越政治、经济与文化边界成功开展业务所需的独特技能与洞察，并具备整合关键商业职能全球维度的高超能力。",
     "descEn": "The first of its kind in Hong Kong, this specialist programme aims to help participants to acquire the unique skills and insights that are needed to successfully conduct business across political, economic and cultural boundaries and become highly competent in integrating the global dimensions of key business functions.",
     "requirementsEn": "Possess a recognized Bachelor's degree with Second Class Honours or above, or the equivalent. Those with at least three years of post-qualification managerial experience in international business or China-related activities preferred.",
-    "requirementsCn": "持有认可的二等荣誉学士学位或同等学历。具备三年以上国际商务或对华业务相关管理经验者优先。"
+    "requirementsCn": "持有认可的二等荣誉学士学位或同等学历。具备三年以上国际商务或对华业务相关管理经验者优先。",
+    "tuitionCny": 341700
   },
   {
     "id": "cityu-mscmi",
@@ -1584,7 +1646,7 @@ const PROGRAMMES = [
     "desc": "聚焦创新管理、创业与组织变革，培养未来产业推动者。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 399000,
-    "tuitionNote": "HKD 399,000（城大官方学费表）",
+    "tuitionNote": "HKD 399,000（城大官方学费表） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2020,
@@ -1599,7 +1661,8 @@ const PROGRAMMES = [
     "descCn": "城大管理与创新理学硕士旨在培养希望全面理解如何有效管理人员、组织与创新以实现战略目标的专业管理者与高管，帮助管理者发展应对复杂管理环境所需的批判性思维、分析、行为与创造技能。",
     "descEn": "This Programme aims to nurture professional managers and executives who want to acquire a broad-based understanding of how to effectively manage people, organizations and innovation to achieve strategic objectives. The Programme aims to help managers develop the critical thinking, analytical, behavioral, and creative-skills needed to deal with complicated management environments.",
     "requirementsEn": "Hold a recognized degree or equivalent. TOEFL 79 or 4 (from 21 Jan 2026) or IELTS 6.0 or CET6 450 if MoI not English.",
-    "requirementsCn": "持有认可学位或同等学历。非英语授课需托福 79 或 4（2026年1月21日起）或雅思 6.0 或 CET6 450。"
+    "requirementsCn": "持有认可学位或同等学历。非英语授课需托福 79 或 4（2026年1月21日起）或雅思 6.0 或 CET6 450。",
+    "tuitionCny": 341700
   },
   {
     "id": "cityu-mscmkt",
@@ -1613,7 +1676,7 @@ const PROGRAMMES = [
     "desc": "This programme is suitable for those who are interested in starting or further developing their business careers in marketing; those who intend to improve their analytical skills in making marketing decision; those who plan to pursue higher academic qualifications such as a PhD programme; those who have a strong background in a professional area (e.g. finance, engineering) but still want to enhance their understanding of customer behaviour and grasp more market opportunities to expand their businesses. Designed to nurture marketing professionals and entrepreneurs.",
     "requirements": "Hold a recognized bachelor's degree, or equivalent. Preferably possess over 2 years of working experience in business. English: TOEFL 79 (or 4) / IELTS 6.0 / CET-6 450 or equivalent. All shortlisted candidates are required to attend an interview.",
     "tuitionHkd": 379500,
-    "tuitionNote": "HKD 379,500（城大官方学费表）",
+    "tuitionNote": "HKD 379,500（城大官方学费表） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2001,
@@ -1626,7 +1689,8 @@ const PROGRAMMES = [
     "sourceNote": "项目名称已出现在本轮抓取的官网列表中",
     "feeSource": "official-page",
     "descEn": "This programme is suitable for those who are interested in starting or further developing their business careers in marketing; those who intend to improve their analytical skills in making marketing decision; those who plan to pursue higher academic qualifications such as a PhD programme; those who have a strong background in a professional area but still want to enhance their understanding of customer behaviour. Designed to nurture marketing professionals and entrepreneurs.",
-    "descCn": "城大市场营销理学硕士适合：希望在营销领域开启或发展职业生涯者；希望提升营销决策分析能力者；计划攻读博士等更高学历者；已有专业背景但希望加深对消费者行为理解者。项目旨在培养营销专业人才与企业家。"
+    "descCn": "城大市场营销理学硕士适合：希望在营销领域开启或发展职业生涯者；希望提升营销决策分析能力者；计划攻读博士等更高学历者；已有专业背景但希望加深对消费者行为理解者。项目旨在培养营销专业人才与企业家。",
+    "tuitionCny": 325000
   },
   {
     "id": "polyu-mscawm",
@@ -1640,7 +1704,7 @@ const PROGRAMMES = [
     "desc": "资产与财富管理硕士，设数字资产管理与家族办公室财富管理方向，面向高净值服务行业。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 519000,
-    "tuitionNote": "HK$519,000（官方学费页，30学分）",
+    "tuitionNote": "HK$519,000（官方学费页，30学分） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制/兼读制约 1-1.5 年",
     "foundedYear": 2025,
@@ -1655,7 +1719,8 @@ const PROGRAMMES = [
     "descCn": "项目注重建立行业联系与实践经验，通过数字社交平台和网络研讨会让学生与业界专业人士互动，实现与行业领袖的实时交流。",
     "descEn": "With a focus on building industry connections and practical experience, the programme offers students opportunities to engage with professionals through digital networking platforms and webinars, facilitating real-time interactions with industry leaders.",
     "requirementsEn": "A Bachelor's degree or equivalent in any discipline.",
-    "requirementsCn": "任何学科的学士学位或同等学历。"
+    "requirementsCn": "任何学科的学士学位或同等学历。",
+    "tuitionCny": 444500
   },
   {
     "id": "polyu-mscbm",
@@ -1669,7 +1734,7 @@ const PROGRAMMES = [
     "desc": "理大商业管理硕士，覆盖战略、营销、财务与运营核心模块，含海外暑期学校体验。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 424800,
-    "tuitionNote": "HK$424,800（官方学费页，36学分，不含暑期学校）",
+    "tuitionNote": "HK$424,800（官方学费页，36学分，不含暑期学校） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制约 1 年",
     "foundedYear": 2000,
@@ -1684,7 +1749,8 @@ const PROGRAMMES = [
     "descCn": "本项目旨在帮助学生掌握实用的管理知识，并在全球化、动态的商业环境中寻求切实可行的解决方案，使学生能够对所在组织作出有效贡献。",
     "descEn": "This programme aims to help students acquire practical knowledge of management and seek practical solutions in a global and dynamic business environment. It enables students to make effective contribution to their organisations.",
     "requirementsEn": "A Bachelor's degree or equivalent in any discipline.",
-    "requirementsCn": "任何学科的学士学位或同等学历。"
+    "requirementsCn": "任何学科的学士学位或同等学历。",
+    "tuitionCny": 363800
   },
   {
     "id": "polyu-mscacc",
@@ -1698,7 +1764,7 @@ const PROGRAMMES = [
     "desc": "专业会计硕士，对接香港会计师公会等专业资格。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 369000,
-    "tuitionNote": "HK$369,000（官方学费页，31学分）",
+    "tuitionNote": "HK$369,000（官方学费页，31学分） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "兼读制约 1.5-2 年",
     "foundedYear": 1990,
@@ -1713,7 +1779,8 @@ const PROGRAMMES = [
     "descCn": "本项目使学生熟悉当代最新会计知识与议题，建立会计知识基础，培养扎实的分析能力与判断力，以作出高效有效的商业决策。",
     "descEn": "This programme familiarises students with contemporary and up-to-date accounting knowledge and issues. It aims to build up their accounting knowledge base, enabling them to develop sound analytical skills and judgement and to make efficient and effective business decisions.",
     "requirementsEn": "A Bachelor's degree in accounting or other relevant disciplines; OR Equivalent professional qualifications. Preference will be given to applicants with at least one year of relevant work experience.",
-    "requirementsCn": "会计或相关专业学士学位，或同等专业资格。优先考虑至少一年相关工作经验者。"
+    "requirementsCn": "会计或相关专业学士学位，或同等专业资格。优先考虑至少一年相关工作经验者。",
+    "tuitionCny": 316000
   },
   {
     "id": "polyu-mscafa",
@@ -1727,7 +1794,7 @@ const PROGRAMMES = [
     "desc": "融合会计、金融与数据分析，培养 fintech 时代的会计金融专才。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 390000,
-    "tuitionNote": "HK$390,000（官方学费页）",
+    "tuitionNote": "HK$390,000（官方学费页） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2021,
@@ -1742,7 +1809,8 @@ const PROGRAMMES = [
     "descCn": "本项目旨在为学生提供会计与金融核心知识，以及将数据分析和技术应用于相关实践的技能，帮助会计金融从业者跟上最新数据分析应用与技能。",
     "descEn": "The programme aims to provide students with a combination of core knowledge in accounting and finance and skills in applying data analytics and technology to related practices. It facilitates practitioners in accounting and finance to keep up with the latest data analytics applications and skills.",
     "requirementsEn": "A Bachelor's degree; Preference will be given to applicants with a business degree who are equipped with some fundamental training in computing or graduates with a background in computing, science or engineering.",
-    "requirementsCn": "学士学位；优先考虑具备一定计算机基础训练的商科背景申请人，或计算机、科学、工程背景毕业生。"
+    "requirementsCn": "学士学位；优先考虑具备一定计算机基础训练的商科背景申请人，或计算机、科学、工程背景毕业生。",
+    "tuitionCny": 334000
   },
   {
     "id": "polyu-mpa",
@@ -1756,7 +1824,7 @@ const PROGRAMMES = [
     "desc": "面向转专业或进阶的会计人才，课程覆盖财务报告、审计、税务与商业法。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 385200,
-    "tuitionNote": "HK$385,200 per programme（HK$10,700 per credit），本地及非本地硕士生。来源：官网项目页",
+    "tuitionNote": "HK$385,200 per programme（HK$10,700 per credit），本地及非本地硕士生。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 1990,
@@ -1771,7 +1839,8 @@ const PROGRAMMES = [
     "descEn": "The Master of Professional Accounting (MPA) programme is a conversion Master's programme that aims to provide business degree graduates with an intensive education in accounting and related knowledge and skills.",
     "requirementsEn": "A Bachelor's degree in business awarded by a recognised tertiary institution; OR A non-business Bachelor's degree plus evidence of completion of fundamental business course(s) deemed acceptable by the School of Accounting and Finance (AF) of PolyU.",
     "requirementsCn": "认可高等院校的商科学士学位；或非商科学士学位，并提供完成理工大会计及金融学院认可的基础商科课程的证明。",
-    "feeSource": "official-page"
+    "feeSource": "official-page",
+    "tuitionCny": 329900
   },
   {
     "id": "polyu-mcg",
@@ -1785,7 +1854,7 @@ const PROGRAMMES = [
     "desc": "聚焦公司治理、合规、风险管理与董事会实务。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 369000,
-    "tuitionNote": "HK$369,000（官方学费页）",
+    "tuitionNote": "HK$369,000（官方学费页） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 1998,
@@ -1800,7 +1869,8 @@ const PROGRAMMES = [
     "descCn": "企业管治硕士（MCG）旨在为企业管理人员（包括CEO、董事、财务总监、司库、管治专业人士及其他关键高管）提供公司治理的深入知识与实务能力。",
     "descEn": "The Master of Corporate Governance (MCG) programme aims to equip corporate administrators, including chief executive officers, board directors, financial controllers, treasurers, governance professionals, and other key corporate officers, with in-depth knowledge and practical competencies in corporate governance.",
     "requirementsEn": "A Bachelor's degree from a recognised university, or the equivalent. Preference will be given to applicants with relevant working experience, but it is not a must.",
-    "requirementsCn": "认可大学的学士学位或同等学历。有相关工作经验者优先，但非必须。"
+    "requirementsCn": "认可大学的学士学位或同等学历。有相关工作经验者优先，但非必须。",
+    "tuitionCny": 316000
   },
   {
     "id": "polyu-mofcf",
@@ -1814,7 +1884,7 @@ const PROGRAMMES = [
     "desc": "企业金融方向，覆盖公司估值、并购、融资与风险管理。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 403200,
-    "tuitionNote": "HK$403,200（官方学费页）",
+    "tuitionNote": "HK$403,200（官方学费页） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制约 1 年",
     "foundedYear": 1998,
@@ -1829,7 +1899,8 @@ const PROGRAMMES = [
     "descCn": "金融学硕士（企业金融）旨在为企业金融从业者提供教育机会，提升其在公司金融、企业风险管理及相关领域的专业性与理论水平。",
     "descEn": "The Master of Finance (Corporate Finance) programme aims to provide corporate finance practitioners with education opportunities to enhance their professionalism and elevate their intellectual capacity in corporate finance, corporate risk management and related areas.",
     "requirementsEn": "A Bachelor's degree from a recognised university, or the equivalent.",
-    "requirementsCn": "认可大学的学士学位或同等学历。"
+    "requirementsCn": "认可大学的学士学位或同等学历。",
+    "tuitionCny": 345300
   },
   {
     "id": "polyu-mofim",
@@ -1843,7 +1914,7 @@ const PROGRAMMES = [
     "desc": "投资管理方向，覆盖资产配置、组合管理、另类投资与行为金融。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 403200,
-    "tuitionNote": "HK$403,200（官方学费页）",
+    "tuitionNote": "HK$403,200（官方学费页） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制约 1 年",
     "foundedYear": 1998,
@@ -1858,7 +1929,8 @@ const PROGRAMMES = [
     "descCn": "金融学硕士（投资管理）旨在为希望专攻投资管理的学位毕业生（尤其是工作经验较少者）提供扎实的金融概念与最新行业知识。",
     "descEn": "The Master of Finance (Investment Management) programme aims to provide degree graduates who would like to specialise in investment management, particularly those with no or little work experience, with a combination of solid finance concepts and up-to-date industry know-how.",
     "requirementsEn": "A Bachelor's degree from a recognised university, or the equivalent.",
-    "requirementsCn": "认可大学的学士学位或同等学历。"
+    "requirementsCn": "认可大学的学士学位或同等学历。",
+    "tuitionCny": 345300
   },
   {
     "id": "polyu-mscecon",
@@ -1872,7 +1944,7 @@ const PROGRAMMES = [
     "desc": "设应用经济学与数字经济学方向，强调政策分析与数据驱动。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 382800,
-    "tuitionNote": "HK$382,800（官方学费页）",
+    "tuitionNote": "HK$382,800（官方学费页） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2024,
@@ -1887,7 +1959,8 @@ const PROGRAMMES = [
     "descCn": "本项目旨在培养学生扎实的经济分析技能，强调数字技术的快速发展与数据日益增长的重要性。除核心经济理论的全面训练外，学生可选择应用经济学或数字经济学方向。",
     "descEn": "This programme aims to equip students with solid economic analysis skills, with an emphasis on the rapid evolution of digital technology and growing importance of data. In addition to receiving comprehensive training in core economic theory, students have the option of specialising in either applied economics or digital economics.",
     "requirementsEn": "A Bachelor's degree from a recognised university.",
-    "requirementsCn": "认可大学的学士学位。"
+    "requirementsCn": "认可大学的学士学位。",
+    "tuitionCny": 327900
   },
   {
     "id": "polyu-mscesg",
@@ -1901,7 +1974,7 @@ const PROGRAMMES = [
     "desc": "培养 ESG 报告、绿色金融与可持续战略专才，响应全球监管与投资趋势。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 378000,
-    "tuitionNote": "HK$378,000（官方学费页）",
+    "tuitionNote": "HK$378,000（官方学费页） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制约 1 年",
     "foundedYear": 2023,
@@ -1916,7 +1989,8 @@ const PROGRAMMES = [
     "descCn": "本项目旨在为毕业生提供 ESG 与可持续发展的跨学科知识（如经济、会计、金融、管理与技术）及相关实践技能。",
     "descEn": "The programme aims to provide graduates with interdisciplinary knowledge in ESG and sustainability (e.g., economic, accounting, finance, management and technology) and relevant skills for related practice.",
     "requirementsEn": "A Bachelor's degree from a recognised university. Applicants with relevant working experience are preferred, but it is not a requirement.",
-    "requirementsCn": "认可大学的学士学位。有相关工作经验者优先，但非必须。"
+    "requirementsCn": "认可大学的学士学位。有相关工作经验者优先，但非必须。",
+    "tuitionCny": 323700
   },
   {
     "id": "polyu-mscgscm",
@@ -1930,7 +2004,7 @@ const PROGRAMMES = [
     "desc": "依托香港物流枢纽优势，培养全球供应链战略与运营人才。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 348000,
-    "tuitionNote": "HK$348,000（官方学费页，MSc）",
+    "tuitionNote": "HK$348,000（官方学费页，MSc） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 2000,
@@ -1945,7 +2019,8 @@ const PROGRAMMES = [
     "descCn": "本项目使管理者具备通过平衡成本、质量与效率，在供应链中创造并保持竞争力的能力。",
     "descEn": "This programme equips executives with the capacity to create and sustain competitiveness in the supply chain by balancing costs, quality and efficiency.",
     "requirementsEn": "A Bachelor's degree in a business-related discipline or an equivalent qualification. For non-business degree holders, 2 years of relevant work experience or relevant background knowledge is preferred.",
-    "requirementsCn": "商科相关专业学士学位或同等资格。非商科背景者，优先考虑具备 2 年相关工作经验或相关背景知识者。"
+    "requirementsCn": "商科相关专业学士学位或同等资格。非商科背景者，优先考虑具备 2 年相关工作经验或相关背景知识者。",
+    "tuitionCny": 298100
   },
   {
     "id": "polyu-mscistl",
@@ -1959,7 +2034,7 @@ const PROGRAMMES = [
     "desc": "亚洲领先的航运与物流项目，覆盖航运金融、港口管理、国际贸易物流。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 316800,
-    "tuitionNote": "HK$316,800（官方学费页，MSc）",
+    "tuitionNote": "HK$316,800（官方学费页，MSc） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 1998,
@@ -1974,7 +2049,8 @@ const PROGRAMMES = [
     "descCn": "本项目使学生具备在航运、运输与物流行业推行现代化、高性价比改革所需的知识与技能。",
     "descEn": "This programme equips students with the knowledge and skills needed to introduce modern and cost-effective reforms into the shipping, transport and logistics industries.",
     "requirementsEn": "A Bachelor's degree or an equivalent qualification OR Full membership in one of the following professional bodies: The Chartered Institute of Logistics and Transport, Hong Kong; The Institute of Chartered Shipbrokers, UK; The Chartered Insurance Institute, UK; The Chartered Institute of Purchasing and Supply, UK",
-    "requirementsCn": "学士学位或同等资格；或下列专业机构的正式会员：香港特许物流及运输学会、英国特许船务经纪学会、英国特许保险学会、英国特许采购与供应学会。"
+    "requirementsCn": "学士学位或同等资格；或下列专业机构的正式会员：香港特许物流及运输学会、英国特许船务经纪学会、英国特许保险学会、英国特许采购与供应学会。",
+    "tuitionCny": 271300
   },
   {
     "id": "polyu-mscom",
@@ -1988,7 +2064,7 @@ const PROGRAMMES = [
     "desc": "培养运营优化、质量管理与流程改进的管理人才。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 369000,
-    "tuitionNote": "HK$369,000 per programme（HK$12,300 per credit），本地及非本地生。来源：官网项目页",
+    "tuitionNote": "HK$369,000 per programme（HK$12,300 per credit），本地及非本地生。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 2000,
@@ -2003,7 +2079,8 @@ const PROGRAMMES = [
     "descEn": "This programme provides non-business graduates with the foundation they need in the main functional areas of management, and it offers graduates in all disciplines in-depth training in operations management.",
     "requirementsEn": "A Bachelor's degree or an equivalent professional qualification, preferably with at least 1 year of relevant work experience. Applicants with other post-secondary qualifications who have been employed in industry, commerce or public administration for no less than 6 years, of which 3 years have been in a managerial capacity, will also be considered.",
     "requirementsCn": "学士学位或同等专业资格，最好具备至少一年相关工作经验。具备其他专上学历、在工商或公共行政领域工作不少于 6 年（其中 3 年为管理岗位）的申请人也会被考虑。",
-    "feeSource": "official-page"
+    "feeSource": "official-page",
+    "tuitionCny": 316000
   },
   {
     "id": "polyu-mscgbda",
@@ -2017,7 +2094,7 @@ const PROGRAMMES = [
     "desc": "融合全球商业战略与数据分析决策方法。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 423000,
-    "tuitionNote": "HK$423,000（官方学费页）",
+    "tuitionNote": "HK$423,000（官方学费页） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制约 1 年",
     "foundedYear": 2022,
@@ -2032,7 +2109,8 @@ const PROGRAMMES = [
     "descCn": "本项目面向多元背景（商科与非商科）但对全球商业充满热忱的学生，提供定量与定性两方面的广泛技能，帮助他们获得在全球商业环境中工作所需的资质。",
     "descEn": "The programme will take students who are from diverse backgrounds (business and non-business) but with an enthusiasm and interest to deal with global business. It aims at providing students with a wide range of skills, both quantitative and qualitative ones, and equipping them with qualifications necessary for working in a global business environment.",
     "requirementsEn": "A Bachelor's degree or equivalent in any discipline.",
-    "requirementsCn": "任何学科的学士学位或同等学历。"
+    "requirementsCn": "任何学科的学士学位或同等学历。",
+    "tuitionCny": 362300
   },
   {
     "id": "polyu-mscqm",
@@ -2046,7 +2124,7 @@ const PROGRAMMES = [
     "desc": "与浙江大学合作，主要在中国内地授课，培养质量管理与卓越运营人才。",
     "requirements": "本科学位；工作经验优先；中文授课为主",
     "tuitionHkd": 250000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 2,
     "durationText": "兼读制约 2 年",
     "foundedYear": 1999,
@@ -2061,7 +2139,8 @@ const PROGRAMMES = [
     "descEn": "No official English description published. Mainland joint programme (ZJU–PolyU), Chinese-medium site only. Official Chinese aim: 本课程旨在拓宽和深化管理人员及技术专家对前沿质量管理的认知和应用，强化系统性与风险性思维，培养创新能力，以追求组织卓越成就。",
     "requirementsEn": "No official English entry requirements published. Official Chinese: Bachelor's degree or above + ≥1 year full-time work experience; or age 35+ with ≥6 years work experience (3 in management) may be considered individually; pass joint centre written test and interview.",
     "requirementsCn": "官网暂无英文入学要求。官方中文：本科或以上学历 + 至少 1 年全职工作经验；或 35 岁以上、工作满 6 年（其中 3 年管理岗）可个别考虑；须通过联合中心笔试与面试。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 214100
   },
   {
     "id": "polyu-mscba",
@@ -2075,7 +2154,7 @@ const PROGRAMMES = [
     "desc": "培养商务数据分析与决策支持能力，兼顾技术与商业应用。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 399000,
-    "tuitionNote": "HK$399,000（官方学费页）",
+    "tuitionNote": "HK$399,000（官方学费页） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 2018,
@@ -2090,7 +2169,8 @@ const PROGRAMMES = [
     "descCn": "本项目从将分析技术应用于大数据以支持组织决策的基础讲起，进而深入研究各应用领域。",
     "descEn": "This programme starts with fundamentals of applying analytical techniques on big data for decision supports of an organisation, and progresses to in-depth studies of various application domains.",
     "requirementsEn": "Applicants should have a Bachelor's degree or equivalent academic/professional qualifications, preferably with at least one year of relevant work experience.",
-    "requirementsCn": "申请人应具有学士学位或同等学术/专业资格，最好具备至少一年相关工作经验。"
+    "requirementsCn": "申请人应具有学士学位或同等学术/专业资格，最好具备至少一年相关工作经验。",
+    "tuitionCny": 341700
   },
   {
     "id": "polyu-mschrm",
@@ -2104,7 +2184,7 @@ const PROGRAMMES = [
     "desc": "培养战略人力资源管理人才，覆盖组织行为、人才发展与雇佣关系。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 375000,
-    "tuitionNote": "HK$375,000（官方学费页）",
+    "tuitionNote": "HK$375,000（官方学费页） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 1995,
@@ -2119,7 +2199,8 @@ const PROGRAMMES = [
     "descCn": "本项目将理论知识与理论应用相结合，以理解和解决组织问题，帮助学生实现有效管理。",
     "descEn": "This programme combines theoretical knowledge with application of theories to understand and solve organisational issues. It helps students to manage effectively.",
     "requirementsEn": "A Bachelor's degree or equivalent professional qualification, preferably with at least 1 year of relevant work experience.",
-    "requirementsCn": "学士学位或同等专业资格，最好具备至少一年相关工作经验。"
+    "requirementsCn": "学士学位或同等专业资格，最好具备至少一年相关工作经验。",
+    "tuitionCny": 321200
   },
   {
     "id": "polyu-msciml",
@@ -2133,7 +2214,7 @@ const PROGRAMMES = [
     "desc": "面向国际管理与领导力发展，强调跨文化团队与全球战略。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 417000,
-    "tuitionNote": "HK$417,000（官方学费页）",
+    "tuitionNote": "HK$417,000（官方学费页） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "foundedYear": 2024,
     "durationYears": 1,
     "durationText": "全日制约 1 年",
@@ -2148,7 +2229,8 @@ const PROGRAMMES = [
     "descCn": "本项目旨在培养在日益复杂的国际环境中能够有效解决问题、推动变革的未来领袖，帮助学生深入理解各类商业职能中的人类行为，成为负责任的全球领导者。",
     "descEn": "This programme aims to develop future leaders who are effective problem solvers and change makers in an increasingly complex international environment. We seek to equip our students with deep understanding of human behaviours in a broad range of business functions, and to empower them to become responsible global leaders of tomorrow.",
     "requirementsEn": "A Bachelor's degree or equivalent academic/professional qualifications.",
-    "requirementsCn": "学士学位或同等学术/专业资格。"
+    "requirementsCn": "学士学位或同等学术/专业资格。",
+    "tuitionCny": 357100
   },
   {
     "id": "polyu-mscmm",
@@ -2162,7 +2244,7 @@ const PROGRAMMES = [
     "desc": "培养数字时代营销管理人才，覆盖品牌、消费者洞察与营销科技。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 387000,
-    "tuitionNote": "HK$387,000 per programme（HK$12,900 per credit），本地及非本地生。来源：官网项目页",
+    "tuitionNote": "HK$387,000 per programme（HK$12,900 per credit），本地及非本地生。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 1998,
@@ -2177,7 +2259,8 @@ const PROGRAMMES = [
     "descCn": "本项目帮助非营销背景毕业生将理论与营销实践相结合，涵盖线上消费者市场分析、营销管理议题、市场研究分析方法与全球营销战略等专业内容。",
     "descEn": "This programme enables non-marketing graduates to connect theory with practice in the field of marketing. It covers a range of specialist marketing issues in areas such as online consumer market analysis, managerial issues in marketing, analytical methods for market research and global marketing strategy.",
     "requirementsEn": "A Bachelor's degree or equivalent academic/professional qualifications. There is no restriction on previous background – business, engineering, social sciences, natural sciences, humanities, law and others are all acceptable.",
-    "requirementsCn": "学士学位或同等学术/专业资格。不限本科背景——商科、工程、社科、自然科学、人文、法律等均可申请。"
+    "requirementsCn": "学士学位或同等学术/专业资格。不限本科背景——商科、工程、社科、自然科学、人文、法律等均可申请。",
+    "tuitionCny": 331500
   },
   {
     "id": "polyu-mscbadata",
@@ -2191,7 +2274,7 @@ const PROGRAMMES = [
     "desc": "与厦门国家会计学院合作，中文授课，聚焦大数据在会计金融中的应用。",
     "requirements": "本科学位；中文授课；工作经验优先",
     "tuitionHkd": 280000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 2,
     "durationText": "兼读制约 2 年",
     "foundedYear": 2022,
@@ -2206,7 +2289,8 @@ const PROGRAMMES = [
     "descEn": "No official English description published. Chinese-only page (code 21056, Xiamen National Accounting Institute partnership). Official Chinese aim: 此项目旨在提供一个专注于专业会计和新技术与会计互动的专业教育体验，赋予年轻专业人士和管理人员在大数据交汇处的高级技能。",
     "requirementsEn": "No official English entry requirements published. Official Chinese: recognised bachelor's degree or above; executives in accounting/finance related industries with 5+ years relevant work experience.",
     "requirementsCn": "官网暂无英文入学要求。官方中文：教育部认可本科或以上学历；会计/财务/金融相关行业高管，五年以上相关工作经验。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 239800
   },
   {
     "id": "polyu-mscgscmce",
@@ -2220,7 +2304,7 @@ const PROGRAMMES = [
     "desc": "面向内地学员的供应链管理项目，中文/双语授课。",
     "requirements": "本科学位；工作经验优先",
     "tuitionHkd": 348000,
-    "tuitionNote": "HK$348,000 per programme（HK$11,600 per credit），本地及非本地 MSc 生。来源：官网项目页",
+    "tuitionNote": "HK$348,000 per programme（HK$11,600 per credit），本地及非本地 MSc 生。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 2015,
@@ -2235,7 +2319,8 @@ const PROGRAMMES = [
     "descEn": "Closest official programme: MSc/PgD in Global Supply Chain Management (44089). Official text: This programme equips executives with the capacity to create and sustain competitiveness in the supply chain by balancing costs, quality and efficiency. (Note: dedicated Chinese Mainland pathway page returned 404.)",
     "requirementsEn": "A Bachelor's degree in a business-related discipline or an equivalent qualification. For non-business degree holders, 2 years of relevant work experience or relevant background knowledge is preferred.",
     "requirementsCn": "商科相关专业学士学位或同等资格。非商科背景者，优先考虑具备 2 年相关工作经验或相关背景知识者。",
-    "feeSource": "official-page"
+    "feeSource": "official-page",
+    "tuitionCny": 298100
   },
   {
     "id": "hku-mscds",
@@ -2249,7 +2334,7 @@ const PROGRAMMES = [
     "desc": "港大数据科学硕士，统计与计算机交叉的旗舰项目，覆盖机器学习、统计推断、大数据计算与行业应用。全日制约 1.5 年。",
     "requirements": "本科学位（统计/CS/工程等相关）；雅思6.0/托福80",
     "tuitionHkd": 339840,
-    "tuitionNote": "非本地 HK$339,840 / 本地 HK$324,000（MDASC 官方）",
+    "tuitionNote": "非本地 HK$339,840 / 本地 HK$324,000（MDASC 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "全日制约 1.5 年",
     "foundedYear": 2018,
@@ -2264,7 +2349,8 @@ const PROGRAMMES = [
     "descCn": "大数据时代，社交媒体、消费者画像、全球经济等渠道每天产生海量数据。这要求我们不仅描述和理解信息，更重要的是揭示关键信息以支持最佳行动。港大数据科学硕士开启了大数据时代高性能分析的新前沿。",
     "descEn": "In the era of big data, colossal amount of data is being generated every day from channels including social media, consumer profile, global economy, etc. These complications of data require us not only to describe and understand the information, but more importantly, to reveal crucial information to facilitate the best course of action. The emergence of HKU Master of Data Science opens up a new frontier of high-performance analytics in this era of big data.",
     "requirementsEn": "Applicants shall hold a Bachelor's degree or an equivalent qualification. Applicants shall have taken at least one university or post-secondary certificate course in each of the following three subjects (calculus and algebra, computer programming and introductory statistics) or related areas.",
-    "requirementsCn": "申请人须具有学士学位或同等学历，并在微积分与代数、计算机编程、初等统计三个科目（或相关领域）各修读过至少一门大学或专上课程。"
+    "requirementsCn": "申请人须具有学士学位或同等学历，并在微积分与代数、计算机编程、初等统计三个科目（或相关领域）各修读过至少一门大学或专上课程。",
+    "tuitionCny": 291100
   },
   {
     "id": "hku-msccs",
@@ -2278,7 +2364,7 @@ const PROGRAMMES = [
     "desc": "计算机科学硕士，含金融计算、网络安全、多媒体与通用方向，与金融科技、商业分析高度交叉。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 334800,
-    "tuitionNote": "非本地 HK$334,800 / 本地 HK$240,000（2026/27 官方，2027/28 约10月更新）",
+    "tuitionNote": "非本地 HK$334,800 / 本地 HK$240,000（2026/27 官方，2027/28 约10月更新） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 1980,
@@ -2293,7 +2379,8 @@ const PROGRAMMES = [
     "descCn": "港大计算机科学理学硕士提供全面的研究生层次计算机科学深入学习，以学分制为基础，课程兼顾应用与基础。学生可选择专注方向或综合多元学习。专注方向包括人工智能与去中心化技术（AI×Web3）、网络安全、多媒体计算与金融计算。",
     "descEn": "The MSc(CompSc) programme is a comprehensive postgraduate study programme provides advanced and in-depth learning in Computer Science. The programme is credit unit based, with courses of both applied and fundamental nature. Students can choose focused streams of study or a comprehensive and diversified study in Computer Science. Focused streams include AI & Decentralized Technologies (AI x Web3), Cyber Security, Multimedia Computing and Financial Computing.",
     "requirementsEn": "Please refer to official programme site for latest entrance requirements. English: TOEFL iBT 80 / IELTS 6.0 typically required for non-English-medium degrees.",
-    "requirementsCn": "请以官网最新入学要求为准。非英语授课学位通常需托福 iBT 80 / 雅思 6.0。"
+    "requirementsCn": "请以官网最新入学要求为准。非英语授课学位通常需托福 iBT 80 / 雅思 6.0。",
+    "tuitionCny": 286700
   },
   {
     "id": "hku-mscstats",
@@ -2307,7 +2394,7 @@ const PROGRAMMES = [
     "desc": "统计学硕士，统计推断、实验设计、时间序列与数据建模，广泛应用于金融、市场与生物统计。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 238800,
-    "tuitionNote": "非本地 HK$238,800 / 本地 HK$228,000（官方）",
+    "tuitionNote": "非本地 HK$238,800 / 本地 HK$228,000（官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 1980,
@@ -2322,7 +2409,8 @@ const PROGRAMMES = [
     "descCn": "港大统计学硕士强调统计技术在各领域的应用，以更清晰准确地制定策略。学生学习检验、解读与分类数据，聚焦数据所提示的关键领域与含义，以支持有效的问题解决与决策。",
     "descEn": "The Master of Statistics (MStat) programme emphasises the applications of statistical techniques across various fields to formulate strategies with greater clarity and accuracy. Students learn to examine, translate, and classify data, with a focus on pinpointing the most critical areas and implications suggested by the data for effective problem-solving and decision-making.",
     "requirementsEn": "A Bachelor's degree or an equivalent qualification; and applicants should have knowledge of matrices and calculus, introductory statistics and linear modelling.",
-    "requirementsCn": "学士学位或同等学历；申请人应具备矩阵与微积分、初等统计与线性建模知识。"
+    "requirementsCn": "学士学位或同等学历；申请人应具备矩阵与微积分、初等统计与线性建模知识。",
+    "tuitionCny": 204500
   },
   {
     "id": "hku-mscere",
@@ -2336,7 +2424,7 @@ const PROGRAMMES = [
     "desc": "房地产投资、估价、开发与资产管理，商科交叉特色明显。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 250000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2000,
@@ -2351,7 +2439,8 @@ const PROGRAMMES = [
     "descEn": "The Master of Science in Real Estate (MSc(RE)) programme approaches real estate from a business and economic perspective. The aims are to introduce students to real estate assets and markets within the framework of law, institutions, and urban economies; to provide theoretical insights and analytical skills to identify and evaluate real estate investment opportunities; and to equip students with necessary management skills.",
     "requirementsEn": "Hold a Bachelor's degree of this University or a qualification of equivalent standard. Applicants from non-English-medium institutions need to satisfy the University English language requirement. Satisfy the examiners in a qualifying examination if required.",
     "requirementsCn": "持有本校学士学位或同等水平资格。非英语授课院校毕业者须满足大学英语要求。如有需要，须通过资格考试。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 214100
   },
   {
     "id": "hku-mscurban",
@@ -2365,7 +2454,7 @@ const PROGRAMMES = [
     "desc": "城市与区域规划，涉及房地产、城市发展与公共政策，商科交叉。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 250000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 2,
     "durationText": "全日制约 2 年",
     "foundedYear": 1980,
@@ -2380,7 +2469,8 @@ const PROGRAMMES = [
     "descEn": "The Master of Science in Urban Planning is a two-year full-time international postgraduate programme that provides comprehensive professional training in the theories, methods and practice of urban and regional planning. An important distinguishing feature is the emphasis on the planning and management of sustainable cities and regions, with a strong focus on Hong Kong, China and the Asia-Pacific region.",
     "requirementsEn": "Hold a Bachelor degree in any discipline from HKU or an equivalent qualification. TOEFL iBT 80 or IELTS overall 6 with no subtest lower than 5.5 for non-English-medium degrees.",
     "requirementsCn": "持有港大任何学科学士学位或同等资格。非英语授课学位需托福 iBT 80 或雅思总分 6（各单项不低于 5.5）。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 214100
   },
   {
     "id": "cuhk-mscis",
@@ -2394,7 +2484,7 @@ const PROGRAMMES = [
     "desc": "信息工程与网络技术，可与金融科技、信息系统交叉应用。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 210000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 1990,
@@ -2409,7 +2499,8 @@ const PROGRAMMES = [
     "descEn": "Established in 1997, the Master of Science in Information Engineering (MScIE) programme is a well-established taught postgraduate programme offered by the Department of Information Engineering at CUHK. The programme combines rigorous theoretical foundations with practical training in information engineering and emerging technologies.",
     "requirementsEn": "Graduated from a recognized university and obtained a Bachelor's degree in engineering, science, or related fields, normally with Second Class Honours or higher, or an average grade of B or better.",
     "requirementsCn": "毕业于认可大学并获得工程、科学或相关领域的学士学位，通常为二等荣誉或以上，或平均成绩 B 或以上。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 179900
   },
   {
     "id": "cuhk-mscfineng",
@@ -2423,7 +2514,7 @@ const PROGRAMMES = [
     "desc": "工程学院与商学院交叉的金融科技项目，覆盖区块链、智能合约、数字支付。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 395000,
-    "tuitionNote": "HK$395,000（可分 2 期或 4 期缴付；自资，须经大学批准）。来源：官网项目页",
+    "tuitionNote": "HK$395,000（可分 2 期或 4 期缴付；自资，须经大学批准）。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2021,
@@ -2438,7 +2529,8 @@ const PROGRAMMES = [
     "descEn": "Upon completion of their studies, FinTech students would have acquired advanced knowledge in technologies such as cyber security, blockchain, data science, AI, etc. for finance and e-commerce, while maintaining a broad understanding of finance and law such as financial markets, financial engineering, regulatory policy, contracts, intellectual property for technologies.",
     "requirementsEn": "Good knowledge of mathematics (such as calculus, linear algebra and probability) and proficiency in at least one modern programming language; obtained a Bachelor's degree in Engineering, Science, Mathematics or Finance/Business-related discipline.",
     "requirementsCn": "具备良好的数学知识（如微积分、线性代数、概率论）并熟练掌握至少一门现代编程语言；持有工程、科学、数学或金融/商科相关专业学士学位。",
-    "feeSource": "official-page"
+    "feeSource": "official-page",
+    "tuitionCny": 338300
   },
   {
     "id": "cuhk-mscds",
@@ -2452,7 +2544,7 @@ const PROGRAMMES = [
     "desc": "Data is everywhere and there is possibly no field across the world that does not deal with data. The programme is designed for students with non-statistics background. We impart data analytic knowledge and provide quantitative training. The programme focuses on data analysis skills and explores core areas of applied and business statistics. It teaches students how to analyze and extract useful information from data and make decisions based on the findings. Statistical packages such as R, Python and SAS will be covered.",
     "requirements": "Please refer to the general requirements of the Graduate School.",
     "tuitionHkd": 231000,
-    "tuitionNote": "HK$231,000 per annum（自资；须经大学批准）。来源：官网项目页",
+    "tuitionNote": "HK$231,000 per annum（自资；须经大学批准）。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2020,
@@ -2465,7 +2557,8 @@ const PROGRAMMES = [
     "sourceNote": "项目存在性未在本轮官网抓取中直接确认，请点击官网核实后再投递",
     "descEn": "Data is everywhere and there is possibly no field across the world that does not deal with data. The programme is designed for students with non-statistics background. We impart data analytic knowledge and provide quantitative training. The programme focuses on data analysis skills and explores core areas of applied and business statistics. Statistical packages such as R, Python and SAS will be covered.",
     "descCn": "数据无处不在，几乎没有哪个领域不与数据打交道。中大数据科学与商业统计理学硕士面向非统计背景学生，传授数据分析知识与定量训练，聚焦数据分析技能与应用统计、商业统计核心领域，涵盖 R、Python、SAS 等统计软件。",
-    "feeSource": "official-page"
+    "feeSource": "official-page",
+    "tuitionCny": 197800
   },
   {
     "id": "hkust-mscaiml",
@@ -2479,7 +2572,7 @@ const PROGRAMMES = [
     "desc": "工学院 AI 硕士，可与商业分析、金融科技交叉。",
     "requirements": "本科学位（工程/科学）；雅思6.5/托福80",
     "tuitionHkd": 400000,
-    "tuitionNote": "HK$400,000（2027/28 Fall intake 名义课程费）。来源：官网项目页",
+    "tuitionNote": "HK$400,000（2027/28 Fall intake 名义课程费）。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2022,
@@ -2494,7 +2587,8 @@ const PROGRAMMES = [
     "descEn": "Our carefully designed MSc program addresses the latest trends in AI development and aims to meet the growing demand for skilled AI practitioners. This program is tailored to both recent graduates and working professionals seeking to enhance their expertise in this exciting and rapidly evolving field.",
     "requirementsEn": "A bachelor's degree in Computer Engineering, Computer Science or a related discipline, or a bachelor's degree in other disciplines with at least two years of post-qualification work experience relevant to the program. English: TOEFL iBT 80 / IELTS 6.5.",
     "requirementsCn": "计算机工程、计算机科学或相关专业学士学位；或其他专业但具备至少两年相关毕业后工作经验。英语：托福 iBT 80 / 雅思 6.5。",
-    "feeSource": "official-page"
+    "feeSource": "official-page",
+    "tuitionCny": 342600
   },
   {
     "id": "hkust-mscbdt",
@@ -2508,7 +2602,7 @@ const PROGRAMMES = [
     "desc": "大数据技术与应用，与商业数据分析高度交叉。",
     "requirements": "本科学位；雅思6.5/托福80",
     "tuitionHkd": 280000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2016,
@@ -2523,7 +2617,8 @@ const PROGRAMMES = [
     "descEn": "This unique MSc in Big Data Technology (BDT) program is jointly offered by the Department of Computer Science and Engineering and the Department of Mathematics. The program integrates a variety of disciplines to allow students to learn all the important facets of big data and how it is used in the real world.",
     "requirementsEn": "A bachelor's degree in Computer Engineering, Computer Science, Mathematics or a related field; or a bachelor's degree in other disciplines with relevant working experience in IT and Mathematics related fields.",
     "requirementsCn": "计算机工程、计算机科学、数学或相关领域学士学位；或其他专业但具备 IT 与数学相关领域工作经验。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 239800
   },
   {
     "id": "cityu-mscds",
@@ -2537,7 +2632,7 @@ const PROGRAMMES = [
     "desc": "数据科学学院旗舰项目，覆盖统计学习、数据挖掘、商业智能。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 282000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2020,
@@ -2551,7 +2646,8 @@ const PROGRAMMES = [
     "descCn": "城大数据科学学院研究生页面当前无法访问（站点防护）。请点城大官网核实。",
     "descEn": "Official School of Data Science postgraduate pages currently inaccessible (site protection). Please verify on CityU official site.",
     "requirementsCn": "未能获取，请点官网核实。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 241500
   },
   {
     "id": "cityu-msccs",
@@ -2565,7 +2661,7 @@ const PROGRAMMES = [
     "desc": "计算机科学硕士，可与商业信息系统、金融科技交叉。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 258000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 1990,
@@ -2580,7 +2676,8 @@ const PROGRAMMES = [
     "descEn": "Enable computer professionals to strengthen and upgrade their technical capabilities in computer software development; Broaden students' knowledge and deepen their understanding of key issues of specific areas in computer science, including artificial intelligence, data science, information security, multimedia, and other related contemporary technologies.",
     "requirementsEn": "A recognised bachelor's degree in a computing discipline such as Computer Science, Information Technology, Computer Engineering, Information Systems, or equivalent; or a related discipline such as Electronic Engineering, Applied Mathematics, Manufacturing Engineering, Quantitative Analysis, or equivalent, together with applicable working experience in information technology.",
     "requirementsCn": "计算机科学、信息技术、计算机工程、信息系统等计算类专业认可学士学位或同等学历；或电子工程、应用数学、制造工程、定量分析等相关专业，并具备适用的信息技术工作经验。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 221000
   },
   {
     "id": "polyu-mscaihm",
@@ -2594,7 +2691,7 @@ const PROGRAMMES = [
     "desc": "AI 与酒店业交叉，培养智慧酒店与旅游科技人才。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 341000,
-    "tuitionNote": "HK$341,000（官方：SHTM 方案，32学分）",
+    "tuitionNote": "HK$341,000（官方：SHTM 方案，32学分） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2024,
@@ -2609,7 +2706,8 @@ const PROGRAMMES = [
     "descCn": "理大国际知名的硕士项目面向希望拓展知识前沿、加速职业发展的学生。酒店及旅游业管理硕士/深造文凭组合课程包括：酒店业人工智能、酒店业创新创业、国际酒店管理、国际旅游及会展管理、国际葡萄酒管理、奢华体验管理。",
     "descEn": "Our internationally recognised Master's degrees are offered to those who want to extend the frontiers of their knowledge and fast-track their careers. The MSc/PgD Scheme in Hospitality and Tourism Management comprises: Artificial Intelligence in Hospitality; Innovation and Entrepreneurship in Hospitality; International Hospitality Management; International Tourism and Event Management; International Wine Management; Luxury Experiences Management.",
     "requirementsEn": "A recognised Bachelor's degree or equivalent. Students without relevant educational or industry backgrounds may be required to take bridging courses/workshops prior to commencement of the programme.",
-    "requirementsCn": "认可的学士学位或同等学历。无相关教育或行业背景的学生可能需要在开学前修读衔接课程/工作坊。"
+    "requirementsCn": "认可的学士学位或同等学历。无相关教育或行业背景的学生可能需要在开学前修读衔接课程/工作坊。",
+    "tuitionCny": 292100
   },
   {
     "id": "polyu-mscieh",
@@ -2623,7 +2721,7 @@ const PROGRAMMES = [
     "desc": "酒店与旅游业创新创业，培养行业新商业模式推动者。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 341000,
-    "tuitionNote": "HK$341,000（官方：SHTM 方案）",
+    "tuitionNote": "HK$341,000（官方：SHTM 方案） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2022,
@@ -2638,7 +2736,8 @@ const PROGRAMMES = [
     "descCn": "属酒店及旅游业管理硕士组合课程之「酒店业创新创业」方向，面向希望拓展知识前沿、加速职业发展的学生。",
     "descEn": "Part of the MSc Scheme in Hospitality and Tourism Management: Innovation and Entrepreneurship in Hospitality. Our internationally recognised Master's degrees are offered to those who want to extend the frontiers of their knowledge and fast-track their careers.",
     "requirementsEn": "A recognised Bachelor's degree or equivalent. Bridging courses may be required for those without relevant backgrounds.",
-    "requirementsCn": "认可的学士学位或同等学历。无相关背景者可能需要修读衔接课程。"
+    "requirementsCn": "认可的学士学位或同等学历。无相关背景者可能需要修读衔接课程。",
+    "tuitionCny": 292100
   },
   {
     "id": "polyu-mscihm",
@@ -2652,7 +2751,7 @@ const PROGRAMMES = [
     "desc": "国际酒店管理硕士，SHTM 世界排名领先，就业资源丰富，属酒店及旅游管理硕士组合课程。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 341000,
-    "tuitionNote": "HK$341,000（官方：SHTM 方案）",
+    "tuitionNote": "HK$341,000（官方：SHTM 方案） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 1990,
@@ -2667,7 +2766,8 @@ const PROGRAMMES = [
     "descCn": "属酒店及旅游业管理硕士组合课程之「国际酒店管理」方向，面向希望拓展知识前沿、加速职业发展的学生。",
     "descEn": "Part of the MSc Scheme in Hospitality and Tourism Management: International Hospitality Management. Our internationally recognised Master's degrees are offered to those who want to extend the frontiers of their knowledge and fast-track their careers.",
     "requirementsEn": "A recognised Bachelor's degree or equivalent. Bridging courses may be required for those without relevant backgrounds.",
-    "requirementsCn": "认可的学士学位或同等学历。无相关背景者可能需要修读衔接课程。"
+    "requirementsCn": "认可的学士学位或同等学历。无相关背景者可能需要修读衔接课程。",
+    "tuitionCny": 292100
   },
   {
     "id": "polyu-mscitem",
@@ -2681,7 +2781,7 @@ const PROGRAMMES = [
     "desc": "国际旅游与会展管理，覆盖目的地营销、活动策划与体验经济。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 341000,
-    "tuitionNote": "HK$341,000（官方：SHTM 方案）",
+    "tuitionNote": "HK$341,000（官方：SHTM 方案） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 1990,
@@ -2696,7 +2796,8 @@ const PROGRAMMES = [
     "descCn": "属酒店及旅游业管理硕士组合课程之「国际旅游及会展管理」方向，面向希望拓展知识前沿、加速职业发展的学生。",
     "descEn": "Part of the MSc Scheme in Hospitality and Tourism Management: International Tourism and Event Management. Our internationally recognised Master's degrees are offered to those who want to extend the frontiers of their knowledge and fast-track their careers.",
     "requirementsEn": "A recognised Bachelor's degree or equivalent. Bridging courses may be required for those without relevant backgrounds.",
-    "requirementsCn": "认可的学士学位或同等学历。无相关背景者可能需要修读衔接课程。"
+    "requirementsCn": "认可的学士学位或同等学历。无相关背景者可能需要修读衔接课程。",
+    "tuitionCny": 292100
   },
   {
     "id": "polyu-msciwm",
@@ -2710,7 +2811,7 @@ const PROGRAMMES = [
     "desc": "葡萄酒与烈酒商业管理，覆盖品鉴、供应链、品牌与零售。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 341000,
-    "tuitionNote": "HK$341,000（官方：SHTM 方案，另需葡萄酒体验费）",
+    "tuitionNote": "HK$341,000（官方：SHTM 方案，另需葡萄酒体验费） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2010,
@@ -2725,7 +2826,8 @@ const PROGRAMMES = [
     "descCn": "属酒店及旅游业管理硕士组合课程之「国际葡萄酒管理」方向，面向希望拓展知识前沿、加速职业发展的学生。",
     "descEn": "Part of the MSc Scheme in Hospitality and Tourism Management: International Wine Management. Our internationally recognised Master's degrees are offered to those who want to extend the frontiers of their knowledge and fast-track their careers.",
     "requirementsEn": "A recognised Bachelor's degree or equivalent. Bridging courses may be required for those without relevant backgrounds.",
-    "requirementsCn": "认可的学士学位或同等学历。无相关背景者可能需要修读衔接课程。"
+    "requirementsCn": "认可的学士学位或同等学历。无相关背景者可能需要修读衔接课程。",
+    "tuitionCny": 292100
   },
   {
     "id": "polyu-msclem",
@@ -2739,7 +2841,7 @@ const PROGRAMMES = [
     "desc": "奢侈品与高端体验管理，覆盖品牌、客户体验与服务设计。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 341000,
-    "tuitionNote": "HK$341,000（官方：SHTM 方案）",
+    "tuitionNote": "HK$341,000（官方：SHTM 方案） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2020,
@@ -2754,7 +2856,8 @@ const PROGRAMMES = [
     "descCn": "属酒店及旅游业管理硕士组合课程之「奢华体验管理」方向，面向希望拓展知识前沿、加速职业发展的学生。",
     "descEn": "Part of the MSc Scheme in Hospitality and Tourism Management: Luxury Experiences Management. Our internationally recognised Master's degrees are offered to those who want to extend the frontiers of their knowledge and fast-track their careers.",
     "requirementsEn": "A recognised Bachelor's degree or equivalent. Bridging courses may be required for those without relevant backgrounds.",
-    "requirementsCn": "认可的学士学位或同等学历。无相关背景者可能需要修读衔接课程。"
+    "requirementsCn": "认可的学士学位或同等学历。无相关背景者可能需要修读衔接课程。",
+    "tuitionCny": 292100
   },
   {
     "id": "polyu-mscghb",
@@ -2768,7 +2871,7 @@ const PROGRAMMES = [
     "desc": "三校联培：欧洲、亚洲、北美各一学期，获取三大市场与校友网络。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 590000,
-    "tuitionNote": "官网原文：学费须直接缴付给开课院校，估算总额约 HK$590,000（受汇率浮动影响）。来源：官网项目页",
+    "tuitionNote": "官网原文：学费须直接缴付给开课院校，估算总额约 HK$590,000（受汇率浮动影响）。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 16 个月（含海外学期）",
     "foundedYear": 2015,
@@ -2783,7 +2886,8 @@ const PROGRAMMES = [
     "descCn": "本项目旨在培养具备第一手商业经验所带来区域洞察的全球酒店业管理者。毕业生掌握在多元文化环境中脱颖而出的知识与技能，将在欧洲、亚洲与北美的三个世界级校园与研究中心学习。",
     "descEn": "The programme aims to develop global hospitality managers with regional awareness derived from first-hand business experience. Graduates are equipped with the knowledge and skills needed to excel in a multicultural environment. Students experience three world-class campuses and research centres across Europe, Asia and North America.",
     "requirementsEn": "A Bachelor's degree in hospitality and tourism management or other disciplines with at least one year of employment in the hospitality industry; or equivalent professional qualifications. TOEFL iBT 100 / IELTS 7.0 for non-native English speakers.",
-    "requirementsCn": "酒店与旅游管理或相关专业学士学位，且在酒店业有不少于一年的工作经验；或同等专业资格。非英语母语者需托福 iBT 100 / 雅思 7.0。"
+    "requirementsCn": "酒店与旅游管理或相关专业学士学位，且在酒店业有不少于一年的工作经验；或同等专业资格。非英语母语者需托福 iBT 100 / 雅思 7.0。",
+    "tuitionCny": 505300
   },
   {
     "id": "polyu-mscmact",
@@ -2796,8 +2900,8 @@ const PROGRAMMES = [
     "category": "精算",
     "desc": "精算与投资科学，对接精算师资格，金融交叉。",
     "requirements": "本科学位（数学/统计相关）；雅思6.0/托福80",
-    "tuitionHkd": null,
-    "tuitionNote": "官网按每学分计费：HK$10,900 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页",
+    "tuitionHkd": 337900,
+    "tuitionNote": "官网按每学分计费：HK$10,900 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页 估算总额 = 官网学分单价 × 官网最低毕业学分 31，官网未列明总额。（人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 1998,
@@ -2812,7 +2916,11 @@ const PROGRAMMES = [
     "descCn": "本项目旨在为学生打下精算与投资科学的坚实基础。毕业生成为应对需识别、量化、评估或管理风险财务影响之商业与社会问题的领军专业人士。重点在于应用以及使用软件处理真实数据、解决实际问题。",
     "descEn": "The main aim is to provide students with a solid foundation of actuarial and investment science. Graduates will become leading professionals in addressing business and societal problems that require identification, quantification, assessment or management of the financial implications of risk. Our focus is on applications and the use of software packages to handle real-world data and solve practical problems.",
     "requirementsEn": "A Bachelor's degree with Honours in engineering, computer science, basic science, business, economics, or the equivalent. Non-English-medium degrees must fulfil the University's minimum English language requirement.",
-    "requirementsCn": "工程、计算机科学、基础科学、商科、经济等专业的荣誉学士学位或同等学历。非英语授课学位须满足大学最低英语要求。"
+    "requirementsCn": "工程、计算机科学、基础科学、商科、经济等专业的荣誉学士学位或同等学历。非英语授课学位须满足大学最低英语要求。",
+    "tuitionPerCredit": 10900,
+    "tuitionCredits": 31,
+    "tuitionIsEstimate": true,
+    "tuitionCny": 289400
   },
   {
     "id": "polyu-mscorra",
@@ -2825,8 +2933,8 @@ const PROGRAMMES = [
     "category": "商业分析",
     "desc": "运筹优化与风险分析，广泛应用于金融、供应链与运营管理。",
     "requirements": "本科学位；雅思6.0/托福80",
-    "tuitionHkd": null,
-    "tuitionNote": "官网按每学分计费：HK$11,300 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页",
+    "tuitionHkd": 350300,
+    "tuitionNote": "官网按每学分计费：HK$11,300 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页 估算总额 = 官网学分单价 × 官网最低毕业学分 31，官网未列明总额。（人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 2000,
@@ -2841,7 +2949,11 @@ const PROGRAMMES = [
     "descEn": "The primary aim of this programme is to produce graduates with strong operational research, risk analysis and statistical skills and a thorough understanding of their applications in the world of modern operational research and risk analysis.",
     "requirementsEn": "A Bachelor's degree with Honours in engineering, computer science, basic science, finance, economics or the equivalent (industrial or business experience will be an asset).",
     "requirementsCn": "工程、计算机科学、基础科学、金融、经济等专业的荣誉学士学位或同等学历（有工业或商业经验者优先）。",
-    "feeSource": "official-per-credit"
+    "feeSource": "official-per-credit",
+    "tuitionPerCredit": 11300,
+    "tuitionCredits": 31,
+    "tuitionIsEstimate": true,
+    "tuitionCny": 300000
   },
   {
     "id": "polyu-mscqff",
@@ -2854,8 +2966,8 @@ const PROGRAMMES = [
     "category": "金融科技",
     "desc": "量化金融与金融科技交叉项目，覆盖算法交易、风控建模与区块链金融。",
     "requirements": "本科学位（数学/工程/商科）；雅思6.0/托福80",
-    "tuitionHkd": null,
-    "tuitionNote": "官网按每学分计费：HK$14,900 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页",
+    "tuitionHkd": 461900,
+    "tuitionNote": "官网按每学分计费：HK$14,900 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页 估算总额 = 官网学分单价 × 官网最低毕业学分 31，官网未列明总额。（人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 2018,
@@ -2870,7 +2982,11 @@ const PROGRAMMES = [
     "descEn": "As a leading international financial centre, Hong Kong is home to many financial institutions. To provide innovative and stable financial services in increasingly complex financial markets, professionals require advanced knowledge in mathematics, statistics, finance and programming. This programme provides in-depth training in quantitative and analytical methods, modelling techniques, financial concepts and programming skills, including artificial intelligence, blockchain, cloud computing and big data.",
     "requirementsEn": "A Bachelor's degree in mathematics, statistics, business, finance, science, computer science, engineering, or the equivalent. Other disciplines with adequate mathematics or IT background will also be considered.",
     "requirementsCn": "数学、统计、商科、金融、科学、计算机科学、工程等专业的学士学位或同等学历。其他学科但具备足够数学或 IT 背景者也会被考虑。",
-    "feeSource": "official-per-credit"
+    "feeSource": "official-per-credit",
+    "tuitionPerCredit": 14900,
+    "tuitionCredits": 31,
+    "tuitionIsEstimate": true,
+    "tuitionCny": 395600
   },
   {
     "id": "polyu-mscds",
@@ -2883,8 +2999,8 @@ const PROGRAMMES = [
     "category": "数据科学",
     "desc": "数据科学与分析硕士，覆盖机器学习、统计建模与商业智能应用。",
     "requirements": "本科学位；雅思6.0/托福80",
-    "tuitionHkd": null,
-    "tuitionNote": "官网按每学分计费：HK$13,500 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页",
+    "tuitionHkd": 418500,
+    "tuitionNote": "官网按每学分计费：HK$13,500 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页 估算总额 = 官网学分单价 × 官网最低毕业学分 31，官网未列明总额。（人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 2018,
@@ -2899,7 +3015,11 @@ const PROGRAMMES = [
     "descCn": "在大数据时代，从社交网络到金融，社会与产业各领域每天产生海量数据。从如此庞大的数据中提取与分析信息极具挑战。要从数据中创造价值，必须融合数学、统计与计算机科学技术。",
     "descEn": "In today's era of big data, large data sets are generated every day in various areas of society and industry, from social networking to finance. It is challenging to extract and analyse information from such an unprecedentedly large volume of data. To create value from such data, one must combine techniques from mathematics, statistics and computer science.",
     "requirementsEn": "A Bachelor's degree with Honours in Mathematics, Statistics, Computer Science, I.T., Engineering, Economics, and Science, or the equivalent. Applicants with a Bachelor's degree in another discipline and an adequate background in mathematics or IT will also be considered.",
-    "requirementsCn": "数学、统计、计算机科学、信息技术、工程、经济、科学等专业的荣誉学士学位或同等学历。其他学科背景但具备足够数学或 IT 基础的申请人也会被考虑。"
+    "requirementsCn": "数学、统计、计算机科学、信息技术、工程、经济、科学等专业的荣誉学士学位或同等学历。其他学科背景但具备足够数学或 IT 基础的申请人也会被考虑。",
+    "tuitionPerCredit": 13500,
+    "tuitionCredits": 31,
+    "tuitionIsEstimate": true,
+    "tuitionCny": 358400
   },
   {
     "id": "polyu-mscaibdc",
@@ -2912,8 +3032,8 @@ const PROGRAMMES = [
     "category": "数据科学",
     "desc": "AI 与大数据计算交叉，可应用于金融科技、商业分析等场景。",
     "requirements": "本科学位；雅思6.0/托福80",
-    "tuitionHkd": null,
-    "tuitionNote": "官网按每学分计费：HK$13,500 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页",
+    "tuitionHkd": 418500,
+    "tuitionNote": "官网按每学分计费：HK$13,500 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页 估算总额 = 官网学分单价 × 官网最低毕业学分 31，官网未列明总额。（人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2021,
@@ -2928,7 +3048,11 @@ const PROGRAMMES = [
     "descCn": "人工智能与大数据（AIBD）技术在社会与产业中快速发展。本项目结合计算机科学与机器学习技术，教学生如何理解 AIBD 并从中创造价值。",
     "descEn": "Artificial intelligence and big data (AIBD) technologies are experiencing rapid development in society and industry. Combining technologies from computer science and machine learning, this programme is designed to teach students how to understand and create value from AIBD.",
     "requirementsEn": "A Bachelor's degree in Computing/Computer Science/Engineering, Information Systems, Mathematics or other related disciplines. Applicants with a Bachelor's degree in other disciplines with at least 3 years of relevant work experience in IT will also be considered.",
-    "requirementsCn": "计算/计算机科学/工程、信息系统、数学或相关专业学士学位。其他学科背景但具备至少 3 年 IT 相关工作经验的申请人也会被考虑。"
+    "requirementsCn": "计算/计算机科学/工程、信息系统、数学或相关专业学士学位。其他学科背景但具备至少 3 年 IT 相关工作经验的申请人也会被考虑。",
+    "tuitionPerCredit": 13500,
+    "tuitionCredits": 31,
+    "tuitionIsEstimate": true,
+    "tuitionCny": 358400
   },
   {
     "id": "polyu-mscebm",
@@ -2942,7 +3066,7 @@ const PROGRAMMES = [
     "desc": "工程与商业管理交叉，IGDS 项目，覆盖战略、运营与技术管理。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 280000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 1998,
@@ -2957,7 +3081,8 @@ const PROGRAMMES = [
     "descEn": "The MSc in Engineering Business Management is designed for those who want to become managers and leaders in technology-based businesses. It provides a multidisciplinary education that integrates engineering, business, and management with analytical tools and techniques.",
     "requirementsEn": "Bachelor's degree with Second Class (Upper Division) Honours or the equivalent; OR mature applicants with significant relevant experience will be considered on individual merit. IELTS 6.5, or TOEFL iBT 92.",
     "requirementsCn": "二等甲级荣誉学士学位或同等学历；或具备丰富相关经验的成熟申请人可按个案审理。雅思 6.5 或托福 iBT 92。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 239800
   },
   {
     "id": "polyu-mscsclm",
@@ -2971,7 +3096,7 @@ const PROGRAMMES = [
     "desc": "供应链与物流管理，IGDS 项目，面向全球供应链战略。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 280000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 1998,
@@ -2986,7 +3111,8 @@ const PROGRAMMES = [
     "descEn": "The MSc introduces participants to tools and techniques that can be used to evaluate, manage and improve service, operational and supply chain processes, and conduct market analyses. Participants will acquire knowledge on how to evaluate and manage appropriate enabling technologies and use enterprise resource planning systems.",
     "requirementsEn": "Bachelor's degree with Second Class (Upper Division) Honours or the equivalent; OR mature applicants with significant relevant experience. IELTS 6.5, or TOEFL iBT 92.",
     "requirementsCn": "二等甲级荣誉学士学位或同等学历；或具备丰富相关经验的成熟申请人。雅思 6.5 或托福 iBT 92。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 239800
   },
   {
     "id": "polyu-mscils",
@@ -3000,7 +3126,7 @@ const PROGRAMMES = [
     "desc": "工业物流系统设计与优化，工程与商业交叉。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 267000,
-    "tuitionNote": "HK$267,000（官方学费页）",
+    "tuitionNote": "HK$267,000（官方学费页） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 2000,
@@ -3015,7 +3141,8 @@ const PROGRAMMES = [
     "descCn": "理大工业物流系统理学硕士面向新经济下物流产业转型，旨在使学生掌握运用信息技术与管理方法改进入厂物流、生产与出厂物流，从而为客户创造价值。",
     "descEn": "The programme is designed for the transformation of the logistics industry under the new economy. It aims to provide students with the use of information technology and managerial approaches in improving inbound logistics, production and outbound logistics so as to create value for the customers.",
     "requirementsEn": "A Bachelor's degree or a professional qualification, or the equivalent, is required.",
-    "requirementsCn": "需具有学士学位或专业资格，或同等学历。"
+    "requirementsCn": "需具有学士学位或专业资格，或同等学历。",
+    "tuitionCny": 228700
   },
   {
     "id": "polyu-mscktm",
@@ -3029,7 +3156,7 @@ const PROGRAMMES = [
     "desc": "知识管理与科技创新管理，工程与商业交叉。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 267000,
-    "tuitionNote": "HK$267,000 per programme。来源：官网项目页",
+    "tuitionNote": "HK$267,000 per programme。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 2000,
@@ -3044,7 +3171,8 @@ const PROGRAMMES = [
     "descEn": "The programme provides a unique and flexible opportunity for participants with diverse backgrounds to customise their learning in areas of technology and innovation based on their professional needs. The aims of the programme are to enable participants to develop their competence in understanding innovation cycles and ultimately turn innovations into commercial successes.",
     "requirementsEn": "A Bachelor's degree in engineering, business or science, or a professional qualification, or the equivalent.",
     "requirementsCn": "工程、商科或科学专业的学士学位，或专业资格，或同等学历。",
-    "feeSource": "official-page"
+    "feeSource": "official-page",
+    "tuitionCny": 228700
   },
   {
     "id": "polyu-mscsm",
@@ -3058,7 +3186,7 @@ const PROGRAMMES = [
     "desc": "智能制造与工业 4.0，涉及运营优化与数字化转型。",
     "requirements": "本科学位；雅思6.0/托福80",
     "tuitionHkd": 267000,
-    "tuitionNote": "HK$267,000 per programme。来源：官网项目页",
+    "tuitionNote": "HK$267,000 per programme。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 2020,
@@ -3073,7 +3201,8 @@ const PROGRAMMES = [
     "descEn": "To equip students with an in-depth knowledge of smart manufacturing technologies and developments. To endow students with the ability to develop smart manufacturing solutions by assessing industrial needs for real-life applications. To endow students with the ability to select, deploy and manage smart manufacturing for digital transformation and upgrading.",
     "requirementsEn": "A Bachelor's degree in engineering, sciences, or a related discipline, or the equivalent. Priority will be given to candidates with relevant work experiences.",
     "requirementsCn": "工程、科学或相关专业的学士学位或同等学历。有相关工作经验者优先。",
-    "feeSource": "official-page"
+    "feeSource": "official-page",
+    "tuitionCny": 228700
   },
   {
     "id": "polyu-mscstm",
@@ -3086,8 +3215,8 @@ const PROGRAMMES = [
     "category": "管理",
     "desc": "体育产业科技与管理交叉，覆盖赛事运营、体育营销与科技应用。",
     "requirements": "本科学位；雅思6.0/托福80",
-    "tuitionHkd": null,
-    "tuitionNote": "官网按每学分计费：HK$9,200 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页",
+    "tuitionHkd": 285200,
+    "tuitionNote": "官网按每学分计费：HK$9,200 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页 估算总额 = 官网学分单价 × 官网最低毕业学分 31，官网未列明总额。（人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 2022,
@@ -3102,7 +3231,11 @@ const PROGRAMMES = [
     "descEn": "To nurture professionals and specialists with professional competence, strategic thinking, and lifelong learning capability in the sports technology and management field. To provide students with modern scientific and engineering knowledge, as well as advanced technology tools necessary for sports technology and management practice.",
     "requirementsEn": "A Bachelor's degree in engineering or applied sciences; OR a degree in a sports science discipline or a related field; OR an equivalent qualification. Relevant post-qualification experience preferred.",
     "requirementsCn": "工程或应用科学学士学位；或体育科学相关学位；或同等资格。有相关毕业后经验者优先。",
-    "feeSource": "official-per-credit"
+    "feeSource": "official-per-credit",
+    "tuitionPerCredit": 9200,
+    "tuitionCredits": 31,
+    "tuitionIsEstimate": true,
+    "tuitionCny": 244300
   },
   {
     "id": "polyu-msccre",
@@ -3115,8 +3248,8 @@ const PROGRAMMES = [
     "category": "房地产",
     "desc": "建筑与房地产商业管理，覆盖开发、投资、估价与项目管理。",
     "requirements": "本科学位；雅思6.0/托福80",
-    "tuitionHkd": null,
-    "tuitionNote": "官网按每学分计费：HK$9,500 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页",
+    "tuitionHkd": 294500,
+    "tuitionNote": "官网按每学分计费：HK$9,500 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页 估算总额 = 官网学分单价 × 官网最低毕业学分 31，官网未列明总额。（人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 1990,
@@ -3131,7 +3264,11 @@ const PROGRAMMES = [
     "descCn": "本项目旨在拓宽和加深学生在建筑与房地产领域的知识，提供基于当代研究成果的最新知识、超越本科层次的专业技能，以及了解中国内地建筑与房地产实践的机会。",
     "descEn": "The programme aims to broaden and deepen students' knowledge in the construction and real estate sectors, providing up-to-date knowledge based on contemporary research findings, specific specialist skills beyond the first undergraduate degree level, and the opportunity to study construction and real estate practices in the Chinese mainland.",
     "requirementsEn": "A Bachelor's degree with Honours; OR a Bachelor's degree in a construction or real estate related discipline; OR corporate membership of a relevant professional institution. Non-English-medium degrees must meet University English requirements.",
-    "requirementsCn": "荣誉学士学位；或建筑/房地产相关专业学士学位；或相关专业机构的正式会员资格。非英语授课学位须满足大学英语要求。"
+    "requirementsCn": "荣誉学士学位；或建筑/房地产相关专业学士学位；或相关专业机构的正式会员资格。非英语授课学位须满足大学英语要求。",
+    "tuitionPerCredit": 9500,
+    "tuitionCredits": 31,
+    "tuitionIsEstimate": true,
+    "tuitionCny": 252200
   },
   {
     "id": "polyu-mscpm",
@@ -3144,8 +3281,8 @@ const PROGRAMMES = [
     "category": "管理",
     "desc": "项目管理，覆盖工程、IT、商业项目的全生命周期管理。",
     "requirements": "本科学位；雅思6.0/托福80",
-    "tuitionHkd": null,
-    "tuitionNote": "官网按每学分计费：HK$9,500 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页",
+    "tuitionHkd": 294500,
+    "tuitionNote": "官网按每学分计费：HK$9,500 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页 估算总额 = 官网学分单价 × 官网最低毕业学分 31，官网未列明总额。（人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 1998,
@@ -3160,7 +3297,11 @@ const PROGRAMMES = [
     "descEn": "This programme aims to benefit professionals who already have a bachelor's in construction or related disciplines and who work in or around Hong Kong. It offers opportunities for practising architects, construction managers, engineers, surveyors, technologists and related professionals to broaden and deepen their knowledge of project management.",
     "requirementsEn": "A Bachelor's degree in a relevant discipline or the equivalent (including recognised professional qualifications). Non-English-medium degrees must meet University English requirements.",
     "requirementsCn": "相关专业学士学位或同等学历（包括认可的专业资格）。非英语授课学位须满足大学英语要求。",
-    "feeSource": "official-per-credit"
+    "feeSource": "official-per-credit",
+    "tuitionPerCredit": 9500,
+    "tuitionCredits": 31,
+    "tuitionIsEstimate": true,
+    "tuitionCny": 252200
   },
   {
     "id": "polyu-mscfm",
@@ -3173,8 +3314,8 @@ const PROGRAMMES = [
     "category": "管理",
     "desc": "设施与资产管理，覆盖商业楼宇运营、能源管理与服务外包。",
     "requirements": "本科学位；雅思6.0/托福80",
-    "tuitionHkd": null,
-    "tuitionNote": "官网按每学分计费：HK$8,200 per credit，本地及非本地生同价。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页",
+    "tuitionHkd": 254200,
+    "tuitionNote": "官网按每学分计费：HK$8,200 per credit，本地及非本地生同价。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页 估算总额 = 官网学分单价 × 官网最低毕业学分 31，官网未列明总额。（人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2000,
@@ -3189,7 +3330,11 @@ const PROGRAMMES = [
     "descCn": "理大设施管理理学硕士：设施管理者的角色日益被视为通过精心匹配组织实体资产与适当的设施支持服务采购，来支撑商业计划实现的关键。",
     "descEn": "The role of the facility manager is increasingly recognised as critical in supporting the realisation of business plans through the careful alignment of an organisation's physical assets with the appropriate sourcing of facility support services.",
     "requirementsEn": "A Bachelor's degree with Honours in architecture, interior design, construction, building surveying, estate management, property/facility management, building services engineering, business or the equivalent; OR a professional qualification plus relevant professional experience.",
-    "requirementsCn": "建筑、室内设计、施工、建筑测量、物业管理、设施管理、屋宇设备工程、商科等专业的荣誉学士学位或同等学历；或专业资格加相关专业经验。"
+    "requirementsCn": "建筑、室内设计、施工、建筑测量、物业管理、设施管理、屋宇设备工程、商科等专业的荣誉学士学位或同等学历；或专业资格加相关专业经验。",
+    "tuitionPerCredit": 8200,
+    "tuitionCredits": 31,
+    "tuitionIsEstimate": true,
+    "tuitionCny": 217700
   },
   {
     "id": "polyu-mscbcc",
@@ -3202,8 +3347,8 @@ const PROGRAMMES = [
     "category": "市场营销",
     "desc": "企业传播与品牌沟通，人文与商业交叉，适合公关、市场、传媒方向。",
     "requirements": "本科学位；雅思6.0/托福80",
-    "tuitionHkd": null,
-    "tuitionNote": "官网按每学分计费：HK$7,900 per credit，本地及非本地生同价。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页",
+    "tuitionHkd": 244900,
+    "tuitionNote": "官网按每学分计费：HK$7,900 per credit，本地及非本地生同价。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页 估算总额 = 官网学分单价 × 官网最低毕业学分 31，官网未列明总额。（人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2000,
@@ -3218,7 +3363,11 @@ const PROGRAMMES = [
     "descCn": "理大中英企业传讯文学硕士依托语文及传播学系在语言媒介传播、符号媒介传播、双语与跨文化传播以及中国研究方面的优势，培养学生企业传讯成功职业所需的素养。",
     "descEn": "MA in Bilingual Corporate Communication (MABCC) aims to draw upon the strengths of LST in language-mediated communication, sign-mediated communication, bilingual & cross-cultural communication as well as China studies to cultivate and equip students with attributes that are essential for a successful career in corporate communication.",
     "requirementsEn": "A Bachelor's degree from a recognised institution. Applicants may be required to attend interviews to further demonstrate their language proficiency.",
-    "requirementsCn": "认可机构的学士学位。申请人可能需要参加面试以进一步证明语言能力。"
+    "requirementsCn": "认可机构的学士学位。申请人可能需要参加面试以进一步证明语言能力。",
+    "tuitionPerCredit": 7900,
+    "tuitionCredits": 31,
+    "tuitionIsEstimate": true,
+    "tuitionCny": 209700
   },
   {
     "id": "hku-mscai",
@@ -3232,7 +3381,7 @@ const PROGRAMMES = [
     "desc": "系统学习机器学习、深度学习、自然语言处理与计算机视觉，可落地金融、营销、运营等商业场景。",
     "requirements": "本科学位（CS/工程/数学等相关）；雅思6.0/托福80",
     "tuitionHkd": 330000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "全日制约 1.5 年",
     "foundedYear": 2023,
@@ -3247,7 +3396,8 @@ const PROGRAMMES = [
     "descEn": "AI at HKU CDS appears as a stream within MSc(CompSc) (AI & Decentralized Technologies). No standalone MSc AI page retrieved. Master of Data Science hub text: In the era of big data, colossal amount of data is being generated every day. The emergence of HKU Master of Data Science opens up a new frontier of high-performance analytics.",
     "requirementsEn": "For MSc(CompSc) AI stream / MDASC: Bachelor's degree; calculus and algebra, computer programming, introductory statistics; TOEFL 80 / IELTS 6.0.",
     "requirementsCn": "计算机科学 AI 方向 / 数据科学硕士：学士学位；微积分与代数、计算机编程、初等统计；托福 80 / 雅思 6.0。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 282600
   },
   {
     "id": "hku-mscstatds",
@@ -3261,7 +3411,7 @@ const PROGRAMMES = [
     "desc": "统计学硕士下的数据科学方向，强调统计学习、贝叶斯方法与高维数据分析。",
     "requirements": "本科学位；雅思6.0/托福80；建议有微积分/线性代数/概率基础",
     "tuitionHkd": 238800,
-    "tuitionNote": "非本地 HK$238,800 / 本地 HK$228,000（MStat 官方）",
+    "tuitionNote": "非本地 HK$238,800 / 本地 HK$228,000（MStat 官方） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 1980,
@@ -3276,7 +3426,8 @@ const PROGRAMMES = [
     "descCn": "港大统计学硕士强调统计技术在各领域的应用，以更清晰准确地制定策略。学生学习检验、解读与分类数据，聚焦数据所提示的关键领域与含义。",
     "descEn": "The Master of Statistics (MStat) programme emphasises the applications of statistical techniques across various fields to formulate strategies with greater clarity and accuracy. Students learn to examine, translate, and classify data, with a focus on pinpointing the most critical areas and implications suggested by the data.",
     "requirementsEn": "A Bachelor's degree or an equivalent qualification; and applicants should have knowledge of matrices and calculus, introductory statistics and linear modelling.",
-    "requirementsCn": "学士学位或同等学历；申请人应具备矩阵与微积分、初等统计与线性建模知识。"
+    "requirementsCn": "学士学位或同等学历；申请人应具备矩阵与微积分、初等统计与线性建模知识。",
+    "tuitionCny": 204500
   },
   {
     "id": "hku-mscact",
@@ -3290,7 +3441,7 @@ const PROGRAMMES = [
     "desc": "精算科学训练，对接 IFoA/ASA 等专业资格，统计与金融交叉。",
     "requirements": "本科学位（数学/统计/精算相关）；雅思6.0/托福80",
     "tuitionHkd": 280000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2000,
@@ -3303,7 +3454,8 @@ const PROGRAMMES = [
     "sourceNote": "数据完整性警示：库内 website 指向 mstat.cds.hku.hk，该站是 Master of Statistics（统计学硕士）而非 Actuarial Science（精算）。本项目官网页本轮未定位，专业名与链接不匹配，须核实后修正或删条。",
     "descCn": "mstat.cds.hku.hk 为统计学硕士，非精算学。本轮未检索到港大精算学独立项目页，请在 portal.hku.hk 或计算与数据科学学院网站核实。",
     "requirementsCn": "未能作为精算学项目获取。请点官网核实。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 239800
   },
   {
     "id": "cuhk-mscecon",
@@ -3317,7 +3469,7 @@ const PROGRAMMES = [
     "desc": "Please refer to the programme page for the latest description. Economics is offered under the Division of Social Science.",
     "requirements": "In addition to the general requirements of the Graduate School, applicants should have a good background in Mathematics or Statistics (preferred); will be assessed on the basis of their past academic record, work experience, references and language abilities; should attend an interview and take a written test (if shortlisted).",
     "tuitionHkd": 358000,
-    "tuitionNote": "HK$358,000 per annum（自资；须经大学批准）。来源：官网项目页",
+    "tuitionNote": "HK$358,000 per annum（自资；须经大学批准）。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2010,
@@ -3332,7 +3484,8 @@ const PROGRAMMES = [
     "descEn": "The objective of the M.Sc. in Economics programme is to provide rigorous training in economics and enable students to conduct analyses of economic issues. The programme is suitable for those who wish to pursue further studies in economics and related disciplines or seek professional positions in private and public sectors.",
     "requirementsEn": "Should have a good background in Mathematics or Statistics (preferred); assessed on past academic record, work experience, references and language abilities; should attend an interview and take a written test (if shortlisted).",
     "requirementsCn": "应具备良好的数学或统计背景（优先）；根据学业成绩、工作经验、推荐信与语言能力综合评定；入围者须参加面试与笔试。",
-    "feeSource": "official-page"
+    "feeSource": "official-page",
+    "tuitionCny": 306600
   },
   {
     "id": "cuhk-mscai",
@@ -3346,7 +3499,7 @@ const PROGRAMMES = [
     "desc": "AI 与机器人交叉，覆盖感知、决策与智能系统，可与智能制造、商业自动化结合。",
     "requirements": "本科学位（工程/CS相关）；雅思6.5/托福79",
     "tuitionHkd": 395000,
-    "tuitionNote": "HK$395,000（可分 3 期或 6 期缴付；自资，须经大学批准）。来源：官网项目页",
+    "tuitionNote": "HK$395,000（可分 3 期或 6 期缴付；自资，须经大学批准）。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2020,
@@ -3361,7 +3514,8 @@ const PROGRAMMES = [
     "descEn": "Offered by the Faculty of Engineering, the Master of Science in Artificial Intelligence (MSc AI) Programme aims to train graduates with comprehensive state-of-the-art knowledge and relevant expertise in AI. Upon completion, students will not only have solid foundation knowledge in AI, but also have accumulated experience in practical applications and project development.",
     "requirementsEn": "Preferably have obtained a bachelor's degree in Engineering or Science discipline from a reputable university or equivalent professional qualifications; OR have at least two years of post-qualification working experience for applicants with a Bachelor's degree in other disciplines.",
     "requirementsCn": "优先考虑知名大学工程或科学专业学士学位或同等专业资格；其他学科学位申请人须具备至少两年毕业后工作经验。",
-    "feeSource": "official-page"
+    "feeSource": "official-page",
+    "tuitionCny": 338300
   },
   {
     "id": "cuhk-mscstats",
@@ -3375,7 +3529,7 @@ const PROGRAMMES = [
     "desc": "统计推断、实验设计、时间序列与数据建模，广泛应用于金融、市场与生物统计。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 250000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 1998,
@@ -3389,7 +3543,8 @@ const PROGRAMMES = [
     "descCn": "中大（数据科学与商业统计）理学硕士聚焦数据分析技能，探索应用统计与商业统计核心领域，教学生如何从数据中分析提取有用信息并基于发现做出决策，涵盖 R、Python、SAS 等统计软件。",
     "descEn": "The programme focuses on data analysis skills and explores core areas of applied and business statistics. It teaches students how to analyze and extract useful information from data and make decisions based on the findings. Statistical packages such as R, Python and SAS will be covered.",
     "requirementsEn": "Please refer to the general requirements of the Graduate School: bachelor's degree, normally Second Class honours or grade B; English TOEFL 79 / IELTS 6.5.",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 214100
   },
   {
     "id": "cuhk-mscqe",
@@ -3403,7 +3558,7 @@ const PROGRAMMES = [
     "desc": "计量与数量经济方向，强调实证分析、因果推断与政策评估。",
     "requirements": "本科学位；建议有计量/统计基础；雅思6.5/托福79",
     "tuitionHkd": 280000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2018,
@@ -3416,7 +3571,8 @@ const PROGRAMMES = [
     "sourceNote": "数据完整性警示：在 CUHK 研究生院与工商管理学院官网页面均未找到本项目，疑与 social-science 的 MSc in Economics 重复。须核实，若确为重复应删条。",
     "descCn": "官网未找到独立的「数量经济学」项目页，可能与社会科学学院经济学硕士为同一项目或重复条目。请点官网核实。",
     "requirementsCn": "官网未找到独立入学要求，请点官网核实。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 239800
   },
   {
     "id": "hkust-mscaif",
@@ -3430,7 +3586,7 @@ const PROGRAMMES = [
     "desc": "工学院 AI 硕士，覆盖机器学习、计算机视觉、NLP 与智能系统，可与金融科技、商业分析交叉。",
     "requirements": "本科学位（工程/科学）；雅思6.5/托福80",
     "tuitionHkd": 400000,
-    "tuitionNote": "HK$400,000（2027/28 Fall intake 名义课程费）。来源：官网项目页",
+    "tuitionNote": "HK$400,000（2027/28 Fall intake 名义课程费）。来源：官网项目页 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2022,
@@ -3445,7 +3601,8 @@ const PROGRAMMES = [
     "descEn": "Our carefully designed MSc program addresses the latest trends in AI development and aims to meet the growing demand for skilled AI practitioners. This program is tailored to both recent graduates and working professionals seeking to enhance their expertise in this exciting and rapidly evolving field.",
     "requirementsEn": "A bachelor's degree in Computer Engineering, Computer Science or a related discipline, or other disciplines with at least two years of relevant post-qualification work experience. English: TOEFL iBT 80 / IELTS 6.5.",
     "requirementsCn": "计算机工程、计算机科学或相关专业学士学位；或其他专业但具备至少两年相关毕业后工作经验。英语：托福 iBT 80 / 雅思 6.5。",
-    "feeSource": "official-page"
+    "feeSource": "official-page",
+    "tuitionCny": 342600
   },
   {
     "id": "hkust-mscstatds",
@@ -3459,7 +3616,7 @@ const PROGRAMMES = [
     "desc": "以数据驱动的统计建模与科学计算，可应用于金融工程、商业预测与运营优化。",
     "requirements": "本科学位（理工科）；雅思6.5/托福80",
     "tuitionHkd": 280000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2019,
@@ -3474,7 +3631,8 @@ const PROGRAMMES = [
     "descEn": "Jointly offered by the Departments of Physics and Mathematics, the program aims to cultivate the next generation to have strong skills in problem solving and logical thinking so that they become competent in the data science sector. By bridging theory, practice and techniques, the program provides students with hands-on experience in analyzing large amounts of data.",
     "requirementsEn": "A bachelor's degree in Science or Engineering disciplines, or other disciplines with relevant working experience in computation-related fields, working knowledge in at least one computer language, and basic training in calculus and linear algebra.",
     "requirementsCn": "科学或工程专业学士学位；或其他专业但具备计算相关领域工作经验、掌握至少一门计算机语言，并接受过微积分与线性代数基础训练。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 239800
   },
   {
     "id": "hkust-mscenvsc",
@@ -3488,7 +3646,7 @@ const PROGRAMMES = [
     "desc": "随机分析、衍生品定价与金融计算，统计/数学与金融深度交叉。",
     "requirements": "本科学位（数学/统计/物理/工程）；雅思6.5/托福80",
     "tuitionHkd": 320000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 2006,
@@ -3501,7 +3659,8 @@ const PROGRAMMES = [
     "sourceNote": "数据完整性警示：库内条目名与官网页内容不一致（原记录指向 Financial Mathematics 页面且不可达）。须在 HKUST 理学院官网重新定位本项目页，否则删条。",
     "descCn": "金融数学官方页面当前无法访问。请点科大理学院或课程目录官网核实。",
     "requirementsCn": "未能从官网获取，请点官网核实。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 274100
   },
   {
     "id": "cityu-mscai2",
@@ -3515,7 +3674,7 @@ const PROGRAMMES = [
     "desc": "数据科学学院 AI 硕士，覆盖学习算法、智能系统与行业应用。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 282000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2022,
@@ -3530,7 +3689,8 @@ const PROGRAMMES = [
     "descEn": "The programme aims to enable computer professionals to strengthen and upgrade their technical capabilities in Artificial Intelligence, broaden students' knowledge and deepen their understanding of specific areas in Artificial Intelligence from both the technical and practical perspectives.",
     "requirementsEn": "A recognised bachelor's degree in a computing discipline such as Computer Studies, Information Technology, Computer Engineering, Information Systems, or equivalent; or a related discipline with applicable IT working experience; or a recognised bachelor's degree with substantial knowledge or background in information technology.",
     "requirementsCn": "计算机研究、信息技术、计算机工程、信息系统等计算类专业认可学士学位或同等学历；或相关专业并具备适用 IT 工作经验；或具备信息技术扎实知识/背景的认可学士学位。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 241500
   },
   {
     "id": "cityu-mscstats",
@@ -3544,7 +3704,7 @@ const PROGRAMMES = [
     "desc": "应用统计与数据分析，覆盖回归、贝叶斯、时间序列与高维统计。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 250000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2000,
@@ -3558,7 +3718,8 @@ const PROGRAMMES = [
     "descCn": "城大数学系研究生页面当前无法访问。请点城大官网核实。",
     "descEn": "Official Math department postgraduate pages currently inaccessible. Please verify on CityU official site.",
     "requirementsCn": "未能获取，请点官网核实。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 214100
   },
   {
     "id": "cityu-mscbsstat",
@@ -3572,7 +3733,7 @@ const PROGRAMMES = [
     "desc": "商业统计与数据分析，面向市场研究、风险评估与运营决策。",
     "requirements": "本科学位；雅思6.5/托福79",
     "tuitionHkd": 250000,
-    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。",
+    "tuitionNote": "本轮未在该项目的官网专属页取到学费原文；此数字为库内旧值、未经官网核实，务必点专业名到官网确认。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2005,
@@ -3586,7 +3747,8 @@ const PROGRAMMES = [
     "descCn": "城大数学系研究生页面当前无法访问。请点城大官网核实。",
     "descEn": "Official Math department postgraduate pages currently inaccessible. Please verify on CityU official site.",
     "requirementsCn": "未能获取，请点官网核实。",
-    "feeSource": "unverified"
+    "feeSource": "unverified",
+    "tuitionCny": 214100
   },
   {
     "id": "polyu-mscaimath",
@@ -3599,8 +3761,8 @@ const PROGRAMMES = [
     "category": "人工智能",
     "desc": "面向 AI 的数学基础与算法实现，覆盖优化、统计学习与深度学习理论。",
     "requirements": "本科学位（数学/统计/CS/工程）；雅思6.0/托福80",
-    "tuitionHkd": null,
-    "tuitionNote": "官网按每学分计费：HK$14,900 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页",
+    "tuitionHkd": 461900,
+    "tuitionNote": "官网按每学分计费：HK$14,900 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页 估算总额 = 官网学分单价 × 官网最低毕业学分 31，官网未列明总额。（人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 2023,
@@ -3615,7 +3777,11 @@ const PROGRAMMES = [
     "descEn": "This programme will meet the rising demand for professionals skilled in AI, equipping graduates with the necessary expertise to drive innovation and efficiency in the tech industry. The interdisciplinary approach will enable graduates to apply their skills across various contexts and industries.",
     "requirementsEn": "A Bachelor's degree with honours in mathematics, statistics, computer science, IT, engineering, and science, or the equivalent. Other disciplines with adequate mathematics or IT background will also be considered.",
     "requirementsCn": "数学、统计、计算机科学、信息技术、工程、科学等专业的荣誉学士学位或同等学历。其他学科但具备足够数学或 IT 背景者也会被考虑。",
-    "feeSource": "official-per-credit"
+    "feeSource": "official-per-credit",
+    "tuitionPerCredit": 14900,
+    "tuitionCredits": 31,
+    "tuitionIsEstimate": true,
+    "tuitionCny": 395600
   },
   {
     "id": "polyu-mscaai",
@@ -3628,8 +3794,8 @@ const PROGRAMMES = [
     "category": "人工智能",
     "desc": "新设项目，聚焦 Agentic AI、多智能体系统与自动化商业流程。",
     "requirements": "本科学位；雅思6.0/托福80",
-    "tuitionHkd": null,
-    "tuitionNote": "官网按每学分计费：HK$14,900 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页",
+    "tuitionHkd": 461900,
+    "tuitionNote": "官网按每学分计费：HK$14,900 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页 估算总额 = 官网学分单价 × 官网最低毕业学分 31，官网未列明总额。（人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2026,
@@ -3644,7 +3810,11 @@ const PROGRAMMES = [
     "descCn": "理大智能体系统理学硕士超越孤立的 AI 算法训练，走向完整自主生态系统的工程化。项目通过将先进推理与稳健的软硬件基础设施相结合，帮助学生弥合抽象 AI 模型与真实世界应用之间的鸿沟。",
     "descEn": "The Master of Science in Agentic AI Systems (MScAS) programme moves beyond the training of isolated AI algorithms to the engineering of complete, autonomous ecosystems. It prepares students to bridge the gap between abstract AI models and real-world applications by integrating advanced reasoning with robust hardware and software infrastructure.",
     "requirementsEn": "A Bachelor's degree in Computing/Computer Science/Engineering, Information Systems, Mathematics or other related disciplines. Applicants with other degrees and at least 3 years of relevant IT work experience will also be considered.",
-    "requirementsCn": "计算/计算机科学/工程、信息系统、数学或相关专业学士学位。其他学位但具备至少 3 年相关 IT 工作经验者也会被考虑。"
+    "requirementsCn": "计算/计算机科学/工程、信息系统、数学或相关专业学士学位。其他学位但具备至少 3 年相关 IT 工作经验者也会被考虑。",
+    "tuitionPerCredit": 14900,
+    "tuitionCredits": 31,
+    "tuitionIsEstimate": true,
+    "tuitionCny": 395600
   },
   {
     "id": "polyu-mscstats2",
@@ -3657,8 +3827,8 @@ const PROGRAMMES = [
     "category": "统计",
     "desc": "应用统计方法与研究设计，覆盖抽样调查、实验设计与高级回归。",
     "requirements": "本科学位；雅思6.0/托福80",
-    "tuitionHkd": null,
-    "tuitionNote": "官网按每学分计费：HK$13,500 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页",
+    "tuitionHkd": 418500,
+    "tuitionNote": "官网按每学分计费：HK$13,500 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页 估算总额 = 官网学分单价 × 官网最低毕业学分 31，官网未列明总额。（人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.5,
     "durationText": "约 1.5 年",
     "foundedYear": 2000,
@@ -3673,7 +3843,11 @@ const PROGRAMMES = [
     "descEn": "In today's era of big data, large data sets are generated every day in various areas of society and industry. It is challenging to extract and analyse information from such an unprecedentedly large volume of data. To create value from such data, one must combine techniques from mathematics, statistics and computer science. (Note: PolyU 2027 TPG list has no standalone Applied Statistics programme; closest official programme is MSc Data Science and Analytics.)",
     "requirementsEn": "A Bachelor's degree with Honours in Mathematics, Statistics, Computer Science, I.T., Engineering, Economics, and Science, or the equivalent.",
     "requirementsCn": "数学、统计、计算机科学、信息技术、工程、经济、科学等专业的荣誉学士学位或同等学历。",
-    "feeSource": "official-per-credit"
+    "feeSource": "official-per-credit",
+    "tuitionPerCredit": 13500,
+    "tuitionCredits": 31,
+    "tuitionIsEstimate": true,
+    "tuitionCny": 358400
   },
   {
     "id": "polyu-mscmaths",
@@ -3686,8 +3860,8 @@ const PROGRAMMES = [
     "category": "人工智能",
     "desc": "区块链技术与应用，可与金融科技、供应链溯源、数字资产交叉。",
     "requirements": "本科学位；雅思6.0/托福80",
-    "tuitionHkd": null,
-    "tuitionNote": "官网按每学分计费：HK$14,500 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页",
+    "tuitionHkd": 449500,
+    "tuitionNote": "官网按每学分计费：HK$14,500 per credit，本地及非本地生同价（官网注明 1 学分的「学术诚信与道德」科目不计费）。官网未列明全程总额，总额取决于实际所修学分。来源：官网项目页 估算总额 = 官网学分单价 × 官网最低毕业学分 31，官网未列明总额。（人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2022,
@@ -3702,7 +3876,11 @@ const PROGRAMMES = [
     "descCn": "理大区块链科技理学硕士面向熟悉区块链及相关技术、希望分析、设计、实施与评估金融科技及相关系统、产品与服务的专业人士，涵盖关键金融科技技术与应用，以及安全、合规与监管等方面。",
     "descEn": "This programme is designed for professionals proficient in blockchain and related technologies to analyse, design, implement and evaluate Fintech and other related systems, products and services. Key Fintech technologies and applications, as well as other aspects such as security, compliance and regulation, are covered.",
     "requirementsEn": "A Bachelor's degree in Computing/Computer Science/Engineering, Information Systems, Mathematics or other related disciplines. Other degrees with at least 3 years of relevant IT work experience will also be considered.",
-    "requirementsCn": "计算/计算机科学/工程、信息系统、数学或相关专业学士学位。其他学位但具备至少 3 年相关 IT 工作经验者也会被考虑。"
+    "requirementsCn": "计算/计算机科学/工程、信息系统、数学或相关专业学士学位。其他学位但具备至少 3 年相关 IT 工作经验者也会被考虑。",
+    "tuitionPerCredit": 14500,
+    "tuitionCredits": 31,
+    "tuitionIsEstimate": true,
+    "tuitionCny": 385000
   },
   {
     "id": "ntu-msc-accountancy",
@@ -3718,7 +3896,7 @@ const PROGRAMMES = [
     "requirementsEn": "A good bachelor's degree from any discipline. GMAT or GRE score is optional. TOEFL score ≥ 100 iBT or IELTS score ≥ 6.5, if English is not the medium of instruction at the undergraduate level. Work experience is a plus but not required.",
     "requirementsCn": "任何学科优秀本科学位。GMAT或GRE成绩可选。若本科非英语授课，TOEFL≥100 iBT或IELTS≥6.5。工作经验为加分项但非必须。",
     "tuitionHkd": null,
-    "tuitionNote": "S$70,850 含 GST（AY2027 / 2027年7月入学，官网）",
+    "tuitionNote": "S$70,850 含 GST（AY2027 / 2027年7月入学，官网） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 12 个月",
     "foundedYear": 2000,
@@ -3729,7 +3907,9 @@ const PROGRAMMES = [
     "website": "https://www.ntu.edu.sg/business/admissions/graduate-studies/msc-accountancy",
     "feeSource": "official-page",
     "sourceConfidence": "official-listed",
-    "sourceNote": "官网 ntu.edu.sg 抓取"
+    "sourceNote": "官网 ntu.edu.sg 抓取",
+    "tuitionSgd": 70850,
+    "tuitionCny": 373100
   },
   {
     "id": "ntu-msc-finance",
@@ -3745,7 +3925,7 @@ const PROGRAMMES = [
     "requirementsEn": "A good bachelor's degree in any discipline. GMAT or GRE score is optional. TOEFL ≥ 100 iBT or IELTS ≥ 6.5 if English is not the medium of instruction. Applicants with no work experience are welcome to apply.",
     "requirementsCn": "任何学科良好本科学位。GMAT或GRE成绩可选。若本科非英语授课，TOEFL≥100 iBT或IELTS≥6.5。无工作经验者欢迎申请。",
     "tuitionHkd": null,
-    "tuitionNote": "S$78,480 含 GST（AY2027，官网）",
+    "tuitionNote": "S$78,480 含 GST（AY2027，官网） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年（3 学期；可选 6 个月实习延伸）",
     "foundedYear": 1996,
@@ -3756,7 +3936,9 @@ const PROGRAMMES = [
     "website": "https://www.ntu.edu.sg/business/admissions/graduate-studies/msc-finance",
     "feeSource": "official-page",
     "sourceConfidence": "official-listed",
-    "sourceNote": "官网抓取"
+    "sourceNote": "官网抓取",
+    "tuitionSgd": 78480,
+    "tuitionCny": 413300
   },
   {
     "id": "ntu-msc-finance-pku",
@@ -3772,7 +3954,7 @@ const PROGRAMMES = [
     "requirementsEn": "A good bachelor's degree in any discipline. GMAT or GRE optional. TOEFL ≥ 100 / IELTS ≥ 6.5 if English not medium of instruction; HSK Level 6 score 210 if degree not taught exclusively in Chinese. Shortlisted applicants invited for NTU and PKU interviews.",
     "requirementsCn": "任何学科良好本科学位。GMAT/GRE可选。若本科非英语授课TOEFL≥100或IELTS≥6.5；若学位非全中文授课，HSK六级≥210分。入围者须参加NTU与北大面试。",
     "tuitionHkd": null,
-    "tuitionNote": "NTU S$75,210 含GST + 北大约 RMB99,000（官网）",
+    "tuitionNote": "NTU S$75,210 含GST + 北大约 RMB99,000（官网） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 2,
     "durationText": "第一年 NTU，其后北大 + ≥3个月实习",
     "foundedYear": 2018,
@@ -3783,7 +3965,9 @@ const PROGRAMMES = [
     "website": "https://www.ntu.edu.sg/business/admissions/graduate-studies/msc-finance/ntu-pku-double-masters",
     "feeSource": "official-page",
     "sourceConfidence": "official-listed",
-    "sourceNote": "官网抓取"
+    "sourceNote": "官网抓取",
+    "tuitionSgd": 75210,
+    "tuitionCny": 396100
   },
   {
     "id": "ntu-msc-ba",
@@ -3799,7 +3983,7 @@ const PROGRAMMES = [
     "requirementsEn": "A good bachelor's degree in any discipline. GMAT or GRE score is optional. TOEFL ≥ 100 iBT or IELTS ≥ 6.5 if English is not the medium of instruction. Applicants with no work experience are welcome to apply.",
     "requirementsCn": "任何学科良好本科学位。GMAT或GRE成绩可选。若本科非英语授课，TOEFL≥100或IELTS≥6.5。无工作经验者欢迎申请。",
     "tuitionHkd": null,
-    "tuitionNote": "S$75,210 含 GST（AY2027，官网）",
+    "tuitionNote": "S$75,210 含 GST（AY2027，官网） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2014,
@@ -3810,7 +3994,9 @@ const PROGRAMMES = [
     "website": "https://www.ntu.edu.sg/business/admissions/graduate-studies/msc-business-analytics",
     "feeSource": "official-page",
     "sourceConfidence": "official-listed",
-    "sourceNote": "官网抓取"
+    "sourceNote": "官网抓取",
+    "tuitionSgd": 75210,
+    "tuitionCny": 396100
   },
   {
     "id": "ntu-msc-marketing",
@@ -3826,7 +4012,7 @@ const PROGRAMMES = [
     "requirementsEn": "A good bachelor's degree from any discipline. GMAT or GRE score is optional. TOEFL ≥ 100 iBT or IELTS ≥ 6.5 if English is not the medium of instruction. Work experience is not required.",
     "requirementsCn": "任何学科良好本科学位。GMAT或GRE成绩可选。若本科非英语授课，TOEFL≥100或IELTS≥6.5。不要求工作经验。",
     "tuitionHkd": null,
-    "tuitionNote": "S$73,030 含 GST（AY2027，官网）",
+    "tuitionNote": "S$73,030 含 GST（AY2027，官网） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2015,
@@ -3837,7 +4023,9 @@ const PROGRAMMES = [
     "website": "https://www.ntu.edu.sg/business/admissions/graduate-studies/msc-marketing-science",
     "feeSource": "official-page",
     "sourceConfidence": "official-listed",
-    "sourceNote": "官网抓取"
+    "sourceNote": "官网抓取",
+    "tuitionSgd": 73030,
+    "tuitionCny": 384600
   },
   {
     "id": "ntu-msc-mfe",
@@ -3853,7 +4041,7 @@ const PROGRAMMES = [
     "requirementsEn": "A good undergraduate degree in applied mathematics, applied science, statistics, computer science, engineering, economics, or other quantitative fields. A good GMAT or GRE score (within last five years), optional for NTU SPMS graduates with Honours (Distinction) and above. TOEFL ≥ 100 / IELTS ≥ 6.5 if English not medium of instruction. Mathematics Preparatory Course is compulsory.",
     "requirementsCn": "应用数学、应用科学、统计、计算机科学、工程、经济或其他量化领域优秀本科学位。良好GMAT/GRE成绩（五年内），NTU SPMS荣誉（优秀）及以上毕业生可豁免。若本科非英语授课，TOEFL≥100或IELTS≥6.5。数学先修课为必修。",
     "tuitionHkd": null,
-    "tuitionNote": "非CMU轨道 S$73,030 / CMU轨道 S$78,480 含GST（AY2027，官网）",
+    "tuitionNote": "非CMU轨道 S$73,030 / CMU轨道 S$78,480 含GST（AY2027，官网） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制最少12个月 / 兼读最少24个月",
     "foundedYear": 2000,
@@ -3864,7 +4052,9 @@ const PROGRAMMES = [
     "website": "https://www.ntu.edu.sg/business/admissions/graduate-studies/msc-financial-engineering",
     "feeSource": "official-page",
     "sourceConfidence": "official-listed",
-    "sourceNote": "官网抓取"
+    "sourceNote": "官网抓取",
+    "tuitionSgd": 73030,
+    "tuitionCny": 384600
   },
   {
     "id": "ntu-msc-mara",
@@ -3880,7 +4070,7 @@ const PROGRAMMES = [
     "requirementsEn": "A good undergraduate degree in any discipline. GMAT or GRE score is optional. TOEFL ≥ 100 iBT or IELTS ≥ 6.5 if English is not the medium of instruction. Work experience is not required.",
     "requirementsCn": "任何学科良好本科学位。GMAT或GRE成绩可选。若本科非英语授课，TOEFL≥100或IELTS≥6.5。不要求工作经验。",
     "tuitionHkd": null,
-    "tuitionNote": "S$70,850 含 GST（AY2027，官网）",
+    "tuitionNote": "S$70,850 含 GST（AY2027，官网） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2023,
@@ -3891,7 +4081,9 @@ const PROGRAMMES = [
     "website": "https://www.ntu.edu.sg/business/admissions/graduate-studies/msc-actuarial-risk-analytics",
     "feeSource": "official-page",
     "sourceConfidence": "official-listed",
-    "sourceNote": "官网抓取"
+    "sourceNote": "官网抓取",
+    "tuitionSgd": 70850,
+    "tuitionCny": 373100
   },
   {
     "id": "ntu-mim",
@@ -3907,7 +4099,7 @@ const PROGRAMMES = [
     "requirementsEn": "A good bachelor's degree from any discipline. GMAT or GRE score is optional. TOEFL ≥100 iBT; IELTS ≥6.5, if English was not the medium of instruction at the undergraduate level. Work experience is optional.",
     "requirementsCn": "任何学科良好本科学位。GMAT或GRE成绩可选。若本科非英语授课，TOEFL≥100或IELTS≥6.5。工作经验可选。",
     "tuitionHkd": null,
-    "tuitionNote": "S$70,850 含 GST（AY2027，官网）",
+    "tuitionNote": "S$70,850 含 GST（AY2027，官网） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年",
     "foundedYear": 2018,
@@ -3918,7 +4110,9 @@ const PROGRAMMES = [
     "website": "https://www.ntu.edu.sg/business/admissions/graduate-studies/master-in-management",
     "feeSource": "official-page",
     "sourceConfidence": "official-listed",
-    "sourceNote": "官网抓取"
+    "sourceNote": "官网抓取",
+    "tuitionSgd": 70850,
+    "tuitionCny": 373100
   },
   {
     "id": "ntu-msc-awm",
@@ -3934,7 +4128,7 @@ const PROGRAMMES = [
     "requirementsEn": "At least 2 years of working experience; A good Bachelor's degree in a relevant programme; Competitive GMAT / GRE score; TOEFL > 100 or IELTS > 6.5 if English was not the medium of instruction. An admissions interview will be required for shortlisted candidates.",
     "requirementsCn": "至少2年工作经验；相关专业良好本科学位；具竞争力的GMAT/GRE成绩；若本科非英语授课，TOEFL>100或IELTS>6.5。入围候选人须参加面试。",
     "tuitionHkd": null,
-    "tuitionNote": "按模块收费 S$2,800–S$7,500/模块（官网）；新加坡人可申请 IBF 补贴",
+    "tuitionNote": "官网按模块收费：S$2,800 – S$7,500 / 模块；新加坡公民可申请 IBF 补贴。官网未列明全程总额（须按实际修读模块数计算），故本库不给估算总价。",
     "durationYears": 1,
     "durationText": "12 个月（可延长至 3 年）；隔周周末",
     "foundedYear": 2020,
@@ -3943,9 +4137,11 @@ const PROGRAMMES = [
     "jointPartner": "Wealth Management Institute (WMI)",
     "location": "新加坡 + 美国 + 英国模块",
     "website": "https://wmi.edu.sg/programmes/master-of-science-in-asset-wealth-management/",
-    "feeSource": "official-page",
+    "feeSource": "official-per-module",
     "sourceConfidence": "official-listed",
-    "sourceNote": "WMI/NBS 官网"
+    "sourceNote": "WMI/NBS 官网",
+    "tuitionPerModuleMinSgd": 2800,
+    "tuitionPerModuleMaxSgd": 7500
   },
   {
     "id": "ntu-emsc-sustainability",
@@ -3961,7 +4157,7 @@ const PROGRAMMES = [
     "requirementsEn": "Demonstrated professional experience in sustainability-related roles; Minimum 10 years of work experience. Undergraduate degree; Fluent in spoken and written English. No GMAT/GRE/TOEFL/IELTS required.",
     "requirementsCn": "具备可持续相关岗位专业经验；至少10年工作经验。本科学位；英语听说读写流利。无需GMAT/GRE/TOEFL/IELTS。",
     "tuitionHkd": null,
-    "tuitionNote": "AY2027: S$67,600（含GST约 S$73,684，官网）",
+    "tuitionNote": "AY2027: S$67,600（含GST约 S$73,684，官网） （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "兼读 1 年（3 学期）",
     "foundedYear": 2023,
@@ -3972,7 +4168,9 @@ const PROGRAMMES = [
     "website": "https://www.ntu.edu.sg/business/admissions/NEE/Executive-Master-of-Science-in-Sustainability-Management",
     "feeSource": "official-page",
     "sourceConfidence": "official-listed",
-    "sourceNote": "官网抓取"
+    "sourceNote": "官网抓取",
+    "tuitionSgd": 67600,
+    "tuitionCny": 356000
   },
   {
     "id": "nus-msc-finance",
@@ -3987,7 +4185,7 @@ const PROGRAMMES = [
     "descCn": "新加坡国立大学商学院金融学理学硕士，面向投行、券商、资管等金融行业。官网正文本次无法抓取，请点官网核实。",
     "requirementsEn": "Educational Background: A good undergraduate degree in any discipline. Applicants in the process of earning a degree or about to graduate are welcome to apply. Admission Interviews: A strong performance in the interview (conducted for shortlisted candidates only). English Language Requirement (if English is not the native language or medium of prior undergraduate instruction): For TOEFL, the internet-based test score must be at least 5.0. For IELTS, the overall band score must be at least 7.0. Work Experience: Not required — we do not require you to have work experience for admission into the programme. GMAT/GRE scores are optional, though a good score may enhance your application.",
     "requirementsCn": "学历背景：任何学科的优良本科学位；在读或即将毕业者亦可申请。入学面试：入围者须有良好面试表现。英语要求（若英语非母语或本科非全英文授课）：TOEFL iBT 至少 5.0（注：2026 年 1 月起 TOEFL 改用新分制，旧制约 100 分对应新制 4.5–5.0）；IELTS 总分至少 7.0。工作经验：不要求。GMAT/GRE：非强制，但好成绩有助申请。",
-    "tuitionNote": "AY2027/2028（2027 年 8 月入学）官网费用：税前 S$71,000.00，含 9% GST S$77,390.00。申请费 S$100.00；接受 offer 费 S$10,900.00；第一期 S$33,245.00（8 月注册时）、第二期 S$33,245.00（1 月）。另每学期收杂费。官网注明费用随 GST 调整；自 AY2024/2025 起 NUS 校友可享商学院全部 MSc 项目 20% 学费返还。",
+    "tuitionNote": "AY2027/2028（2027 年 8 月入学）官网费用：税前 S$71,000.00，含 9% GST S$77,390.00。申请费 S$100.00；接受 offer 费 S$10,900.00；第一期 S$33,245.00（8 月注册时）、第二期 S$33,245.00（1 月）。另每学期收杂费。官网注明费用随 GST 调整；自 AY2024/2025 起 NUS 校友可享商学院全部 MSc 项目 20% 学费返还。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1.3,
     "durationText": "全日制 16 个月（48 学分，3 学期密集授课，含可选体验式学习模块）",
     "foundedYear": 2000,
@@ -3999,7 +4197,10 @@ const PROGRAMMES = [
     "feeSource": "official-page",
     "sourceConfidence": "official-listed",
     "sourceNote": "2026-09-20 由浏览器实抓 NUS 官网项目页核实（curl/Node 被 Incapsula WAF 拦截，真实浏览器可通过挑战）。学费、入学要求、关键日期均取自官网原文；费用为新元，未折算港币。",
-    "requirements": "Educational Background: A good undergraduate degree in any discipline. Applicants in the process of earning a degree or about to graduate are welcome to apply. Admission Interviews: A strong performance in the interview (conducted for shortlisted candidates only). English Language Requirement (if English is not the native language or medium of prior undergraduate instruction): For TOEFL, the internet-based test score must be at least 5.0. For IELTS, the overall band score must be at least 7.0. Work Experience: Not required — we do not require you to have work experience for admission into the programme. GMAT/GRE scores are optional, though a good score may enhance your application."
+    "requirements": "Educational Background: A good undergraduate degree in any discipline. Applicants in the process of earning a degree or about to graduate are welcome to apply. Admission Interviews: A strong performance in the interview (conducted for shortlisted candidates only). English Language Requirement (if English is not the native language or medium of prior undergraduate instruction): For TOEFL, the internet-based test score must be at least 5.0. For IELTS, the overall band score must be at least 7.0. Work Experience: Not required — we do not require you to have work experience for admission into the programme. GMAT/GRE scores are optional, though a good score may enhance your application.",
+    "tuitionSgd": 77390,
+    "tuitionHkd": null,
+    "tuitionCny": 407600
   },
   {
     "id": "nus-msc-accounting-fa",
@@ -4014,7 +4215,7 @@ const PROGRAMMES = [
     "descCn": "新加坡国立大学会计与财务分析理学硕士，结合会计专长与数据分析技能。官网完整正文请点 mscacc.nus.edu.sg 核实。",
     "requirementsEn": "Educational Background: A good undergraduate degree in any discipline. Applicants in the process of earning a degree or about to graduate are welcome to apply. Admission Interviews: A strong performance in the interview (conducted for shortlisted candidates only). English Language Requirement (if English is not the native language or medium of prior undergraduate instruction): For TOEFL, the internet-based test score must be at least 5.0. For IELTS, the overall band score must be at least 7.0. Work Experience: Not required — we do not require you to have work experience for admission into the programme. GMAT/GRE scores are optional, though a good score may enhance your application.",
     "requirementsCn": "学历背景：任何学科的优良本科学位；在读或即将毕业者亦可申请。入学面试：入围者须有良好面试表现。英语要求（若英语非母语或本科非全英文授课）：TOEFL iBT 至少 5.0（注：2026 年 1 月起 TOEFL 改用新分制，旧制约 100 分对应新制 4.5–5.0）；IELTS 总分至少 7.0。工作经验：不要求。GMAT/GRE：非强制，但好成绩有助申请。",
-    "tuitionNote": "AY2027/2028（2027 年 8 月入学）官网费用：单学位税前 S$71,000.00，含 9% GST S$77,390.00。申请费 S$100.00；接受 offer 费 S$10,900.00；第一期 S$33,245.00（8 月注册）、第二期 S$33,245.00（1 月）。官网另注明设有数量有限之 NUS Study Awards。",
+    "tuitionNote": "AY2027/2028（2027 年 8 月入学）官网费用：单学位税前 S$71,000.00，含 9% GST S$77,390.00。申请费 S$100.00；接受 offer 费 S$10,900.00；第一期 S$33,245.00（8 月注册）、第二期 S$33,245.00（1 月）。官网另注明设有数量有限之 NUS Study Awards。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 12 个月（40 学分，三学期结构，最后一学期含体验式学习）",
     "foundedYear": 2010,
@@ -4026,7 +4227,10 @@ const PROGRAMMES = [
     "feeSource": "official-page",
     "sourceConfidence": "official-listed",
     "sourceNote": "2026-09-20 由浏览器实抓 NUS 官网项目页核实（curl/Node 被 Incapsula WAF 拦截，真实浏览器可通过挑战）。学费、入学要求、关键日期均取自官网原文；费用为新元，未折算港币。",
-    "requirements": "Educational Background: A good undergraduate degree in any discipline. Applicants in the process of earning a degree or about to graduate are welcome to apply. Admission Interviews: A strong performance in the interview (conducted for shortlisted candidates only). English Language Requirement (if English is not the native language or medium of prior undergraduate instruction): For TOEFL, the internet-based test score must be at least 5.0. For IELTS, the overall band score must be at least 7.0. Work Experience: Not required — we do not require you to have work experience for admission into the programme. GMAT/GRE scores are optional, though a good score may enhance your application."
+    "requirements": "Educational Background: A good undergraduate degree in any discipline. Applicants in the process of earning a degree or about to graduate are welcome to apply. Admission Interviews: A strong performance in the interview (conducted for shortlisted candidates only). English Language Requirement (if English is not the native language or medium of prior undergraduate instruction): For TOEFL, the internet-based test score must be at least 5.0. For IELTS, the overall band score must be at least 7.0. Work Experience: Not required — we do not require you to have work experience for admission into the programme. GMAT/GRE scores are optional, though a good score may enhance your application.",
+    "tuitionSgd": 77390,
+    "tuitionHkd": null,
+    "tuitionCny": 407600
   },
   {
     "id": "nus-msc-sustainable-green-finance",
@@ -4066,7 +4270,7 @@ const PROGRAMMES = [
     "descCn": "新国大市场营销分析与洞察理学硕士融合市场营销与数据分析，可选 CEMS 国际管理双硕士。请点官网核实完整简介。",
     "requirementsEn": "Educational Background: A good undergraduate degree in any discipline. Applicants in the process of earning a degree or about to graduate are welcome to apply. Admission Interviews: A strong performance in the interview (conducted for shortlisted candidates only). English Language Requirement (if English is not the native language or medium of prior undergraduate instruction): For TOEFL, the internet-based test score must be at least 5.0. For IELTS, the overall band score must be at least 7.0. Work Experience: Not required — we do not require you to have work experience for admission into the programme. GMAT/GRE scores are optional, though a good score may enhance your application.",
     "requirementsCn": "学历背景：任何学科的优良本科学位；在读或即将毕业者亦可申请。入学面试：入围者须有良好面试表现。英语要求（若英语非母语或本科非全英文授课）：TOEFL iBT 至少 5.0（注：2026 年 1 月起 TOEFL 改用新分制，旧制约 100 分对应新制 4.5–5.0）；IELTS 总分至少 7.0。工作经验：不要求。GMAT/GRE：非强制，但好成绩有助申请。",
-    "tuitionNote": "AY2027/2028（2027 年 8 月入学）官网费用：单学位税前 S$71,000.00，含 9% GST S$77,390.00；双学位（含 CEMS MIM）税前 S$84,000.00，含 9% GST S$91,560.00。申请费 S$100.00；接受 offer 费 S$10,900.00。",
+    "tuitionNote": "AY2027/2028（2027 年 8 月入学）官网费用：单学位税前 S$71,000.00，含 9% GST S$77,390.00；双学位（含 CEMS MIM）税前 S$84,000.00，含 9% GST S$91,560.00。申请费 S$100.00；接受 offer 费 S$10,900.00。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制（官网单学位项目；详见 programme-structure 页）",
     "foundedYear": 2018,
@@ -4078,7 +4282,10 @@ const PROGRAMMES = [
     "feeSource": "official-page",
     "sourceConfidence": "official-listed",
     "sourceNote": "2026-09-20 由浏览器实抓 NUS 官网项目页核实（curl/Node 被 Incapsula WAF 拦截，真实浏览器可通过挑战）。学费、入学要求、关键日期均取自官网原文；费用为新元，未折算港币。",
-    "requirements": "Educational Background: A good undergraduate degree in any discipline. Applicants in the process of earning a degree or about to graduate are welcome to apply. Admission Interviews: A strong performance in the interview (conducted for shortlisted candidates only). English Language Requirement (if English is not the native language or medium of prior undergraduate instruction): For TOEFL, the internet-based test score must be at least 5.0. For IELTS, the overall band score must be at least 7.0. Work Experience: Not required — we do not require you to have work experience for admission into the programme. GMAT/GRE scores are optional, though a good score may enhance your application."
+    "requirements": "Educational Background: A good undergraduate degree in any discipline. Applicants in the process of earning a degree or about to graduate are welcome to apply. Admission Interviews: A strong performance in the interview (conducted for shortlisted candidates only). English Language Requirement (if English is not the native language or medium of prior undergraduate instruction): For TOEFL, the internet-based test score must be at least 5.0. For IELTS, the overall band score must be at least 7.0. Work Experience: Not required — we do not require you to have work experience for admission into the programme. GMAT/GRE scores are optional, though a good score may enhance your application.",
+    "tuitionSgd": 77390,
+    "tuitionHkd": null,
+    "tuitionCny": 407600
   },
   {
     "id": "nus-msc-real-estate",
@@ -4093,7 +4300,7 @@ const PROGRAMMES = [
     "descCn": "新国大房地产理学硕士为跨学科应用型项目，融合金融、开发与城市系统，培养房地产领域能力。请点官网核实完整简介。",
     "requirementsEn": "Educational Background: A good undergraduate degree in any discipline. Applicants in the process of earning a degree or about to graduate are welcome to apply. Admission Interviews: A strong performance in the interview (conducted for shortlisted candidates only). English Language Requirement (if English is not the native language or medium of prior undergraduate instruction): For TOEFL, the internet-based test score must be at least 5.0. For IELTS, the overall band score must be at least 7.0. Work Experience: Not required — we do not require you to have work experience for admission into the programme. GMAT/GRE scores are optional, though a good score may enhance your application.",
     "requirementsCn": "学历背景：任何学科的优良本科学位；在读或即将毕业者亦可申请。入学面试：入围者须有良好面试表现。英语要求（若英语非母语或本科非全英文授课）：TOEFL iBT 至少 5.0（注：2026 年 1 月起 TOEFL 改用新分制，旧制约 100 分对应新制 4.5–5.0）；IELTS 总分至少 7.0。工作经验：不要求。GMAT/GRE：非强制，但好成绩有助申请。",
-    "tuitionNote": "AY2027/2028（2027 年 8 月入学）官网费用：税前 S$58,700，含 9% GST S$63,983。申请费 S$100.00；接受 offer 费 S$10,900.00。",
+    "tuitionNote": "AY2027/2028（2027 年 8 月入学）官网费用：税前 S$58,700，含 9% GST S$63,983。申请费 S$100.00；接受 offer 费 S$10,900.00。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制（详见官网 programme structure 页；另设兼读制）",
     "foundedYear": 1986,
@@ -4105,7 +4312,10 @@ const PROGRAMMES = [
     "feeSource": "official-page",
     "sourceConfidence": "official-listed",
     "sourceNote": "2026-09-20 由浏览器实抓 NUS 官网项目页核实（curl/Node 被 Incapsula WAF 拦截，真实浏览器可通过挑战）。学费、入学要求、关键日期均取自官网原文；费用为新元，未折算港币。",
-    "requirements": "Educational Background: A good undergraduate degree in any discipline. Applicants in the process of earning a degree or about to graduate are welcome to apply. Admission Interviews: A strong performance in the interview (conducted for shortlisted candidates only). English Language Requirement (if English is not the native language or medium of prior undergraduate instruction): For TOEFL, the internet-based test score must be at least 5.0. For IELTS, the overall band score must be at least 7.0. Work Experience: Not required — we do not require you to have work experience for admission into the programme. GMAT/GRE scores are optional, though a good score may enhance your application."
+    "requirements": "Educational Background: A good undergraduate degree in any discipline. Applicants in the process of earning a degree or about to graduate are welcome to apply. Admission Interviews: A strong performance in the interview (conducted for shortlisted candidates only). English Language Requirement (if English is not the native language or medium of prior undergraduate instruction): For TOEFL, the internet-based test score must be at least 5.0. For IELTS, the overall band score must be at least 7.0. Work Experience: Not required — we do not require you to have work experience for admission into the programme. GMAT/GRE scores are optional, though a good score may enhance your application.",
+    "tuitionSgd": 63983,
+    "tuitionHkd": null,
+    "tuitionCny": 337000
   },
   {
     "id": "nus-msc-strategic-analysis-innovation",
@@ -4118,7 +4328,7 @@ const PROGRAMMES = [
     "category": "管理",
     "descEn": "MSc in Strategic Analysis and Innovation (MSI) at NUS Business School. Graduates work across industries including consumer goods, consulting and corporate strategy. (Partial index; verify on mscstrategy.nus.edu.sg.)",
     "descCn": "新国大战略分析与创新理学硕士（MSI），毕业生广泛进入消费品、管理咨询与企业战略等领域。请点官网核实完整简介。",
-    "tuitionNote": "官网费用：税前 S$71,000.00，含 9% GST S$77,390.00。申请费 S$100.00；接受 offer 费 S$10,900.00。",
+    "tuitionNote": "官网费用：税前 S$71,000.00，含 9% GST S$77,390.00。申请费 S$100.00；接受 offer 费 S$10,900.00。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制（待核实）",
     "foundedYear": 2022,
@@ -4129,7 +4339,10 @@ const PROGRAMMES = [
     "website": "https://mscstrategy.nus.edu.sg/",
     "feeSource": "official-page",
     "sourceConfidence": "official-listed",
-    "sourceNote": "2026-09-20 由浏览器实抓 NUS 官网项目页核实（curl/Node 被 Incapsula WAF 拦截，真实浏览器可通过挑战）。学费、入学要求、关键日期均取自官网原文；费用为新元，未折算港币。"
+    "sourceNote": "2026-09-20 由浏览器实抓 NUS 官网项目页核实（curl/Node 被 Incapsula WAF 拦截，真实浏览器可通过挑战）。学费、入学要求、关键日期均取自官网原文；费用为新元，未折算港币。",
+    "tuitionSgd": 77390,
+    "tuitionHkd": null,
+    "tuitionCny": 407600
   },
   {
     "id": "nus-msc-management",
@@ -4144,7 +4357,7 @@ const PROGRAMMES = [
     "descCn": "新国大管理学理学硕士，由商学院在两学期内完成，强调财务分析与 ESG 融合，培养卓越领导力。请点官网核实完整简介。",
     "requirementsEn": "Educational Background: A good undergraduate degree in any discipline. Applicants in the process of earning a degree or about to graduate are welcome to apply. Admission Interviews: A strong performance in the interview (conducted for shortlisted candidates only). English Language Requirement (if English is not the native language or medium of prior undergraduate instruction): For TOEFL, the internet-based test score must be at least 5.0. For IELTS, the overall band score must be at least 7.0. Work Experience: Not required — we do not require you to have work experience for admission into the programme. GMAT/GRE scores are optional, though a good score may enhance your application.",
     "requirementsCn": "学历背景：任何学科的优良本科学位；在读或即将毕业者亦可申请。入学面试：入围者须有良好面试表现。英语要求（若英语非母语或本科非全英文授课）：TOEFL iBT 至少 5.0（注：2026 年 1 月起 TOEFL 改用新分制，旧制约 100 分对应新制 4.5–5.0）；IELTS 总分至少 7.0。工作经验：不要求。GMAT/GRE：非强制，但好成绩有助申请。",
-    "tuitionNote": "官网费用（January 2028 intake，AY2027/2028）：单学位税前 S$56,700.00，含 9% GST S$61,803.00；双学位（含 CEMS MIM）税前 S$69,700.00，含 9% GST S$75,973.00。官网注明设有数量有限之 NUS Study Awards。",
+    "tuitionNote": "官网费用（January 2028 intake，AY2027/2028）：单学位税前 S$56,700.00，含 9% GST S$61,803.00；双学位（含 CEMS MIM）税前 S$69,700.00，含 9% GST S$75,973.00。官网注明设有数量有限之 NUS Study Awards。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 1 年（10 门课 / 40 学分，两学期）",
     "foundedYear": 2010,
@@ -4156,7 +4369,10 @@ const PROGRAMMES = [
     "feeSource": "official-page",
     "sourceConfidence": "official-listed",
     "sourceNote": "2026-09-20 由浏览器实抓 NUS 官网项目页核实（curl/Node 被 Incapsula WAF 拦截，真实浏览器可通过挑战）。学费、入学要求、关键日期均取自官网原文；费用为新元，未折算港币。",
-    "requirements": "Educational Background: A good undergraduate degree in any discipline. Applicants in the process of earning a degree or about to graduate are welcome to apply. Admission Interviews: A strong performance in the interview (conducted for shortlisted candidates only). English Language Requirement (if English is not the native language or medium of prior undergraduate instruction): For TOEFL, the internet-based test score must be at least 5.0. For IELTS, the overall band score must be at least 7.0. Work Experience: Not required — we do not require you to have work experience for admission into the programme. GMAT/GRE scores are optional, though a good score may enhance your application."
+    "requirements": "Educational Background: A good undergraduate degree in any discipline. Applicants in the process of earning a degree or about to graduate are welcome to apply. Admission Interviews: A strong performance in the interview (conducted for shortlisted candidates only). English Language Requirement (if English is not the native language or medium of prior undergraduate instruction): For TOEFL, the internet-based test score must be at least 5.0. For IELTS, the overall band score must be at least 7.0. Work Experience: Not required — we do not require you to have work experience for admission into the programme. GMAT/GRE scores are optional, though a good score may enhance your application.",
+    "tuitionSgd": 61803,
+    "tuitionHkd": null,
+    "tuitionCny": 325500
   },
   {
     "id": "nus-msc-business-analytics",
@@ -4171,7 +4387,7 @@ const PROGRAMMES = [
     "descCn": "新国大商业分析理学硕士（MSBA）获 2025 UPS George D. Smith Prize，亚洲顶尖 MSBA 项目，聚焦数据科学与分析的前沿知识与实践经验。请点官网核实完整简介与 2027 时间线。",
     "requirementsEn": "Admission Criteria: A good Bachelors' degree, preferably from Business, Computing, Economics, Engineering, Mathematics, Science or Statistics, with a good honours classification; or at least 2 years' relevant work experience (Highly Recommended). A good quantitative score in GRE/GMAT (GRE/GMAT is highly recommended). Strong Mathematics foundation.",
     "requirementsCn": "录取标准：优良学士学位，优先来自商科、计算、经济、工程、数学、理科或统计，且荣誉等级良好；或至少 2 年相关的工作经验（强烈建议）。GRE/GMAT 需有良好量化分数（强烈建议提交）。须有扎实数学基础。",
-    "tuitionNote": "官网 AY2027/28 intake 学费（均含 9% GST，按身份分档）：国际学生 S$87,550；NUS 校友 S$70,040；新加坡公民及 PR S$52,530。申请费 S$100；接受 offer 费 S$21,800。官网注明：新加坡公民/PR 享 40% 学费返还、NUS 校友享 20% 返还；学费不含教材与读物费用。内地申请者适用国际学生档 S$87,550。",
+    "tuitionNote": "官网 AY2027/28 intake 学费（均含 9% GST，按身份分档）：国际学生 S$87,550；NUS 校友 S$70,040；新加坡公民及 PR S$52,530。申请费 S$100；接受 offer 费 S$21,800。官网注明：新加坡公民/PR 享 40% 学费返还、NUS 校友享 20% 返还；学费不含教材与读物费用。内地申请者适用国际学生档 S$87,550。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制（待核实）",
     "foundedYear": 2014,
@@ -4183,7 +4399,10 @@ const PROGRAMMES = [
     "feeSource": "official-page",
     "sourceConfidence": "official-listed",
     "sourceNote": "2026-09-20 由浏览器实抓 NUS 官网项目页核实（curl/Node 被 Incapsula WAF 拦截，真实浏览器可通过挑战）。学费、入学要求、关键日期均取自官网原文；费用为新元，未折算港币。",
-    "requirements": "A good Bachelors' degree, preferably from Business, Computing, Economics, Engineering, Mathematics, Science or Statistics, with a good honours classification; or at least 2 years' relevant work experience. A good quantitative score in GRE/GMAT. Strong Mathematics foundation."
+    "requirements": "A good Bachelors' degree, preferably from Business, Computing, Economics, Engineering, Mathematics, Science or Statistics, with a good honours classification; or at least 2 years' relevant work experience. A good quantitative score in GRE/GMAT. Strong Mathematics foundation.",
+    "tuitionSgd": 87550,
+    "tuitionHkd": null,
+    "tuitionCny": 461100
   },
   {
     "id": "nus-msc-hcm-analytics",
@@ -4198,7 +4417,7 @@ const PROGRAMMES = [
     "descCn": "新国大人力资本管理与分析理学硕士。本轮未能确认官网项目站，请通过商学院或邮箱 mschcma@nus.edu.sg 核实。",
     "requirementsEn": "Educational Background: A good undergraduate degree in any discipline. Applicants in the process of earning a degree or about to graduate are welcome to apply. Admission Interviews: A strong performance in the interview (conducted for shortlisted candidates only). English Language Requirement (if English is not the native language or medium of prior undergraduate instruction): For TOEFL, the internet-based test score must be at least 5.0. For IELTS, the overall band score must be at least 7.0. Work Experience: Not required — we do not require you to have work experience for admission into the programme. GMAT/GRE scores are optional, though a good score may enhance your application.",
     "requirementsCn": "学历背景：任何学科的优良本科学位；在读或即将毕业者亦可申请。入学面试：入围者须有良好面试表现。英语要求（若英语非母语或本科非全英文授课）：TOEFL iBT 至少 5.0（注：2026 年 1 月起 TOEFL 改用新分制，旧制约 100 分对应新制 4.5–5.0）；IELTS 总分至少 7.0。工作经验：不要求。GMAT/GRE：非强制，但好成绩有助申请。",
-    "tuitionNote": "AY2027/2028（2027 年 8 月入学）官网费用：单学位税前 S$71,000.00，含 9% GST S$77,390.00。申请费 S$100.00；接受 offer 费 S$10,900.00；第一期 S$33,245.00（1 月注册）、第二期 S$33,245.00。全日制档期表另列。官网注明设有数量有限之 NUS Study Awards。",
+    "tuitionNote": "AY2027/2028（2027 年 8 月入学）官网费用：单学位税前 S$71,000.00，含 9% GST S$77,390.00。申请费 S$100.00；接受 offer 费 S$10,900.00；第一期 S$33,245.00（1 月注册）、第二期 S$33,245.00。全日制档期表另列。官网注明设有数量有限之 NUS Study Awards。 （人民币为按 2026-09-20 汇率 1 HKD = 0.856469 / 1 SGD = 5.266594 换算的参考值，非官网数字）",
     "durationYears": 1,
     "durationText": "全日制 12 个月（44 学分，三学期，含体验式学习）",
     "foundedYear": 2020,
@@ -4210,7 +4429,10 @@ const PROGRAMMES = [
     "feeSource": "official-page",
     "sourceConfidence": "official-listed",
     "sourceNote": "2026-09-20 由浏览器实抓 NUS 官网项目页核实（curl/Node 被 Incapsula WAF 拦截，真实浏览器可通过挑战）。学费、入学要求、关键日期均取自官网原文；费用为新元，未折算港币。",
-    "requirements": "Educational Background: A good undergraduate degree in any discipline. Applicants in the process of earning a degree or about to graduate are welcome to apply. Admission Interviews: A strong performance in the interview (conducted for shortlisted candidates only). English Language Requirement (if English is not the native language or medium of prior undergraduate instruction): For TOEFL, the internet-based test score must be at least 5.0. For IELTS, the overall band score must be at least 7.0. Work Experience: Not required — we do not require you to have work experience for admission into the programme. GMAT/GRE scores are optional, though a good score may enhance your application."
+    "requirements": "Educational Background: A good undergraduate degree in any discipline. Applicants in the process of earning a degree or about to graduate are welcome to apply. Admission Interviews: A strong performance in the interview (conducted for shortlisted candidates only). English Language Requirement (if English is not the native language or medium of prior undergraduate instruction): For TOEFL, the internet-based test score must be at least 5.0. For IELTS, the overall band score must be at least 7.0. Work Experience: Not required — we do not require you to have work experience for admission into the programme. GMAT/GRE scores are optional, though a good score may enhance your application.",
+    "tuitionSgd": 77390,
+    "tuitionHkd": null,
+    "tuitionCny": 407600
   },
   {
     "id": "nus-mfe",

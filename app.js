@@ -42,16 +42,48 @@
     return v || UNVERIFIED;
   }
 
-  // tuitionNote 常常把金额又复述一遍，含相同金额时只留说明，避免「HK$468,000HK$468,000（…）」
-  function tuitionCell(p) {
-    const amt = typeof p.tuitionHkd === "number" ? "HK$" + p.tuitionHkd.toLocaleString("en-US") : "";
-    const note = (p.tuitionNote || "").trim();
-    const squash = s => s.replace(/[\s,]/g, "");
-    if (amt && note) {
-      if (squash(note).includes(squash(amt))) return esc(note);
-      return `${esc(amt)}<br/><span style="color:#78716c">${esc(note)}</span>`;
+  const nf = n => n.toLocaleString("en-US");
+  const cnySuffix = p => typeof p.tuitionCny === "number" ? ` ≈ ¥${nf(p.tuitionCny)}` : "";
+
+  // 官网原币值优先展示，人民币是按 DATA_META.fx 当日汇率换算的参考值，附在旁边
+  function fmtTuition(p) {
+    if (typeof p.tuitionPerCredit === "number" && typeof p.tuitionCredits === "number") {
+      return `HK$${nf(p.tuitionPerCredit)}/学分 × ${p.tuitionCredits} 学分 ≈ HK$${nf(p.tuitionHkd)}${cnySuffix(p)}（总额估算）`;
     }
-    return esc(amt || note || "以官网为准");
+    if (typeof p.tuitionPerModuleMinSgd === "number") {
+      return `S$${nf(p.tuitionPerModuleMinSgd)}–${nf(p.tuitionPerModuleMaxSgd)}/模块${cnySuffix(p)}`;
+    }
+    const parts = [];
+    if (typeof p.tuitionHkd === "number") parts.push("HK$" + nf(p.tuitionHkd));
+    if (typeof p.tuitionSgd === "number") parts.push("S$" + nf(p.tuitionSgd));
+    if (!parts.length) return p.tuitionNote || "以官网为准";
+    return parts.join(" / ") + cnySuffix(p);
+  }
+
+  // 卡片格子窄，用紧凑形式（原币值 + 人民币），完整算式在展开详情与弹窗里
+  function fmtTuitionShort(p) {
+    if (typeof p.tuitionPerCredit === "number" && typeof p.tuitionCredits === "number") {
+      return `≈HK$${nf(p.tuitionHkd)}${cnySuffix(p)}（按学分估算）`;
+    }
+    if (typeof p.tuitionPerModuleMinSgd === "number") {
+      return `S$${nf(p.tuitionPerModuleMinSgd)}–${nf(p.tuitionPerModuleMaxSgd)}/模块`;
+    }
+    const parts = [];
+    if (typeof p.tuitionHkd === "number") parts.push("HK$" + nf(p.tuitionHkd));
+    if (typeof p.tuitionSgd === "number") parts.push("S$" + nf(p.tuitionSgd));
+    return parts.length ? parts.join(" / ") + cnySuffix(p) : clip(p.tuitionNote || "以官网为准", 30);
+  }
+
+  // tuitionNote 常把金额又复述一遍；含相同金额时只留说明，避免「HK$468,000HK$468,000（…）」
+  function tuitionCell(p) {
+    const head = esc(fmtTuition(p));
+    const note = (p.tuitionNote || "").trim();
+    if (!note) return head;
+    const squash = s => s.replace(/[\s,]/g, "");
+    const amt = typeof p.tuitionHkd === "number" ? "HK$" + nf(p.tuitionHkd)
+      : typeof p.tuitionSgd === "number" ? "S$" + nf(p.tuitionSgd) : "";
+    if (amt && squash(note).includes(squash(amt))) return `<span style="color:#78716c">${esc(note)}</span>`;
+    return `${head}<br/><span style="color:#78716c">${esc(note)}</span>`;
   }
 
   function durationOf(p) {
@@ -63,13 +95,6 @@
   function clip(s, n) {
     s = s || "";
     return s.length > n ? s.slice(0, n) + "…" : s;
-  }
-
-  function fmtTuition(p) {
-    if (typeof p.tuitionHkd === "number") {
-      return "HK$" + p.tuitionHkd.toLocaleString("en-US");
-    }
-    return p.tuitionNote || "以官网为准";
   }
 
   function openStatusText(p) {
@@ -191,7 +216,13 @@
       `项目存在性：<strong>${confOk}</strong> 条已在官网名单确认，${total - confOk} 条待核实。` +
       `学费：<strong>${feeOk}</strong> 条取自官网项目页、<strong>${feeCredit}</strong> 条官网按学分计费（只记单价，不推算总额）、` +
       `<strong>${feeOther}</strong> 条官网仅列其他入学周期、<strong>${feeBad}</strong> 条未能核实（卡片标注「学费待核实」）。` +
-      `开办年份与截止日期多为参考，<strong>投递前必须点专业名跳转官网确认</strong>。`;
+      `开办年份与截止日期多为参考，<strong>投递前必须点专业名跳转官网确认</strong>。` +
+      (DATA_META.fx
+        ? `<br/><strong>人民币换算：</strong>${esc(DATA_META.fx.date)} 汇率 1 HKD = ${DATA_META.fx.HKD_CNY}、1 SGD = ${DATA_META.fx.SGD_CNY}（来源 ${esc(DATA_META.fx.source)}），` +
+          `取整到百元，<strong>仅为参考、非各校官网数字</strong>；官网原币值始终优先展示。` +
+          `身份档位按${esc(DATA_META.applicantResidency || "中国大陆")}申请者取（如 NUS MSBA 取国际学生档 S$87,550）。` +
+          `按学分计费的项目，总额 = 官网学分单价 × 官网最低毕业学分，属估算并已标注。`
+        : "");
   }
 
   function renderCards() {
@@ -221,10 +252,12 @@
       const feeBadge = p.feeSource === "official-page"
         ? '<span class="badge open">学费官网已核</span>'
         : p.feeSource === "official-per-credit"
-          ? '<span class="badge pending">官网按学分计费</span>'
-          : p.feeSource === "official-other-intake"
-            ? '<span class="badge pending">官网仅列其他入学周期</span>'
-            : '<span class="badge pending">学费待核实</span>';
+          ? '<span class="badge pending">官网按学分计费·总额为估算</span>'
+          : p.feeSource === "official-per-module"
+            ? '<span class="badge pending">官网按模块计费</span>'
+            : p.feeSource === "official-other-intake"
+              ? '<span class="badge pending">官网仅列其他入学周期</span>'
+              : '<span class="badge pending">学费待核实</span>';
       const showLoc = p.location && p.location.indexOf("香港") === -1;
       const reqSummary = clip(orUnverified(reqCnOf(p) || reqEnOf(p)), 80);
 
@@ -250,7 +283,7 @@
           <div class="meta-grid">
             <div><div class="k">学院</div><div class="v">${esc(p.facultyCn || p.faculty)}</div></div>
             <div><div class="k">学制</div><div class="v">${esc(durationOf(p))}</div></div>
-            <div><div class="k">学费</div><div class="v">${esc(clip(fmtTuition(p), 44))}</div></div>
+            <div><div class="k">学费</div><div class="v">${esc(fmtTuitionShort(p))}</div></div>
             <div><div class="k">申请要求</div><div class="v req-text">${esc(reqSummary)}</div></div>
             <div><div class="k">申请窗口</div><div class="v">${esc(p.applyWindow)}</div></div>
             <div><div class="k">授课地点</div><div class="v">${esc(p.location)}</div></div>
@@ -298,7 +331,8 @@
     if (sort === "uni") {
       items.sort((a, b) => a.uni.localeCompare(b.uni) || a.nameCn.localeCompare(b.nameCn, "zh-Hans-CN"));
     } else if (sort === "tuition") {
-      items.sort((a, b) => (a.tuitionHkd ?? Infinity) - (b.tuitionHkd ?? Infinity));
+      // 用人民币参考值排序，港币与新币项目才可比；无换算值的排最后
+      items.sort((a, b) => (a.tuitionCny ?? Infinity) - (b.tuitionCny ?? Infinity));
     } else if (sort === "open") {
       const rank = p => p.open27 === true ? 0 : p.open27 === "pending" ? 1 : 2;
       items.sort((a, b) => rank(a) - rank(b) || a.uni.localeCompare(b.uni));
@@ -440,13 +474,19 @@
   function exportCsv() {
     const items = wishItems();
     if (!items.length) { toast("志愿单为空，无法导出"); return; }
-    const headers = ["顺序", "学校", "中文名", "英文名", "方向", "学院", "学制", "学费HKD", "学费说明",
+    const headers = ["顺序", "学校", "中文名", "英文名", "方向", "学院", "学制",
+      "学费(官网原文)", "学费HKD", "学费SGD", "学费CNY(参考换算)", "是否估算总额", "学费说明",
       "27Fall状态", "申请窗口", "授课地点", "联培", "数据可信度", "官网"];
     const lines = [headers.join(",")];
     items.forEach((p, i) => {
       const row = [
         i + 1, p.uni, p.nameCn, p.nameEn, p.category, p.facultyCn || p.faculty, durationOf(p),
-        typeof p.tuitionHkd === "number" ? p.tuitionHkd : "", p.tuitionNote || "",
+        fmtTuition(p),
+        typeof p.tuitionHkd === "number" ? p.tuitionHkd : "",
+        typeof p.tuitionSgd === "number" ? p.tuitionSgd : "",
+        typeof p.tuitionCny === "number" ? p.tuitionCny : "",
+        p.tuitionIsEstimate ? "是（官网学分单价×官网最低学分）" : "否",
+        p.tuitionNote || "",
         openStatusText(p).label, p.applyWindow, p.location, p.jointPartner || "",
         p.sourceConfidence === "official-listed" ? "官网名单已核" : "待官网核实",
         p.website
