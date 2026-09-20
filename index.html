@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>港五商科授课硕士信息库 · 志愿单</title>
+<title>港五 + 新二 商科授课硕士信息库 · 志愿单</title>
 <style>
 :root {
   --bg: #f4f1ea;
@@ -13,7 +13,6 @@
   --line: #e7e0d4;
   --accent: #0f4c5c;
   --accent-soft: #dce8ec;
-  --gold: #b45309;
   --ok: #166534;
   --warn: #a16207;
   --pend: #6b7280;
@@ -85,8 +84,6 @@ button { font: inherit; cursor: pointer; }
   white-space: nowrap;
 }
 .btn.ghost { background: transparent; color: var(--accent); }
-.btn.warn { background: var(--gold); border-color: var(--gold); }
-.btn:disabled { opacity: .55; cursor: not-allowed; }
 .link-btn {
   display: inline-flex;
   align-items: center;
@@ -118,9 +115,7 @@ button { font: inherit; cursor: pointer; }
   background: var(--paper);
 }
 #statusBar.show { display: block; }
-#statusBar.ok { border-color: #86efac; background: #f0fdf4; color: var(--ok); }
 #statusBar.warn { border-color: #fcd34d; background: #fffbeb; color: var(--warn); }
-#statusBar.err { border-color: #fca5a5; background: #fef2f2; color: #991b1b; }
 
 /* Layout */
 .layout {
@@ -211,7 +206,6 @@ button { font: inherit; cursor: pointer; }
 .meta-grid .v { color: var(--ink); font-weight: 500; }
 .card-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .card-actions .btn { padding: 7px 11px; font-size: .82rem; }
-.card.expanded .desc { -webkit-line-clamp: unset; display: block; }
 .detail {
   display: none;
   margin-top: 10px;
@@ -282,6 +276,17 @@ button { font: inherit; cursor: pointer; }
   border-radius: 6px;
   padding: 4px 8px;
   font-size: .75rem;
+}
+.wish-item .wi-site {
+  display: inline-flex;
+  align-items: center;
+  font-size: .75rem;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #faf7f0;
+  text-decoration: none;
+  color: var(--accent);
 }
 .wish-empty {
   padding: 28px 16px;
@@ -365,7 +370,7 @@ button { font: inherit; cursor: pointer; }
 <div class="shell">
   <header class="hero">
     <h1>港五 + 新二 商科授课硕士信息库</h1>
-    <p>覆盖香港五大（港大、港中文、港科大、城大、理大）及新加坡国立大学、南洋理工大学的商学院与商科交叉授课制硕士。支持筛选、搜索、志愿单与招生状态刷新；点专业名称直达官网。</p>
+    <p>覆盖香港五大（港大、港中文、港科大、城大、理大）及新加坡国立大学、南洋理工大学的商学院与商科交叉授课制硕士。支持筛选、搜索、志愿单与导出；点专业名称直达官网。</p>
     <div class="hero-meta">
       <div class="chip">目标入学：<strong id="cycleLabel">2027 Fall</strong></div>
       <div class="chip">数据更新：<strong id="refreshLabel">—</strong></div>
@@ -395,7 +400,6 @@ button { font: inherit; cursor: pointer; }
     </label>
     <div class="btn-row">
       <button class="btn ghost" id="btnReset">重置</button>
-      <button class="btn warn" id="btnRefresh">刷新 27 Fall 状态</button>
     </div>
   </div>
 
