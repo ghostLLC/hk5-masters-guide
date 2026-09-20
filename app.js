@@ -51,6 +51,11 @@
     if (typeof p.tuitionPerCredit === "number" && typeof p.tuitionCredits === "number") {
       return `HK$${nf(p.tuitionPerCredit)}/学分 × ${p.tuitionCredits} 学分 ≈ HK$${nf(p.tuitionHkd)}${cnySuffix(p)}（总额估算）`;
     }
+    // 官网按学年计费：保留学年单价原值，总额按官网学制估算并标注
+    if (typeof p.tuitionRmbPerYear === "number") {
+      const yrs = p.durationYears ? ` × ${p.durationYears} 年` : "";
+      return `¥${nf(p.tuitionRmbPerYear)}/学年${yrs} ≈ ¥${nf(p.tuitionRmb)}（总额估算）`;
+    }
     if (typeof p.tuitionPerModuleMinSgd === "number") {
       return `S$${nf(p.tuitionPerModuleMinSgd)}–${nf(p.tuitionPerModuleMaxSgd)}/模块${cnySuffix(p)}`;
     }
@@ -67,6 +72,9 @@
   function fmtTuitionShort(p) {
     if (typeof p.tuitionPerCredit === "number" && typeof p.tuitionCredits === "number") {
       return `≈HK$${nf(p.tuitionHkd)}${cnySuffix(p)}（按学分估算）`;
+    }
+    if (typeof p.tuitionRmbPerYear === "number") {
+      return `¥${nf(p.tuitionRmbPerYear)}/学年 ≈ ¥${nf(p.tuitionRmb)}（估算）`;
     }
     if (typeof p.tuitionPerModuleMinSgd === "number") {
       return `S$${nf(p.tuitionPerModuleMinSgd)}–${nf(p.tuitionPerModuleMaxSgd)}/模块`;
@@ -213,8 +221,9 @@
     const feeInst = n(p => p.feeSource === "official-installments");
     const feeCredit = n(p => p.feeSource === "official-per-credit");
     const feeModule = n(p => p.feeSource === "official-per-module");
+    const feeYear = n(p => p.feeSource === "official-per-year");
     const feeOther = n(p => p.feeSource === "official-other-intake");
-    const feeBad = total - feeOk - feeInst - feeCredit - feeModule - feeOther;
+    const feeBad = total - feeOk - feeInst - feeCredit - feeModule - feeYear - feeOther;
     const bar = $("#statusBar");
     bar.className = "show warn";
     bar.innerHTML =
@@ -224,6 +233,7 @@
       (feeInst ? `、<strong>${feeInst}</strong> 条官网按学期分项列示` : "") +
       (feeCredit ? `、<strong>${feeCredit}</strong> 条官网按学分计费（总额 = 官网单价 × 官网最低毕业学分，属估算）` : "") +
       (feeModule ? `、<strong>${feeModule}</strong> 条官网按模块计费（官网未列模块数，不给估算总额）` : "") +
+      (feeYear ? `、<strong>${feeYear}</strong> 条官网按学年计费（总额 = 学年单价 × 官网学制，属估算）` : "") +
       (feeOther ? `、<strong>${feeOther}</strong> 条官网仅列其他入学周期` : "") +
       `、<strong>${feeBad}</strong> 条未能核实（卡片标注「学费待核实」）。` +
       `开办年份与截止日期多为参考，<strong>投递前必须点专业名跳转官网确认</strong>。` +
@@ -264,7 +274,9 @@
           ? '<span class="badge pending">官网按学分计费·总额为估算</span>'
           : p.feeSource === "official-per-module"
             ? '<span class="badge pending">官网按模块计费</span>'
-            : p.feeSource === "official-installments"
+            : p.feeSource === "official-per-year"
+              ? '<span class="badge pending">官网按学年计费·总额为估算</span>'
+              : p.feeSource === "official-installments"
               ? '<span class="badge open">学费官网已核·按学期分项</span>'
               : p.feeSource === "official-other-intake"
                 ? '<span class="badge pending">官网仅列其他入学周期</span>'
@@ -457,6 +469,7 @@
         ${row("数据可信度", (p.sourceConfidence === "official-listed" ? "官网名单已确认" : "项目存在性待官网核实")
           + "；学费" + (p.feeSource === "official-page" ? "已对照官网项目页核实"
             : p.feeSource === "official-per-credit" ? "官网按学分/模块计费，未列全程总额，已记官网单价"
+            : p.feeSource === "official-per-year" ? "官网按学年计费，未列全程总额；总额按官网学制估算并已标注"
             : p.feeSource === "official-pending-approval" ? "官网标注为待审批，非最终金额，须以官网后续公布为准"
             : p.feeSource === "official-other-intake" ? "官网仅列明其他入学周期，本周期费用须向项目确认"
             : "未经官网核实，投递前务必打开官网确认"))}
