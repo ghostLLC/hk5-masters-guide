@@ -38,6 +38,13 @@
   font-size: 16px; line-height: 1.5;
 }
 * { box-sizing: border-box; }
+/* hidden 属性必须始终生效。
+   浏览器默认的 [hidden] { display: none } 来自 UA 样式表，任何作者样式都能压过它：
+   #viewBrowse 带内联 display:contents（让分面侧栏与主内容成为 .frame 网格的直接子项），
+   于是 hidden 拿它没办法，切到「申请跟进」时浏览内容仍参与布局，
+   把跟进表推到页面底部约 8900px 处，用户看起来就是「点了没反应」。
+   这条规则让 hidden 恢复权威，避免同类陷阱再次出现。 */
+[hidden] { display: none !important; }
 body { margin: 0; background: var(--bg); color: var(--ink); -webkit-text-size-adjust: 100%; }
 a { color: var(--brand); }
 button, input, select, textarea { font: inherit; color: inherit; }
