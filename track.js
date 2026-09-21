@@ -345,7 +345,9 @@
     if (!window.HK5Store || !window.HK5App) return;
     bind();
     store().onStatus(renderSyncBar);
-    store().onTracks(() => { app().renderTabCount(); if (view === "track") renderTrack(); });
+    // 跟进记录变化也要刷新志愿单抽屉：抽屉里显示名次与申请状态，
+    // 不联动的话在跟进表改完名次，抽屉里还是旧值
+    store().onTracks(() => { app().renderTabCount(); app().refreshWish(); if (view === "track") renderTrack(); });
     app().onWishChange(() => {
       // 志愿单变更同样要标记为待同步，否则云端收不到纯志愿单的改动
       store().markDirty();

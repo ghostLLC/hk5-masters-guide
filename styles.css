@@ -196,7 +196,9 @@ h1, h2, h3 { text-wrap: balance; margin: 0; }
 .drawer-t input, .drawer-t select { flex: 1 1 110px; min-width: 96px; border: 1px solid var(--line-2); border-radius: var(--r-xs); padding: 6px 8px; font-size: var(--t-xs); background: var(--surface); }
 .drawer-l { flex: 1; overflow: auto; padding: var(--sp-3); display: flex; flex-direction: column; gap: var(--sp-2); }
 .wi { border: 1px solid var(--line); border-radius: var(--r-sm); padding: 10px; background: var(--surface); }
-.wi .t { font-weight: 650; font-size: var(--t-sm); line-height: 1.45; margin-bottom: 3px; }
+.wi .t { display: flex; gap: 8px; align-items: baseline; justify-content: space-between; font-weight: 650; font-size: var(--t-sm); line-height: 1.45; margin-bottom: 3px; }
+.wi .t-nm { min-width: 0; }
+.wi .rnk { flex: none; font-size: var(--t-xs); font-weight: 600; font-variant-numeric: tabular-nums; background: var(--brand-tint); color: var(--brand-deep); border: 1px solid var(--brand-line); border-radius: 999px; padding: 0 8px; line-height: 1.7; }
 .wi .t a { color: var(--ink); text-decoration: none; }
 .wi .t a:hover { color: var(--brand); text-decoration: underline; }
 .wi .s { color: var(--muted); font-size: var(--t-xs); line-height: 1.55; margin-bottom: 7px; }

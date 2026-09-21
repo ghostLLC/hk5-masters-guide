@@ -416,9 +416,25 @@
     const items = wishItems();
     const wq = ($("#wq").value || "").trim().toLowerCase();
     const sort = $("#wSort").value;
+    // order 与 tr 在排序前就要可用：按名次排序需要读跟进记录里的 rank
+    const order = new Map(items.map((p, i) => [p.id, i]));
+    const tr = id => (window.HK5Store ? window.HK5Store.getTrack(id) : null);
+    const rankOf = p => {
+      const tk = tr(p.id);
+      return tk && Number.isSafeInteger(tk.rank) ? tk.rank : null;
+    };
+
     let list = items.slice();
     if (wq) list = list.filter(p => (p.nameCn + p.nameEn + p.uni + p.uniCn + p.category).toLowerCase().includes(wq));
-    if (sort === "uni") list.sort((a, b) => a.uni.localeCompare(b.uni));
+    if (sort === "rank") {
+      // 名次小的在前，未填名次的排最后；同名次保持加入顺序
+      list.sort((a, b) => {
+        const ra = rankOf(a), rb = rankOf(b);
+        const na = ra === null ? Infinity : ra;
+        const nb = rb === null ? Infinity : rb;
+        return na - nb || order.get(a.id) - order.get(b.id);
+      });
+    } else if (sort === "uni") list.sort((a, b) => a.uni.localeCompare(b.uni));
     else if (sort === "tuition") list.sort((a, b) => cmpTuition(a, b, "asc"));
     else if (sort === "open") { const r = { open: 0, pending: 1, closed: 2 }; list.sort((a, b) => r[open27Of(a)] - r[open27Of(b)]); }
 
@@ -429,13 +445,15 @@
       host.innerHTML = `<div class="drawer-empty">${items.length ? "没有匹配的志愿。" : "志愿单还是空的。<br/>在项目卡片或表格里点「加入志愿」。"}</div>`;
       return;
     }
-    const order = new Map(items.map((p, i) => [p.id, i]));
-    const tr = id => (window.HK5Store ? window.HK5Store.getTrack(id) : null);
-    host.innerHTML = list.map(p => {
+    host.innerHTML = list.map((p, i) => {
       const t = tuitionParts(p);
       const tk = tr(p.id);
+      const rank = rankOf(p);
       return `<div class="wi" data-id="${esc(p.id)}">
-        <div class="t">${order.get(p.id) + 1}. ${progLink(p, "", p.nameCn)}</div>
+        <div class="t">
+          <span class="t-nm">${i + 1}. ${progLink(p, "", p.nameCn)}</span>
+          ${rank === null ? "" : `<span class="rnk" title="你在跟进表里填的名次">名次 ${esc(rank)}</span>`}
+        </div>
         <div class="s">${esc(p.uni)} · ${esc(OPEN27[open27Of(p)])}${t.cny ? ` · ≈¥${nf(t.cny)}` : t.primary ? ` · ${esc(t.primary)}` : ""}${tk && tk.status !== "not_started" ? ` · ${esc((window.HK5Store.STATUSES || {})[tk.status] || tk.status)}` : ""}</div>
         <div class="a">
           <button type="button" data-act="up" aria-label="上移">↑</button>
