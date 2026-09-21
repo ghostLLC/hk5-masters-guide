@@ -94,11 +94,27 @@
     let list = rows();
     const f = $("#tFilter").value, s = $("#tSort").value;
     if (f) list = list.filter(r => ((r.track || {}).status || "not_started") === f);
-    if (s === "deadline") list.sort((a, b) => ((a.track || {}).deadline || "9999-12-31") < ((b.track || {}).deadline || "9999-12-31") ? -1 : 1);
-    else if (s === "status") {
+    if (s === "priority") {
+      // 冲 → 稳 → 保，未标优先级的排最后；同级内保持志愿单顺序
+      const pRank = { reach: 0, match: 1, safe: 2 };
+      list.sort((a, b) => {
+        const pa = pRank[(a.track || {}).priority] ?? 3;
+        const pb = pRank[(b.track || {}).priority] ?? 3;
+        return pa - pb || a.order - b.order;
+      });
+    } else if (s === "deadline") {
+      // 比较器必须对相等返回 0，否则排序结果不稳定
+      list.sort((a, b) => {
+        const da = (a.track || {}).deadline || "9999-12-31";
+        const db = (b.track || {}).deadline || "9999-12-31";
+        return da < db ? -1 : da > db ? 1 : a.order - b.order;
+      });
+    } else if (s === "status") {
       const rank = { preparing: 0, not_started: 1, submitted: 2, interview: 3, offer: 4, accepted: 5, rejected: 6, withdrawn: 7 };
       list.sort((a, b) => (rank[(a.track || {}).status] ?? 9) - (rank[(b.track || {}).status] ?? 9) || a.order - b.order);
-    } else list.sort((a, b) => a.order - b.order);
+    } else {
+      list.sort((a, b) => a.order - b.order);
+    }
 
     const all = rows(), counts = {};
     for (const k of STATUS_ORDER) counts[k] = 0;
