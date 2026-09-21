@@ -74,6 +74,9 @@ function sanitizeTracks(input) {
     if (!t || typeof t !== 'object' || Array.isArray(t)) throw new InputError(400);
     if (!STATUSES.includes(t.status)) throw new InputError(400);
     if (!PRIORITIES.includes(t.priority ?? '')) throw new InputError(400);
+    // 名次：1–999 的整数，允许 null（未填）；其余一律拒绝
+    if (!(t.rank === null || t.rank === undefined
+      || (Number.isSafeInteger(t.rank) && t.rank >= 1 && t.rank <= 999))) throw new InputError(400);
     for (const f of ['deadline', 'submittedAt', 'interviewAt', 'resultAt']) {
       if (!optDate(t[f])) throw new InputError(400);
     }
@@ -84,6 +87,7 @@ function sanitizeTracks(input) {
     out[key] = {
       status: t.status,
       priority: t.priority ?? '',
+      rank: t.rank ?? null,
       deadline: t.deadline || '',
       submittedAt: t.submittedAt || '',
       interviewAt: t.interviewAt || '',

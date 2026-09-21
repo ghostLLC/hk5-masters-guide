@@ -61,6 +61,7 @@
         ${info ? `<div class="flag tone-${info.tone}">${app().esc(info.text)}</div>` : ""}
         ${r.inWish ? "" : `<div class="flag tone-muted">已不在志愿单，仅保留跟进记录</div>`}
       </td>
+      <td class="c-rank" data-label="名次"><input type="number" data-act="rank" data-id="${app().esc(r.id)}" value="${t.rank == null ? "" : app().esc(t.rank)}" min="1" max="999" step="1" inputmode="numeric" placeholder="—" aria-label="名次"/></td>
       <td class="c-prio" data-label="优先级"><select data-act="priority" data-id="${app().esc(r.id)}" aria-label="优先级">${opts(PRIORITY_LABEL, t.priority)}</select></td>
       <td class="c-status" data-label="申请状态"><select data-act="status" data-id="${app().esc(r.id)}" aria-label="申请状态">${opts(STATUS_LABEL, t.status)}</select></td>
       <td class="c-date" data-label="截止日期"><label class="dlab"><span>截止</span><input type="date" data-act="deadline" data-id="${app().esc(r.id)}" value="${app().esc(t.deadline || "")}" aria-label="截止日期"/></label></td>
@@ -94,7 +95,16 @@
     let list = rows();
     const f = $("#tFilter").value, s = $("#tSort").value;
     if (f) list = list.filter(r => ((r.track || {}).status || "not_started") === f);
-    if (s === "priority") {
+    if (s === "rank") {
+      // 名次小的在前，未填名次的排最后；同名次保持志愿单顺序
+      list.sort((a, b) => {
+        const ra = (a.track || {}).rank;
+        const rb = (b.track || {}).rank;
+        const na = Number.isSafeInteger(ra) ? ra : Infinity;
+        const nb = Number.isSafeInteger(rb) ? rb : Infinity;
+        return na - nb || a.order - b.order;
+      });
+    } else if (s === "priority") {
       // 冲 → 稳 → 保，未标优先级的排最后；同级内保持志愿单顺序
       const pRank = { reach: 0, match: 1, safe: 2 };
       list.sort((a, b) => {
@@ -131,7 +141,7 @@
       + (soon ? `<span class="pill tone-warn">${WARN_DAYS} 天内截止 <strong>${soon}</strong></span>` : "");
     $("#trackBody").innerHTML = list.length
       ? list.map(trackRowHtml).join("")
-      : `<tr><td colspan="10" class="tempty">${f ? `没有符合「${app().esc(STATUS_LABEL[f] || f)}」的项目。` : "跟进表还是空的。先在「浏览选校」里把项目加入志愿单，它们会自动出现在这里；也可以点右上角「载入示例数据」看效果。"}</td></tr>`;
+      : `<tr><td colspan="11" class="tempty">${f ? `没有符合「${app().esc(STATUS_LABEL[f] || f)}」的项目。` : "跟进表还是空的。先在「浏览选校」里把项目加入志愿单，它们会自动出现在这里；也可以点右上角「载入示例数据」看效果。"}</td></tr>`;
     app().renderTabCount();
   }
 
@@ -209,13 +219,13 @@
     const list = rows();
     if (!list.length) return app().toast("跟进表为空，无法导出");
     const q = v => `"${String(v ?? "").replace(/"/g, '""')}"`;
-    const header = ["顺序", "学校", "中文名", "英文名", "方向", "优先级", "申请状态",
+    const header = ["名次", "顺序", "学校", "中文名", "英文名", "方向", "优先级", "申请状态",
       "截止日期", "提交日期", "面试日期", "出结果日期",
       ...MKEYS().map(m => "材料·" + (MATERIAL_LABEL[m] || m)), "备注", "官网"];
     const lines = [header.map(q).join(",")];
     list.forEach((r, i) => {
       const p = r.prog, t = r.track || {}, mats = t.materials || {};
-      lines.push([i + 1, p ? p.uni : "—", p ? p.nameCn : "（已不在库中）", p ? p.nameEn : r.id,
+      lines.push([Number.isSafeInteger(t.rank) ? t.rank : "", i + 1, p ? p.uni : "—", p ? p.nameCn : "（已不在库中）", p ? p.nameEn : r.id,
         p ? p.category : "—", PRIORITY_LABEL[t.priority || ""] || "", STATUS_LABEL[t.status || "not_started"] || "",
         t.deadline || "", t.submittedAt || "", t.interviewAt || "", t.resultAt || "",
         ...MKEYS().map(m => (mats[m] ? "已备" : "")), t.note || "", p ? p.website : ""].map(q).join(","));
@@ -243,6 +253,13 @@
         const mats = Object.assign({}, cur.materials || {});
         mats[el.dataset.mat] = el.checked;
         store().setTrack(id, { materials: mats });
+        renderTrack();
+        return;
+      }
+      // 名次是数字输入：必须转成整数再存，否则会被 sanitizeTrack 当成非法值丢弃
+      if (act === "rank") {
+        const n = parseInt(el.value, 10);
+        store().setTrack(id, { rank: Number.isFinite(n) && n >= 1 && n <= 999 ? n : null });
         renderTrack();
         return;
       }
@@ -280,12 +297,12 @@
 
     $("#tSeed").addEventListener("click", () => {
       const seed = [
-        { id: "hku-mfin", status: "submitted", priority: "reach", dl: 9, sub: -3, note: "已提交，等面试邀请", all: 1 },
-        { id: "cuhk-mscfin", status: "interview", priority: "match", dl: 4, iv: 6, note: "面试形式待确认", all: 1 },
-        { id: "hkust-msac", status: "preparing", priority: "match", dl: -2, note: "截止日期已过，确认是否还能补交", some: 1 },
-        { id: "cityudg-msc-data-science", status: "offer", priority: "safe", dl: -20, sub: -40, res: -5, note: "有条件录取，需补最终成绩单", all: 1 },
-        { id: "xjtlu-finance", status: "not_started", priority: "reach", dl: 25 },
-        { id: "nus-msc-business-analytics", status: "rejected", priority: "safe", dl: -30, sub: -50, res: -8, all: 1 }
+        { id: "hku-mfin", rank: 2, status: "submitted", priority: "reach", dl: 9, sub: -3, note: "已提交，等面试邀请", all: 1 },
+        { id: "cuhk-mscfin", rank: 1, status: "interview", priority: "match", dl: 4, iv: 6, note: "面试形式待确认", all: 1 },
+        { id: "hkust-msac", rank: 4, status: "preparing", priority: "match", dl: -2, note: "截止日期已过，确认是否还能补交", some: 1 },
+        { id: "cityudg-msc-data-science", rank: 3, status: "offer", priority: "safe", dl: -20, sub: -40, res: -5, note: "有条件录取，需补最终成绩单", all: 1 },
+        { id: "xjtlu-finance", rank: 6, status: "not_started", priority: "reach", dl: 25 },
+        { id: "nus-msc-business-analytics", rank: 5, status: "rejected", priority: "safe", dl: -30, sub: -50, res: -8, all: 1 }
       ].filter(x => app().byId(x.id));
       if (!seed.length) return app().toast("示例项目不在当前库中");
       const d = n => new Date(Date.now() + n * 86400000).toISOString().slice(0, 10);
@@ -295,7 +312,7 @@
         const mats = {};
         for (const m of MKEYS()) mats[m] = !!(x.all || (x.some && (m === "transcript" || m === "language")));
         store().setTrack(x.id, {
-          status: x.status, priority: x.priority,
+          status: x.status, priority: x.priority, rank: x.rank,
           deadline: x.dl !== undefined ? d(x.dl) : "",
           submittedAt: x.sub !== undefined ? d(x.sub) : "",
           interviewAt: x.iv !== undefined ? d(x.iv) : "",

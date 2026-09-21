@@ -223,7 +223,7 @@ h1, h2, h3 { text-wrap: balance; margin: 0; }
 .pill.tone-bad { background: var(--bad-bg); color: var(--bad); border-color: var(--bad-line); }
 .notice { background: var(--warn-bg); border: 1px solid var(--warn-line); color: var(--warn); border-radius: var(--r-sm); padding: 9px var(--sp-3); font-size: var(--t-xs); line-height: 1.6; }
 
-.ktable { width: 100%; border-collapse: collapse; font-size: var(--t-xs); min-width: 1120px; }
+.ktable { width: 100%; border-collapse: collapse; font-size: var(--t-xs); min-width: 1190px; }
 .ktable th, .ktable td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
 .ktable th { background: var(--surface-2); color: var(--muted); font-weight: 650; position: sticky; top: 0; z-index: 2; white-space: nowrap; }
 .ktable tbody tr:last-child td { border-bottom: none; }
@@ -234,7 +234,7 @@ h1, h2, h3 { text-wrap: balance; margin: 0; }
 .ktable tbody tr.st-rejected { background: #fff8f8; }
 .ktable tbody tr.due-soon { box-shadow: inset 0 0 0 1px var(--warn-line); }
 .ktable tbody tr.due-past { box-shadow: inset 0 0 0 1px var(--bad-line); }
-.c-prog { min-width: 200px; max-width: 250px; } .c-prio { width: 76px; } .c-status { width: 108px; }
+.c-prog { min-width: 200px; max-width: 250px; } .c-rank { width: 68px; } .c-prio { width: 76px; } .c-status { width: 108px; }
 .c-date { width: 116px; } .c-mat { min-width: 160px; } .c-note { min-width: 180px; } .c-act { width: 92px; }
 .pname { font-weight: 650; font-size: var(--t-sm); line-height: 1.45; margin-bottom: 2px; }
 .pname a { color: var(--ink); text-decoration: none; }
@@ -245,7 +245,11 @@ h1, h2, h3 { text-wrap: balance; margin: 0; }
 .flag.tone-warn { background: var(--warn-bg); color: var(--warn); font-weight: 650; }
 .flag.tone-bad { background: var(--bad-bg); color: var(--bad); font-weight: 650; }
 .flag.tone-muted { background: var(--surface-2); color: var(--muted); }
-.ktable select, .ktable input[type="date"], .ktable textarea { border: 1px solid var(--line-2); border-radius: var(--r-xs); padding: 5px 6px; font-size: var(--t-xs); background: var(--surface); width: 100%; }
+.ktable select, .ktable input[type="date"], .ktable input[type="number"], .ktable textarea { border: 1px solid var(--line-2); border-radius: var(--r-xs); padding: 5px 6px; font-size: var(--t-xs); background: var(--surface); width: 100%; }
+.ktable input[type="number"] { text-align: center; font-variant-numeric: tabular-nums; }
+.ktable input[type="number"]::-webkit-outer-spin-button,
+.ktable input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.ktable input[type="number"] { -moz-appearance: textfield; appearance: textfield; }
 .ktable textarea { resize: vertical; min-height: 44px; line-height: 1.5; }
 .dlab { display: flex; flex-direction: column; gap: 2px; font-size: var(--t-xs); color: var(--muted); }
 .mat { display: inline-flex; align-items: center; gap: 3px; font-size: var(--t-xs); margin: 0 7px 4px 0; white-space: nowrap; }

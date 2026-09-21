@@ -132,5 +132,32 @@ console.log('\n=== 材料清单白名单与数据库故障 ===');
   check('写入被约束拒绝 → 503 write_rejected', werr.status === 503 && ['write_rejected', 'write_result_unknown', 'conflict'].includes(werr.json?.error), JSON.stringify(werr.json));
 }
 
+console.log('\n=== 名次字段（rank）校验 ===');
+{
+  const cur = await call('load', { who: 'B' });
+  const v = cur.json?.empty ? 0 : cur.json.version;
+  const good = await call('save', { who: 'B', method: 'POST', body: { baseVersion: v, wishlist: [], tracks: { 'hku-mfin': { ...track(), rank: 3 } } } });
+  check('合法名次（整数 3）被接受', good.status === 200 && good.json?.tracks?.['hku-mfin']?.rank === 3, JSON.stringify(good.json?.tracks?.['hku-mfin'] || good.json));
+  check('合法名次于边界 999 被接受', (await call('save', { who: 'B', method: 'POST', body: { baseVersion: good.json.version, wishlist: [], tracks: { 'hku-mfin': { ...track(), rank: 1 } } } })).json?.tracks?.['hku-mfin']?.rank === 1);
+  const nullRank = await call('save', { who: 'B', method: 'POST', body: { baseVersion: (await call('load', { who: 'B' })).json.version, wishlist: [], tracks: { 'hku-mfin': { ...track(), rank: null } } } });
+  check('rank 允许为 null（未填）', nullRank.status === 200 && nullRank.json?.tracks?.['hku-mfin']?.rank === null, JSON.stringify(nullRank.json?.tracks?.['hku-mfin']));
+
+  const badRank = async (name, rank, expect = 400) => {
+    const c = await call('load', { who: 'B' });
+    const r = await call('save', { who: 'B', method: 'POST', body: { baseVersion: c.json?.empty ? 0 : c.json.version, wishlist: [], tracks: { 'hku-mfin': { ...track(), rank } } } });
+    check(name, r.status === expect, `${r.status} ${JSON.stringify(r.json)}`);
+  };
+  await badRank('名次 0 被拒（不能用 0 表示未填）', 0);
+  await badRank('负名次被拒', -1);
+  await badRank('名次超上限 1000 被拒', 1000);
+  await badRank('小数名次被拒', 1.5);
+  await badRank('字符串名次 "3" 被拒（必须传数字）', '3');
+
+  // 未提供 rank 字段时不应报错，且应归一为 null
+  const c2 = await call('load', { who: 'B' });
+  const noRank = await call('save', { who: 'B', method: 'POST', body: { baseVersion: c2.json?.empty ? 0 : c2.json.version, wishlist: [], tracks: { 'hku-mfin': track() } } });
+  check('不带 rank 字段时归一为 null', noRank.status === 200 && noRank.json?.tracks?.['hku-mfin']?.rank === null, JSON.stringify(noRank.json?.tracks?.['hku-mfin']));
+}
+
 console.log(`\n===== 契约测试：${pass} 通过 / ${fail} 失败 =====`);
 process.exit(fail ? 1 : 0);

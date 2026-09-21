@@ -68,9 +68,12 @@
     const srcM = src.materials && typeof src.materials === "object" ? src.materials : {};
     for (const m of MATERIALS) materials[m] = srcM[m] === true;
     const date = v => (typeof v === "string" && /^\d{4}-\d{2}-\d{2}$/.test(v)) ? v : "";
+    // 名次：1–999 的整数，未填为 null（用 null 而不是 0，避免与「第 0 名」混淆）
+    const rank = Number.isSafeInteger(src.rank) && src.rank >= 1 && src.rank <= 999 ? src.rank : null;
     return {
       status: STATUSES.includes(src.status) ? src.status : "not_started",
       priority: PRIORITIES.includes(src.priority) ? src.priority : "",
+      rank,
       deadline: date(src.deadline),
       submittedAt: date(src.submittedAt),
       interviewAt: date(src.interviewAt),
