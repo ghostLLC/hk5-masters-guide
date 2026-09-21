@@ -33,7 +33,7 @@
   let localMessage = "本机保存 · 数据只存在当前浏览器";
 
   let tracks = {};
-  let meta = { version: 0, savedAt: 0, dirty: false };
+  let meta = { version: 0, savedAt: 0, dirty: false, userId: "" };
   let saveTimer = null;
   let autoSaveSuspended = false;
   const statusListeners = [];
@@ -138,6 +138,8 @@
       meta.version = Number.isSafeInteger(m.version) ? m.version : 0;
       meta.savedAt = Number.isFinite(m.savedAt) ? m.savedAt : 0;
       meta.dirty = m.dirty === true;
+      // 记录本机缓存属于哪个账号，换账号时据此判断不能把缓存带过去
+      meta.userId = typeof m.userId === "string" ? m.userId : "";
     }
     status.version = meta.version;
     status.lastSavedAt = meta.savedAt;
@@ -178,8 +180,14 @@
 
     status.mode = "cloud";
     status.user = probe.user;
+    // 同一浏览器换账号时，本机缓存属于上一个账号，绝不能推给新账号。
+    // 只有在从未同步过任何账号（meta.userId 为空）时才允许把本机数据推上去，
+    // 这样「先在静态站点用了一阵、再登录」的场景仍然能把已有数据带上来。
+    const switched = !!meta.userId && meta.userId !== probe.user.id;
     try {
-      await reconcileWithCloud();
+      await reconcileWithCloud({ switchedAccounts: switched });
+      meta.userId = probe.user.id;
+      writeLocal();
     } catch (err) {
       emitStatus("error", describeError(err) + "（改动仍保留在本机）");
     }
@@ -187,11 +195,20 @@
   }
 
   // 云端与本机对账：本机有未同步改动时交给用户裁决，否则以云端为准
-  async function reconcileWithCloud() {
+  async function reconcileWithCloud({ switchedAccounts = false } = {}) {
     const cloud = await callCloud("load");
     if (cloud.empty) {
       status.version = 0;
       meta.version = 0;
+      if (switchedAccounts) {
+        // 新账号云端还没有数据，而本机缓存是别人账号留下的，只能留空并说明
+        tracks = {};
+        if (window.HK5App) window.HK5App.replaceWish([], true);
+        meta.dirty = false;
+        writeLocal();
+        emitStatus("idle", "已切换到另一个账号，云端还没有该账号的数据。上一位账号留在本机的副本没有上传；如需找回那份数据，请切回该账号后再「导出备份」。");
+        return;
+      }
       // 云端还没有数据：把本机已有的志愿单与跟进表推上去
       await pushToCloud();
       return;
@@ -200,6 +217,15 @@
     status.lastSavedAt = Date.parse(cloud.updatedAt) || meta.savedAt;
     meta.version = cloud.version;
     meta.savedAt = status.lastSavedAt;
+
+    if (switchedAccounts) {
+      // 换账号：以新账号的云端数据为准，本机旧账号的改动不带过去
+      adoptCloud(cloud);
+      meta.dirty = false;
+      writeLocal();
+      emitStatus("saved", cloudLabel() + "（已切换到该账号的云端数据，上一位账号留在本机的改动未上传）");
+      return;
+    }
 
     if (meta.dirty) {
       emitStatus("conflict", "本机有尚未同步到云端的改动，云端也存有数据，请选择保留哪一份");
@@ -333,6 +359,8 @@
 
     // 用 DOM 构建而非 innerHTML：云端回传的字段一律走 textContent，不给注入留口子
     host.textContent = "";
+    const box = document.createElement("div");
+    box.className = "rec-in";
     const text = document.createElement("div");
     text.className = "rec-text";
     text.append(`云端存有一份数据（版本 v${ver}，保存于 ${when}），本机也有尚未同步的改动。两者不一致，请选择保留哪一份——被放弃的一方不会被自动恢复。`);
@@ -347,7 +375,8 @@
     useCloud.type = "button";
     useCloud.textContent = "放弃本机，使用云端";
     actions.append(keepLocal, useCloud);
-    host.append(text, actions);
+    box.append(text, actions);
+    host.append(box);
     host.hidden = false;
 
     keepLocal.onclick = async () => {
@@ -406,6 +435,16 @@
     delete tracks[id];
     markDirty();
     emitTracks();
+  }
+
+  // 批量清空：逐条 removeTrack 会触发 N 次重绘，这里只发一次
+  function clearAllTracks() {
+    if (!Object.keys(tracks).length) return 0;
+    const n = Object.keys(tracks).length;
+    tracks = {};
+    markDirty();
+    emitTracks();
+    return n;
   }
 
   /* ---------- 导出 / 导入 ---------- */
@@ -469,6 +508,7 @@
     getTrack,
     setTrack,
     removeTrack,
+    clearAllTracks,
     markDirty,
     saveNow() { autoSaveSuspended = false; return pushToCloud(); },
     async reloadFromCloud() {

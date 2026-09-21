@@ -38,24 +38,35 @@ https://github.com/ghostLLC/hk5-masters-guide
 
 | 文件 | 作用 | 是否发布 |
 |------|------|----------|
-| index.html | 入口页面（界面 + 样式） | 两个站点都发布 |
+| index.html | 入口页面（结构） | 两个站点都发布 |
+| styles.css | 全部样式（含响应式与减少动效适配） | 两个站点都发布 |
 | data.js | 177 个项目的数据库（学费/简介/要求/官网等） | 两个站点都发布 |
-| app.js | 筛选、搜索、志愿单、导出逻辑；末尾暴露 `window.HK5App` 桥接 | 两个站点都发布 |
-| store.js | 存储层：本机 localStorage + 云端同步、版本 CAS、冲突裁决、导出导入 | 两个站点都发布 |
-| track.js | 申请状态跟进表 UI（视图切换、表格、汇总、跟进表 CSV 导出） | 两个站点都发布 |
+| app.js | 分面筛选、卡片/表格双视图、志愿单抽屉、详情弹窗、导出；末尾暴露 `window.HK5App` 桥接 | 两个站点都发布 |
+| store.js | 存储层：本机 localStorage + 云端同步、版本 CAS、冲突裁决、账号切换守卫、导出导入 | 两个站点都发布 |
+| track.js | 申请跟进表、视图切换、在线保存状态条、示例数据 | 两个站点都发布 |
 | functions/index.ts | Qoder Edge Function 入口（Deno），固定 `@supabase/supabase-js@2.57.4` | 仅 Qoder |
 | functions/adapter.mjs | 平台提供的数据库适配器，**逐字复制未改动** | 仅 Qoder |
 | functions/auth.mjs | 平台提供的网关身份读取器，**逐字复制未改动** | 仅 Qoder |
 | functions/handler.mjs | 业务处理器：`action=me/load/save`，身份与校验都在这一层 | 仅 Qoder |
-| tools/sync-web.mjs | 生成 `web/` 发布目录并做发布前自检（文件齐备、无密钥、无内部路径） | 不发布 |
+| tools/sync-web.mjs | 生成 `web/` 发布目录并做发布前自检（文件齐备、关键节点存在、无密钥、无内部路径） | 不发布 |
 | dev/track-preview/server.mjs | 本地静态服务 + Function 代理 + 合成身份，**不得部署** | 不发布 |
 | dev/track-preview/contract-test.mjs | Function 契约测试（42 项：隔离/CAS/校验/错误码/方法约束） | 不发布 |
+| dev/proto-server.mjs | 原型预览用静态服务（临时） | 不发布 |
 | .scrape/ | 采集脚本与官网逐字原文存档 | 不发布（gitignore） |
+| prototypes/ | 三个改版候选原型（已选定 V2，保留备查） | 不发布（gitignore） |
 | web/ | Qoder 发布产物 | 不发布（gitignore） |
 
-本地打开方式：直接用浏览器打开 index.html 即可（需同目录下的 data.js、app.js、store.js、track.js）。此时为纯本地模式。
+本地打开方式：直接用浏览器打开 index.html 即可（需同目录下的 styles.css、data.js、app.js、store.js、track.js）。此时为纯本地模式。
 要连本地后端一起测：`node dev/track-preview/server.mjs 8000`，然后开 http://127.0.0.1:8000/ ，
 用 `/functions/v1/app?action=me&fixture=A`（或 B / anonymous / dberror）切换测试身份。
+
+## 界面版式（2026-09-21 改版为 V2 重构方案）
+
+用户从三个候选原型（现有风格打磨 / 较大重构布局 / 完全重新设计）中选定 **V2 较大重构布局**，已并入正式文件并接回在线保存。
+
+版式要点：左侧分面筛选侧栏（学校 / 方向 / 27 Fall 状态 / 学费核实状态，各带条数并可折叠）；顶栏搜索 + 卡片与表格双视图切换 + 志愿单抽屉；渐进加载（每次 30 条）代替翻页；筛选条件显示为可单个删除的标签。
+
+改版同时修掉的实测问题：文档总高 113,125px → 约一屏可容纳的规模（30 条一次、单卡约 260px）；11,820 个 DOM 节点 → 约 900；三处低于 WCAG AA 4.5:1 的对比度（4.25 / 4.48 / 4.52）→ 全部达标，最低 6.77:1；11.5px 小字 → 13px 下限；按钮、链接、卡片补上键盘焦点样式；去掉 3px 状态侧边条与「1px 边框 + 24px 模糊阴影」的组合；窄屏跟进表由横向滚动改为堆叠卡片。
 
 ## 数据范围（177 项 · 12 所院校）
 
@@ -108,7 +119,7 @@ https://github.com/ghostLLC/hk5-masters-guide
 ### 1. GitHub Pages（静态，无在线保存）
 
 ```
-git add index.html data.js app.js store.js track.js functions tools dev README-部署说明.md 开发要求与逻辑总结.md
+git add index.html styles.css data.js app.js store.js track.js functions tools dev README.md 开发要求与逻辑总结.md
 git commit -m "更新说明"
 git push
 ```
@@ -308,6 +319,8 @@ NUS 另有 WAF 屏蔽非浏览器请求），因此真实的联网重查在当�
 - 浏览器**不能**指定 `user_id`。身份只来自网关验证过后注入的 `x-qoder-user-context` 请求头，由平台提供的 `functions/auth.mjs`（逐字复制、未改动）解析；网关会先剥掉浏览器自带的任何 `x-qoder-*` 头再注入。`functions/handler.mjs` 用 `requireUser(request)` 取出 `user_id`，**所有数据库查询都带 `.eq('user_id', user.user_id)`**。
 - 载荷里塞 `user_id` 字段无效，已在契约测试中验证（B 提交 `user_id: 'fixture-A'`，数据仍落在 B 自己行上，A 的数据未被篡改）。
 - 未登录时 `load` / `save` 一律 401 `login_required`，不会退化成匿名读写。
+- **同浏览器切换账号时不会串数据**：本机缓存（localStorage）属于浏览器而非账号，因此 `store.js` 把「本机缓存属于哪个账号」记在 `hk5_sync_v1.userId` 里。检测到当前登录账号与记录不一致时，**不把本机缓存推给新账号**，而是以新账号的云端数据为准，并在状态条上说明「上一位账号留在本机的副本没有上传」。只有在从未同步过任何账号（`userId` 为空）时才允许把本机数据推上去，这样「先在静态站点用了一阵、再登录」的场景仍能把已有数据带上来。
+  - 这条守卫是在联调中发现并补上的：修复前，同一浏览器里 A 退出、B 登录会把 A 留在本机的志愿单与跟进记录静默复制到 B 的云端行，破坏按账号隔离的前提。
 
 ### 已知边界（用户已于 2026-09-21 知情并接受）
 
