@@ -1,27 +1,61 @@
 # 港五 + 新二 + 中外合办 商科授课硕士信息库
 
-## 线上地址
+## 线上地址（两处部署，内容相同，能力不同）
 
-https://ghostllc.github.io/hk5-masters-guide/
+| 站点 | 地址 | 在线保存 | 说明 |
+|------|------|----------|------|
+| **Qoder 站点** | https://hk5-masters-guide-kxanr44c725.qoder.zone | **支持**（登录 Qoder 账号后） | 国内直连较快，公开可浏览；跟进数据存云端数据库 |
+| GitHub Pages | https://ghostllc.github.io/hk5-masters-guide/ | 不支持（纯静态，无后端） | 数据只存在当前浏览器，可用导出/导入 JSON 迁移 |
+
+两个站点跑的是同一份前端代码。`store.js` 启动时探测 `/functions/v1/app?action=me`：拿到 JSON 就认为有后端，拿到 HTML 404 或请求发不出就降级为纯本地模式，并在页面顶部同步条上如实说明当前是哪种。**不需要为两个环境维护两份代码。**
 
 ## GitHub 仓库
 
 https://github.com/ghostLLC/hk5-masters-guide
 
 - 分支：master
-- 托管：GitHub Pages（master 根目录）
+- GitHub Pages 托管：master **根目录**
 - 账号：ghostLLC
-- 最近一次推送：2026-09-21（补入港城大东莞计算机科学 + 回填港中深/港城莞/西浦英文原文与入学要求 + 港中深市场学、数据科学 27 Fall 状态更正，共 177 项）
+- 最近一次推送：2026-09-21（新增申请状态跟进表 + 在线保存；此前同日补入港城大东莞计算机科学、回填英文原文、更正港中深 2 条 27 Fall 状态，共 177 项）
+
+## Qoder 站点部署信息（远程开发用）
+
+| 项 | 值 |
+|----|-----|
+| 站点域名 | `hk5-masters-guide-kxanr44c725.qoder.zone` |
+| 访问范围 | public（2026-09-21 经用户明确授权由 private 改为 public） |
+| projectId | `01a0c22c-ef5e-773d-aec4-9c4b819015bf` |
+| siteId | `01a0c22c-ef61-7429-b0fb-852ec61fb325` |
+| 后端能力 | database + functions + storage（status: ready） |
+| Function | 逻辑名 `app`，runtime `edge`，authMode `anonymous`，databaseAccess `read_write`，requiredSchemaVersion `1` |
+| 数据表 | `app.track_state`（5 列：user_id / wishlist / tracks / version / updated_at） |
+| 发布目录 | `web/`（由 `tools/sync-web.mjs` 生成，已 gitignore） |
+| Function 目录 | `functions/`（index.ts + adapter.mjs + auth.mjs + handler.mjs） |
+
+`.商科硕士申请信息库.qoder.site` 是 Qoder 工具自有的本地预览描述文件，内嵌冻结的首页快照、每次发布都会过期，且不能用于在别的机器恢复源码，因此已 gitignore；上表中的域名与两个 ID 才是跨机器续用所需的信息。
 
 ## 文件说明
 
-| 文件 | 作用 |
-|------|------|
-| index.html | 入口页面（界面 + 样式） |
-| data.js | 177 个项目的数据库（学费/简介/要求/官网等） |
-| app.js | 筛选、搜索、志愿单、导出逻辑 |
+| 文件 | 作用 | 是否发布 |
+|------|------|----------|
+| index.html | 入口页面（界面 + 样式） | 两个站点都发布 |
+| data.js | 177 个项目的数据库（学费/简介/要求/官网等） | 两个站点都发布 |
+| app.js | 筛选、搜索、志愿单、导出逻辑；末尾暴露 `window.HK5App` 桥接 | 两个站点都发布 |
+| store.js | 存储层：本机 localStorage + 云端同步、版本 CAS、冲突裁决、导出导入 | 两个站点都发布 |
+| track.js | 申请状态跟进表 UI（视图切换、表格、汇总、跟进表 CSV 导出） | 两个站点都发布 |
+| functions/index.ts | Qoder Edge Function 入口（Deno），固定 `@supabase/supabase-js@2.57.4` | 仅 Qoder |
+| functions/adapter.mjs | 平台提供的数据库适配器，**逐字复制未改动** | 仅 Qoder |
+| functions/auth.mjs | 平台提供的网关身份读取器，**逐字复制未改动** | 仅 Qoder |
+| functions/handler.mjs | 业务处理器：`action=me/load/save`，身份与校验都在这一层 | 仅 Qoder |
+| tools/sync-web.mjs | 生成 `web/` 发布目录并做发布前自检（文件齐备、无密钥、无内部路径） | 不发布 |
+| dev/track-preview/server.mjs | 本地静态服务 + Function 代理 + 合成身份，**不得部署** | 不发布 |
+| dev/track-preview/contract-test.mjs | Function 契约测试（42 项：隔离/CAS/校验/错误码/方法约束） | 不发布 |
+| .scrape/ | 采集脚本与官网逐字原文存档 | 不发布（gitignore） |
+| web/ | Qoder 发布产物 | 不发布（gitignore） |
 
-本地打开方式：直接用浏览器打开 index.html 即可（需同目录下的 data.js 与 app.js）。
+本地打开方式：直接用浏览器打开 index.html 即可（需同目录下的 data.js、app.js、store.js、track.js）。此时为纯本地模式。
+要连本地后端一起测：`node dev/track-preview/server.mjs 8000`，然后开 http://127.0.0.1:8000/ ，
+用 `/functions/v1/app?action=me&fixture=A`（或 B / anonymous / dberror）切换测试身份。
 
 ## 数据范围（177 项 · 12 所院校）
 
@@ -69,17 +103,49 @@ https://github.com/ghostLLC/hk5-masters-guide
 
 ## 如何更新并重新上线
 
-本目录已于 2026-09-20 绑定同一仓库（分支 master），日常更新流程：
+本目录已于 2026-09-20 绑定 GitHub 仓库（分支 master）。**两个站点要分别发布，改完代码后两边都要走一遍。**
+
+### 1. GitHub Pages（静态，无在线保存）
 
 ```
-git add index.html data.js app.js README-部署说明.md
+git add index.html data.js app.js store.js track.js functions tools dev README-部署说明.md 开发要求与逻辑总结.md
 git commit -m "更新说明"
 git push
 ```
 
-GitHub Pages 会自动重新构建，一般 1–3 分钟后生效。
+Pages 自动重建，一般 1–3 分钟生效。验证：
 
-若需在其他机器重新绑定：
+```
+curl -s https://ghostllc.github.io/hk5-masters-guide/data.js | head -2
+```
+
+`functions/`、`tools/`、`dev/` 会一并进入仓库（用户要求代码/文档都上传），GitHub Pages 也会把它们当静态文件挂在同路径下，但**不会执行**——Pages 没有 Edge Function 运行时，`/functions/v1/app` 返回 HTML 404，前端据此降级为纯本地模式。这些文件不含任何密钥。
+
+### 2. Qoder 站点（含在线保存）
+
+必须用 Qoder 的 sites 工具链，`git push` 不会触发它重新发布：
+
+1. `node tools/sync-web.mjs` —— 重新生成 `web/` 发布目录（含发布前自检：5 个文件齐备、脚本引用完整、不含平台密钥与内部路径）
+2. 用新的 `actionId` 调 `prepare_site`，参数：`projectRoot` = 本目录、`webDirectory` = `web`、`functionDirectory` = `functions`、`projectId` = `01a0c22c-ef5e-773d-aec4-9c4b819015bf`、`databaseAccess` = `read_write`、`requiredSchemaVersion` = `1`、`spa` = false
+   - 若返回 `descriptorStatus: pending`，等 `verificationOperationId` 的 operation 变成 succeeded 后，**用同一个 actionId 和完全相同的入参重试一次**即可变成 `written`
+3. `get_publish_status` 确认 `canPublish: true`，再 `publish_site`
+4. 轮询 `publishOperationId` 到 `state: succeeded` 且 `committed: true`，然后 `get_publish_status` 确认 `published: true`
+5. 验证运行时（预览画布不执行 Function，必须单独验）：
+   ```
+   curl -s https://hk5-masters-guide-kxanr44c725.qoder.zone/functions/v1/app?action=me
+   # 期望 {"backend":"ok","user":null}
+   curl -s -o /dev/null -w "%{http_code}\n" https://hk5-masters-guide-kxanr44c725.qoder.zone/functions/v1/app?action=load
+   # 期望 401（未登录），证明 requireUser 生效
+   ```
+   再逐个比对线上 5 个静态文件与本地的 sha256（`index.html` 会因平台注入水印脚本而不同，属正常）
+
+### 3. 数据库结构变更
+
+只能通过 sites-management 的迁移工具做，不能在 Function 里执行 DDL。步骤：`get_database` 读当前 `schema_version` 与 `schema_fingerprint` → `create_database_migration`（受限 DDL 子集 + 声明式 `accessPolicies`）→ 核对返回的 normalized SQL → `apply_database_migration` → 轮询 operation → `refresh_database` → `list_database_tables` 核对列数。改完后 `prepare_site` 的 `requiredSchemaVersion` 要同步更新为新的版本号。
+
+有版本在线上时按 expand-and-contract 做：先加兼容的表/可空列，保持旧 Function 可用，再发布使用新结构的 Function。
+
+若需在其他机器重新绑定 GitHub：
 
 ```
 git init -b master
@@ -93,6 +159,8 @@ git push -u origin master
 
 ## 功能
 
+### 浏览选校
+
 - 按学校 / 方向 / 27 Fall 状态筛选
 - 关键词搜索（中英文名、学院、中英简介、申请要求、学费说明等；空格分隔多关键词需全部命中）
 - 志愿单：加入、排序、搜索、导出 CSV / JSON
@@ -100,6 +168,44 @@ git push -u origin master
 - 中英双语简介与申请要求展示（卡片摘要 + 展开四段对照，多段官网原文按行渲染）
 - 核实状态可见：卡片徽章区分「官网名单已核 / 待官网核实」「学费官网已核 / 按学分计费·总额为估算 / 按学年计费·总额为估算 / 仅列其他入学周期 / 学费待审批 / 学费待核实」「申请要求非官网原文·无中文」；页面顶部来源提示条给出各类计数、汇率来源与身份档位
 - CSV 导出 23 列，含学费原币值与人民币参考值、是否估算总额、中英申请要求及其核实状态
+
+### 申请跟进（顶部「申请跟进」标签）
+
+以志愿单为行来源——加入志愿的项目自动出现在跟进表里，移出志愿单后跟进记录仍保留（会标注「已不在志愿单」）。每行可记录：
+
+| 字段 | 取值 |
+|------|------|
+| 优先级 | 未定 / 冲 / 稳 / 保 |
+| 申请状态 | 未开始 / 准备材料 / 已提交 / 面试中 / 已获 Offer / 已接受 / 已拒 / 已放弃 |
+| 四个日期 | 截止日期、提交日期、面试日期、出结果日期 |
+| 材料清单 | 成绩单、学位/在读、语言成绩、推荐信、个人陈述、简历、其他（7 项勾选） |
+| 备注 | 自由文本，上限 2000 字符 |
+
+- 顶部汇总条按状态计数，并单独提示「N 天内截止」与「已过期未提交」
+- 截止日期在 14 天内且尚未提交 → 整行标黄并显示「剩 N 天」；已过期未提交 → 标红
+- 已提交之后的状态（含 Offer/已拒）不再告警，只显示「已于 X 截止」
+- 支持按状态筛选，按志愿单顺序 / 截止日期 / 申请状态排序
+- 跟进表可单独导出 CSV（22 列，含全部日期与 7 项材料勾选状态）
+- 所有改动即时保存，备注按输入防抖 600ms
+
+### 在线保存
+
+页面顶部同步条实时显示当前存储状态，四种情形措辞不同，不会让人误判数据存在哪里：
+
+| 情形 | 同步条文案 | 可用操作 |
+|------|-----------|----------|
+| Qoder 站点 + 已登录 | 在线保存已开启 · 账号名 · 云端版本 vN · 上次保存时间 | 立即保存、重新读取云端、导出备份、导入备份 |
+| Qoder 站点 + 未登录 | 本机保存 · 登录 Qoder 账号后可开启在线保存 | 导出备份、导入备份 |
+| GitHub Pages | 本机保存 · 此站点为静态部署，数据只存在当前浏览器，可用「导出备份 / 导入备份」在设备间迁移 | 导出备份、导入备份 |
+| 云端暂时不可用 | 本机保存 · 云端服务暂不可用，改动已留在本机 | 导出备份、导入备份 |
+
+行为约定：
+
+- **任何改动先落 localStorage 再推云端**，云端失败绝不丢数据
+- 云端保存走**版本化写入**（CAS）：带上 `baseVersion`，服务端按 `user_id + version` 双条件过滤并检查受影响行数；版本不符返回 409 并附云端当前状态，前端弹出让用户选「用本机覆盖云端」或「放弃本机，使用云端」，**绝不静默覆盖**
+- 写入结果未知（断网/超时）时**挂起自动保存**，只提示「重新读取云端」做对账，**不自动重放写入**——因为无法判断上一次是否已提交
+- 登录后若本机有未同步改动（`dirty` 标记）且云端也有数据，同样走裁决弹窗
+- 导出/导入的 JSON 带 `kind` 与 `schema` 标识，导入非本站文件会被拒绝
 
 ## 数据核实状态（2026-09-21 复核）
 
@@ -191,6 +297,56 @@ NUS 官网对 `curl` / Node 请求返回 Incapsula 挑战页（955 字节），�
 本站为 GitHub Pages 静态部署，浏览器端无法跨域抓取各校官网（仅 PolyU、XJTLU 返回 CORS 头，
 NUS 另有 WAF 屏蔽非浏览器请求），因此真实的联网重查在当前架构下不可实现，按「不能真实实现就不要」的原则删除。
 招生状态以 `data.js` 中经官网核实的记录为准，更新方式为重新采集数据并提交。
+
+## 在线保存的安全边界（务必读）
+
+申请跟进数据是个人隐私数据。这里如实记录它的保护方式与**已知未验证的边界**，不夸大。
+
+### 隔离是怎么实现的
+
+- 浏览器**不能**指定 `user_id`。身份只来自网关验证过后注入的 `x-qoder-user-context` 请求头，由平台提供的 `functions/auth.mjs`（逐字复制、未改动）解析；网关会先剥掉浏览器自带的任何 `x-qoder-*` 头再注入。`functions/handler.mjs` 用 `requireUser(request)` 取出 `user_id`，**所有数据库查询都带 `.eq('user_id', user.user_id)`**。
+- 载荷里塞 `user_id` 字段无效，已在契约测试中验证（B 提交 `user_id: 'fixture-A'`，数据仍落在 B 自己行上，A 的数据未被篡改）。
+- 未登录时 `load` / `save` 一律 401 `login_required`，不会退化成匿名读写。
+
+### 已知边界（用户已于 2026-09-21 知情并接受）
+
+**数据库层的行级安全无法按 owner 策略生效。** 平台自带的数据库适配器只支持匿名模式，用 `SUPABASE_ANON_KEY` 做 apikey 与 Bearer 认证，不会把站点登录态翻译成 Supabase 用户，因此 `auth.uid()` 恒为空、`owner` 模板的策略会让 Function 一行都读不到。可用的声明式策略只有 `deny` / `public` / `owner` 三种，于是本表只能用：
+
+```json
+[{ "table": "track_state", "principal": "anonymous",
+   "actions": ["select","insert","update"], "template": "public" }]
+```
+
+含义与后果：
+
+- **跨用户隔离完全由 Function 代码强制**，不是由数据库强制。正常路径下浏览器只能访问同源 `/functions/v1/app`，无法直连数据库，因此隔离是有效的。
+- 但「绕过 Function 直连数据库」的隔离性，平台文档明确标注为**未验证**：站点源上 `/rest/v1` 被拒只证明那条路由关了，前端产物里没有凭证只证明产物没暴露凭证，两者都不等于证明了 provider 直连与备用入口的隔离。
+- 平台规范本身写明「不得把私有数据设计改成 anonymous + public CRUD 当作生产方案」。这里是用户在了解上述边界后明确选择的方案（三个选项中的「公开站点 + 登录隔离」），属于**有限功能验证范围**，不是生产级安全保证。
+- 授权范围已按最小化：只给 `select` / `insert` / `update`，**没有给 `delete`**（清空通过写入空载荷实现）。
+
+如果日后要收紧：把 `accessPolicies` 换成 `deny` 表清除标记即可撤销全部托管授权（表与数据保留），代价是在线保存失效、退回纯本地 + 导入导出。
+
+### 其他防护措施
+
+| 面 | 做法 |
+|----|------|
+| 写入校验 | 服务端白名单：状态/优先级枚举、项目 id 正则、日期 `YYYY-MM-DD`、材料键固定 7 个且强制布尔、备注 ≤2000 字符、志愿 ≤200 条、跟进 ≤200 条、请求体 ≤256KB（按实际流过的字节计数，不信 `Content-Length`） |
+| 错误信息 | 只回固定应用错误码（`invalid_input` / `conflict` / `login_required` / `write_rejected` / `write_result_unknown` / `state_unavailable`），**绝不回传 SQL、键值、路由头或原始 provider 报错** |
+| 方法约束 | GET 不改状态；`save` 只接受 POST、`load` 只接受 GET，其余 405；未知 action 404 |
+| 密钥 | `functions/` 与 `web/` 内无任何硬编码凭证；数据库凭证由平台注入，不进 `secretNames`、不进源码、不进前端；`tools/sync-web.mjs` 发布前会扫一遍 `SUPABASE_*` / `QODER_PAT` / `DATABASE_URL` / JWT 前缀 |
+| XSS | 所有数据插值经 `esc()`（`& < > " '`）；专业名链接只允许 http(s)，其余降级为纯文本；对账弹窗改用 DOM API + `textContent` 构建，不走 `innerHTML`。已用 `<img src=x onerror=...>` 与 `javascript:` URL 实测：注入标记以转义文本呈现、页面 `img` 数为 0、回调未触发、`h3` 降级为 `span` |
+| 平台文件 | `functions/adapter.mjs` 与 `functions/auth.mjs` 逐字复制平台资产、未改动（已 `diff` 校验） |
+| 本地测试件 | `dev/` 下的 fixture 服务与合成身份**不进发布包**，生产端点没有 fixture 开关 |
+
+### 验证到什么程度（区分清楚，不含糊）
+
+**已验证**
+
+- 本地：Function 契约测试 42 项全通过（身份/匿名、方法与路由约束、首次写入与读回、版本 CAS、跨用户隔离、输入校验白名单、材料键白名单、数据库故障错误码）。命令：`node dev/track-preview/server.mjs 8000` 后 `node dev/track-preview/contract-test.mjs`
+- 本地：前端云端全流程（首存、刷新读回、改动自动保存并版本 +1、双身份互不可见、冲突弹窗两种选择、导出导入往返、`file://` 与静态托管降级）
+- 线上：`published: true` 且 release 一致；Function `is_active`、`database_access: read_write`、`required_schema_version: 1`；数据表 `track_state` 5 列经目录核对；匿名 `?action=me` 返回 `{"backend":"ok","user":null}`；匿名 `?action=load` 返回 401；未知 action 404；GET `save` 405；线上 4 个 JS 与本地 sha256 完全一致（`index.html` 因平台注入水印脚本而不同）；页面渲染 177 张卡片、无控制台报错，同步条正确显示「登录 Qoder 账号后可开启在线保存」而非静态站点文案
+
+**未验证**：真实网关身份注入后的**登录态读写往返**。这一步需要用户本人登录 Qoder 账号，我无法代替（浏览器里没有会话，访问会撞登录门）。本地那套是 fixture，能证明应用逻辑正确，**不能证明真实网关与真实数据库往返**。
 
 ## 免责声明
 

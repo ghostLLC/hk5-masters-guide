@@ -1,2 +1,11 @@
 # 抓取脚本、原始 HTML 与中间产物，不入库（数据结论已写入 data.js 与两份文档）
 .scrape/
+
+# Qoder Sites 发布产物：由 tools/sync-web.mjs 从根目录静态文件生成，不入库
+# （prepare_site 按磁盘内容打包，不需要它在版本控制里）
+web/
+
+# Qoder Sites 本地预览描述文件，由 show_publish_confirmation 生成/刷新，工具自有。
+# 内嵌冻结的首页快照，会随每次发布过期，且不能用于在别的机器恢复源码。
+# 真正需要的持久信息（站点域名、projectId、siteId）记在 README-部署说明.md 里。
+.*.qoder.site

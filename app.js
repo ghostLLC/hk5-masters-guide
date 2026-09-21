@@ -13,6 +13,9 @@
     expanded: new Set()
   };
 
+  // 志愿单变更订阅者（store.js 推云端、track.js 重绘跟进表）
+  const wishListeners = [];
+
   /* ---------- 输出安全 ---------- */
 
   function esc(v) {
@@ -157,8 +160,12 @@
     return normalize(read(WISH_KEY_LEGACY));
   }
 
-  function saveWish() {
+  function saveWish(silent) {
     localStorage.setItem(WISH_KEY, JSON.stringify(state.wish));
+    if (silent) return;
+    for (const fn of wishListeners) {
+      try { fn(); } catch { /* 订阅者失败不得影响本地保存 */ }
+    }
   }
 
   // 按志愿单顺序解析出完整项目对象
@@ -627,6 +634,30 @@
       if (e.key === "Escape") $("#modalBackdrop").classList.remove("open");
     });
   }
+
+  /* ---------- 对外桥接：store.js（在线保存）与 track.js（申请跟进表）使用 ---------- */
+
+  window.HK5App = {
+    programmes: PROGRAMMES,
+    byId(id) { return PROGRAMMES.find(p => p.id === id) || null; },
+    getWish() { return state.wish.map(w => ({ id: w.id, addedAt: w.addedAt || 0 })); },
+    isWished,
+    toast,
+    esc,
+    refreshCards: renderCards,
+    refreshWish: renderWish,
+    onWishChange(fn) { wishListeners.push(fn); },
+    // 云端对账后整体替换志愿单；silent=true 表示这次变更来自云端，不得再回推云端
+    replaceWish(next, silent) {
+      const ids = new Set(PROGRAMMES.map(p => p.id));
+      state.wish = (Array.isArray(next) ? next : [])
+        .filter(w => w && ids.has(w.id))
+        .map(w => ({ id: w.id, addedAt: w.addedAt || 0 }));
+      saveWish(silent);
+      renderWish();
+      renderCards();
+    }
+  };
 
   function init() {
     fillFilters();

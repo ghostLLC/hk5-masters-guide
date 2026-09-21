@@ -365,6 +365,175 @@ button { font: inherit; cursor: pointer; }
   text-align: center;
   color: var(--muted);
 }
+
+/* ---------- 视图切换 ---------- */
+.viewswitch { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.vbtn {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-size: .9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.vbtn.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+.vcount {
+  background: rgba(255,255,255,.22);
+  border-radius: 999px;
+  padding: 1px 8px;
+  font-size: .75rem;
+}
+.vbtn:not(.active) .vcount { background: var(--accent-soft); color: var(--accent); }
+.vcount:empty { display: none; }
+
+/* ---------- 同步状态条 ---------- */
+.syncbar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-size: .85rem;
+  line-height: 1.5;
+}
+.syncbar.show { display: flex; }
+.sync-text { flex: 1 1 320px; }
+.sync-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.sync-saved { border-color: #86efac; background: #f0fdf4; color: var(--ok); }
+.sync-saving { border-color: #b7ced6; background: var(--accent-soft); color: var(--accent); }
+.sync-error, .sync-unknown { border-color: #fca5a5; background: #fef2f2; color: #991b1b; }
+.sync-conflict { border-color: #fcd34d; background: #fffbeb; color: var(--warn); }
+.btn.sm { padding: 5px 10px; font-size: .78rem; border-radius: 8px; }
+.import-label { position: relative; overflow: hidden; display: inline-flex; align-items: center; }
+.import-label input[type="file"] {
+  position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+}
+
+/* ---------- 本机/云端对账提示 ---------- */
+.reconcile {
+  margin-bottom: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #fcd34d;
+  background: #fffbeb;
+  color: #78350f;
+  font-size: .88rem;
+  line-height: 1.6;
+}
+.rec-actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+
+/* ---------- 跟进表 ---------- */
+.track-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+}
+.track-head h2 { margin: 0 0 6px; font-size: 1.1rem; }
+.track-tip { margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.6; max-width: 62ch; }
+.track-tools { display: flex; gap: 10px; align-items: end; flex-wrap: wrap; }
+.track-tools label { display: flex; flex-direction: column; gap: 4px; font-size: .76rem; color: var(--muted); }
+.track-tools select {
+  border: 1px solid var(--line); border-radius: 9px; padding: 7px 9px; font: inherit; font-size: .84rem; background: #fff;
+}
+
+.track-summary { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 12px; }
+.tchip {
+  font-size: .78rem;
+  border-radius: 999px;
+  padding: 4px 11px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--muted);
+}
+.tchip strong { font-weight: 700; margin-left: 2px; }
+.tchip.t-not_started { background: #f1f5f9; color: #475569; border-color: #cbd5e1; }
+.tchip.t-preparing { background: #fffbeb; color: var(--warn); border-color: #fde047; }
+.tchip.t-submitted { background: var(--accent-soft); color: var(--accent); border-color: #b7ced6; }
+.tchip.t-interview { background: #f3e8ff; color: #6b21a8; border-color: #d8b4fe; }
+.tchip.t-offer { background: #dcfce7; color: var(--ok); border-color: #86efac; }
+.tchip.t-accepted { background: #bbf7d0; color: #14532d; border-color: #4ade80; }
+.tchip.t-rejected { background: #fee2e2; color: #991b1b; border-color: #fca5a5; }
+.tchip.t-withdrawn { background: #f5f5f4; color: #78716c; border-color: #d6d3d1; }
+.tchip.t-soon { background: #ffedd5; color: #9a3412; border-color: #fdba74; }
+
+.track-scroll {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow-x: auto;
+}
+.track-table { width: 100%; border-collapse: collapse; font-size: .83rem; min-width: 1180px; }
+.track-table th, .track-table td {
+  text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top;
+}
+.track-table th {
+  color: var(--muted); font-weight: 600; font-size: .74rem; letter-spacing: .02em;
+  background: #faf7f0; position: sticky; top: 0; z-index: 1; white-space: nowrap;
+}
+.track-table tbody tr:last-child td { border-bottom: none; }
+.c-prog { min-width: 210px; max-width: 260px; }
+.c-prio { width: 74px; }
+.c-status { width: 106px; }
+.c-date { width: 118px; }
+.c-mat { min-width: 168px; }
+.c-note { min-width: 190px; }
+.c-act { width: 96px; }
+
+.track-row.row-soon { background: #fffdf5; }
+.track-row.row-overdue { background: #fff7f7; }
+.track-row.row-orphan { background: #fafaf9; color: var(--muted); }
+.track-row td.c-prog { border-left: 3px solid transparent; }
+.track-row.st-preparing td.c-prog { border-left-color: #fbbf24; }
+.track-row.st-submitted td.c-prog { border-left-color: var(--accent); }
+.track-row.st-interview td.c-prog { border-left-color: #a855f7; }
+.track-row.st-offer td.c-prog, .track-row.st-accepted td.c-prog { border-left-color: #22c55e; }
+.track-row.st-rejected td.c-prog { border-left-color: #ef4444; }
+.track-row.st-withdrawn td.c-prog { border-left-color: #a8a29e; }
+
+.tp-name { font-weight: 600; line-height: 1.4; margin-bottom: 2px; }
+.tp-sub { color: var(--muted); font-size: .74rem; line-height: 1.4; }
+.tp-flag { font-size: .72rem; margin-top: 4px; padding: 2px 7px; border-radius: 999px; display: inline-block; }
+.tp-flag.ok { background: #f1f5f9; color: #475569; }
+.tp-flag.soon { background: #ffedd5; color: #9a3412; font-weight: 600; }
+.tp-flag.past { background: #fee2e2; color: #991b1b; font-weight: 600; }
+.tp-flag.past-done { background: #f5f5f4; color: #78716c; }
+.tp-flag.orphan { background: #fef9c3; color: var(--warn); }
+
+.track-table select, .track-table input[type="date"], .track-table textarea {
+  border: 1px solid var(--line); border-radius: 7px; padding: 5px 6px;
+  font: inherit; font-size: .8rem; background: #fff; color: var(--ink); width: 100%;
+}
+.track-table textarea { resize: vertical; min-height: 42px; line-height: 1.45; }
+.track-table select:focus, .track-table input:focus, .track-table textarea:focus {
+  outline: 2px solid var(--accent-soft); border-color: var(--accent);
+}
+.c-date label { display: flex; flex-direction: column; gap: 2px; font-size: .68rem; color: var(--muted); }
+.mat { display: inline-flex; align-items: center; gap: 3px; font-size: .74rem; margin: 0 7px 4px 0; white-space: nowrap; }
+.mat input { margin: 0; }
+.track-empty { padding: 34px 18px; text-align: center; color: var(--muted); line-height: 1.7; }
+.track-table .btn.sm { white-space: nowrap; margin-bottom: 5px; display: block; }
+
+@media (max-width: 700px) {
+  .track-head { flex-direction: column; }
+  .c-prog { min-width: 170px; }
+}
 </style>
 </head>
 <body>
@@ -381,6 +550,19 @@ button { font: inherit; cursor: pointer; }
 
   <div id="statusBar"></div>
 
+  <div class="viewswitch" role="tablist" aria-label="视图切换">
+    <button type="button" class="vbtn active" data-view="browse" role="tab" aria-selected="true">浏览选校</button>
+    <button type="button" class="vbtn" data-view="track" role="tab" aria-selected="false">申请跟进 <span id="trackCount" class="vcount"></span></button>
+  </div>
+
+  <div id="syncBar" class="syncbar" aria-live="polite">
+    <span id="syncText" class="sync-text">正在检测在线保存…</span>
+    <span id="syncActions" class="sync-actions"></span>
+  </div>
+
+  <div id="reconcileBar" class="reconcile" hidden></div>
+
+  <div id="viewBrowse">
   <div class="toolbar">
     <label>搜索
       <input id="q" type="search" placeholder="专业中英文 / 学院 / 关键词…" />
@@ -438,6 +620,61 @@ button { font: inherit; cursor: pointer; }
       </div>
     </aside>
   </div>
+  </div><!-- /#viewBrowse -->
+
+  <div id="viewTrack" hidden>
+    <div class="track-head">
+      <div>
+        <h2>硕士申请状态跟进表</h2>
+        <p class="track-tip">行来源是你的志愿单：在「浏览选校」里加入志愿的项目会自动出现在这里。所有改动即时保存，状态、日期、材料清单与备注都会跟着一起存。</p>
+      </div>
+      <div class="track-tools">
+        <label>状态筛选
+          <select id="tFilter">
+            <option value="">全部</option>
+            <option value="not_started">未开始</option>
+            <option value="preparing">准备材料</option>
+            <option value="submitted">已提交</option>
+            <option value="interview">面试中</option>
+            <option value="offer">已获 Offer</option>
+            <option value="accepted">已接受</option>
+            <option value="rejected">已拒</option>
+            <option value="withdrawn">已放弃</option>
+          </select>
+        </label>
+        <label>排序
+          <select id="tSort">
+            <option value="wish">按志愿单顺序</option>
+            <option value="deadline">按截止日期（近→远）</option>
+            <option value="status">按申请状态</option>
+          </select>
+        </label>
+        <button type="button" class="btn ghost sm" id="tExportCsv">导出跟进表 CSV</button>
+      </div>
+    </div>
+
+    <div id="trackSummary" class="track-summary"></div>
+
+    <div class="track-scroll">
+      <table class="track-table">
+        <thead>
+          <tr>
+            <th class="c-prog">项目</th>
+            <th class="c-prio">优先级</th>
+            <th class="c-status">申请状态</th>
+            <th class="c-date">截止日期</th>
+            <th class="c-date">提交日期</th>
+            <th class="c-date">面试日期</th>
+            <th class="c-date">出结果</th>
+            <th class="c-mat">材料清单</th>
+            <th class="c-note">备注</th>
+            <th class="c-act">操作</th>
+          </tr>
+        </thead>
+        <tbody id="trackBody"></tbody>
+      </table>
+    </div>
+  </div><!-- /#viewTrack -->
 
   <p class="footer-note">
     免责声明：学费、申请截止日期与 27 Fall 开放状态来自各校官网公开信息的整理，可能存在滞后或调整。正式申请前请务必以各大学/学院官网最新公告为准。部分标注「约」的学费为参考区间。
@@ -451,5 +688,7 @@ button { font: inherit; cursor: pointer; }
 
 <script src="data.js"></script>
 <script src="app.js"></script>
+<script src="store.js"></script>
+<script src="track.js"></script>
 </body>
 </html>
