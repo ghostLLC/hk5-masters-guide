@@ -179,7 +179,7 @@ button { font: inherit; cursor: pointer; }
 .req-text { font-weight: 400; font-size: .78rem; line-height: 1.45; color: #44403c; }
 .detail-block { margin-bottom: 12px; }
 .detail-label { font-size: .75rem; color: var(--muted); margin-bottom: 4px; font-weight: 600; letter-spacing: .02em; }
-.detail-body { font-size: .9rem; line-height: 1.65; color: #292524; }
+.detail-body { font-size: .9rem; line-height: 1.65; color: #292524; white-space: pre-line; }
 .detail-body.en { font-size: .84rem; color: #57534e; font-style: italic; }
 .desc-en {
   margin: 0 0 10px;
@@ -193,7 +193,6 @@ button { font: inherit; cursor: pointer; }
   overflow: hidden;
 }
 .card.expanded .desc-en { -webkit-line-clamp: unset; display: block; }
-.modal td.en { font-style: italic; color: #57534e; font-size: .85rem; }
 .meta-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0,1fr));
@@ -329,6 +328,8 @@ button { font: inherit; cursor: pointer; }
 .modal .sub { color: var(--muted); font-size: .88rem; margin-bottom: 14px; }
 .modal table { width: 100%; border-collapse: collapse; font-size: .88rem; }
 .modal th, .modal td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.modal td { white-space: pre-line; }
+.modal td.en { font-style: italic; color: #57534e; font-size: .85rem; }
 .modal th { color: var(--muted); font-weight: 500; width: 28%; }
 .modal-close { margin-top: 16px; }
 

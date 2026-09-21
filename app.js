@@ -39,6 +39,21 @@
   const reqCnOf = p => p.requirementsCn || p.requirements || "";
   const reqEnOf = p => p.requirementsEn || p.requirements || "";
 
+  // 34 条港五/NUS 早期条目缺中英对照：有的只有单一 requirements（压缩改写、非官网逐字原文），
+  // 有的 requirementsCn 是「未能获取」占位。reqCnOf/reqEnOf 的回退会把同一段英文填进中英两栏，
+  // 若不标注就会让改写文本看起来像已核实的双语原文。
+  const REQ_PLACEHOLDER = /未能获取|请点官网核实/;
+  const reqOk = p => !!p.requirementsCn && !!p.requirementsEn
+    && !REQ_PLACEHOLDER.test(p.requirementsCn) && !REQ_PLACEHOLDER.test(p.requirementsEn);
+
+  const REQ_CN_FALLBACK = "（本条暂无中文要求，此处显示的是英文摘要）";
+  const REQ_EN_FALLBACK = "（本条为早期采集的压缩摘要，非官网逐字原文，投递前务必点官网核对）";
+  const DESC_EN_FALLBACK = "（本条暂无英文简介，此处显示的是中文简介）";
+
+  const reqCnLabel = p => "申请要求 · 中文" + (reqOk(p) ? "" : REQ_CN_FALLBACK);
+  const reqEnLabel = p => "Admission Requirements · English" + (reqOk(p) ? "（官网原文）" : REQ_EN_FALLBACK);
+  const descEnLabel = p => "Programme Description · English" + (p.descEn ? "（官网原文）" : DESC_EN_FALLBACK);
+
   function orUnverified(v) {
     return v || UNVERIFIED;
   }
@@ -223,7 +238,8 @@
     const feeModule = n(p => p.feeSource === "official-per-module");
     const feeYear = n(p => p.feeSource === "official-per-year");
     const feeOther = n(p => p.feeSource === "official-other-intake");
-    const feeBad = total - feeOk - feeInst - feeCredit - feeModule - feeYear - feeOther;
+    const feePend = n(p => p.feeSource === "official-pending-approval");
+    const feeBad = total - feeOk - feeInst - feeCredit - feeModule - feeYear - feeOther - feePend;
     const bar = $("#statusBar");
     bar.className = "show warn";
     bar.innerHTML =
@@ -235,7 +251,10 @@
       (feeModule ? `、<strong>${feeModule}</strong> 条官网按模块计费（官网未列模块数，不给估算总额）` : "") +
       (feeYear ? `、<strong>${feeYear}</strong> 条官网按学年计费（总额 = 学年单价 × 官网学制，属估算）` : "") +
       (feeOther ? `、<strong>${feeOther}</strong> 条官网仅列其他入学周期` : "") +
+      (feePend ? `、<strong>${feePend}</strong> 条官网学费标注待审批（非最终金额）` : "") +
       `、<strong>${feeBad}</strong> 条未能核实（卡片标注「学费待核实」）。` +
+      `申请要求：<strong>${n(reqOk)}</strong> 条为官网逐字原文并附中文对照，` +
+      `<strong>${n(p => !reqOk(p))}</strong> 条为早期采集的压缩摘要（非官网原文、暂无中文，卡片已标注）。` +
       `开办年份与截止日期多为参考，<strong>投递前必须点专业名跳转官网确认</strong>。` +
       (DATA_META.fx
         ? `<br/><strong>人民币换算：</strong>${esc(DATA_META.fx.date)} 汇率 1 HKD = ${DATA_META.fx.HKD_CNY}、1 SGD = ${DATA_META.fx.SGD_CNY}（来源 ${esc(DATA_META.fx.source)}），` +
@@ -286,6 +305,8 @@
       // 港五以外的院校一律显示授课地点徽章（旧逻辑按「location 含香港」判断，
       // 会把「深圳（香港中文大学（深圳）校区）」误判为香港而漏显示）
       const showLoc = !HK5.has(p.uni) && !!p.location;
+      // jointPartner 可能带官网原文引证，徽章只取机构名，完整引证留在弹窗
+      const jointShort = String(p.jointPartner || "").split("（")[0].trim();
       const reqSummary = clip(orUnverified(reqCnOf(p) || reqEnOf(p)), 80);
 
       return `
@@ -296,7 +317,8 @@
             <span class="badge ${st.cls}">${st.label}</span>
             ${conf}
             ${feeBadge}
-            ${p.jointPartner ? `<span class="badge">联培：${esc(p.jointPartner)}</span>` : ""}
+            ${reqOk(p) ? "" : '<span class="badge pending">申请要求非官网原文·无中文</span>'}
+            ${jointShort ? `<span class="badge">联培：${esc(jointShort)}</span>` : ""}
             ${showLoc ? `<span class="badge">授课：${esc(p.location)}</span>` : ""}
           </div>
           <div class="card-top">
@@ -311,7 +333,7 @@
             <div><div class="k">学院</div><div class="v">${esc(p.facultyCn || p.faculty)}</div></div>
             <div><div class="k">学制</div><div class="v">${esc(durationOf(p))}</div></div>
             <div><div class="k">学费</div><div class="v">${esc(fmtTuitionShort(p))}</div></div>
-            <div><div class="k">申请要求</div><div class="v req-text">${esc(reqSummary)}</div></div>
+            <div><div class="k">${reqOk(p) ? "申请要求" : "申请要求（英文摘要，非官网原文）"}</div><div class="v req-text">${esc(reqSummary)}</div></div>
             <div><div class="k">申请窗口</div><div class="v">${esc(p.applyWindow)}</div></div>
             <div><div class="k">授课地点</div><div class="v">${esc(p.location)}</div></div>
           </div>
@@ -325,15 +347,15 @@
               <div class="detail-body">${esc(orUnverified(descCnOf(p)))}</div>
             </div>
             <div class="detail-block">
-              <div class="detail-label">Programme Description · English（官网原文）</div>
+              <div class="detail-label">${esc(descEnLabel(p))}</div>
               <div class="detail-body en">${esc(orUnverified(descEnOf(p)))}</div>
             </div>
             <div class="detail-block">
-              <div class="detail-label">申请要求 · 中文</div>
+              <div class="detail-label">${esc(reqCnLabel(p))}</div>
               <div class="detail-body">${esc(orUnverified(reqCnOf(p)))}</div>
             </div>
             <div class="detail-block">
-              <div class="detail-label">Admission Requirements · English（官网原文）</div>
+              <div class="detail-label">${esc(reqEnLabel(p))}</div>
               <div class="detail-body en">${esc(orUnverified(reqEnOf(p)))}</div>
             </div>
             <dl>
@@ -462,9 +484,9 @@
         ${row("联培学校/企业", esc(p.jointPartner || "—"))}
         ${row("授课地点", esc(p.location))}
         ${row("专业简介 · 中文", esc(orUnverified(descCnOf(p))))}
-        ${row("简介 · 英文原文", esc(orUnverified(descEnOf(p))), "en")}
-        ${row("申请要求 · 中文", esc(orUnverified(reqCnOf(p))))}
-        ${row("要求 · 英文原文", esc(orUnverified(reqEnOf(p))), "en")}
+        ${row(descEnLabel(p), esc(orUnverified(descEnOf(p))), "en")}
+        ${row(reqCnLabel(p), esc(orUnverified(reqCnOf(p))))}
+        ${row(reqEnLabel(p), esc(orUnverified(reqEnOf(p))), "en")}
         ${row("官网", progLink(p, "prog-link", p.website))}
         ${row("数据可信度", (p.sourceConfidence === "official-listed" ? "官网名单已确认" : "项目存在性待官网核实")
           + "；学费" + (p.feeSource === "official-page" ? "已对照官网项目页核实"
@@ -472,7 +494,8 @@
             : p.feeSource === "official-per-year" ? "官网按学年计费，未列全程总额；总额按官网学制估算并已标注"
             : p.feeSource === "official-pending-approval" ? "官网标注为待审批，非最终金额，须以官网后续公布为准"
             : p.feeSource === "official-other-intake" ? "官网仅列明其他入学周期，本周期费用须向项目确认"
-            : "未经官网核实，投递前务必打开官网确认"))}
+            : "未经官网核实，投递前务必打开官网确认")
+          + (reqOk(p) ? "" : "；申请要求为早期采集的压缩摘要，非官网逐字原文，且暂无中文对照，投递前务必点官网核对"))}
         ${p.sourceNote ? row("来源说明", esc(p.sourceNote)) : ""}
       </table>
       <div class="modal-close">
@@ -505,7 +528,8 @@
     if (!items.length) { toast("志愿单为空，无法导出"); return; }
     const headers = ["顺序", "学校", "中文名", "英文名", "方向", "学院", "学制",
       "学费(官网原文)", "学费HKD", "学费SGD", "学费RMB", "学费CNY(参考换算)", "是否估算总额", "学费说明",
-      "27Fall状态", "申请窗口", "授课地点", "联培", "数据可信度", "官网"];
+      "27Fall状态", "申请窗口", "授课地点", "联培",
+      "申请要求(中文)", "申请要求(英文原文)", "申请要求核实状态", "数据可信度", "官网"];
     const lines = [headers.join(",")];
     items.forEach((p, i) => {
       const row = [
@@ -518,6 +542,8 @@
         p.tuitionIsEstimate ? "是（官网学分单价×官网最低学分）" : "否",
         p.tuitionNote || "",
         openStatusText(p).label, p.applyWindow, p.location, p.jointPartner || "",
+        reqCnOf(p), reqEnOf(p),
+        reqOk(p) ? "官网逐字原文并附中文对照" : "早期采集的压缩摘要，非官网原文且暂无中文对照，须点官网核对",
         p.sourceConfidence === "official-listed" ? "官网名单已核" : "待官网核实",
         p.website
       ].map(v => `"${String(v ?? "").replace(/"/g, '""')}"`);
