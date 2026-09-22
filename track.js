@@ -68,7 +68,7 @@
       <td class="c-date" data-label="提交日期"><label class="dlab"><span>提交</span><input type="date" data-act="submittedAt" data-id="${app().esc(r.id)}" value="${app().esc(t.submittedAt || "")}" aria-label="提交日期"/></label></td>
       <td class="c-date" data-label="面试日期"><label class="dlab"><span>面试</span><input type="date" data-act="interviewAt" data-id="${app().esc(r.id)}" value="${app().esc(t.interviewAt || "")}" aria-label="面试日期"/></label></td>
       <td class="c-date" data-label="出结果"><label class="dlab"><span>出结果</span><input type="date" data-act="resultAt" data-id="${app().esc(r.id)}" value="${app().esc(t.resultAt || "")}" aria-label="出结果日期"/></label></td>
-      <td class="c-mat" data-label="材料清单">${MKEYS().map(m => `<label class="mat"><input type="checkbox" data-act="mat" data-id="${app().esc(r.id)}" data-mat="${app().esc(m)}"${mats[m] ? " checked" : ""}/> ${app().esc(MATERIAL_LABEL[m] || m)}</label>`).join("")}</td>
+      <td class="c-mat" data-label="材料清单"><div class="matgrid">${MKEYS().map(m => `<label class="mat"><input type="checkbox" data-act="mat" data-id="${app().esc(r.id)}" data-mat="${app().esc(m)}"${mats[m] ? " checked" : ""}/> ${app().esc(MATERIAL_LABEL[m] || m)}</label>`).join("")}</div></td>
       <td class="c-note" data-label="备注"><textarea data-act="note" data-id="${app().esc(r.id)}" rows="2" placeholder="面试形式、材料缺口、offer 条件…">${app().esc(t.note || "")}</textarea></td>
       <td class="c-act" data-label="">
         ${r.inWish ? `<button type="button" class="btn ghost sm" data-act="unwish" data-id="${app().esc(r.id)}">移出志愿</button>` : ""}

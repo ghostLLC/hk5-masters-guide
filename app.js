@@ -237,17 +237,23 @@
 
   /* ---------- 徽章与单元格 ---------- */
 
-  function tagsOf(p) {
-    const st = open27Of(p);
+  // 默认安静：状态用圆点文字，质量问题才出声
+  function flagsOf(p) {
+    const out = [];
     const fee = FEE_BADGE[p.feeSource || "unverified"] || FEE_BADGE.unverified;
-    const out = [
-      `<span class="tag uni">${esc(p.uni)}</span>`,
-      `<span class="tag tone-${st === "open" ? "ok" : st === "pending" ? "warn" : "pend"}">${esc(OPEN27[st])}</span>`,
-      `<span class="tag tone-${fee.tone}">${esc(fee.text)}</span>`
-    ];
-    if (p.sourceConfidence !== "official-listed") out.push(`<span class="tag tone-warn">存在性待核实</span>`);
-    if (!reqOk(p)) out.push(`<span class="tag tone-warn">申请要求非官网原文</span>`);
-    return out.join("");
+    if (p.feeSource === "unverified") out.push({ text: fee.text, bad: true });
+    else if (p.feeSource && p.feeSource !== "official-page" && p.feeSource !== "official-installments") out.push({ text: fee.text, bad: false });
+    if (p.sourceConfidence !== "official-listed") out.push({ text: "存在性待核实", bad: false });
+    if (!reqOk(p)) out.push({ text: "要求非官网原文", bad: false });
+    return out;
+  }
+  function flagsHtml(p) {
+    return flagsOf(p).map(f => `<span class="qflag${f.bad ? " bad" : ""}">${esc(f.text)}</span>`).join("");
+  }
+  const stClass = p => "st-" + open27Of(p);
+  function stHtml(p) {
+    const st = open27Of(p);
+    return `<span class="st st-${st}"><i></i>${esc(OPEN27[st])}</span>`;
   }
 
   function feeCell(p) {
@@ -259,20 +265,21 @@
   /* ---------- 列表渲染 ---------- */
 
   function cardHtml(p) {
-    return `<article class="pc${isWished(p.id) ? " wished" : ""}" data-id="${esc(p.id)}">
-      <div class="top">
-        <div style="min-width:0">
-          <h3>${progLink(p, "", p.nameCn)}</h3>
-          <p class="en">${esc(p.nameEn)} · ${esc(p.uniCn)} · ${esc(p.category)}</p>
-        </div>
+    return `<article class="pc ${stClass(p)}${isWished(p.id) ? " wished" : ""}" data-id="${esc(p.id)}">
+      <div class="pc-head">
+        <span class="pc-uni">${esc(p.uni)} · ${esc(p.uniCn)}</span>
+        ${stHtml(p)}
       </div>
-      <div class="tags">${tagsOf(p)}</div>
-      <p class="d">${esc(clip(descCnOf(p), 200))}</p>
+      <h3>${progLink(p, "", p.nameCn)}</h3>
+      <p class="en">${esc(p.nameEn)}</p>
+      <p class="cat">${esc(p.category)}${p.facultyCn ? " · " + esc(p.facultyCn) : ""}</p>
+      <p class="d">${esc(clip(descCnOf(p), 160))}</p>
       <div class="kv">
         <span>学费 <b>${feeCell(p)}</b></span>
         <span>学制 <b>${esc(p.durationYears ? p.durationYears + " 年" : "见官网")}</b></span>
         ${p.location && !HK5.has(p.uni) ? `<span>授课 <b>${esc(p.location)}</b></span>` : ""}
       </div>
+      <div class="qflags">${flagsHtml(p)}</div>
       <div class="foot">
         <button type="button" class="btn ghost sm" data-act="modal">完整信息</button>
         <button type="button" class="btn ${isWished(p.id) ? "ghost" : ""} sm" data-act="wish">${isWished(p.id) ? "已在志愿单" : "加入志愿"}</button>
@@ -293,14 +300,13 @@
       <thead><tr>${TCOLS.map(c => `<th scope="col"${c.num ? ' class="num"' : ""}>${c.k
         ? `<button type="button" data-sort="${esc(c.k)}">${esc(c.label)}${arrow(c.k)}</button>` : esc(c.label)}</th>`).join("")}</tr></thead>
       <tbody>${items.map(p => {
-        const st = open27Of(p);
         return `<tr data-id="${esc(p.id)}">
           <td><span class="sub">${esc(p.uni)}</span></td>
           <td><span class="nm">${progLink(p, "", p.nameCn)}</span><br/><span class="sub">${esc(clip(p.nameEn, 46))}</span></td>
           <td><span class="sub">${esc(p.category)}</span></td>
           <td class="num">${feeCell(p)}</td>
           <td class="num"><span class="sub">${esc(p.durationYears ? p.durationYears + " 年" : "见官网")}</span></td>
-          <td><span class="tag tone-${st === "open" ? "ok" : st === "pending" ? "warn" : "pend"}">${esc(OPEN27[st])}</span></td>
+          <td>${stHtml(p)}</td>
           <td><span class="sub">${esc(p.location || "—")}</span></td>
           <td style="white-space:nowrap">
             <button type="button" class="btn ghost sm" data-act="modal">详情</button>
