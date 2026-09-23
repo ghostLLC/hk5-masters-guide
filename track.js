@@ -9,6 +9,7 @@
     not_started: "未开始", preparing: "准备材料", submitted: "已提交", interview: "面试中",
     offer: "已获 Offer", accepted: "已接受", rejected: "已拒", withdrawn: "已放弃"
   };
+  window.HK5StatusLabels = STATUS_LABEL;
   const STATUS_ORDER = ["not_started", "preparing", "submitted", "interview", "offer", "accepted", "rejected", "withdrawn"];
   const PRIORITY_LABEL = { "": "未定", reach: "冲", match: "稳", safe: "保" };
   const MATERIAL_LABEL = {
@@ -24,6 +25,24 @@
   const setSeeded = on => { try { on ? localStorage.setItem(SEED_FLAG, "1") : localStorage.removeItem(SEED_FLAG); } catch { /* 忽略 */ } };
 
   let view = "browse";
+  let search = "", localEdit = false;
+  const expanded = new Set();
+  window.HK5TrackSearch = value => { search = value; renderTrack(); };
+  function updateTrack(id, patch) {
+    localEdit = true;
+    try { store().setTrack(id, patch); } finally { localEdit = false; }
+    refreshRow(id);
+  }
+  function refreshRow(id) {
+    const row = [...$("#trackBody").querySelectorAll("tr[data-row]")].find(el => el.dataset.row === id);
+    if (!row) return;
+    const t = store().getTrack(id) || {}, info = deadlineInfo(t);
+    row.className = "st-" + T(t.status) + (info?.tone === "bad" ? " due-past" : info?.tone === "warn" ? " due-soon" : "");
+    const flag = row.querySelector(".deadline-flag");
+    flag.textContent = info?.text || "未设置截止日期";
+    flag.className = "flag deadline-flag tone-" + (info?.tone || "muted");
+    row.querySelector(".material-count").textContent = MKEYS().filter(m => t.materials?.[m]).length + " / " + MKEYS().length;
+  }
 
   const store = () => window.HK5Store;
   const app = () => window.HK5App;
@@ -33,48 +52,40 @@
   function deadlineInfo(track) {
     const d = track && track.deadline;
     if (!d || !/^\d{4}-\d{2}-\d{2}$/.test(d)) return null;
-    const t = new Date(d + "T23:59:59");
-    if (Number.isNaN(t.getTime())) return null;
-    const days = Math.ceil((t.getTime() - Date.now()) / 86400000);
+    const today = new Date(); today.setHours(0,0,0,0);
+    const due = new Date(d + "T00:00:00");
+    if (Number.isNaN(due.getTime())) return null;
+    const days = Math.round((due.getTime() - today.getTime()) / 86400000);
     const done = DONE_STATUSES.has(track.status);
     if (days < 0) return { days, tone: done ? "muted" : "bad", text: done ? `已于 ${d} 截止` : `已过期 ${-days} 天` };
     if (done) return { days, tone: "muted", text: `${d} 截止` };
-    if (days <= WARN_DAYS) return { days, tone: "warn", text: `剩 ${days} 天（${d} 截止）` };
+    if (days <= WARN_DAYS) return { days, tone: "warn", text: `${days === 0 ? "今天截止" : "剩 " + days + " 天"}（${d}）` };
     return { days, tone: "ok", text: `${d} 截止（剩 ${days} 天）` };
   }
 
   /* ---------- 跟进表 ---------- */
 
   function trackRowHtml(r) {
-    const p = r.prog;
-    const t = r.track || (store().getTrack(r.id) || {});
-    const info = deadlineInfo(t);
-    const cls = ["st-" + T(t.status)];
-    if (info && info.tone === "warn") cls.push("due-soon");
-    if (info && info.tone === "bad") cls.push("due-past");
-    const opts = (map, cur) => Object.keys(map).map(k => `<option value="${app().esc(k)}"${(cur || "") === k ? " selected" : ""}>${app().esc(map[k])}</option>`).join("");
-    const mats = t.materials || {};
-    return `<tr class="${cls.join(" ")}" data-row="${app().esc(r.id)}">
-      <td class="c-prog" data-label="项目">
-        <div class="pname">${p ? app().esc(p.nameCn) : "（该项目已不在库中）"}</div>
-        <div class="psub">${app().esc(p ? p.uni : "—")} · ${app().esc(p ? p.nameEn : r.id)}</div>
-        ${info ? `<div class="flag tone-${info.tone}">${app().esc(info.text)}</div>` : ""}
-        ${r.inWish ? "" : `<div class="flag tone-muted">已不在志愿单，仅保留跟进记录</div>`}
-      </td>
-      <td class="c-rank" data-label="名次"><input type="number" data-act="rank" data-id="${app().esc(r.id)}" value="${t.rank == null ? "" : app().esc(t.rank)}" min="1" max="999" step="1" inputmode="numeric" placeholder="—" aria-label="名次"/></td>
-      <td class="c-prio" data-label="优先级"><select data-act="priority" data-id="${app().esc(r.id)}" aria-label="优先级">${opts(PRIORITY_LABEL, t.priority)}</select></td>
-      <td class="c-status" data-label="申请状态"><select data-act="status" data-id="${app().esc(r.id)}" aria-label="申请状态">${opts(STATUS_LABEL, t.status)}</select></td>
-      <td class="c-date" data-label="截止日期"><label class="dlab"><span>截止</span><input type="date" data-act="deadline" data-id="${app().esc(r.id)}" value="${app().esc(t.deadline || "")}" aria-label="截止日期"/></label></td>
-      <td class="c-date" data-label="提交日期"><label class="dlab"><span>提交</span><input type="date" data-act="submittedAt" data-id="${app().esc(r.id)}" value="${app().esc(t.submittedAt || "")}" aria-label="提交日期"/></label></td>
-      <td class="c-date" data-label="面试日期"><label class="dlab"><span>面试</span><input type="date" data-act="interviewAt" data-id="${app().esc(r.id)}" value="${app().esc(t.interviewAt || "")}" aria-label="面试日期"/></label></td>
-      <td class="c-date" data-label="出结果"><label class="dlab"><span>出结果</span><input type="date" data-act="resultAt" data-id="${app().esc(r.id)}" value="${app().esc(t.resultAt || "")}" aria-label="出结果日期"/></label></td>
-      <td class="c-mat" data-label="材料清单"><div class="matgrid">${MKEYS().map(m => `<label class="mat"><input type="checkbox" data-act="mat" data-id="${app().esc(r.id)}" data-mat="${app().esc(m)}"${mats[m] ? " checked" : ""}/> ${app().esc(MATERIAL_LABEL[m] || m)}</label>`).join("")}</div></td>
-      <td class="c-note" data-label="备注"><textarea data-act="note" data-id="${app().esc(r.id)}" rows="2" placeholder="面试形式、材料缺口、offer 条件…">${app().esc(t.note || "")}</textarea></td>
-      <td class="c-act" data-label="">
-        ${r.inWish ? `<button type="button" class="btn ghost sm" data-act="unwish" data-id="${app().esc(r.id)}">移出志愿</button>` : ""}
-        <button type="button" class="btn ghost sm" data-act="clear" data-id="${app().esc(r.id)}">清空跟进</button>
-      </td>
-    </tr>`;
+    const p = r.prog, t = r.track || {}, e = app().esc, info = deadlineInfo(t), id = e(r.id);
+    const opts = (map, cur) => Object.entries(map).map(([k,v]) => `<option value="${k}"${(cur || "") === k ? " selected" : ""}>${v}</option>`).join("");
+    const date = (key, label) => `<label class="edit-field">${label}<input type="date" data-act="${key}" data-id="${id}" value="${e(t[key] || "")}" aria-label="${label}"/></label>`;
+    const open = expanded.has(r.id);
+    return `<tr data-row="${id}" class="st-${T(t.status)} ${info?.tone === "bad" ? "due-past" : info?.tone === "warn" ? "due-soon" : ""}">
+      <td class="c-prog" data-label="项目"><div class="pname">${e(p?.nameCn || "已移出项目库")}</div><div class="psub">${e(p?.uni || "")} · ${e(p?.nameEn || r.id)}</div>
+      <div class="flag deadline-flag tone-${info?.tone || "muted"}">${e(info?.text || "未设置截止日期")}</div>${r.inWish ? "" : '<span class="flag tone-muted">已移出志愿 · 保留记录</span>'}</td>
+      <td class="c-rank" data-label="名次"><input type="number" min="1" max="999" step="1" data-act="rank" data-id="${id}" value="${t.rank ?? ""}" placeholder="—" aria-label="名次"/></td>
+      <td class="c-prio" data-label="优先级"><select data-act="priority" data-id="${id}" aria-label="优先级">${opts(PRIORITY_LABEL,t.priority)}</select></td>
+      <td class="c-status" data-label="状态"><select data-act="status" data-id="${id}" aria-label="申请状态">${opts(STATUS_LABEL,t.status || "not_started")}</select></td>
+      <td class="c-date" data-label="截止日期">${date("deadline","截止日期")}</td>
+      <td class="c-progress" data-label="材料"><span class="material-count">${MKEYS().filter(m=>t.materials?.[m]).length} / ${MKEYS().length}</span><span class="progress-label"> 已备齐</span></td>
+      <td class="c-act"><button type="button" class="btn ghost sm" data-act="expand" data-id="${id}" aria-expanded="${open}" aria-controls="edit-${id}">${open ? "收起" : "编辑详情"}</button></td>
+    </tr>
+    <tr class="track-detail" id="edit-${id}" ${open ? "" : "hidden"}><td colspan="7"><div class="track-editor">
+      <div class="edit-dates">${date("submittedAt","提交日期")}${date("interviewAt","面试日期")}${date("resultAt","出结果日期")}</div>
+      <fieldset class="edit-materials"><legend>材料清单</legend><div class="matgrid">${MKEYS().map(m=>`<label class="mat"><input type="checkbox" data-act="mat" data-id="${id}" data-mat="${m}" ${t.materials?.[m] ? "checked" : ""}/> ${MATERIAL_LABEL[m]}</label>`).join("")}</div></fieldset>
+      <label class="edit-field edit-note">备注<textarea data-act="note" data-id="${id}" maxlength="2000" rows="3" placeholder="记录材料缺口、面试安排或录取条件">${e(t.note || "")}</textarea><span class="note-count">${(t.note || "").length} / 2000</span></label>
+      <div class="edit-actions">${p ? `<a href="${e(p.website)}" target="_blank" rel="noopener noreferrer">查看项目官网 ↗</a>` : ""}<span></span>${r.inWish ? `<button type="button" class="btn ghost sm" data-act="unwish" data-id="${id}">移出志愿</button>` : ""}<button type="button" class="btn ghost sm" data-act="clear" data-id="${id}">清空跟进</button></div>
+    </div></td></tr>`;
   }
 
   function rows() {
@@ -94,6 +105,8 @@
     if (!window.HK5Store || !app()) return;
     let list = rows();
     const f = $("#tFilter").value, s = $("#tSort").value;
+    const terms = search.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    if (terms.length) list = list.filter(r => terms.every(term => [r.prog?.nameCn,r.prog?.nameEn,r.prog?.uni,r.prog?.uniCn,r.track?.note].join(" ").toLowerCase().includes(term)));
     if (f) list = list.filter(r => ((r.track || {}).status || "not_started") === f);
     if (s === "rank") {
       // 名次小的在前，未填名次的排最后；同名次保持志愿单顺序
@@ -139,9 +152,11 @@
       + STATUS_ORDER.filter(k => counts[k]).map(k => `<span class="pill">${app().esc(STATUS_LABEL[k])} <strong>${counts[k]}</strong></span>`).join("")
       + (past ? `<span class="pill tone-bad">已过期未提交 <strong>${past}</strong></span>` : "")
       + (soon ? `<span class="pill tone-warn">${WARN_DAYS} 天内截止 <strong>${soon}</strong></span>` : "");
+    $("#tSeed").hidden = all.length > 0 || store().status.mode === "cloud";
+    if (localEdit) { app().renderTabCount(); return; }
     $("#trackBody").innerHTML = list.length
       ? list.map(trackRowHtml).join("")
-      : `<tr><td colspan="11" class="tempty">${f ? `没有符合「${app().esc(STATUS_LABEL[f] || f)}」的项目。` : "跟进表还是空的。先在「浏览选校」里把项目加入志愿单，它们会自动出现在这里；也可以点右上角「载入示例数据」看效果。"}</td></tr>`;
+      : `<tr><td colspan="7" class="tempty">${search ? "没有匹配的项目，试试其他关键词。" : f ? `没有符合「${app().esc(STATUS_LABEL[f] || f)}」的项目。` : "跟进表还是空的。先在「浏览选校」里把项目加入志愿单，它们会自动出现在这里；也可以点右上角「载入示例数据」看效果。"}</td></tr>`;
     app().renderTabCount();
   }
 
@@ -149,6 +164,11 @@
 
   function setView(v) {
     view = v;
+    document.body.dataset.page = v;
+    $(".seg").hidden = v === "track";
+    $("#q").value = v === "track" ? search : app().getSearch();
+    $("#q").placeholder = v === "track" ? "搜索跟进项目、学校或备注" : "搜索项目、学校或关键词";
+    $(".skip").href = v === "track" ? "#viewTrack" : "#results";
     $$("[data-view]").forEach(b => {
       const on = b.dataset.view === v;
       b.setAttribute("aria-selected", on ? "true" : "false");
@@ -168,6 +188,7 @@
   /* ---------- 在线保存状态条 ---------- */
 
   function renderSyncBar(st) {
+    $("#tSeed").hidden = rows().length > 0 || st.mode === "cloud";
     const bar = $("#syncBar");
     if (!bar) return;
     bar.className = "syncbar show sync-" + st.sync;
@@ -193,7 +214,7 @@
       }
       mk("立即保存", "ghost", async () => { await store().saveNow(); renderTrack(); });
     }
-    mk("导出备份", "ghost", () => store().exportAll());
+    mk("完整备份", "ghost", () => store().exportAll());
     const imp = document.createElement("label");
     imp.className = "btn ghost import-label";
     imp.textContent = "导入备份";
@@ -204,6 +225,7 @@
       const f = file.files && file.files[0];
       if (!f) return;
       const text = await f.text();
+      if (!confirm("导入将替换现有志愿单与申请记录。建议先导出完整备份，确定继续？")) { file.value = ""; return; }
       const r = store().importAll(text);
       if (r.ok) { renderTrack(); app().toast(`已导入：志愿 ${r.wish} 条、跟进 ${r.tracks} 条`); }
       else app().toast("导入失败：" + r.error);
@@ -252,42 +274,53 @@
         const cur = store().getTrack(id) || {};
         const mats = Object.assign({}, cur.materials || {});
         mats[el.dataset.mat] = el.checked;
-        store().setTrack(id, { materials: mats });
-        renderTrack();
+        updateTrack(id, { materials: mats });
         return;
       }
       // 名次是数字输入：必须转成整数再存，否则会被 sanitizeTrack 当成非法值丢弃
       if (act === "rank") {
-        const n = parseInt(el.value, 10);
-        store().setTrack(id, { rank: Number.isFinite(n) && n >= 1 && n <= 999 ? n : null });
-        renderTrack();
+        const n = Number(el.value);
+        updateTrack(id, { rank: Number.isInteger(n) && n >= 1 && n <= 999 ? n : null });
+        el.value = store().getTrack(id)?.rank ?? "";
         return;
       }
-      store().setTrack(id, { [act]: el.value });
-      renderTrack();
+      if (act !== "note") updateTrack(id, { [act]: el.value });
     });
 
-    let noteTimer;
     $("#trackBody").addEventListener("input", e => {
       const el = e.target;
-      if (!el.dataset || el.dataset.act !== "note") return;
-      const id = el.dataset.id, v = el.value;
-      clearTimeout(noteTimer);
-      noteTimer = setTimeout(() => { store().setTrack(id, { note: v }); }, 600);
+      if (el.dataset.act !== "note") return;
+      updateTrack(el.dataset.id, { note: el.value });
+      el.parentElement.querySelector(".note-count").textContent = el.value.length + " / 2000";
     });
 
     $("#trackBody").addEventListener("click", e => {
       const btn = e.target.closest("[data-act]");
       if (!btn) return;
       const id = btn.dataset.id;
+      if (btn.dataset.act === "expand") {
+        expanded.has(id) ? expanded.delete(id) : expanded.add(id);
+        const open = expanded.has(id);
+        document.getElementById("edit-" + id).hidden = !open;
+        btn.setAttribute("aria-expanded", String(open));
+        btn.textContent = open ? "收起" : "编辑详情";
+        if (!open) {
+          renderTrack();
+          const button = [...$("#trackBody").querySelectorAll('[data-act="expand"]')].find(el => el.dataset.id === id);
+          (button || $("#tFilter")).focus({preventScroll:true});
+        }
+        return;
+      }
       if (btn.dataset.act === "unwish") {
         app().replaceWish(app().getWish().filter(w => w.id !== id), false);
         renderTrack();
         app().toast("已移出志愿单，跟进记录保留");
       } else if (btn.dataset.act === "clear") {
+        const previous = store().getTrack(id);
+        if (!previous) return app().toast("该项目还没有跟进记录");
         store().removeTrack(id);
         renderTrack();
-        app().toast("已清空该项目的跟进记录");
+        app().toast("已清空该项目的跟进记录", () => store().setTrack(id, previous));
       }
     });
 
@@ -296,6 +329,7 @@
     $("#tExportCsv").addEventListener("click", exportTrackCsv);
 
     $("#tSeed").addEventListener("click", () => {
+      if (rows().length || store().status.mode === "cloud") return app().toast("示例仅在空白的本机跟进表中提供");
       const seed = [
         { id: "hku-mfin", rank: 2, status: "submitted", priority: "reach", dl: 9, sub: -3, note: "已提交，等面试邀请", all: 1 },
         { id: "cuhk-mscfin", rank: 1, status: "interview", priority: "match", dl: 4, iv: 6, note: "面试形式待确认", all: 1 },
@@ -345,6 +379,7 @@
     if (!window.HK5Store || !window.HK5App) return;
     bind();
     store().onStatus(renderSyncBar);
+    // 自己正在编辑时只更新汇总和行摘要，保持输入节点与输入法组合状态。
     // 跟进记录变化也要刷新志愿单抽屉：抽屉里显示名次与申请状态，
     // 不联动的话在跟进表改完名次，抽屉里还是旧值
     store().onTracks(() => { app().renderTabCount(); app().refreshWish(); if (view === "track") renderTrack(); });

@@ -1000,3 +1000,102 @@ h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 650; letter-spacing: -0
     scroll-behavior: auto !important;
   }
 }
+
+/* 浏览与跟进：紧凑摘要，按需展开编辑 */
+button:disabled { opacity: .4; cursor: not-allowed; }
+.overlay-open { overflow: hidden; }
+body:has(dialog[open]) { overflow: hidden; }
+.toast.actionable.show { pointer-events: auto; display: flex; align-items: center; gap: 16px; }
+.toast button { border: 0; border-bottom: 1px solid currentColor; background: transparent; color: white; padding: 6px 2px; white-space: nowrap; }
+#btnFilters { display: none; }
+#filterDialog { width: min(520px, calc(100vw - 24px)); max-height: 88dvh; padding: 20px; border: 1px solid var(--line); border-radius: 16px; color: var(--ink); background: var(--surface); }
+#filterDialog::backdrop { background: rgba(17,24,28,.45); }
+.filter-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.filter-head h2 { margin: 0; font-size: 19px; }
+#filterContent { max-height: 62dvh; overflow: auto; }
+#filterContent .facets { position: static; display: flex; max-height: none; flex-direction: column; padding: 0; }
+#filterContent .fgroup { flex: none; }
+#filterContent .fopts { max-height: none; }
+#filterDone { width: 100%; margin-top: 18px; min-height: 44px; }
+.ktable { min-width: 800px; table-layout: auto; }
+.ktable .c-prog { width: 32%; max-width: none; }
+.ktable .c-rank { width: 70px; }
+.ktable .c-prio { width: 82px; }
+.ktable .c-status { width: 118px; }
+.ktable .c-date { width: 155px; }
+.ktable .c-act { width: 105px; }
+.ktable .c-progress { min-width: 105px; }
+.ktable td { padding: 16px 12px; }
+.ktable .c-prog .pname { font-size: 15px; margin-bottom: 5px; }
+.ktable .psub { line-height: 1.6; }
+.material-count { font-variant-numeric: tabular-nums; font-weight: 650; }
+.progress-label { color: var(--muted); font-size: 12px; }
+.edit-field { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--muted); min-width: 0; }
+.c-date > .edit-field { font-size: 0; gap: 0; }
+.track-detail > td { background: var(--surface-2); padding: 20px !important; }
+.track-editor { display: grid; grid-template-columns: 1.1fr 1fr 1.4fr; gap: 24px; }
+.edit-dates { display: grid; gap: 10px; }
+.edit-materials { border: 0; margin: 0; padding: 0; min-width: 0; }
+.edit-materials legend { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+.edit-materials .matgrid { display: flex; flex-wrap: wrap; gap: 12px; }
+.edit-materials .mat { min-width: 90px; min-height: 28px; }
+.edit-note textarea { width: 100%; min-height: 140px; }
+.note-count { text-align: right; font-size: 12px; }
+.edit-actions { grid-column: 1/-1; display: flex; gap: 10px; align-items: center; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; }
+.edit-actions > span { flex: 1; }
+.ktable .track-detail { box-shadow: none; }
+.ktable input, .ktable select, .ktable textarea { min-height: 38px; }
+@media (max-width: 1000px) {
+  #viewBrowse > .facets { display: none; }
+  #btnFilters { display: inline-flex; }
+  .bar { gap: 10px; }
+  .bar .res { flex: 1; }
+}
+@media (max-width: 640px) {
+  .topbar { position: static; }
+  .topnav { gap: 6px; flex-wrap: wrap; }
+  .topnav .tbtn { padding: 9px 10px; }
+  .topnav .seg { margin-left: auto; order: 2; }
+  .brandline { padding: 4px 0; }
+  .searchwrap input { min-height: 44px; }
+  .metastrip { margin-bottom: 4px; }
+  .statusbar summary { font-size: 12px; }
+  .statusbar details:not([open]) #sourceSummaryText { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ktable td.c-prog::before { display: none; }
+  .syncbar-in { gap: 8px; padding: 10px 0; }
+  .sync-text { font-size: 12px; }
+  .sync-actions { gap: 6px; }
+  .sync-actions .btn { padding: 6px 9px; font-size: 12px; }
+  .bar { margin-top: 4px; }
+  .pc { padding: 18px; }
+  .pc h3 { font-size: 18px; }
+  .pc .foot .btn { min-height: 42px; }
+  .thead2 { padding: 16px; gap: 14px; }
+  .thead2 .tip { display: none; }
+  .thead2 .tools { gap: 8px; width: 100%; }
+  .thead2 .tools label { flex: 1; min-width: 120px; }
+  .thead2 .tools select { width: 100%; }
+  .summary { gap: 6px; margin: 14px 0; }
+  .ktable { min-width: 0; display: block; width: 100%; }
+  .ktable tbody { display: block; }
+  .ktable tbody tr[data-row] { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; padding: 16px; margin-bottom: 12px; }
+  .ktable td { padding: 0; min-width: 0; }
+  .ktable .c-prog { grid-column: 1/-1; }
+  .ktable .c-date { grid-column: 1/3; }
+  .ktable .c-act { grid-column: 1/-1; padding-top: 4px; }
+  .ktable td.c-act .btn { min-height: 42px; }
+  .ktable input, .ktable select { width: 100%; min-height: 42px; }
+  .ktable input[type=checkbox] { width: 18px; min-height: 18px; }
+  .ktable .track-detail { margin-top: -12px; border-top: 0; border-radius: 0 0 10px 10px; padding: 0; }
+  .track-detail > td { padding: 16px !important; }
+  .track-detail > td::before { display: none; }
+  .track-editor { grid-template-columns: 1fr; gap: 20px; }
+  .edit-dates { grid-template-columns: 1fr; }
+  .edit-actions { flex-wrap: wrap; }
+  .edit-actions a { width: 100%; }
+  .edit-actions > span { display: none; }
+  .edit-actions button { flex: 1; min-height: 42px; }
+  .modal { padding: 18px; max-height: 88dvh; }
+  .modal th { width: 25%; }
+  .modal td { overflow-wrap: anywhere; }
+}

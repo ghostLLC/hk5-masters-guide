@@ -20,6 +20,16 @@ async function call(action, { who, method = 'GET', body, fault } = {}) {
 
 const track = (over = {}) => ({ status: 'preparing', priority: 'reach', deadline: '2026-11-15', note: '面试形式待确认', materials: { transcript: true, ps: false }, ...over });
 
+console.log('\n=== 中文备注长度 ===');
+{
+  const current = await call('load', { who: 'B' });
+  const version = current.json?.empty ? 0 : current.json.version;
+  const saved = await call('save', {who:'B', method:'POST', body:{baseVersion:version,wishlist:[],tracks:{'hku-mfin':track({note:'中'.repeat(2000)})}}});
+  check('2000 字中文备注可保存并完整读回', saved.status === 200 && saved.json?.tracks?.['hku-mfin']?.note === '中'.repeat(2000));
+  const rejected = await call('save', {who:'B', method:'POST', body:{baseVersion:saved.json?.version,wishlist:[],tracks:{'hku-mfin':track({note:'中'.repeat(2001)})}}});
+  check('2001 字中文备注被拒绝', rejected.status === 413);
+}
+
 console.log('\n=== 身份与匿名 ===');
 {
   const anon = await call('me', { who: 'anonymous' });

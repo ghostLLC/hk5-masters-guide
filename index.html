@@ -21,7 +21,7 @@
     </div>
     <div class="searchwrap">
       <label class="sr" for="q">搜索项目</label>
-      <input id="q" type="search" placeholder="搜索专业、学校、学院、关键词（空格分隔需全部命中）" autocomplete="off" />
+      <input id="q" type="search" placeholder="搜索项目、学校或关键词" autocomplete="off" />
     </div>
     <nav class="topnav" aria-label="主导航">
       <div class="seg" role="group" aria-label="列表显示方式">
@@ -58,7 +58,7 @@
     <aside class="facets" id="facets" aria-label="筛选条件"></aside>
 
     <main class="content" id="main">
-      <div class="bar">
+      <div class="bar"><button type="button" class="btn ghost" id="btnFilters" aria-haspopup="dialog">筛选</button>
         <span class="res" id="resCount">0 条结果</span>
         <label style="display:inline-flex;align-items:center;gap:6px;font-size:var(--t-xs);color:var(--muted)">排序
           <select id="sortSel">
@@ -84,7 +84,7 @@
       <div class="thead2">
         <div>
           <h2>硕士申请状态跟进表</h2>
-          <p class="tip">行来源是你的志愿单：加入志愿的项目自动出现在这里，移出志愿单后跟进记录仍会保留并标注。所有改动即时保存，未登录时只存在当前浏览器。</p>
+          <p class="tip">加入志愿的项目会出现在这里。展开可编辑日期、材料与备注，移出志愿后仍保留记录。</p>
         </div>
         <div class="tools">
           <label>状态筛选
@@ -126,11 +126,7 @@
               <th scope="col" class="c-prio">优先级</th>
               <th scope="col" class="c-status">申请状态</th>
               <th scope="col" class="c-date">截止日期</th>
-              <th scope="col" class="c-date">提交日期</th>
-              <th scope="col" class="c-date">面试日期</th>
-              <th scope="col" class="c-date">出结果</th>
-              <th scope="col" class="c-mat">材料清单</th>
-              <th scope="col" class="c-note">备注</th>
+              <th scope="col" class="c-progress">材料进度</th>
               <th scope="col" class="c-act">操作</th>
             </tr>
           </thead>
@@ -146,7 +142,7 @@
 </p>
 
 <div class="scrim" id="scrim"></div>
-<aside class="drawer" id="drawer" aria-label="我的志愿单" aria-hidden="true">
+<aside inert class="drawer" id="drawer" aria-label="我的志愿单" aria-hidden="true">
   <div class="drawer-h">
     <div>
       <h2>我的志愿单</h2>
@@ -157,7 +153,7 @@
   <div class="drawer-t">
     <input id="wq" type="search" placeholder="在志愿单中搜索" aria-label="在志愿单中搜索" />
     <select id="wSort" aria-label="志愿单排序">
-      <option value="add">按加入顺序</option>
+      <option value="add">手动排序（可上下移动）</option>
       <option value="rank">按名次（1→N）</option>
       <option value="uni">按学校</option>
       <option value="tuition">按学费（低到高）</option>
@@ -167,7 +163,7 @@
   <div class="drawer-l" id="wishList"></div>
   <div class="drawer-f">
     <button type="button" class="btn sm" id="btnWishCsv">导出 CSV</button>
-    <button type="button" class="btn ghost sm" id="btnWishJson">导出 JSON</button>
+    <button type="button" class="btn ghost sm" id="btnWishJson" title="仅导出项目资料；恢复进度请使用顶部完整备份">导出项目资料</button>
     <button type="button" class="btn ghost sm" id="btnWishClear">清空</button>
   </div>
 </aside>
@@ -175,6 +171,10 @@
 <div class="backdrop" id="backdrop"><div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="项目完整信息"></div></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<dialog id="filterDialog" aria-labelledby="filterTitle">
+  <div class="filter-head"><h2 id="filterTitle">筛选项目</h2><button type="button" class="btn ghost" id="filterClose">关闭</button></div>
+  <div id="filterContent"></div><button type="button" class="btn" id="filterDone">查看项目</button>
+</dialog>
 <script src="data.js"></script>
 <script src="app.js"></script>
 <script src="store.js"></script>

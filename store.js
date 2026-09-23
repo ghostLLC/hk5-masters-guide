@@ -421,7 +421,7 @@
     const next = sanitizeTrack({ ...cur, ...patch });
     // 全是默认值且志愿单里也没有它 → 不必留一行空记录
     const empty = next.status === "not_started" && !next.priority && !next.deadline && !next.submittedAt
-      && !next.interviewAt && !next.resultAt && !next.note
+      && !next.interviewAt && !next.resultAt && !next.note && next.rank === null
       && MATERIALS.every(m => !next.materials[m]);
     if (empty && !(window.HK5App && window.HK5App.isWished(id))) {
       delete tracks[id];
@@ -470,6 +470,9 @@
     try { blob = JSON.parse(text); } catch { return { ok: false, error: "文件不是合法 JSON" }; }
     if (!blob || blob.kind !== "hk5-masters-guide/state") {
       return { ok: false, error: "不是本站导出的备份文件" };
+    }
+    if (blob.schema !== 1 || !Array.isArray(blob.wishlist) || !blob.tracks || typeof blob.tracks !== "object" || Array.isArray(blob.tracks)) {
+      return { ok: false, error: "备份版本不支持或缺少必要字段，原有数据未改变" };
     }
     const nextTracks = normalizeTracks(blob.tracks || {});
     const nextWish = Array.isArray(blob.wishlist) ? blob.wishlist : [];

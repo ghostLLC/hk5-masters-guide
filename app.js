@@ -135,7 +135,7 @@
       .map(w => ({ id: w.id, addedAt: w.addedAt || 0 }));
 
     const current = normalize(read(WISH_KEY));
-    if (current.length) return current;
+    try { if (localStorage.getItem(WISH_KEY) !== null) return current; } catch {}
     return normalize(read(WISH_KEY_LEGACY));
   }
 
@@ -154,7 +154,13 @@
     else state.wish.push({ id, addedAt: Date.now() });
     saveWish();
     renderWish();
-    renderList();
+    $$("#results [data-act=wish]").forEach(b => {
+      const on = isWished(b.closest("[data-id]").dataset.id);
+      b.textContent = state.mode === "table" ? (on ? "已选" : "选") : (on ? "已在志愿单" : "加入志愿");
+      b.classList.toggle("ghost", on);
+      b.setAttribute("aria-pressed", String(on));
+      b.closest(".pc")?.classList.toggle("wished", on);
+    });
     renderTabCount();
   }
   function removeWish(id) {
@@ -198,13 +204,13 @@
   const HAY = new WeakMap();
   const hayOf = p => { let h = HAY.get(p); if (!h) { h = haystack(p); HAY.set(p, h); } return h; };
 
-  function filtered() {
+  function filtered(except = "") {
     const terms = state.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
     return state.list.filter(p => {
-      if (state.uni.size && !state.uni.has(p.uni)) return false;
-      if (state.cat.size && !state.cat.has(p.category)) return false;
-      if (state.open.size && !state.open.has(open27Of(p))) return false;
-      if (state.fee.size && !state.fee.has(p.feeSource || "unverified")) return false;
+      if (except !== "uni" && state.uni.size && !state.uni.has(p.uni)) return false;
+      if (except !== "cat" && state.cat.size && !state.cat.has(p.category)) return false;
+      if (except !== "open" && state.open.size && !state.open.has(open27Of(p))) return false;
+      if (except !== "fee" && state.fee.size && !state.fee.has(p.feeSource || "unverified")) return false;
       if (terms.length) { const h = hayOf(p); if (!terms.every(t => h.includes(t))) return false; }
       return true;
     });
@@ -227,7 +233,7 @@
 
   function facetCounts(key, map) {
     const counts = new Map();
-    for (const p of filtered()) {
+    for (const p of filtered(key === "category" ? "cat" : key)) {
       const k = map ? map(p) : p[key];
       if (k == null || k === "") continue;
       counts.set(k, (counts.get(k) || 0) + 1);
@@ -316,7 +322,7 @@
       }).join("")}</tbody></table></div>`;
   }
 
-  function renderList() {
+  function renderList(appendFrom = 0) {
     const items = sorted(filtered());
     const slice = items.slice(0, state.shown);
     $("#resCount").innerHTML = `<strong>${items.length}</strong> 条结果${items.length > slice.length ? `，已显示 ${slice.length}` : ""}`;
@@ -326,15 +332,25 @@
       $("#moreWrap").innerHTML = "";
       return;
     }
-    host.innerHTML = state.mode === "card"
-      ? `<div class="grid">${slice.map(cardHtml).join("")}</div>`
-      : tableHtml(slice);
+    if (appendFrom > 0 && state.mode === "card" && host.querySelector(".grid")) {
+      host.querySelector(".grid").insertAdjacentHTML("beforeend", slice.slice(appendFrom).map(cardHtml).join(""));
+    } else {
+      host.innerHTML = state.mode === "card"
+        ? `<div class="grid">${slice.map(cardHtml).join("")}</div>`
+        : tableHtml(slice);
+    }
     $("#moreWrap").innerHTML = items.length > state.shown
       ? `<button type="button" class="btn ghost" id="btnMore">再显示 ${Math.min(PAGE_STEP, items.length - state.shown)} 条</button>
          <div class="hint">已显示 ${slice.length} / ${items.length} 条</div>`
       : (items.length > PAGE_STEP ? `<div class="hint">已显示全部 ${items.length} 条</div>` : "");
     const bm = $("#btnMore");
-    if (bm) bm.addEventListener("click", () => { state.shown += PAGE_STEP; renderList(); });
+    if (bm) bm.addEventListener("click", () => {
+      const previous = state.shown;
+      state.shown += PAGE_STEP;
+      renderList(previous);
+      const added = [...host.querySelectorAll(".pc, tbody tr")][previous];
+      added?.querySelector("a, button")?.focus({preventScroll:true});
+    });
   }
 
   /* ---------- 分面与筛选标签 ---------- */
@@ -351,6 +367,10 @@
   }
 
   function renderFacets() {
+    const host = $("#facets"), scroll = host.scrollTop;
+    const old = [...host.querySelectorAll(".fgroup")].map(el => ({open: el.open, scroll: el.querySelector(".fopts").scrollTop}));
+    const focused = document.activeElement;
+    const focusKey = focused?.dataset.facet ? {facet: focused.dataset.facet, value: focused.value} : null;
     const uniCn = new Map(state.list.map(p => [p.uni, p.uniCn]));
     const uni = new Map([...facetCounts("uni")].sort((a, b) => a[0].localeCompare(b[0]))
       .map(([k, n]) => [`${k} · ${uniCn.get(k) || k}`, n]));
@@ -361,12 +381,12 @@
     const catEntries = new Map([...facetCounts("category")].sort((a, b) => b[1] - a[1]));
 
     const openMap = new Map(Object.keys(OPEN27).map(k => [k, 0]));
-    for (const p of filtered()) {
+    for (const p of filtered("open")) {
       const k = open27Of(p);
       openMap.set(k, (openMap.get(k) || 0) + 1);
     }
     const feeMap = new Map(Object.keys(FEE_BADGE).map(k => [k, 0]));
-    for (const p of filtered()) {
+    for (const p of filtered("fee")) {
       const k = p.feeSource || "unverified";
       feeMap.set(k, (feeMap.get(k) || 0) + 1);
     }
@@ -384,7 +404,14 @@
             <span>${esc(FEE_BADGE[k].text)}</span><i>${n}</i></label>`).join("")}</div></details>`
       + `<button type="button" class="fclear" id="btnClearFacets">清除全部筛选</button>`;
     void uni;
-    $("#btnClearFacets").addEventListener("click", resetAll);
+    [...host.querySelectorAll(".fgroup")].forEach((el, i) => {
+      if (old[i]) { el.open = old[i].open; el.querySelector(".fopts").scrollTop = old[i].scroll; }
+    });
+    host.scrollTop = scroll;
+    if (focusKey) [...host.querySelectorAll("input")].find(el => el.dataset.facet === focusKey.facet && el.value === focusKey.value)?.focus({preventScroll:true});
+    const n = state.uni.size + state.cat.size + state.open.size + state.fee.size;
+    $("#btnFilters").textContent = n ? `筛选 · ${n}` : "筛选";
+    $("#filterDone").textContent = `查看 ${filtered().length} 个项目`;
   }
 
   function renderChips() {
@@ -409,13 +436,25 @@
   /* ---------- 志愿单抽屉 ---------- */
 
   let drawerOpen = false;
+  let overlayReturn = null;
+  function setOverlay(active) {
+    for (const el of document.body.children) {
+      if (["drawer", "scrim", "backdrop", "toast", "filterDialog"].includes(el.id) || el.tagName === "SCRIPT") continue;
+      el.inert = active;
+    }
+    document.body.classList.toggle("overlay-open", active);
+  }
   function setDrawer(open) {
+    if (open) overlayReturn = document.activeElement;
     drawerOpen = open;
+    $("#drawer").inert = !open;
+    setOverlay(open);
     $("#drawer").classList.toggle("open", open);
     $("#drawer").setAttribute("aria-hidden", open ? "false" : "true");
     $("#scrim").classList.toggle("open", open);
     $("#btnWish").setAttribute("aria-expanded", open ? "true" : "false");
     if (open) $("#drawerClose").focus();
+    else if (overlayReturn?.isConnected) overlayReturn.focus({preventScroll:true});
   }
 
   function renderWish() {
@@ -460,10 +499,10 @@
           <span class="t-nm">${i + 1}. ${progLink(p, "", p.nameCn)}</span>
           ${rank === null ? "" : `<span class="rnk" title="你在跟进表里填的名次">名次 ${esc(rank)}</span>`}
         </div>
-        <div class="s">${esc(p.uni)} · ${esc(OPEN27[open27Of(p)])}${t.cny ? ` · ≈¥${nf(t.cny)}` : t.primary ? ` · ${esc(t.primary)}` : ""}${tk && tk.status !== "not_started" ? ` · ${esc((window.HK5Store.STATUSES || {})[tk.status] || tk.status)}` : ""}</div>
+        <div class="s">${esc(p.uni)} · ${esc(OPEN27[open27Of(p)])}${t.cny ? ` · ≈¥${nf(t.cny)}` : t.primary ? ` · ${esc(t.primary)}` : ""}${tk && tk.status !== "not_started" ? ` · ${esc((window.HK5StatusLabels || {})[tk.status] || tk.status)}` : ""}</div>
         <div class="a">
-          <button type="button" data-act="up" aria-label="上移">↑</button>
-          <button type="button" data-act="down" aria-label="下移">↓</button>
+          <button type="button" data-act="up" ${sort !== "add" || wq || i === 0 ? "disabled" : ""} aria-label="上移">↑</button>
+          <button type="button" data-act="down" ${sort !== "add" || wq || i === list.length - 1 ? "disabled" : ""} aria-label="下移">↓</button>
           <button type="button" data-act="unwish">移除</button>
           <button type="button" data-act="modal">详情</button>
         </div>
@@ -474,7 +513,7 @@
   function renderTabCount() {
     const el = $("#trackCount");
     if (!el) return;
-    const n = wishItems().length + Math.max(0, Object.keys((window.HK5Store && window.HK5Store.tracks) || {}).length - state.wish.length);
+    const n = new Set([...state.wish.map(w => w.id), ...Object.keys(window.HK5Store?.tracks || {})]).size;
     el.textContent = n ? String(n) : "";
   }
 
@@ -515,11 +554,18 @@
         <button type="button" class="btn" data-act="wish" data-id="${esc(p.id)}">${isWished(p.id) ? "已在志愿单（点击移除）" : "加入志愿单"}</button>
         <button type="button" class="btn ghost" id="modalClose">关闭</button>
       </div>`;
+    if (!$("#backdrop").classList.contains("open")) overlayReturn = document.activeElement;
+    setOverlay(true);
     $("#backdrop").classList.add("open");
     $("#modalClose").addEventListener("click", closeModal);
     $("#modalClose").focus();
   }
-  const closeModal = () => $("#backdrop").classList.remove("open");
+  const closeModal = () => {
+    if (!$("#backdrop").classList.contains("open")) return;
+    $("#backdrop").classList.remove("open");
+    setOverlay(false);
+    if (overlayReturn?.isConnected) overlayReturn.focus({preventScroll:true});
+  };
 
   /* ---------- 来源提示条 ---------- */
 
@@ -547,12 +593,24 @@
   /* ---------- 提示与导出 ---------- */
 
   let toastTimer;
-  function toast(msg) {
+  function toast(msg, undo) {
     const el = $("#toast");
     el.textContent = msg;
+    el.classList.toggle("actionable", !!undo);
+    if (undo) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = "撤销";
+      button.onclick = () => { undo(); toast("已恢复"); };
+      el.append(button);
+    }
     el.classList.add("show");
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => el.classList.remove("show"), 2500);
+    toastTimer = setTimeout(() => {
+      el.classList.remove("show");
+      const action = el.querySelector("button");
+      if (action) action.disabled = true;
+    }, undo ? 10000 : 2500);
   }
 
   const q = v => `"${String(v ?? "").replace(/"/g, '""')}"`;
@@ -589,11 +647,23 @@
   /* ---------- 事件 ---------- */
 
   function bind() {
+    $("#btnFilters").onclick = () => {
+      $("#filterContent").append($("#facets"));
+      $("#filterDialog").showModal();
+    };
+    $("#filterClose").onclick = $("#filterDone").onclick = () => $("#filterDialog").close();
+    $("#filterDialog").addEventListener("close", () => {
+      $("#viewBrowse").prepend($("#facets"));
+      $("#btnFilters").focus({preventScroll:true});
+    });
+    $("#filterDialog").addEventListener("click", e => { if (e.target === $("#filterDialog")) $("#filterDialog").close(); });
     let debounce;
     $("#q").addEventListener("input", e => {
       clearTimeout(debounce);
+      if (isTrackView()) { window.HK5TrackSearch?.(e.target.value); return; }
+      state.q = e.target.value;
       debounce = setTimeout(() => {
-        state.q = e.target.value; state.shown = PAGE_STEP;
+        state.shown = PAGE_STEP;
         renderChips(); renderFacets(); renderList();
       }, 140);
     });
@@ -688,6 +758,14 @@
       openModal(b.dataset.id);
     });
     document.addEventListener("keydown", e => {
+      if (e.key === "Tab") {
+        const root = drawerOpen ? $("#drawer") : $("#backdrop").classList.contains("open") ? $("#modal") : null;
+        if (root) {
+          const els = [...root.querySelectorAll('a[href],button:not(:disabled),input,select,textarea')].filter(el => el.getClientRects().length);
+          if (e.shiftKey && document.activeElement === els[0]) { e.preventDefault(); els.at(-1)?.focus(); }
+          else if (!e.shiftKey && document.activeElement === els.at(-1)) { e.preventDefault(); els[0]?.focus(); }
+        }
+      }
       if (e.key === "Escape") { closeModal(); if (drawerOpen) setDrawer(false); }
     });
   }
@@ -700,6 +778,7 @@
 
   window.HK5App = {
     programmes: PROGRAMMES,
+    getSearch: () => state.q,
     byId(id) { return state.list.find(p => p.id === id) || null; },
     getWish() { return state.wish.map(w => ({ id: w.id, addedAt: w.addedAt || 0 })); },
     isWished,

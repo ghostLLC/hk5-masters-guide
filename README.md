@@ -1,5 +1,33 @@
 # 港五 + 新二 + 中外合办 商科授课硕士信息库
 
+## 2026-09-23 前端交互改进（本地，尚未发布）
+
+- 学校、方向支持同维度多选；筛选保留折叠、滚动与焦点。1000px 及以下改用筛选弹窗，首屏优先展示项目。
+- 跟进表改为摘要行与展开编辑，手机显示卡片。日期、材料和备注在详情中编辑；备注即时落本机，云同步继续使用原有防抖，输入停顿不再重建控件。
+- 顶部搜索在跟进页搜索跟进项目、学校及备注；卡片/表格切换只在浏览页显示。
+- 加入志愿保留卡片和按钮焦点；卡片加载更多追加节点。志愿状态显示中文，非手动排序时禁用上下移动。
+- 单条清空提供 10 秒撤销；有记录或云端模式时不提供示例载入。导入有覆盖确认及 schema/必要字段检查。
+- 详情和志愿抽屉增加背景隔离、键盘焦点约束与关闭后的焦点恢复。修复截止日期过期判断、跟进计数及旧版空志愿回退。
+- 中文备注前后端统一为 2000 个 UTF-16 单元（与浏览器 maxlength 一致）；请求总大小仍受原有上限约束。
+
+验证：23 项 Chromium 交互检查通过（1440×900、390×844）；53 项本地 Function 契约测试通过；发布自检通过。未进行线上部署或真实手机测试，云端并发与账号切换的历史问题不在本轮重构范围内。
+
+本地预览：`node dev/track-preview/server.mjs 8000`，打开 http://127.0.0.1:8000/ 。
+后端检查：`node dev/track-preview/contract-test.mjs`（先启动预览服务）。
+浏览器回归脚本：`dev/track-preview/frontend-check.js`，通过 Playwright CLI 的 `run-code` 执行；必须使用独立测试浏览器，因为脚本会清空该浏览器的本地志愿与跟进记录。
+
+PowerShell 示例（需要 Node/npm 与 Chrome）：
+
+```powershell
+npx --yes --package @playwright/cli playwright-cli -s=hk5-test open http://127.0.0.1:8000/
+New-Item -ItemType Directory -Force output/playwright | Out-Null
+$frontendCheck = ((Get-Content dev/track-preview/frontend-check.js | Where-Object { -not $_.StartsWith('//') }) -join ' ')
+npx --yes --package @playwright/cli playwright-cli -s=hk5-test run-code $frontendCheck
+npx --yes --package @playwright/cli playwright-cli -s=hk5-test close
+```
+
+下方历史部署记录仍描述上一个线上版本；后续发布需同时发布前端和 Function，才能在线使用更新后的中文备注长度校验。
+
 ## 线上地址（两处部署，内容相同，能力不同）
 
 | 站点 | 地址 | 在线保存 | 说明 |

@@ -80,7 +80,7 @@ function sanitizeTracks(input) {
     for (const f of ['deadline', 'submittedAt', 'interviewAt', 'resultAt']) {
       if (!optDate(t[f])) throw new InputError(400);
     }
-    if (!str(t.note ?? '', MAX_NOTE)) throw new InputError(413);
+    if (typeof (t.note ?? '') !== 'string' || (t.note ?? '').length > MAX_NOTE) throw new InputError(413);
     const materials = {};
     const src = t.materials && typeof t.materials === 'object' && !Array.isArray(t.materials) ? t.materials : {};
     for (const m of MATERIALS) materials[m] = src[m] === true;
